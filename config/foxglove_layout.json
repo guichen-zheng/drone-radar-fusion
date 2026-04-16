@@ -1,0 +1,72 @@
+{
+  "configById": {},
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": { "speed": 1.0 },
+  "layout": {
+    "first": {
+      "first": "3d!main",
+      "second": "ImageView!camera",
+      "direction": "column",
+      "splitPercentage": 65
+    },
+    "second": {
+      "first": "RawMessages!warn",
+      "second": "Plot!height",
+      "direction": "column",
+      "splitPercentage": 50
+    },
+    "direction": "row",
+    "splitPercentage": 70
+  },
+  "panels": {
+    "3d!main": {
+      "title": "3D 点云 + 追踪 Marker",
+      "config": {
+        "followTf": "map",
+        "topics": {
+          "/radar/dynamic_cloud": {
+            "visible": true,
+            "pointSize": 2,
+            "colorMode": "colormap",
+            "colorField": "z",
+            "colormap": "turbo"
+          },
+          "/fusion/markers": { "visible": true },
+          "/radar/cluster_markers": { "visible": true }
+        },
+        "layers": [
+          { "type": "grid", "visible": true, "size": 200, "divisions": 20 }
+        ]
+      }
+    },
+    "ImageView!camera": {
+      "title": "YOLO 检测画面",
+      "config": {
+        "cameraTopic": "/camera/debug_image",
+        "synchronize": false
+      }
+    },
+    "RawMessages!warn": {
+      "title": "融合结果 / 报警",
+      "config": {
+        "topicPath": "/fusion/warn"
+      }
+    },
+    "Plot!height": {
+      "title": "无人机高度曲线",
+      "config": {
+        "paths": [
+          {
+            "value": "/fusion/final_result.drones[:].z",
+            "enabled": true,
+            "timestampMethod": "receiveTime",
+            "label": "高度 (m)"
+          }
+        ],
+        "xAxisVal": "timestamp",
+        "showLegend": true
+      }
+    }
+  }
+}

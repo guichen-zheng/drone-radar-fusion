@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>radar</name>
+  <version>1.0.0</version>
+  <description>激光雷达点云处理：GICP 背景去除 + 欧几里得聚类 + 无人机候选筛选</description>
+  <maintainer email="your@email.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>pcl_conversions</depend>
+  <depend>interface</depend>
+
+  <build_depend>libpcl-dev</build_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>无人机监控系统</title>
+
+<!-- Leaflet 地图 -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Socket.IO -->
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Arial', sans-serif; background: #0d1117; color: #e6edf3; height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── 顶部状态栏 ── */
+  #topbar {
+    background: #161b22; border-bottom: 1px solid #30363d;
+    padding: 8px 20px; display: flex; align-items: center; gap: 20px;
+  }
+  #topbar h1 { font-size: 16px; color: #58a6ff; letter-spacing: 1px; }
+  #status-dot { width: 10px; height: 10px; border-radius: 50%; background: #3fb950; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  #drone-count { font-size: 13px; color: #8b949e; }
+  #drone-count span { color: #f0883e; font-weight: bold; font-size: 15px; }
+
+  /* ── 主体布局 ── */
+  #main { display: flex; flex: 1; overflow: hidden; }
+
+  /* ── 地图 ── */
+  #map { flex: 1; }
+
+  /* ── 右侧面板 ── */
+  #panel {
+    width: 320px; background: #161b22; border-left: 1px solid #30363d;
+    display: flex; flex-direction: column; overflow: hidden;
+  }
+  .panel-section { border-bottom: 1px solid #30363d; padding: 12px 14px; }
+  .panel-title { font-size: 12px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+  /* 目标列表 */
+  #drone-list { overflow-y: auto; flex: 1; }
+  .drone-card {
+    margin: 8px; padding: 10px 12px;
+    background: #21262d; border: 1px solid #30363d; border-radius: 6px;
+    cursor: pointer; transition: border-color .2s;
+  }
+  .drone-card:hover { border-color: #58a6ff; }
+  .drone-card.warn { border-color: #f85149; background: #2d1b1b; }
+  .drone-card .drone-id { font-size: 13px; font-weight: bold; color: #58a6ff; }
+  .drone-card .drone-coords { font-size: 12px; color: #8b949e; margin-top: 4px; }
+  .drone-card .drone-height { font-size: 18px; font-weight: bold; color: #3fb950; }
+  .drone-card .drone-conf { font-size: 11px; color: #f0883e; }
+  .drone-card .drone-speed { font-size: 11px; color: #a5d6ff; }
+
+  /* 相机预览 */
+  #camera-preview {
+    width: 100%; aspect-ratio: 16/9;
+    background: #000; display: flex; align-items: center; justify-content: center;
+    color: #30363d; font-size: 12px;
+  }
+  #camera-preview img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* ── 报警弹窗 ── */
+  #warn-overlay {
+    position: fixed; top: 60px; right: 340px;
+    display: flex; flex-direction: column; gap: 8px; z-index: 9999;
+    pointer-events: none;
+  }
+  .warn-toast {
+    background: #2d1b1b; border: 1px solid #f85149; border-left: 4px solid #f85149;
+    border-radius: 6px; padding: 10px 14px; min-width: 260px;
+    pointer-events: all; animation: slideIn .3s ease;
+  }
+  @keyframes slideIn { from{transform:translateX(40px);opacity:0} to{transform:translateX(0);opacity:1} }
+  .warn-toast .warn-title { color: #f85149; font-size: 13px; font-weight: bold; }
+  .warn-toast .warn-body  { color: #e6edf3; font-size: 12px; margin-top: 4px; }
+  .warn-toast .warn-close {
+    float: right; cursor: pointer; color: #8b949e;
+    background: none; border: none; font-size: 14px;
+  }
+
+  /* ── 高度色标 ── */
+  #legend {
+    position: absolute; bottom: 30px; left: 10px; z-index: 1000;
+    background: rgba(22,27,34,.85); border: 1px solid #30363d;
+    padding: 8px 12px; border-radius: 6px; font-size: 11px;
+  }
+  .legend-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<!-- 顶部状态栏 -->
+<div id="topbar">
+  <div id="status-dot"></div>
+  <h1>🛡 无人机监控系统</h1>
+  <div id="drone-count">当前追踪目标：<span id="count">0</span></div>
+  <div id="conn-status" style="margin-left:auto;font-size:12px;color:#3fb950">● 已连接</div>
+</div>
+
+<!-- 主体 -->
+<div id="main">
+  <div id="map"></div>
+
+  <div id="panel">
+    <!-- 相机实时画面 -->
+    <div class="panel-section">
+      <div class="panel-title">📷 实时画面</div>
+      <div id="camera-preview"><span>等待相机画面...</span></div>
+    </div>
+    <!-- 目标列表 -->
+    <div class="panel-title" style="padding:10px 14px 0">🎯 检测目标</div>
+    <div id="drone-list"></div>
+  </div>
+</div>
+
+<!-- 报警弹窗容器 -->
+<div id="warn-overlay"></div>
+
+<!-- 高度图例 -->
+<div id="legend">
+  <div style="color:#8b949e;margin-bottom:4px">高度图例</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#3fb950"></div>0–50m</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#f0883e"></div>50–150m</div>
+  <div class="legend-row"><div class="legend-dot" style="background:#f85149"></div>&gt;150m</div>
+</div>
+
+<script>
+// ── 初始化地图（默认中心可在 params.yaml 配置，此处为示例坐标）──────────────
+const map = L.map('map', { zoomControl: true }).setView([39.9, 116.4], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap', maxZoom: 19
+}).addTo(map);
+
+// ── 高度 → 颜色映射 ───────────────────────────────────────────────────────
+function heightColor(z) {
+  if (z < 50)  return '#3fb950';
+  if (z < 150) return '#f0883e';
+  return '#f85149';
+}
+
+// ── 创建自定义无人机图标 ──────────────────────────────────────────────────
+function droneIcon(z) {
+  const color = heightColor(z);
+  return L.divIcon({
+    className: '',
+    html: `<div style="
+      width:28px;height:28px;border-radius:50%;
+      background:${color};border:3px solid #fff;
+      box-shadow:0 0 12px ${color};
+      display:flex;align-items:center;justify-content:center;
+      font-size:14px;">✈</div>`,
+    iconSize: [28, 28], iconAnchor: [14, 14]
+  });
+}
+
+// ── 存储地图 Marker 引用 ──────────────────────────────────────────────────
+const droneMarkers = {};   // drone_id → L.marker
+const droneCards   = {};   // drone_id → DOM element
+
+// ── Socket.IO 连接 ────────────────────────────────────────────────────────
+const socket = io();
+
+socket.on('connect',    () => setConnStatus(true));
+socket.on('disconnect', () => setConnStatus(false));
+
+function setConnStatus(ok) {
+  const el = document.getElementById('conn-status');
+  el.textContent = ok ? '● 已连接' : '● 已断开';
+  el.style.color = ok ? '#3fb950' : '#f85149';
+}
+
+// ── 接收无人机坐标更新 ────────────────────────────────────────────────────
+socket.on('drone_update', (data) => {
+  const activIds = new Set();
+
+  data.drones.forEach(d => {
+    activIds.add(d.id);
+    // 注意：此处 d.x, d.y 为雷达坐标系（米），需转换为经纬度
+    // lat/lng 由 fusion 节点（CoordTransform）直接填入（WGS84 度），前端无需手动换算
+    const lat = d.lat;
+    const lng = d.lng;
+
+    // 更新地图 Marker
+    if (droneMarkers[d.id]) {
+      droneMarkers[d.id].setLatLng([lat, lng]);
+      droneMarkers[d.id].setIcon(droneIcon(d.z));
+      droneMarkers[d.id].getPopup().setContent(popupHtml(d));
+    } else {
+      const marker = L.marker([lat, lng], { icon: droneIcon(d.z) })
+        .bindPopup(popupHtml(d))
+        .addTo(map);
+      droneMarkers[d.id] = marker;
+    }
+
+    // 更新右侧面板卡片
+    updateCard(d);
+  });
+
+  // 删除已消失的目标
+  Object.keys(droneMarkers).forEach(id => {
+    if (!activIds.has(parseInt(id))) {
+      map.removeLayer(droneMarkers[id]);
+      delete droneMarkers[id];
+      document.getElementById(`card-${id}`)?.remove();
+      delete droneCards[id];
+    }
+  });
+
+  document.getElementById('count').textContent = activIds.size;
+});
+
+// ── 地图弹窗内容 ──────────────────────────────────────────────────────────
+function popupHtml(d) {
+  const spd = Math.sqrt(d.vx**2 + d.vy**2 + d.vz**2).toFixed(1);
+  return `<div style="font-size:13px;line-height:1.7">
+    <b>无人机 ID: ${d.id}</b><br>
+    <span style="color:#555">坐标</span> X:${d.x}m  Y:${d.y}m<br>
+    <span style="color:#555">高度</span> <b style="color:#16a34a">${d.z}m</b><br>
+    <span style="color:#555">速度</span> ${spd} m/s<br>
+    <span style="color:#555">置信度</span> ${(d.confidence*100).toFixed(0)}%
+  </div>`;
+}
+
+// ── 右侧面板卡片更新 ──────────────────────────────────────────────────────
+function updateCard(d) {
+  const spd = Math.sqrt(d.vx**2 + d.vy**2 + d.vz**2).toFixed(1);
+  let card = document.getElementById(`card-${d.id}`);
+  if (!card) {
+    card = document.createElement('div');
+    card.id = `card-${d.id}`;
+    card.className = 'drone-card';
+    card.onclick = () => {
+      if (droneMarkers[d.id]) {
+        map.panTo(droneMarkers[d.id].getLatLng());
+        droneMarkers[d.id].openPopup();
+      }
+    };
+    document.getElementById('drone-list').appendChild(card);
+  }
+  card.innerHTML = `
+    <div class="drone-id">✈ 目标 #${d.id}
+      <span class="drone-conf" style="float:right">${(d.confidence*100).toFixed(0)}%</span>
+    </div>
+    <div class="drone-height" style="color:${heightColor(d.z)}">${d.z} m</div>
+    <div class="drone-coords">X:${d.x}m  Y:${d.y}m</div>
+    <div class="drone-speed">速度: ${spd} m/s &nbsp;|&nbsp; 类别: ${d.label}</div>
+  `;
+}
+
+// ── 接收报警通知 ──────────────────────────────────────────────────────────
+socket.on('drone_warn', (data) => {
+  showWarnToast(data);
+  // 对应卡片变红
+  const card = document.getElementById(`card-${data.drone_id}`);
+  if (card) card.classList.add('warn');
+});
+
+function showWarnToast(data) {
+  const toast = document.createElement('div');
+  toast.className = 'warn-toast';
+  toast.innerHTML = `
+    <button class="warn-close" onclick="this.parentElement.remove()">✕</button>
+    <div class="warn-title">⚠ 无人机报警 [${data.level}]</div>
+    <div class="warn-body">
+      ID: ${data.drone_id} &nbsp;|&nbsp; 高度: ${data.z.toFixed(1)}m<br>
+      坐标: (${data.x.toFixed(1)}, ${data.y.toFixed(1)})<br>
+      置信度: ${(data.confidence*100).toFixed(0)}%
+    </div>
+  `;
+  document.getElementById('warn-overlay').appendChild(toast);
+  // 8 秒后自动消失
+  setTimeout(() => toast.remove(), 8000);
+}
+
+// ── 接收相机帧 ────────────────────────────────────────────────────────────
+socket.on('camera_frame', (data) => {
+  const preview = document.getElementById('camera-preview');
+  let img = preview.querySelector('img');
+  if (!img) {
+    preview.innerHTML = '';
+    img = document.createElement('img');
+    preview.appendChild(img);
+  }
+  img.src = 'data:image/jpeg;base64,' + data.data;
+});
+
+// ── 地图初始中心由后端 params.yaml 的 origin_lat/lng 决定 ────────────────────
+// （lat/lng 已由 fusion 节点直接填入每个目标的消息字段，前端无需换算）
+</script>
+</body>
+</html>
