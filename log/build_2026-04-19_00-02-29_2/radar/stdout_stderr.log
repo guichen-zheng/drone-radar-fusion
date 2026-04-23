@@ -1,0 +1,22 @@
+Consolidate compiler generated dependencies of target radar_node
+[100%] Built target radar_node
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/lib/radar/radar_node
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/include/radar/radar_processor.hpp
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/launch/radar_launch.py
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/ament_index/resource_index/package_run_dependencies/radar
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/ament_index/resource_index/parent_prefix_path/radar
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/ament_prefix_path.sh
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/ament_prefix_path.dsv
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/path.sh
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/path.dsv
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.bash
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.sh
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.zsh
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.dsv
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.dsv
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/ament_index/resource_index/packages/radar
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/cmake/radarConfig.cmake
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/cmake/radarConfig-version.cmake
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.xml

@@ -1,0 +1,51 @@
+[0.007s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/fusion -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/fusion
+[0.014s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.092s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.096s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.114s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.115s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.119s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.125s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.133s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.153s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.154s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.223s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.259s] -- Found message_filters: 4.3.15 (/opt/ros/humble/share/message_filters/cmake)
+[0.261s] -- Found visualization_msgs: 4.9.1 (/opt/ros/humble/share/visualization_msgs/cmake)
+[0.296s] -- Found interface: 1.0.0 (/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake)
+[5.638s] -- Using the multi-header code from /home/guichen/Documents/drone-radar-fusion/build/fusion/_deps/json-src/include/
+[5.683s] -- Configuring done
+[5.692s] -- Generating done
+[5.694s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/fusion
+[5.701s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/fusion -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/fusion
+[5.701s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/fusion -- -j16 -l16
+[5.732s] [ 25%] Building CXX object CMakeFiles/fusion_node.dir/src/fusion_node.cpp.o
+[5.732s] [ 50%] Building CXX object CMakeFiles/fusion_node.dir/src/fusion_manager.cpp.o
+[5.732s] [ 75%] Building CXX object CMakeFiles/fusion_node.dir/src/kalman_filter.cpp.o
+[7.715s] In file included from /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_node.cpp:1:
+[7.716s] /home/guichen/Documents/drone-radar-fusion/src/fusion/include/fusion/fusion_manager.hpp:50:5: error: ‘cv’ does not name a type
+[7.716s]    50 |     cv::Point2f projectToImage(
+[7.716s]       |     ^~
+[8.063s] In file included from /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp:1:
+[8.063s] /home/guichen/Documents/drone-radar-fusion/src/fusion/include/fusion/fusion_manager.hpp:50:5: error: ‘cv’ does not name a type
+[8.063s]    50 |     cv::Point2f projectToImage(
+[8.063s]       |     ^~
+[8.769s] /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp: In member function ‘std::vector<std::pair<int, int> > fusion::FusionManager::matchDetections(const DroneDetectArray&, const DroneDetectArray&, const Matrix3d&, const Matrix4d&)’:
+[8.769s] /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp:134:28: error: ‘projectToImage’ was not declared in this scope
+[8.769s]   134 |         cv::Point2f proj = projectToImage(pt, K, T_cam_lidar);
+[8.770s]       |                            ^~~~~~~~~~~~~~
+[8.772s] /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp: At global scope:
+[8.773s] /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp:164:13: error: no declaration matches ‘cv::Point2f fusion::FusionManager::projectToImage(const Vector3d&, const Matrix3d&, const Matrix4d&)’
+[8.773s]   164 | cv::Point2f FusionManager::projectToImage(
+[8.773s]       |             ^~~~~~~~~~~~~
+[8.773s] /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp:164:13: note: no functions named ‘cv::Point2f fusion::FusionManager::projectToImage(const Vector3d&, const Matrix3d&, const Matrix4d&)’
+[8.773s] In file included from /home/guichen/Documents/drone-radar-fusion/src/fusion/src/fusion_manager.cpp:1:
+[8.773s] /home/guichen/Documents/drone-radar-fusion/src/fusion/include/fusion/fusion_manager.hpp:29:7: note: ‘class fusion::FusionManager’ defined here
+[8.773s]    29 | class FusionManager : public rclcpp::Node
+[8.773s]       |       ^~~~~~~~~~~~~
+[9.645s] gmake[2]: *** [CMakeFiles/fusion_node.dir/build.make:76：CMakeFiles/fusion_node.dir/src/fusion_node.cpp.o] 错误 1
+[9.646s] gmake[2]: *** 正在等待未完成的任务....
+[11.710s] gmake[2]: *** [CMakeFiles/fusion_node.dir/build.make:90：CMakeFiles/fusion_node.dir/src/fusion_manager.cpp.o] 错误 1
+[11.710s] gmake[1]: *** [CMakeFiles/Makefile2:154：CMakeFiles/fusion_node.dir/all] 错误 2
+[11.710s] gmake: *** [Makefile:146：all] 错误 2
+[11.712s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '2': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/fusion -- -j16 -l16

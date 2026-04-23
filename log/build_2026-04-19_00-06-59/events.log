@@ -1,0 +1,856 @@
+[0.000000] (-) TimerEvent: {}
+[0.000050] (-) JobUnselected: {'identifier': 'camera_vision'}
+[0.000066] (-) JobUnselected: {'identifier': 'fusion'}
+[0.000077] (-) JobUnselected: {'identifier': 'hik_camera_ros2_driver'}
+[0.000086] (-) JobUnselected: {'identifier': 'interface'}
+[0.000095] (-) JobUnselected: {'identifier': 'radar'}
+[0.000104] (-) JobUnselected: {'identifier': 'web_dashboard'}
+[0.000116] (livox_interfaces) JobQueued: {'identifier': 'livox_interfaces', 'dependencies': OrderedDict()}
+[0.000141] (livox_sdk_vendor) JobQueued: {'identifier': 'livox_sdk_vendor', 'dependencies': OrderedDict()}
+[0.000151] (livox_ros2_avia) JobQueued: {'identifier': 'livox_ros2_avia', 'dependencies': OrderedDict([('livox_interfaces', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces'), ('livox_sdk_vendor', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor')])}
+[0.000424] (livox_interfaces) JobStarted: {'identifier': 'livox_interfaces'}
+[0.003764] (livox_sdk_vendor) JobStarted: {'identifier': 'livox_sdk_vendor'}
+[0.005967] (livox_interfaces) JobProgress: {'identifier': 'livox_interfaces', 'progress': 'cmake'}
+[0.006235] (livox_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces', '-DCMAKE_BUILD_TYPE=Release', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.007446] (livox_sdk_vendor) JobProgress: {'identifier': 'livox_sdk_vendor', 'progress': 'cmake'}
+[0.007602] (livox_sdk_vendor) Command: {'cmd': ['/usr/bin/cmake', '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor', '-DCMAKE_BUILD_TYPE=Release', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.040069] (livox_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.040279] (livox_sdk_vendor) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.075171] (livox_sdk_vendor) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.075318] (livox_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.079611] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.079742] (livox_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.099854] (-) TimerEvent: {}
+[0.122680] (livox_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.122808] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.127545] (livox_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.127709] (livox_sdk_vendor) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.127751] (livox_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.127785] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.127850] (livox_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.127940] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.129868] (livox_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.129950] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.179473] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.179654] (livox_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.184323] (livox_sdk_vendor) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.184417] (livox_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.184486] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.184611] (livox_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.184761] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.184911] (livox_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.185949] (livox_sdk_vendor) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.186028] (livox_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.199941] (-) TimerEvent: {}
+[0.282298] (livox_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.282435] (livox_sdk_vendor) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.300028] (-) TimerEvent: {}
+[0.325482] (livox_sdk_vendor) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.326450] (livox_interfaces) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.342087] (livox_interfaces) StdoutLine: {'line': b'-- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[0.369135] (livox_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.372870] (livox_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.377806] (livox_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.385002] (livox_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.394252] (livox_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.400136] (-) TimerEvent: {}
+[0.410520] (livox_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.412818] (livox_sdk_vendor) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.415252] (livox_sdk_vendor) StdoutLine: {'line': b'-- Generating done\n'}
+[0.416439] (livox_sdk_vendor) StdoutLine: {'line': b'-- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor\n'}
+[0.420991] (livox_sdk_vendor) CommandEnded: {'returncode': 0}
+[0.422202] (livox_sdk_vendor) JobProgress: {'identifier': 'livox_sdk_vendor', 'progress': 'build'}
+[0.422277] (livox_sdk_vendor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor', '--', '-j16', '-l16'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.450574] (livox_sdk_vendor) StdoutLine: {'line': b"[ 12%] Creating directories for 'livox-sdk-master'\n"}
+[0.491648] (livox_sdk_vendor) StdoutLine: {'line': b"[ 25%] Performing download step (git clone) for 'livox-sdk-master'\n"}
+[0.500218] (-) TimerEvent: {}
+[0.503097] (livox_sdk_vendor) StderrLine: {'line': b"\xe6\xad\xa3\xe5\x85\x8b\xe9\x9a\x86\xe5\x88\xb0 'livox-sdk-master'...\n"}
+[0.592204] (livox_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.600301] (-) TimerEvent: {}
+[0.700435] (-) TimerEvent: {}
+[0.800620] (-) TimerEvent: {}
+[0.806992] (livox_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.898941] (livox_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.900697] (-) TimerEvent: {}
+[0.912959] (livox_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[0.913633] (livox_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[0.928830] (livox_interfaces) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[0.928928] (livox_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.928987] (livox_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[0.929021] (livox_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[0.941166] (livox_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.000801] (-) TimerEvent: {}
+[1.012794] (livox_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.027314] (livox_interfaces) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[1.028413] (livox_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.029134] (livox_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.031023] (livox_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.050980] (livox_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[1.058180] (livox_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces\n'}
+[1.065234] (livox_interfaces) CommandEnded: {'returncode': 0}
+[1.065995] (livox_interfaces) JobProgress: {'identifier': 'livox_interfaces', 'progress': 'build'}
+[1.066135] (livox_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces', '--', '-j16', '-l16'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.090089] (livox_interfaces) StdoutLine: {'line': b'[  2%] Generating C code for ROS interfaces\n'}
+[1.095316] (livox_interfaces) StdoutLine: {'line': b'[  5%] Generating Rust code for ROS interfaces\n'}
+[1.095858] (livox_interfaces) StdoutLine: {'line': b'[  7%] Generating C++ code for ROS interfaces\n'}
+[1.100421] (livox_interfaces) StdoutLine: {'line': b'[  7%] Built target ament_cmake_python_symlink_livox_interfaces\n'}
+[1.100859] (-) TimerEvent: {}
+[1.201065] (-) TimerEvent: {}
+[1.241671] (livox_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[1.242248] (livox_interfaces) StdoutLine: {'line': b'creating livox_interfaces.egg-info\n'}
+[1.242564] (livox_interfaces) StdoutLine: {'line': b'writing livox_interfaces.egg-info/PKG-INFO\n'}
+[1.242651] (livox_interfaces) StdoutLine: {'line': b'writing dependency_links to livox_interfaces.egg-info/dependency_links.txt\n'}
+[1.243006] (livox_interfaces) StdoutLine: {'line': b'writing top-level names to livox_interfaces.egg-info/top_level.txt\n'}
+[1.243055] (livox_interfaces) StdoutLine: {'line': b"writing manifest file 'livox_interfaces.egg-info/SOURCES.txt'\n"}
+[1.244870] (livox_interfaces) StdoutLine: {'line': b"reading manifest file 'livox_interfaces.egg-info/SOURCES.txt'\n"}
+[1.245357] (livox_interfaces) StdoutLine: {'line': b"writing manifest file 'livox_interfaces.egg-info/SOURCES.txt'\n"}
+[1.269058] (livox_interfaces) StdoutLine: {'line': b'[  7%] Built target ament_cmake_python_build_livox_interfaces_egg\n'}
+[1.301152] (-) TimerEvent: {}
+[1.371528] (livox_interfaces) StdoutLine: {'line': b'[  7%] Built target livox_interfaces__rs\n'}
+[1.395829] (livox_interfaces) StdoutLine: {'line': b'[ 10%] Building C object CMakeFiles/livox_interfaces__rosidl_generator_c.dir/rosidl_generator_c/livox_interfaces/msg/detail/custom_point__functions.c.o\n'}
+[1.396038] (livox_interfaces) StdoutLine: {'line': b'[ 12%] Building C object CMakeFiles/livox_interfaces__rosidl_generator_c.dir/rosidl_generator_c/livox_interfaces/msg/detail/custom_msg__functions.c.o\n'}
+[1.401266] (-) TimerEvent: {}
+[1.406328] (livox_interfaces) StdoutLine: {'line': b'[ 12%] Built target livox_interfaces__cpp\n'}
+[1.412508] (livox_interfaces) StdoutLine: {'line': b'[ 20%] Generating C++ introspection for ROS interfaces\n'}
+[1.412635] (livox_interfaces) StdoutLine: {'line': b'[ 20%] Generating C++ type support for eProsima Fast-RTPS\n'}
+[1.412673] (livox_interfaces) StdoutLine: {'line': b'[ 20%] Generating C++ type support dispatch for ROS interfaces\n'}
+[1.458673] (livox_interfaces) StdoutLine: {'line': b'[ 22%] Linking C shared library liblivox_interfaces__rosidl_generator_c.so\n'}
+[1.481914] (livox_interfaces) StdoutLine: {'line': b'[ 22%] Built target livox_interfaces__rosidl_generator_c\n'}
+[1.488150] (livox_interfaces) StdoutLine: {'line': b'[ 30%] Generating C type support dispatch for ROS interfaces\n'}
+[1.488275] (livox_interfaces) StdoutLine: {'line': b'[ 30%] Generating C type support for eProsima Fast-RTPS\n'}
+[1.488327] (livox_interfaces) StdoutLine: {'line': b'[ 30%] Generating C introspection for ROS interfaces\n'}
+[1.501366] (-) TimerEvent: {}
+[1.601547] (-) TimerEvent: {}
+[1.673643] (livox_interfaces) StdoutLine: {'line': b'[ 35%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_interfaces/msg/custom_msg__type_support.cpp.o\n'}
+[1.673848] (livox_interfaces) StdoutLine: {'line': b'[ 35%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_interfaces/msg/custom_point__type_support.cpp.o\n'}
+[1.687787] (livox_interfaces) StdoutLine: {'line': b'[ 40%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_interfaces/msg/detail/custom_point__type_support.cpp.o\n'}
+[1.687990] (livox_interfaces) StdoutLine: {'line': b'[ 40%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_interfaces/msg/detail/custom_msg__type_support.cpp.o\n'}
+[1.701646] (-) TimerEvent: {}
+[1.702305] (livox_interfaces) StdoutLine: {'line': b'[ 42%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_interfaces/msg/detail/dds_fastrtps/custom_point__type_support.cpp.o\n'}
+[1.704023] (livox_interfaces) StdoutLine: {'line': b'[ 45%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_interfaces/msg/detail/dds_fastrtps/custom_msg__type_support.cpp.o\n'}
+[1.756976] (livox_interfaces) StdoutLine: {'line': b'[ 47%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_interfaces/msg/custom_point__type_support.cpp.o\n'}
+[1.759284] (livox_interfaces) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_interfaces/msg/custom_msg__type_support.cpp.o\n'}
+[1.786941] (livox_interfaces) StdoutLine: {'line': b'[ 55%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_interfaces/msg/detail/custom_point__type_support_c.cpp.o\n'}
+[1.787134] (livox_interfaces) StdoutLine: {'line': b'[ 55%] Building CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_interfaces/msg/detail/custom_msg__type_support_c.cpp.o\n'}
+[1.793596] (livox_interfaces) StdoutLine: {'line': b'[ 57%] Linking CXX shared library liblivox_interfaces__rosidl_typesupport_c.so\n'}
+[1.801808] (-) TimerEvent: {}
+[1.809105] (livox_interfaces) StdoutLine: {'line': b'[ 60%] Building C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_interfaces/msg/detail/custom_msg__type_support.c.o\n'}
+[1.809840] (livox_interfaces) StdoutLine: {'line': b'[ 62%] Building C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_interfaces/msg/detail/custom_point__type_support.c.o\n'}
+[1.836205] (livox_interfaces) StdoutLine: {'line': b'[ 62%] Built target livox_interfaces__rosidl_typesupport_c\n'}
+[1.848278] (livox_interfaces) StdoutLine: {'line': b'[ 65%] Linking C shared library liblivox_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[1.870353] (livox_interfaces) StdoutLine: {'line': b'[ 65%] Built target livox_interfaces__rosidl_typesupport_introspection_c\n'}
+[1.883898] (livox_interfaces) StdoutLine: {'line': b'[ 67%] Linking CXX shared library liblivox_interfaces__rosidl_typesupport_cpp.so\n'}
+[1.901914] (-) TimerEvent: {}
+[1.912297] (livox_interfaces) StdoutLine: {'line': b'[ 67%] Built target livox_interfaces__rosidl_typesupport_cpp\n'}
+[2.001992] (-) TimerEvent: {}
+[2.004508] (livox_interfaces) StdoutLine: {'line': b'[ 70%] Linking CXX shared library liblivox_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[2.053622] (livox_interfaces) StdoutLine: {'line': b'[ 70%] Built target livox_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[2.081841] (livox_interfaces) StdoutLine: {'line': b'[ 72%] Linking CXX shared library liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[2.102092] (-) TimerEvent: {}
+[2.126891] (livox_interfaces) StdoutLine: {'line': b'[ 75%] Linking CXX shared library liblivox_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[2.129356] (livox_interfaces) StdoutLine: {'line': b'[ 75%] Built target livox_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[2.172771] (livox_interfaces) StdoutLine: {'line': b'[ 75%] Built target livox_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[2.184124] (livox_interfaces) StdoutLine: {'line': b'[ 75%] Built target livox_interfaces\n'}
+[2.195233] (livox_interfaces) StdoutLine: {'line': b'[ 77%] Generating Python code for ROS interfaces\n'}
+[2.202156] (-) TimerEvent: {}
+[2.302280] (-) TimerEvent: {}
+[2.402533] (-) TimerEvent: {}
+[2.502716] (-) TimerEvent: {}
+[2.602924] (-) TimerEvent: {}
+[2.623011] (livox_interfaces) StdoutLine: {'line': b'[ 77%] Built target livox_interfaces__py\n'}
+[2.635209] (livox_interfaces) StdoutLine: {'line': b'[ 82%] Building C object CMakeFiles/livox_interfaces__rosidl_generator_py.dir/rosidl_generator_py/livox_interfaces/msg/_custom_point_s.c.o\n'}
+[2.635344] (livox_interfaces) StdoutLine: {'line': b'[ 82%] Building C object CMakeFiles/livox_interfaces__rosidl_generator_py.dir/rosidl_generator_py/livox_interfaces/msg/_custom_msg_s.c.o\n'}
+[2.703132] (-) TimerEvent: {}
+[2.725395] (livox_interfaces) StdoutLine: {'line': b'[ 85%] Linking C shared library rosidl_generator_py/livox_interfaces/liblivox_interfaces__rosidl_generator_py.so\n'}
+[2.751428] (livox_interfaces) StdoutLine: {'line': b'[ 85%] Built target livox_interfaces__rosidl_generator_py\n'}
+[2.763762] (livox_interfaces) StdoutLine: {'line': b'[ 90%] Building C object CMakeFiles/livox_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_c.c.o\n'}
+[2.763988] (livox_interfaces) StdoutLine: {'line': b'[ 90%] Building C object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\n'}
+[2.764031] (livox_interfaces) StdoutLine: {'line': b'[ 92%] Building C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\n'}
+[2.803224] (-) TimerEvent: {}
+[2.842449] (livox_interfaces) StdoutLine: {'line': b'[100%] Linking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.842612] (livox_interfaces) StdoutLine: {'line': b'[100%] Linking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.842670] (livox_interfaces) StdoutLine: {'line': b'[100%] Linking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[2.866934] (livox_interfaces) StdoutLine: {'line': b'[100%] Built target livox_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[2.867067] (livox_interfaces) StdoutLine: {'line': b'[100%] Built target livox_interfaces__rosidl_typesupport_c__pyext\n'}
+[2.867106] (livox_interfaces) StdoutLine: {'line': b'[100%] Built target livox_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.873831] (livox_interfaces) CommandEnded: {'returncode': 0}
+[2.874362] (livox_interfaces) JobProgress: {'identifier': 'livox_interfaces', 'progress': 'install'}
+[2.879589] (livox_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.884093] (livox_interfaces) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[2.884418] (livox_interfaces) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[2.884542] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/rosidl_interfaces/livox_interfaces\n'}
+[2.889671] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_msg.h\n'}
+[2.894523] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_point.h\n'}
+[2.898881] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__functions.h\n'}
+[2.903284] (-) TimerEvent: {}
+[2.903376] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__struct.h\n'}
+[2.908049] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.h\n'}
+[2.912457] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__functions.h\n'}
+[2.916899] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__struct.h\n'}
+[2.921411] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.h\n'}
+[2.925859] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[2.930748] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/library_path.sh\n'}
+[2.935250] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/library_path.dsv\n'}
+[2.939890] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_fastrtps_c.h\n'}
+[2.944277] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_fastrtps_c.h\n'}
+[2.948615] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[2.953313] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_msg.hpp\n'}
+[2.957619] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_point.hpp\n'}
+[2.962095] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__builder.hpp\n'}
+[2.966665] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__struct.hpp\n'}
+[2.970990] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__traits.hpp\n'}
+[2.975518] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.hpp\n'}
+[2.980608] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__builder.hpp\n'}
+[2.985924] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__struct.hpp\n'}
+[2.990542] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__traits.hpp\n'}
+[2.995339] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.hpp\n'}
+[2.999841] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[3.003373] (-) TimerEvent: {}
+[3.004568] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.009119] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.013716] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.018946] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_introspection_c.h\n'}
+[3.023616] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_introspection_c.h\n'}
+[3.028184] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.033178] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.037820] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.042214] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/pythonpath.sh\n'}
+[3.046709] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/pythonpath.dsv\n'}
+[3.051573] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/PKG-INFO\n'}
+[3.055995] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/SOURCES.txt\n'}
+[3.060240] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/dependency_links.txt\n'}
+[3.064610] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/top_level.txt\n'}
+[3.069613] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/__init__.py\n'}
+[3.074032] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[3.078276] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.082438] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.086877] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/liblivox_interfaces__rosidl_generator_py.so\n'}
+[3.091266] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.095526] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.100081] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.103458] (-) TimerEvent: {}
+[3.104655] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/__init__.py\n'}
+[3.109129] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_msg.py\n'}
+[3.113239] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_msg_s.c\n'}
+[3.117761] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_point.py\n'}
+[3.122200] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_point_s.c\n'}
+[3.126626] (livox_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.126755] (livox_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.126844] (livox_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.126942] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/rust_packages/livox_interfaces\n'}
+[3.131464] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/Cargo.toml\n'}
+[3.135936] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/build.rs\n'}
+[3.140225] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/src/lib.rs\n'}
+[3.144654] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/src/msg.rs\n'}
+[3.149192] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/src/msg/rmw.rs\n'}
+[3.153679] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomPoint.idl\n'}
+[3.158320] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomMsg.idl\n'}
+[3.162785] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomPoint.msg\n'}
+[3.167178] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomMsg.msg\n'}
+[3.171537] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/package_run_dependencies/livox_interfaces\n'}
+[3.176173] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/parent_prefix_path/livox_interfaces\n'}
+[3.180487] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/ament_prefix_path.sh\n'}
+[3.185084] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/ament_prefix_path.dsv\n'}
+[3.189460] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/path.sh\n'}
+[3.194363] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/path.dsv\n'}
+[3.199782] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.bash\n'}
+[3.203547] (-) TimerEvent: {}
+[3.205175] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.sh\n'}
+[3.210049] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.zsh\n'}
+[3.214679] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.dsv\n'}
+[3.220383] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.dsv\n'}
+[3.225953] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/packages/livox_interfaces\n'}
+[3.231058] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[3.235905] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.240592] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.245280] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.249957] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.254466] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[3.259297] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[3.263863] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfacesConfig.cmake\n'}
+[3.269578] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfacesConfig-version.cmake\n'}
+[3.274531] (livox_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.xml\n'}
+[3.279309] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_c.so\n'}
+[3.279514] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_c.so" to ""\n'}
+[3.279616] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[3.279796] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[3.279890] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.280129] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[3.280240] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[3.280444] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[3.280551] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_c.so\n'}
+[3.280704] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[3.280798] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[3.280993] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[3.281095] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_cpp.so\n'}
+[3.281256] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[3.303697] (-) TimerEvent: {}
+[3.304249] (livox_interfaces) StdoutLine: {'line': b"Listing '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces'...\n"}
+[3.304333] (livox_interfaces) StdoutLine: {'line': b"Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/__init__.py'...\n"}
+[3.304373] (livox_interfaces) StdoutLine: {'line': b"Listing '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg'...\n"}
+[3.304406] (livox_interfaces) StdoutLine: {'line': b"Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/__init__.py'...\n"}
+[3.304436] (livox_interfaces) StdoutLine: {'line': b"Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_msg.py'...\n"}
+[3.304466] (livox_interfaces) StdoutLine: {'line': b"Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_point.py'...\n"}
+[3.307195] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_py.so\n'}
+[3.307425] (livox_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_py.so" to ""\n'}
+[3.307524] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cExport.cmake\n'}
+[3.307619] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cExport-release.cmake\n'}
+[3.307724] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[3.307823] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cExport-release.cmake\n'}
+[3.307930] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cppExport.cmake\n'}
+[3.308043] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[3.308144] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cppExport-release.cmake\n'}
+[3.308253] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.308348] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cExport-release.cmake\n'}
+[3.308459] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[3.308581] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cExport-release.cmake\n'}
+[3.308680] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[3.308776] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cppExport-release.cmake\n'}
+[3.308879] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[3.308997] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cppExport-release.cmake\n'}
+[3.309132] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_pyExport.cmake\n'}
+[3.309229] (livox_interfaces) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_pyExport-release.cmake\n'}
+[3.310732] (livox_interfaces) CommandEnded: {'returncode': 0}
+[3.324126] (livox_interfaces) JobEnded: {'identifier': 'livox_interfaces', 'rc': 0}
+[3.403828] (-) TimerEvent: {}
+[3.504061] (-) TimerEvent: {}
+[3.604320] (-) TimerEvent: {}
+[3.704556] (-) TimerEvent: {}
+[3.804752] (-) TimerEvent: {}
+[3.904950] (-) TimerEvent: {}
+[4.005207] (-) TimerEvent: {}
+[4.105387] (-) TimerEvent: {}
+[4.205617] (-) TimerEvent: {}
+[4.305811] (-) TimerEvent: {}
+[4.405993] (-) TimerEvent: {}
+[4.506204] (-) TimerEvent: {}
+[4.606502] (-) TimerEvent: {}
+[4.706697] (-) TimerEvent: {}
+[4.806900] (-) TimerEvent: {}
+[4.907090] (-) TimerEvent: {}
+[5.007281] (-) TimerEvent: {}
+[5.107482] (-) TimerEvent: {}
+[5.207673] (-) TimerEvent: {}
+[5.307859] (-) TimerEvent: {}
+[5.408021] (-) TimerEvent: {}
+[5.508185] (-) TimerEvent: {}
+[5.608448] (-) TimerEvent: {}
+[5.708693] (-) TimerEvent: {}
+[5.808850] (-) TimerEvent: {}
+[5.909058] (-) TimerEvent: {}
+[6.009226] (-) TimerEvent: {}
+[6.109362] (-) TimerEvent: {}
+[6.209552] (-) TimerEvent: {}
+[6.309749] (-) TimerEvent: {}
+[6.409956] (-) TimerEvent: {}
+[6.510107] (-) TimerEvent: {}
+[6.610339] (-) TimerEvent: {}
+[6.710501] (-) TimerEvent: {}
+[6.810676] (-) TimerEvent: {}
+[6.910848] (-) TimerEvent: {}
+[6.967330] (livox_sdk_vendor) StderrLine: {'line': b"\xe5\xb7\xb2\xe7\xbb\x8f\xe4\xbd\x8d\xe4\xba\x8e 'master'\n"}
+[6.967462] (livox_sdk_vendor) StdoutLine: {'line': b"\xe6\x82\xa8\xe7\x9a\x84\xe5\x88\x86\xe6\x94\xaf\xe4\xb8\x8e\xe4\xb8\x8a\xe6\xb8\xb8\xe5\x88\x86\xe6\x94\xaf 'origin/master' \xe4\xb8\x80\xe8\x87\xb4\xe3\x80\x82\n"}
+[6.997735] (livox_sdk_vendor) StdoutLine: {'line': b"[ 37%] Performing update step for 'livox-sdk-master'\n"}
+[7.011037] (-) TimerEvent: {}
+[7.111267] (-) TimerEvent: {}
+[7.211497] (-) TimerEvent: {}
+[7.311801] (-) TimerEvent: {}
+[7.412103] (-) TimerEvent: {}
+[7.512477] (-) TimerEvent: {}
+[7.612792] (-) TimerEvent: {}
+[7.713168] (-) TimerEvent: {}
+[7.813516] (-) TimerEvent: {}
+[7.913855] (-) TimerEvent: {}
+[8.014123] (-) TimerEvent: {}
+[8.114321] (-) TimerEvent: {}
+[8.214525] (-) TimerEvent: {}
+[8.314735] (-) TimerEvent: {}
+[8.414984] (-) TimerEvent: {}
+[8.515228] (-) TimerEvent: {}
+[8.615417] (-) TimerEvent: {}
+[8.715616] (-) TimerEvent: {}
+[8.815870] (-) TimerEvent: {}
+[8.916089] (-) TimerEvent: {}
+[9.016308] (-) TimerEvent: {}
+[9.116565] (-) TimerEvent: {}
+[9.182110] (livox_sdk_vendor) StderrLine: {'line': b'HEAD \xe7\x9b\xae\xe5\x89\x8d\xe4\xbd\x8d\xe4\xba\x8e 1b3ef28 fix build ubuntu 22.04\n'}
+[9.203072] (livox_sdk_vendor) StdoutLine: {'line': b"[ 50%] No patch step for 'livox-sdk-master'\n"}
+[9.216658] (-) TimerEvent: {}
+[9.216963] (livox_sdk_vendor) StdoutLine: {'line': b"[ 62%] Performing configure step for 'livox-sdk-master'\n"}
+[9.252954] (livox_sdk_vendor) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[9.288893] (livox_sdk_vendor) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[9.293673] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[9.316759] (-) TimerEvent: {}
+[9.342140] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[9.347793] (livox_sdk_vendor) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[9.347942] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[9.348256] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[9.350489] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[9.398594] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[9.404394] (livox_sdk_vendor) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[9.404496] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[9.404849] (livox_sdk_vendor) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[9.405303] (livox_sdk_vendor) StdoutLine: {'line': b'-- main project dir: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master\n'}
+[9.407689] (livox_sdk_vendor) StdoutLine: {'line': b'-- Configuring done\n'}
+[9.416834] (-) TimerEvent: {}
+[9.420124] (livox_sdk_vendor) StdoutLine: {'line': b'-- Generating done\n'}
+[9.421354] (livox_sdk_vendor) StdoutLine: {'line': b'-- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master-build\n'}
+[9.432964] (livox_sdk_vendor) StdoutLine: {'line': b"[ 75%] Performing build step for 'livox-sdk-master'\n"}
+[9.457052] (livox_sdk_vendor) StdoutLine: {'line': b'[  2%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o\n'}
+[9.457255] (livox_sdk_vendor) StdoutLine: {'line': b'[  4%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o\n'}
+[9.458102] (livox_sdk_vendor) StdoutLine: {'line': b'[  6%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.o\n'}
+[9.458210] (livox_sdk_vendor) StdoutLine: {'line': b'[  8%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o\n'}
+[9.458248] (livox_sdk_vendor) StdoutLine: {'line': b'[ 12%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o\n'}
+[9.458306] (livox_sdk_vendor) StdoutLine: {'line': b'[ 12%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_thread.cpp.o\n'}
+[9.458365] (livox_sdk_vendor) StdoutLine: {'line': b'[ 14%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o\n'}
+[9.458544] (livox_sdk_vendor) StdoutLine: {'line': b'[ 16%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/comm_port.cpp.o\n'}
+[9.458598] (livox_sdk_vendor) StdoutLine: {'line': b'[ 22%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp.o\n'}
+[9.458635] (livox_sdk_vendor) StdoutLine: {'line': b'[ 22%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o\n'}
+[9.458686] (livox_sdk_vendor) StdoutLine: {'line': b'[ 22%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o\n'}
+[9.458737] (livox_sdk_vendor) StdoutLine: {'line': b'[ 27%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o\n'}
+[9.458836] (livox_sdk_vendor) StdoutLine: {'line': b'[ 27%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/sdk_protocol.cpp.o\n'}
+[9.458894] (livox_sdk_vendor) StdoutLine: {'line': b'[ 29%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp.o\n'}
+[9.459601] (livox_sdk_vendor) StdoutLine: {'line': b'[ 31%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/thread_base.cpp.o\n'}
+[9.460584] (livox_sdk_vendor) StdoutLine: {'line': b'[ 33%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp.o\n'}
+[9.517980] (-) TimerEvent: {}
+[9.533688] (livox_sdk_vendor) StdoutLine: {'line': b'[ 35%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler.cpp.o\n'}
+[9.548488] (livox_sdk_vendor) StdoutLine: {'line': b'[ 37%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handler.cpp.o\n'}
+[9.618091] (-) TimerEvent: {}
+[9.679196] (livox_sdk_vendor) StdoutLine: {'line': b'[ 39%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o\n'}
+[9.718203] (-) TimerEvent: {}
+[9.729212] (livox_sdk_vendor) StdoutLine: {'line': b'[ 41%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_base.cpp.o\n'}
+[9.788999] (livox_sdk_vendor) StdoutLine: {'line': b'[ 43%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_epoll.cpp.o\n'}
+[9.818314] (-) TimerEvent: {}
+[9.918635] (-) TimerEvent: {}
+[10.015707] (livox_sdk_vendor) StdoutLine: {'line': b'[ 45%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_poll.cpp.o\n'}
+[10.018733] (-) TimerEvent: {}
+[10.077476] (livox_sdk_vendor) StdoutLine: {'line': b'[ 47%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_select.cpp.o\n'}
+[10.118851] (-) TimerEvent: {}
+[10.219148] (-) TimerEvent: {}
+[10.224418] (livox_sdk_vendor) StdoutLine: {'line': b'[ 50%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_kqueue.cpp.o\n'}
+[10.303228] (livox_sdk_vendor) StdoutLine: {'line': b'[ 52%] Building CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/wake_up/unix/wake_up_pipe.cpp.o\n'}
+[10.319269] (-) TimerEvent: {}
+[10.419570] (-) TimerEvent: {}
+[10.519795] (-) TimerEvent: {}
+[10.619987] (-) TimerEvent: {}
+[10.720209] (-) TimerEvent: {}
+[10.820997] (-) TimerEvent: {}
+[10.921223] (-) TimerEvent: {}
+[11.021439] (-) TimerEvent: {}
+[11.121665] (-) TimerEvent: {}
+[11.221888] (-) TimerEvent: {}
+[11.322117] (-) TimerEvent: {}
+[11.422342] (-) TimerEvent: {}
+[11.522571] (-) TimerEvent: {}
+[11.622795] (-) TimerEvent: {}
+[11.722992] (-) TimerEvent: {}
+[11.823298] (-) TimerEvent: {}
+[11.923502] (-) TimerEvent: {}
+[12.023713] (-) TimerEvent: {}
+[12.123937] (-) TimerEvent: {}
+[12.224148] (-) TimerEvent: {}
+[12.324366] (-) TimerEvent: {}
+[12.424581] (-) TimerEvent: {}
+[12.524794] (-) TimerEvent: {}
+[12.624981] (-) TimerEvent: {}
+[12.725170] (-) TimerEvent: {}
+[12.825361] (-) TimerEvent: {}
+[12.925580] (-) TimerEvent: {}
+[13.025800] (-) TimerEvent: {}
+[13.126021] (-) TimerEvent: {}
+[13.226238] (-) TimerEvent: {}
+[13.326428] (-) TimerEvent: {}
+[13.426627] (-) TimerEvent: {}
+[13.526808] (-) TimerEvent: {}
+[13.627067] (-) TimerEvent: {}
+[13.727303] (-) TimerEvent: {}
+[13.827507] (-) TimerEvent: {}
+[13.927735] (-) TimerEvent: {}
+[13.968272] (livox_sdk_vendor) StdoutLine: {'line': b'[ 54%] Linking CXX static library liblivox_sdk_static.a\n'}
+[14.027939] (livox_sdk_vendor) StdoutLine: {'line': b'[ 54%] Built target livox_sdk_static\n'}
+[14.028098] (-) TimerEvent: {}
+[14.041315] (livox_sdk_vendor) StdoutLine: {'line': b'[ 58%] Building CXX object sample/lidar_lvx_file/CMakeFiles/lidar_lvx_sample.dir/main.cpp.o\n'}
+[14.041720] (livox_sdk_vendor) StdoutLine: {'line': b'[ 58%] Building CXX object sample_cc/lidar_utc_sync/CMakeFiles/lidar_utc_sync.dir/main.cpp.o\n'}
+[14.041814] (livox_sdk_vendor) StdoutLine: {'line': b'[ 62%] Building CXX object sample/hub_lvx_file/CMakeFiles/hub_lvx_sample.dir/main.cpp.o\n'}
+[14.041872] (livox_sdk_vendor) StdoutLine: {'line': b'[ 62%] Building C object sample/lidar/CMakeFiles/lidar_sample.dir/main.c.o\n'}
+[14.041931] (livox_sdk_vendor) StdoutLine: {'line': b'[ 64%] Building C object sample/hub/CMakeFiles/hub_sample.dir/main.c.o\n'}
+[14.041991] (livox_sdk_vendor) StdoutLine: {'line': b'[ 66%] Building CXX object sample/hub_lvx_file/CMakeFiles/hub_lvx_sample.dir/lvx_file.cpp.o\n'}
+[14.042213] (livox_sdk_vendor) StdoutLine: {'line': b'[ 75%] Building CXX object sample_cc/lidar/CMakeFiles/lidar_sample_cc.dir/main.cpp.o\n'}
+[14.042320] (livox_sdk_vendor) StdoutLine: {'line': b'[ 68%] Building CXX object sample/lidar_lvx_file/CMakeFiles/lidar_lvx_sample.dir/lvx_file.cpp.o\n'}
+[14.042375] (livox_sdk_vendor) StdoutLine: {'line': b'[ 75%] Building CXX object sample_cc/hub/CMakeFiles/hub_sample_cc.dir/main.cpp.o\n'}
+[14.042437] (livox_sdk_vendor) StdoutLine: {'line': b'[ 75%] Building CXX object sample_cc/hub/CMakeFiles/hub_sample_cc.dir/lds_hub.cpp.o\n'}
+[14.042497] (livox_sdk_vendor) StdoutLine: {'line': b'[ 79%] Building CXX object sample_cc/trouble_shooting/CMakeFiles/trouble_shooting.dir/main.cpp.o\n'}
+[14.042559] (livox_sdk_vendor) StdoutLine: {'line': b'[ 79%] Building CXX object sample_cc/lidar/CMakeFiles/lidar_sample_cc.dir/lds_lidar.cpp.o\n'}
+[14.042708] (livox_sdk_vendor) StdoutLine: {'line': b'[ 81%] Building CXX object sample_cc/lidar_utc_sync/CMakeFiles/lidar_utc_sync.dir/lds_lidar.cpp.o\n'}
+[14.042775] (livox_sdk_vendor) StdoutLine: {'line': b'[ 83%] Building CXX object sample_cc/lidar_utc_sync/CMakeFiles/lidar_utc_sync.dir/synchro.cpp.o\n'}
+[14.128225] (-) TimerEvent: {}
+[14.138377] (livox_sdk_vendor) StdoutLine: {'line': b'[ 85%] Linking CXX executable lidar_sample\n'}
+[14.144129] (livox_sdk_vendor) StdoutLine: {'line': b'[ 87%] Linking CXX executable hub_sample\n'}
+[14.228544] (-) TimerEvent: {}
+[14.283837] (livox_sdk_vendor) StdoutLine: {'line': b'[ 87%] Built target lidar_sample\n'}
+[14.284676] (livox_sdk_vendor) StdoutLine: {'line': b'[ 87%] Built target hub_sample\n'}
+[14.328652] (-) TimerEvent: {}
+[14.428884] (-) TimerEvent: {}
+[14.441859] (livox_sdk_vendor) StdoutLine: {'line': b'[ 89%] Linking CXX executable trouble_shooting\n'}
+[14.524462] (livox_sdk_vendor) StdoutLine: {'line': b'[ 89%] Built target trouble_shooting\n'}
+[14.528947] (-) TimerEvent: {}
+[14.629099] (-) TimerEvent: {}
+[14.729271] (-) TimerEvent: {}
+[14.829456] (-) TimerEvent: {}
+[14.929617] (-) TimerEvent: {}
+[15.029798] (-) TimerEvent: {}
+[15.125655] (livox_sdk_vendor) StdoutLine: {'line': b'[ 91%] Linking CXX executable lidar_sample_cc\n'}
+[15.129888] (-) TimerEvent: {}
+[15.192070] (livox_sdk_vendor) StdoutLine: {'line': b'[ 93%] Linking CXX executable hub_sample_cc\n'}
+[15.205902] (livox_sdk_vendor) StdoutLine: {'line': b'[ 93%] Built target lidar_sample_cc\n'}
+[15.230004] (-) TimerEvent: {}
+[15.265746] (livox_sdk_vendor) StdoutLine: {'line': b'[ 95%] Linking CXX executable lidar_utc_sync\n'}
+[15.271063] (livox_sdk_vendor) StdoutLine: {'line': b'[ 95%] Built target hub_sample_cc\n'}
+[15.330101] (-) TimerEvent: {}
+[15.340952] (livox_sdk_vendor) StdoutLine: {'line': b'[ 95%] Built target lidar_utc_sync\n'}
+[15.430194] (-) TimerEvent: {}
+[15.494146] (livox_sdk_vendor) StdoutLine: {'line': b'[ 97%] Linking CXX executable hub_lvx_sample\n'}
+[15.530299] (-) TimerEvent: {}
+[15.550505] (livox_sdk_vendor) StdoutLine: {'line': b'[100%] Linking CXX executable lidar_lvx_sample\n'}
+[15.568044] (livox_sdk_vendor) StdoutLine: {'line': b'[100%] Built target hub_lvx_sample\n'}
+[15.622634] (livox_sdk_vendor) StdoutLine: {'line': b'[100%] Built target lidar_lvx_sample\n'}
+[15.630440] (-) TimerEvent: {}
+[15.637869] (livox_sdk_vendor) StdoutLine: {'line': b"[ 87%] Performing install step for 'livox-sdk-master'\n"}
+[15.665713] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target livox_sdk_static\n'}
+[15.675608] (livox_sdk_vendor) StdoutLine: {'line': b'[ 54%] Built target livox_sdk_static\n'}
+[15.682377] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target hub_sample\n'}
+[15.682524] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lidar_sample\n'}
+[15.683030] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target trouble_shooting\n'}
+[15.683292] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target hub_lvx_sample\n'}
+[15.683471] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lidar_sample_cc\n'}
+[15.683527] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target hub_sample_cc\n'}
+[15.683640] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lidar_lvx_sample\n'}
+[15.684213] (livox_sdk_vendor) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target lidar_utc_sync\n'}
+[15.689113] (livox_sdk_vendor) StdoutLine: {'line': b'[ 66%] Built target hub_sample\n'}
+[15.689259] (livox_sdk_vendor) StdoutLine: {'line': b'[ 66%] Built target lidar_sample\n'}
+[15.689324] (livox_sdk_vendor) StdoutLine: {'line': b'[ 66%] Built target trouble_shooting\n'}
+[15.689654] (livox_sdk_vendor) StdoutLine: {'line': b'[ 72%] Built target hub_sample_cc\n'}
+[15.689831] (livox_sdk_vendor) StdoutLine: {'line': b'[ 79%] Built target hub_lvx_sample\n'}
+[15.689939] (livox_sdk_vendor) StdoutLine: {'line': b'[ 85%] Built target lidar_lvx_sample\n'}
+[15.690187] (livox_sdk_vendor) StdoutLine: {'line': b'[ 91%] Built target lidar_sample_cc\n'}
+[15.690977] (livox_sdk_vendor) StdoutLine: {'line': b'[100%] Built target lidar_utc_sync\n'}
+[15.702496] (livox_sdk_vendor) StdoutLine: {'line': b'Install the project...\n'}
+[15.707581] (livox_sdk_vendor) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[15.707729] (livox_sdk_vendor) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/lib/liblivox_sdk_static.a\n'}
+[15.709120] (livox_sdk_vendor) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/include/livox_def.h\n'}
+[15.709195] (livox_sdk_vendor) StdoutLine: {'line': b'-- Installing: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/include/livox_sdk.h\n'}
+[15.720570] (livox_sdk_vendor) StdoutLine: {'line': b"[100%] Completed 'livox-sdk-master'\n"}
+[15.730588] (-) TimerEvent: {}
+[15.738270] (livox_sdk_vendor) StdoutLine: {'line': b'[100%] Built target livox-sdk-master\n'}
+[15.744725] (livox_sdk_vendor) CommandEnded: {'returncode': 0}
+[15.745246] (livox_sdk_vendor) JobProgress: {'identifier': 'livox_sdk_vendor', 'progress': 'install'}
+[15.745389] (livox_sdk_vendor) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[15.750096] (livox_sdk_vendor) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[15.750415] (livox_sdk_vendor) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[15.750767] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include/livox_def.h\n'}
+[15.755382] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include/livox_sdk.h\n'}
+[15.760010] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/liblivox_sdk_static.a\n'}
+[15.764813] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules/Findlivox_sdk.cmake\n'}
+[15.769547] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/package_run_dependencies/livox_sdk_vendor\n'}
+[15.773923] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/parent_prefix_path/livox_sdk_vendor\n'}
+[15.778278] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.sh\n'}
+[15.782870] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.dsv\n'}
+[15.787284] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.sh\n'}
+[15.791915] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.dsv\n'}
+[15.796603] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.bash\n'}
+[15.801705] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.sh\n'}
+[15.806746] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.zsh\n'}
+[15.811689] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.dsv\n'}
+[15.816560] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv\n'}
+[15.822219] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/packages/livox_sdk_vendor\n'}
+[15.827278] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendor-extras.cmake\n'}
+[15.830673] (-) TimerEvent: {}
+[15.832114] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig.cmake\n'}
+[15.836602] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig-version.cmake\n'}
+[15.841210] (livox_sdk_vendor) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.xml\n'}
+[15.846783] (livox_sdk_vendor) CommandEnded: {'returncode': 0}
+[15.854354] (livox_sdk_vendor) JobEnded: {'identifier': 'livox_sdk_vendor', 'rc': 0}
+[15.854934] (livox_ros2_avia) JobStarted: {'identifier': 'livox_ros2_avia'}
+[15.859137] (livox_ros2_avia) JobProgress: {'identifier': 'livox_ros2_avia', 'progress': 'cmake'}
+[15.859373] (livox_ros2_avia) Command: {'cmd': ['/usr/bin/cmake', '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia', '-DCMAKE_BUILD_TYPE=Release', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/opt/ros/humble')]), 'shell': False}
+[15.891619] (livox_ros2_avia) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[15.924400] (livox_ros2_avia) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[15.928611] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[15.930732] (-) TimerEvent: {}
+[15.972361] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[15.977018] (livox_ros2_avia) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[15.977213] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[15.977380] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[15.979261] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[16.027831] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[16.030802] (-) TimerEvent: {}
+[16.032495] (livox_ros2_avia) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[16.032615] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[16.032970] (livox_ros2_avia) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[16.033534] (livox_ros2_avia) StdoutLine: {'line': b'-- livox_ros2_avia version: 0.0.1\n'}
+[16.034425] (livox_ros2_avia) StdoutLine: {'line': b'-- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)\n'}
+[16.124664] (livox_ros2_avia) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[16.130887] (-) TimerEvent: {}
+[16.163609] (livox_ros2_avia) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[16.230996] (-) TimerEvent: {}
+[16.240824] (livox_ros2_avia) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[16.243371] (livox_ros2_avia) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[16.248123] (livox_ros2_avia) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[16.255238] (livox_ros2_avia) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[16.268835] (livox_ros2_avia) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[16.306979] (livox_ros2_avia) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[16.308333] (livox_ros2_avia) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[16.331063] (-) TimerEvent: {}
+[16.357162] (livox_ros2_avia) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[16.373216] (livox_ros2_avia) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[16.396208] (livox_ros2_avia) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[16.400839] (livox_ros2_avia) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[16.431158] (-) TimerEvent: {}
+[16.446948] (livox_ros2_avia) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[16.447111] (livox_ros2_avia) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[16.492021] (livox_ros2_avia) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[16.492684] (livox_ros2_avia) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[16.531255] (-) TimerEvent: {}
+[16.598822] (livox_ros2_avia) StdoutLine: {'line': b"-- Checking for module 'eigen3'\n"}
+[16.605996] (livox_ros2_avia) StdoutLine: {'line': b'--   Found eigen3, version 3.4.0\n'}
+[16.624091] (livox_ros2_avia) StdoutLine: {'line': b'-- Found Eigen: /usr/include/eigen3 (Required is at least version "3.1") \n'}
+[16.624197] (livox_ros2_avia) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[16.631335] (-) TimerEvent: {}
+[16.644458] (livox_ros2_avia) StdoutLine: {'line': b"-- Checking for module 'flann'\n"}
+[16.651797] (livox_ros2_avia) StdoutLine: {'line': b'--   Found flann, version 1.9.1\n'}
+[16.675418] (livox_ros2_avia) StdoutLine: {'line': b'-- Found FLANN: /usr/lib/x86_64-linux-gnu/libflann_cpp.so  \n'}
+[16.675571] (livox_ros2_avia) StdoutLine: {'line': b'-- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)\n'}
+[16.731440] (-) TimerEvent: {}
+[16.831677] (-) TimerEvent: {}
+[16.931866] (-) TimerEvent: {}
+[17.032034] (-) TimerEvent: {}
+[17.132193] (-) TimerEvent: {}
+[17.232368] (-) TimerEvent: {}
+[17.269103] (livox_ros2_avia) StdoutLine: {'line': b"-- Checking for module 'libusb-1.0'\n"}
+[17.277587] (livox_ros2_avia) StdoutLine: {'line': b'--   Found libusb-1.0, version 1.0.25\n'}
+[17.299066] (livox_ros2_avia) StdoutLine: {'line': b'-- Found libusb: /usr/lib/x86_64-linux-gnu/libusb-1.0.so  \n'}
+[17.299726] (livox_ros2_avia) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[17.332470] (-) TimerEvent: {}
+[17.333262] (livox_ros2_avia) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[17.432478] (livox_ros2_avia) StdoutLine: {'line': b'-- Eigen found (include: /usr/include/eigen3, version: 3.4.0)\n'}
+[17.432633] (-) TimerEvent: {}
+[17.436477] (livox_ros2_avia) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[17.440473] (livox_ros2_avia) StdoutLine: {'line': b'-- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)\n'}
+[17.532757] (-) TimerEvent: {}
+[17.540827] (livox_ros2_avia) StdoutLine: {'line': b'-- Found Qhull version 8.0.2\n'}
+[17.631530] (livox_ros2_avia) StdoutLine: {'line': b'-- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)\n'}
+[17.632837] (-) TimerEvent: {}
+[17.716922] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_COMMON: /usr/lib/x86_64-linux-gnu/libpcl_common.so  \n'}
+[17.717345] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_KDTREE: /usr/lib/x86_64-linux-gnu/libpcl_kdtree.so  \n'}
+[17.717890] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_OCTREE: /usr/lib/x86_64-linux-gnu/libpcl_octree.so  \n'}
+[17.718369] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_SEARCH: /usr/lib/x86_64-linux-gnu/libpcl_search.so  \n'}
+[17.719138] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_SAMPLE_CONSENSUS: /usr/lib/x86_64-linux-gnu/libpcl_sample_consensus.so  \n'}
+[17.719650] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_FILTERS: /usr/lib/x86_64-linux-gnu/libpcl_filters.so  \n'}
+[17.719847] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_2D: /usr/include/pcl-1.12  \n'}
+[17.720063] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_GEOMETRY: /usr/include/pcl-1.12  \n'}
+[17.720589] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_IO: /usr/lib/x86_64-linux-gnu/libpcl_io.so  \n'}
+[17.721149] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_FEATURES: /usr/lib/x86_64-linux-gnu/libpcl_features.so  \n'}
+[17.721666] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_ML: /usr/lib/x86_64-linux-gnu/libpcl_ml.so  \n'}
+[17.722178] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_SEGMENTATION: /usr/lib/x86_64-linux-gnu/libpcl_segmentation.so  \n'}
+[17.722774] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_VISUALIZATION: /usr/lib/x86_64-linux-gnu/libpcl_visualization.so  \n'}
+[17.723386] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_SURFACE: /usr/lib/x86_64-linux-gnu/libpcl_surface.so  \n'}
+[17.723929] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_REGISTRATION: /usr/lib/x86_64-linux-gnu/libpcl_registration.so  \n'}
+[17.724500] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_KEYPOINTS: /usr/lib/x86_64-linux-gnu/libpcl_keypoints.so  \n'}
+[17.725053] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_TRACKING: /usr/lib/x86_64-linux-gnu/libpcl_tracking.so  \n'}
+[17.725615] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_RECOGNITION: /usr/lib/x86_64-linux-gnu/libpcl_recognition.so  \n'}
+[17.726146] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_STEREO: /usr/lib/x86_64-linux-gnu/libpcl_stereo.so  \n'}
+[17.726684] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_APPS: /usr/lib/x86_64-linux-gnu/libpcl_apps.so  \n'}
+[17.727224] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_IN_HAND_SCANNER: /usr/include/pcl-1.12  \n'}
+[17.727336] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_MODELER: /usr/include/pcl-1.12  \n'}
+[17.727571] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_POINT_CLOUD_EDITOR: /usr/include/pcl-1.12  \n'}
+[17.728124] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_OUTOFCORE: /usr/lib/x86_64-linux-gnu/libpcl_outofcore.so  \n'}
+[17.728682] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PCL_PEOPLE: /usr/lib/x86_64-linux-gnu/libpcl_people.so  \n'}
+[17.732924] (-) TimerEvent: {}
+[17.755202] (livox_ros2_avia) StderrLine: {'line': b'CMake Warning (dev) at CMakeLists.txt:31 (find_package):\n'}
+[17.755369] (livox_ros2_avia) StderrLine: {'line': b'  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.\n'}
+[17.755410] (livox_ros2_avia) StderrLine: {'line': b'  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy\n'}
+[17.755444] (livox_ros2_avia) StderrLine: {'line': b'  command to set the policy and suppress this warning.\n'}
+[17.755479] (livox_ros2_avia) StderrLine: {'line': b'\n'}
+[17.755510] (livox_ros2_avia) StderrLine: {'line': b'  CMake variable PCL_ROOT is set to:\n'}
+[17.755541] (livox_ros2_avia) StderrLine: {'line': b'\n'}
+[17.755571] (livox_ros2_avia) StderrLine: {'line': b'    /usr\n'}
+[17.755602] (livox_ros2_avia) StderrLine: {'line': b'\n'}
+[17.755632] (livox_ros2_avia) StderrLine: {'line': b'  For compatibility, CMake is ignoring the variable.\n'}
+[17.755663] (livox_ros2_avia) StderrLine: {'line': b'This warning is for project developers.  Use -Wno-dev to suppress it.\n'}
+[17.755695] (livox_ros2_avia) StderrLine: {'line': b'\n'}
+[17.761003] (livox_ros2_avia) StdoutLine: {'line': b'-- Found livox_sdk: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include  \n'}
+[17.764052] (livox_ros2_avia) StdoutLine: {'line': b'-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.2") \n'}
+[17.764627] (livox_ros2_avia) StdoutLine: {'line': b"-- Checking for module 'apr-1'\n"}
+[17.766486] (livox_ros2_avia) StdoutLine: {'line': b"--   No package 'apr-1' found\n"}
+[17.774920] (livox_ros2_avia) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[17.787433] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[17.790317] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[17.790577] (livox_ros2_avia) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/comon/rapdidxml;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/comm;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/timesync;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/timesync/user_uart;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/livox_ros2_avia\n'}
+[17.790619] (livox_ros2_avia) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[17.792612] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[17.792668] (livox_ros2_avia) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[17.793088] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[17.793763] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[17.794239] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[17.796095] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[17.796141] (livox_ros2_avia) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[17.796586] (livox_ros2_avia) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[17.798019] (livox_ros2_avia) StdoutLine: {'line': b'-- Configuring done\n'}
+[17.821514] (livox_ros2_avia) StdoutLine: {'line': b'-- Generating done\n'}
+[17.827886] (livox_ros2_avia) StdoutLine: {'line': b'-- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia\n'}
+[17.832987] (-) TimerEvent: {}
+[17.838598] (livox_ros2_avia) CommandEnded: {'returncode': 0}
+[17.839141] (livox_ros2_avia) JobProgress: {'identifier': 'livox_ros2_avia', 'progress': 'build'}
+[17.839439] (livox_ros2_avia) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia', '--', '-j16', '-l16'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/opt/ros/humble')]), 'shell': False}
+[17.873971] (livox_ros2_avia) StdoutLine: {'line': b'[ 12%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/ldq.cpp.o\n'}
+[17.874240] (livox_ros2_avia) StdoutLine: {'line': b'[ 12%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds_lvx.cpp.o\n'}
+[17.874357] (livox_ros2_avia) StdoutLine: {'line': b'[ 18%] Building CXX object CMakeFiles/livox_ros2_avia_node.dir/rclcpp_components/node_main_livox_ros2_avia_node.cpp.o\n'}
+[17.874418] (livox_ros2_avia) StdoutLine: {'line': b'[ 25%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lvx_file.cpp.o\n'}
+[17.874580] (livox_ros2_avia) StdoutLine: {'line': b'[ 31%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds.cpp.o\n'}
+[17.875119] (livox_ros2_avia) StdoutLine: {'line': b'[ 37%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds_lidar.cpp.o\n'}
+[17.875282] (livox_ros2_avia) StdoutLine: {'line': b'[ 43%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds_hub.cpp.o\n'}
+[17.876361] (livox_ros2_avia) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lddc.cpp.o\n'}
+[17.876491] (livox_ros2_avia) StdoutLine: {'line': b'[ 56%] Building CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/livox_ros2_driver.cpp.o\n'}
+[17.876560] (livox_ros2_avia) StdoutLine: {'line': b'[ 62%] Building CXX object CMakeFiles/livox_ros2_avia.dir/timesync/timesync.cpp.o\n'}
+[17.876626] (livox_ros2_avia) StdoutLine: {'line': b'[ 68%] Building CXX object CMakeFiles/livox_ros2_avia.dir/timesync/user_uart/user_uart.cpp.o\n'}
+[17.876688] (livox_ros2_avia) StdoutLine: {'line': b'[ 75%] Building CXX object CMakeFiles/livox_ros2_avia.dir/common/comm/sdk_protocol.cpp.o\n'}
+[17.876743] (livox_ros2_avia) StdoutLine: {'line': b'[ 87%] Building CXX object CMakeFiles/livox_ros2_avia.dir/common/comm/comm_protocol.cpp.o\n'}
+[17.876881] (livox_ros2_avia) StdoutLine: {'line': b'[ 87%] Building CXX object CMakeFiles/livox_ros2_avia.dir/common/comm/gps_protocol.cpp.o\n'}
+[17.933110] (-) TimerEvent: {}
+[18.033265] (-) TimerEvent: {}
+[18.133459] (-) TimerEvent: {}
+[18.233679] (-) TimerEvent: {}
+[18.333897] (-) TimerEvent: {}
+[18.434118] (-) TimerEvent: {}
+[18.527224] (livox_ros2_avia) StderrLine: {'line': b'In file included from /usr/include/string.h:535,\n'}
+[18.527435] (livox_ros2_avia) StderrLine: {'line': b'                 from /usr/include/c++/11/cstring:42,\n'}
+[18.527506] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson/rapidjson.h:45,\n'}
+[18.527569] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson/stream.h:19,\n'}
+[18.527638] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson/memorystream.h:22,\n'}
+[18.527701] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson/encodedstream.h:22,\n'}
+[18.527763] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson/document.h:26,\n'}
+[18.527824] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/livox_ros2_avia/lds_lidar.h:36,\n'}
+[18.527885] (livox_ros2_avia) StderrLine: {'line': b'                 from /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/livox_ros2_avia/lds_lidar.cpp:25:\n'}
+[18.527956] (livox_ros2_avia) StderrLine: {'line': b'In function \xe2\x80\x98char* strncpy(char*, const char*, size_t)\xe2\x80\x99,\n'}
+[18.528020] (livox_ros2_avia) StderrLine: {'line': b'    inlined from \xe2\x80\x98int livox_ros::LdsLidar::ParseTimesyncConfig(rapidjson::Document&)\xe2\x80\x99 at /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/livox_ros2_avia/lds_lidar.cpp:607:17:\n'}
+[18.528082] (livox_ros2_avia) StderrLine: {'line': b'/usr/include/x86_64-linux-gnu/bits/string_fortified.h:95:34: warning: \xe2\x80\x98char* __builtin_strncpy(char*, const char*, long unsigned int)\xe2\x80\x99 specified bound 256 equals destination size [-Wstringop-truncation]\n'}
+[18.528143] (livox_ros2_avia) StderrLine: {'line': b'   95 |   return __builtin___strncpy_chk (__dest, __src, __len,\n'}
+[18.528200] (livox_ros2_avia) StderrLine: {'line': b'      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\n'}
+[18.528256] (livox_ros2_avia) StderrLine: {'line': b'   96 |                                   __glibc_objsize (__dest));\n'}
+[18.528312] (livox_ros2_avia) StderrLine: {'line': b'      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[18.534221] (-) TimerEvent: {}
+[18.634441] (-) TimerEvent: {}
+[18.734660] (-) TimerEvent: {}
+[18.834841] (-) TimerEvent: {}
+[18.931719] (livox_ros2_avia) StderrLine: {'line': b'In function \xe2\x80\x98char* strncpy(char*, const char*, size_t)\xe2\x80\x99,\n'}
+[18.931859] (livox_ros2_avia) StderrLine: {'line': b'    inlined from \xe2\x80\x98int livox_ros::LdsLidar::ParseConfigFile(const char*)\xe2\x80\x99 at /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/livox_ros2_avia/lds_lidar.cpp:670:25:\n'}
+[18.931898] (livox_ros2_avia) StderrLine: {'line': b'/usr/include/x86_64-linux-gnu/bits/string_fortified.h:95:34: warning: \xe2\x80\x98char* __builtin_strncpy(char*, const char*, long unsigned int)\xe2\x80\x99 specified bound 16 equals destination size [-Wstringop-truncation]\n'}
+[18.931951] (livox_ros2_avia) StderrLine: {'line': b'   95 |   return __builtin___strncpy_chk (__dest, __src, __len,\n'}
+[18.931986] (livox_ros2_avia) StderrLine: {'line': b'      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\n'}
+[18.932018] (livox_ros2_avia) StderrLine: {'line': b'   96 |                                   __glibc_objsize (__dest));\n'}
+[18.932057] (livox_ros2_avia) StderrLine: {'line': b'      |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[18.934897] (-) TimerEvent: {}
+[19.035095] (-) TimerEvent: {}
+[19.135283] (-) TimerEvent: {}
+[19.235472] (-) TimerEvent: {}
+[19.335721] (-) TimerEvent: {}
+[19.435921] (-) TimerEvent: {}
+[19.536186] (-) TimerEvent: {}
+[19.636393] (-) TimerEvent: {}
+[19.736645] (-) TimerEvent: {}
+[19.836842] (-) TimerEvent: {}
+[19.936982] (-) TimerEvent: {}
+[20.037156] (-) TimerEvent: {}
+[20.137354] (-) TimerEvent: {}
+[20.237556] (-) TimerEvent: {}
+[20.329053] (livox_ros2_avia) StdoutLine: {'line': b'[ 93%] Linking CXX executable livox_ros2_avia_node\n'}
+[20.337664] (-) TimerEvent: {}
+[20.402057] (livox_ros2_avia) StdoutLine: {'line': b'[ 93%] Built target livox_ros2_avia_node\n'}
+[20.437782] (-) TimerEvent: {}
+[20.538002] (-) TimerEvent: {}
+[20.638267] (-) TimerEvent: {}
+[20.738468] (-) TimerEvent: {}
+[20.838700] (-) TimerEvent: {}
+[20.938887] (-) TimerEvent: {}
+[21.039153] (-) TimerEvent: {}
+[21.139356] (-) TimerEvent: {}
+[21.239563] (-) TimerEvent: {}
+[21.339766] (-) TimerEvent: {}
+[21.440036] (-) TimerEvent: {}
+[21.540296] (-) TimerEvent: {}
+[21.640588] (-) TimerEvent: {}
+[21.740789] (-) TimerEvent: {}
+[21.841054] (-) TimerEvent: {}
+[21.941330] (-) TimerEvent: {}
+[22.041537] (-) TimerEvent: {}
+[22.141754] (-) TimerEvent: {}
+[22.242040] (-) TimerEvent: {}
+[22.342221] (-) TimerEvent: {}
+[22.442444] (-) TimerEvent: {}
+[22.542670] (-) TimerEvent: {}
+[22.642956] (-) TimerEvent: {}
+[22.743157] (-) TimerEvent: {}
+[22.843354] (-) TimerEvent: {}
+[22.943541] (-) TimerEvent: {}
+[23.043720] (-) TimerEvent: {}
+[23.143949] (-) TimerEvent: {}
+[23.244122] (-) TimerEvent: {}
+[23.344302] (-) TimerEvent: {}
+[23.444493] (-) TimerEvent: {}
+[23.544678] (-) TimerEvent: {}
+[23.644867] (-) TimerEvent: {}
+[23.745057] (-) TimerEvent: {}
+[23.845264] (-) TimerEvent: {}
+[23.945519] (-) TimerEvent: {}
+[24.045825] (-) TimerEvent: {}
+[24.146078] (-) TimerEvent: {}
+[24.246249] (-) TimerEvent: {}
+[24.346449] (-) TimerEvent: {}
+[24.446661] (-) TimerEvent: {}
+[24.470739] (livox_ros2_avia) StdoutLine: {'line': b'[100%] Linking CXX shared library liblivox_ros2_avia.so\n'}
+[24.546769] (-) TimerEvent: {}
+[24.646984] (-) TimerEvent: {}
+[24.745480] (livox_ros2_avia) StdoutLine: {'line': b'[100%] Built target livox_ros2_avia\n'}
+[24.747043] (-) TimerEvent: {}
+[24.752438] (livox_ros2_avia) CommandEnded: {'returncode': 0}
+[24.752939] (livox_ros2_avia) JobProgress: {'identifier': 'livox_ros2_avia', 'progress': 'install'}
+[24.753309] (livox_ros2_avia) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/560a9dba96f961efea7b1612916f89e5d5d4d679","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('CLAUDE_AGENT_SDK_VERSION', '0.2.114'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('COPILOT_OTEL_FILE_EXPORTER_PATH', '/dev/null'), ('MANAGERPID', '1875'), ('SYSTEMD_EXEC_PID', '2334'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '23840'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('VSCODE_L10N_BUNDLE_LOCATION', 'file:///home/guichen/.vscode/extensions/ms-ceintl.vscode-language-pack-zh-hans-1.110.2026041514/translations/extensions/vscode.json-language-features.i18n.json'), ('APPLICATION_INSIGHTS_NO_STATSBEAT', 'true'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('OTEL_INSTRUMENTATION_GENAI_CAPTURE_MESSAGE_CONTENT', 'true'), ('JOURNAL_STREAM', '8:6738'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2301,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2301'), ('INVOCATION_ID', '7096030d19a6447493eee8a8f3b4a07f'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('COPILOT_OTEL_ENABLED', 'true'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/560a9dba96f961efea7b1612916f89e5d5d4d679'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.114-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '23840'), ('COPILOT_OTEL_EXPORTER_TYPE', 'file'), ('CMAKE_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/opt/ros/humble')]), 'shell': False}
+[24.758001] (livox_ros2_avia) StdoutLine: {'line': b'-- Install configuration: "Release"\n'}
+[24.758314] (livox_ros2_avia) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[24.758523] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/livox_ros2_avia/livox_ros2_avia_node\n'}
+[24.764324] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/library_path.sh\n'}
+[24.769440] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/library_path.dsv\n'}
+[24.774536] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/liblivox_ros2_avia.so\n'}
+[24.779477] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_hub.rviz\n'}
+[24.784298] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_hub_config.json\n'}
+[24.788988] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_lidar.rviz\n'}
+[24.793680] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_lidar_config.json\n'}
+[24.798504] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_hub_launch.py\n'}
+[24.804080] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_hub_msg_launch .py\n'}
+[24.809325] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_hub_rviz_launch.py\n'}
+[24.814456] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_lidar_launch.py\n'}
+[24.819418] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_lidar_msg_launch.py\n'}
+[24.825014] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_lidar_rviz_launch.py\n'}
+[24.830005] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_template_launch.py\n'}
+[24.835337] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/package_run_dependencies/livox_ros2_avia\n'}
+[24.840698] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/parent_prefix_path/livox_ros2_avia\n'}
+[24.846248] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/ament_prefix_path.sh\n'}
+[24.847118] (-) TimerEvent: {}
+[24.851693] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/ament_prefix_path.dsv\n'}
+[24.856644] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/path.sh\n'}
+[24.861824] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/path.dsv\n'}
+[24.866708] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.bash\n'}
+[24.871389] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.sh\n'}
+[24.876007] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.zsh\n'}
+[24.880733] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.dsv\n'}
+[24.885601] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.dsv\n'}
+[24.891171] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/packages/livox_ros2_avia\n'}
+[24.896271] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/rclcpp_components/livox_ros2_avia\n'}
+[24.900948] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[24.905791] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[24.910442] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/livox_ros2_aviaConfig.cmake\n'}
+[24.915352] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/livox_ros2_aviaConfig-version.cmake\n'}
+[24.920039] (livox_ros2_avia) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.xml\n'}
+[24.925498] (livox_ros2_avia) CommandEnded: {'returncode': 0}
+[24.935924] (livox_ros2_avia) JobEnded: {'identifier': 'livox_ros2_avia', 'rc': 0}
+[24.936278] (-) EventReactorShutdown: {}

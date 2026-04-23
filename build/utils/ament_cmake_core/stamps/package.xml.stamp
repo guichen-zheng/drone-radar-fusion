@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>utils</name>
+  <version>1.0.0</version>
+  <description>纯头文件工具库：坐标转换、检测日志、BBox 工具、FPS 计数器</description>
+  <maintainer email="your@email.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>libeigen3-dev</build_depend>
+  <exec_depend>libeigen3-dev</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

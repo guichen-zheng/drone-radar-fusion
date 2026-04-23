@@ -7,7 +7,7 @@ package_name = 'web_dashboard'
 setup(
     name=package_name,
     version='1.0.0',
-    packages=[package_name, package_name + '.web_dashboard'],
+    packages=[package_name],
     data_files=[
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
@@ -18,6 +18,7 @@ setup(
     entry_points={
         'console_scripts': [
             'web_dashboard_node = web_dashboard.app:main',
+            'watchdog_node = web_dashboard.watchdog_node:main',
         ],
     },
 )

@@ -90,6 +90,48 @@
   }
   .legend-row { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
   .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  /* ── 传感器位姿工具 ── */
+  #pose-btn {
+    padding: 5px 12px;
+    background: #21262d; border: 1px solid #30363d; border-radius: 4px;
+    color: #8b949e; cursor: pointer; font-size: 12px; transition: all .2s;
+    white-space: nowrap;
+  }
+  #pose-btn:hover { border-color: #58a6ff; color: #e6edf3; }
+  #pose-btn.active { background: #1f6feb; border-color: #58a6ff; color: #fff; }
+  #pose-info { font-size: 12px; color: #8b949e; white-space: nowrap; }
+  #pose-info span.val { color: #f0883e; font-weight: bold; }
+  #map.pose-mode { cursor: crosshair !important; }
+  #map.pose-mode .leaflet-interactive { cursor: crosshair !important; }
+  /* SVG 拖拽箭头层（覆盖在地图之上） */
+  #drag-arrow-svg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 500;
+  }
+  /* 操作提示浮层 */
+  #pose-hint {
+    position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
+    background: rgba(22,27,34,.92); border: 1px solid #58a6ff; border-radius: 6px;
+    padding: 8px 16px; font-size: 12px; color: #e6edf3;
+    z-index: 1001; pointer-events: none; display: none; white-space: nowrap;
+  }
+  /* ── 地点搜索框 ── */
+  #search-box { display: flex; gap: 4px; align-items: center; }
+  #search-input {
+    background: #21262d; border: 1px solid #30363d; border-radius: 4px;
+    color: #e6edf3; padding: 5px 10px; font-size: 12px; width: 180px; outline: none;
+  }
+  #search-input:focus { border-color: #58a6ff; }
+  #search-input::placeholder { color: #484f58; }
+  #search-btn {
+    padding: 5px 10px; background: #21262d; border: 1px solid #30363d;
+    border-radius: 4px; color: #8b949e; cursor: pointer; font-size: 12px;
+  }
+  #search-btn:hover { border-color: #58a6ff; color: #e6edf3; }
+  /* ── 传感器连接状态 ── */
+  .sensor-status { font-size: 12px; white-space: nowrap; color: #f85149; }
+  .sensor-status.ok { color: #3fb950; }
 </style>
 </head>
 <body>
@@ -99,12 +141,29 @@
   <div id="status-dot"></div>
   <h1>🛡 无人机监控系统</h1>
   <div id="drone-count">当前追踪目标：<span id="count">0</span></div>
-  <div id="conn-status" style="margin-left:auto;font-size:12px;color:#3fb950">● 已连接</div>
+  <button id="pose-btn" onclick="togglePoseMode()">📍 设置传感器位姿</button>
+  <div id="pose-info" style="display:none">
+    位置: <span class="val" id="pose-lat">--</span>, <span class="val" id="pose-lng">--</span>
+    &nbsp;|&nbsp; 朝向: <span class="val" id="pose-heading">--</span>°
+    (<span class="val" id="pose-dir">--</span>)
+  </div>
+  <div id="search-box" style="margin-left:auto">
+    <input id="search-input" type="text" placeholder="🔍 搜索地点..."
+           onkeydown="if(event.key==='Enter')searchLocation()">
+    <button id="search-btn" onclick="searchLocation()">搜索</button>
+  </div>
+  <div id="radar-status" class="sensor-status">● 雷达</div>
+  <div id="camera-status" class="sensor-status">● 相机</div>
 </div>
 
 <!-- 主体 -->
 <div id="main">
-  <div id="map"></div>
+  <div id="map" style="position:relative">
+    <!-- 拖拽箭头 SVG 层 -->
+    <svg id="drag-arrow-svg"></svg>
+    <!-- 位姿设置操作提示 -->
+    <div id="pose-hint">按住鼠标拖拽以设置传感器朝向，松开确认</div>
+  </div>
 
   <div id="panel">
     <!-- 相机实时画面 -->
@@ -166,14 +225,19 @@ const droneCards   = {};   // drone_id → DOM element
 // ── Socket.IO 连接 ────────────────────────────────────────────────────────
 const socket = io();
 
-socket.on('connect',    () => setConnStatus(true));
 socket.on('disconnect', () => setConnStatus(false));
 
 function setConnStatus(ok) {
-  const el = document.getElementById('conn-status');
-  el.textContent = ok ? '● 已连接' : '● 已断开';
-  el.style.color = ok ? '#3fb950' : '#f85149';
+  if (!ok) {
+    document.getElementById('radar-status').className  = 'sensor-status';
+    document.getElementById('camera-status').className = 'sensor-status';
+  }
 }
+
+socket.on('sensor_status', (data) => {
+  document.getElementById('radar-status').className  = 'sensor-status' + (data.radar  ? ' ok' : '');
+  document.getElementById('camera-status').className = 'sensor-status' + (data.camera ? ' ok' : '');
+});
 
 // ── 接收无人机坐标更新 ────────────────────────────────────────────────────
 socket.on('drone_update', (data) => {
@@ -292,6 +356,230 @@ socket.on('camera_frame', (data) => {
 
 // ── 地图初始中心由后端 params.yaml 的 origin_lat/lng 决定 ────────────────────
 // （lat/lng 已由 fusion 节点直接填入每个目标的消息字段，前端无需换算）
+
+// ════════════════════════════════════════════════════════════════════════════
+// 传感器位姿交互工具（类 RViz 2D Pose Estimate）
+// 箭头根部 = 传感器经纬度，箭头方向 = 雷达朝向（相对正北，顺时针0-360°）
+// ════════════════════════════════════════════════════════════════════════════
+
+let poseMode      = false;    // 是否处于位姿设置模式
+let poseDragging  = false;    // 是否正在拖拽
+let poseOrigin    = null;     // 按下时的 L.LatLng（箭头根部）
+let sensorMarkerGroup = L.layerGroup().addTo(map);  // 固定箭头图层
+
+// ── 模式开关 ──────────────────────────────────────────────────────────────
+function togglePoseMode() {
+  poseMode = !poseMode;
+  const btn   = document.getElementById('pose-btn');
+  const hint  = document.getElementById('pose-hint');
+  const mapEl = document.getElementById('map');
+
+  if (poseMode) {
+    btn.classList.add('active');
+    btn.textContent = '✕ 取消设置';
+    mapEl.classList.add('pose-mode');
+    hint.style.display = 'block';
+    map.dragging.disable();
+    map.doubleClickZoom.disable();
+  } else {
+    btn.classList.remove('active');
+    btn.textContent = '📍 设置传感器位姿';
+    mapEl.classList.remove('pose-mode');
+    hint.style.display = 'none';
+    map.dragging.enable();
+    map.doubleClickZoom.enable();
+    clearDragArrow();
+    poseDragging = false;
+    poseOrigin   = null;
+  }
+}
+
+// ── 罗盘方位角计算（0°=正北，顺时针，0-360°）─────────────────────────────
+function calcHeading(from, to) {
+  const dLat = to.lat - from.lat;
+  const dLng = (to.lng - from.lng) * Math.cos(from.lat * Math.PI / 180);
+  return ((Math.atan2(dLng, dLat) * 180 / Math.PI) + 360) % 360;
+}
+
+// ── 罗盘方向文字 ─────────────────────────────────────────────────────────
+function compassLabel(h) {
+  const dirs = ['北','东北','东','东南','南','西南','西','西北'];
+  return dirs[Math.round(h / 45) % 8];
+}
+
+// ── 拖拽箭头绘制（SVG 像素坐标，跟随鼠标实时更新）────────────────────────
+function drawDragArrow(fromLatLng, toLatLng, heading) {
+  const svg     = document.getElementById('drag-arrow-svg');
+  const mapEl   = document.getElementById('map');
+  const w = mapEl.clientWidth, h = mapEl.clientHeight;
+  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+
+  const fp = map.latLngToContainerPoint(fromLatLng);
+  const tp = map.latLngToContainerPoint(toLatLng);
+  const dx = tp.x - fp.x, dy = tp.y - fp.y;
+  const len = Math.sqrt(dx*dx + dy*dy);
+  if (len < 5) { svg.innerHTML = ''; return; }
+
+  const angle = Math.atan2(dy, dx);
+  const hl    = Math.min(22, len * 0.35);          // 箭头头部长度
+  const a1 = angle + Math.PI * 0.75;
+  const a2 = angle - Math.PI * 0.75;
+  // 杆的终点（不延伸到箭头尖）
+  const sx = tp.x - hl * 0.55 * Math.cos(angle);
+  const sy = tp.y - hl * 0.55 * Math.sin(angle);
+
+  svg.innerHTML = `
+    <line x1="${fp.x}" y1="${fp.y}" x2="${sx}" y2="${sy}"
+          stroke="#58a6ff" stroke-width="7" stroke-opacity=".18" stroke-linecap="round"/>
+    <line x1="${fp.x}" y1="${fp.y}" x2="${sx}" y2="${sy}"
+          stroke="#58a6ff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 4"/>
+    <polygon points="${tp.x},${tp.y}
+                     ${tp.x+hl*Math.cos(a1)},${tp.y+hl*Math.sin(a1)}
+                     ${tp.x+hl*Math.cos(a2)},${tp.y+hl*Math.sin(a2)}"
+             fill="#58a6ff" opacity=".9"/>
+    <circle cx="${fp.x}" cy="${fp.y}" r="6" fill="#f0883e" stroke="#fff" stroke-width="2"/>
+    <text x="${fp.x+10}" y="${fp.y-10}" fill="#f0883e" font-size="13"
+          font-family="monospace" font-weight="bold"
+          style="text-shadow:0 1px 3px #000">${heading.toFixed(1)}°</text>
+  `;
+}
+
+function clearDragArrow() {
+  document.getElementById('drag-arrow-svg').innerHTML = '';
+}
+
+// ── 确认位姿：绘制固定箭头 + 通知后端 ────────────────────────────────────
+function renderSensorArrow(latlng, heading) {
+  sensorMarkerGroup.clearLayers();
+
+  // 根部橙色圆点
+  L.circleMarker(latlng, {
+    radius: 7, color: '#fff', weight: 2.5,
+    fillColor: '#f0883e', fillOpacity: 1
+  }).bindTooltip(
+    `传感器位置<br>${latlng.lat.toFixed(6)}, ${latlng.lng.toFixed(6)}`,
+    { direction: 'top' }
+  ).addTo(sensorMarkerGroup);
+
+  // 箭头杆（固定地理长度 60m）
+  const R = 6378137;
+  const theta = heading * Math.PI / 180;
+  const dLat = (60 / R) * Math.cos(theta) * 180 / Math.PI;
+  const dLng = (60 / R / Math.cos(latlng.lat * Math.PI / 180)) * Math.sin(theta) * 180 / Math.PI;
+  const tip  = L.latLng(latlng.lat + dLat, latlng.lng + dLng);
+
+  L.polyline([latlng, tip], { color: '#58a6ff', weight: 3, opacity: .9 })
+   .addTo(sensorMarkerGroup);
+
+  // 箭头头部（旋转 CSS 三角形）
+  L.marker(tip, {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        width:0;height:0;
+        border-left:7px solid transparent;
+        border-right:7px solid transparent;
+        border-bottom:16px solid #58a6ff;
+        transform:rotate(${heading}deg);
+        transform-origin:center bottom;
+        margin-top:-8px;margin-left:-7px;
+        filter:drop-shadow(0 0 3px #58a6ff88);
+      "></div>`,
+      iconSize: [14, 16], iconAnchor: [7, 8]
+    })
+  }).addTo(sensorMarkerGroup);
+
+  // 角度标签
+  L.marker(tip, {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        background:rgba(22,27,34,.88);border:1px solid #58a6ff;
+        border-radius:3px;padding:2px 7px;font-size:11px;
+        color:#58a6ff;white-space:nowrap;margin-left:12px;margin-top:-8px;
+      ">${heading.toFixed(1)}° ${compassLabel(heading)}</div>`,
+      iconAnchor: [0, 8]
+    })
+  }).addTo(sensorMarkerGroup);
+
+  // 更新顶部信息栏
+  document.getElementById('pose-lat').textContent     = latlng.lat.toFixed(6);
+  document.getElementById('pose-lng').textContent     = latlng.lng.toFixed(6);
+  document.getElementById('pose-heading').textContent = heading.toFixed(1);
+  document.getElementById('pose-dir').textContent     = compassLabel(heading);
+  document.getElementById('pose-info').style.display  = 'inline';
+}
+
+function confirmSensorPose(latlng, heading) {
+  clearDragArrow();
+  renderSensorArrow(latlng, heading);
+  map.panTo(latlng);
+  socket.emit('set_sensor_pose', { lat: latlng.lat, lng: latlng.lng, heading: heading });
+}
+
+// ── 地图鼠标事件绑定 ──────────────────────────────────────────────────────
+map.on('mousedown', function(e) {
+  if (!poseMode) return;
+  poseDragging = true;
+  poseOrigin   = e.latlng;
+});
+
+map.on('mousemove', function(e) {
+  if (!poseMode || !poseDragging || !poseOrigin) return;
+  const h = calcHeading(poseOrigin, e.latlng);
+  drawDragArrow(poseOrigin, e.latlng, h);
+  document.getElementById('pose-lat').textContent     = poseOrigin.lat.toFixed(6);
+  document.getElementById('pose-lng').textContent     = poseOrigin.lng.toFixed(6);
+  document.getElementById('pose-heading').textContent = h.toFixed(1);
+  document.getElementById('pose-dir').textContent     = compassLabel(h);
+  document.getElementById('pose-info').style.display  = 'inline';
+});
+
+map.on('mouseup', function(e) {
+  if (!poseMode || !poseDragging || !poseOrigin) return;
+  poseDragging = false;
+  const dist = poseOrigin.distanceTo(e.latlng);
+  if (dist < 5) { clearDragArrow(); poseOrigin = null; return; }
+  const heading = calcHeading(poseOrigin, e.latlng);
+  confirmSensorPose(poseOrigin, heading);
+  togglePoseMode();   // 退出设置模式
+});
+
+// ── 连接后请求当前传感器位姿（刷新页面时恢复箭头）───────────────────────
+socket.on('connect', () => {
+  setConnStatus(true);
+  socket.emit('request_sensor_pose');
+  socket.emit('request_sensor_status');
+});
+
+socket.on('sensor_pose_current', (data) => {
+  if (data && data.lat != null && data.lng != null && data.heading != null) {
+    renderSensorArrow(L.latLng(data.lat, data.lng), data.heading);
+  }
+});
+
+// ── 地点搜索（Nominatim / OpenStreetMap，无需 API Key）────────────────────
+async function searchLocation() {
+  const input = document.getElementById('search-input');
+  const q = input.value.trim();
+  if (!q) return;
+  try {
+    const res = await fetch(
+      'https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(q) + '&format=json&limit=1',
+      { headers: { 'Accept-Language': 'zh-CN,zh;q=0.9' } }
+    );
+    const data = await res.json();
+    if (data.length > 0) {
+      map.setView([parseFloat(data[0].lat), parseFloat(data[0].lon)], 14);
+      input.style.borderColor = '#3fb950';
+    } else {
+      input.style.borderColor = '#f85149';
+    }
+  } catch (e) {
+    input.style.borderColor = '#f85149';
+  }
+  setTimeout(() => { input.style.borderColor = ''; }, 1500);
+}
 </script>
 </body>
 </html>

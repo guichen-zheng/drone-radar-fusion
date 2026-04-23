@@ -1,0 +1,4 @@
+source;share/fusion/local_setup.bash
+source;share/fusion/local_setup.dsv
+source;share/fusion/local_setup.sh
+source;share/fusion/local_setup.zsh

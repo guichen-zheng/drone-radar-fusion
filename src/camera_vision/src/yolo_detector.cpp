@@ -1,5 +1,6 @@
 #include "camera_vision/yolo_detector.hpp"
 #include <filesystem>
+#include <fstream>
 
 namespace camera_vision
 {

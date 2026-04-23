@@ -1,0 +1,13 @@
+package.xml
+setup.py
+resource/web_dashboard
+templates/index.html
+web_dashboard/__init__.py
+web_dashboard/app.py
+web_dashboard/watchdog_node.py
+web_dashboard.egg-info/PKG-INFO
+web_dashboard.egg-info/SOURCES.txt
+web_dashboard.egg-info/dependency_links.txt
+web_dashboard.egg-info/entry_points.txt
+web_dashboard.egg-info/requires.txt
+web_dashboard.egg-info/top_level.txt

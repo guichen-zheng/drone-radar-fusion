@@ -57,6 +57,11 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     pub_markers_  = this->create_publisher<visualization_msgs::msg::MarkerArray>("/fusion/markers", 10);
     pub_warn_json_= this->create_publisher<std_msgs::msg::String>("/fusion/warn_json", 10);
 
+    // 订阅 Web Dashboard 发来的传感器位姿，动态更新坐标转换
+    sub_sensor_pose_ = this->create_subscription<std_msgs::msg::String>(
+        "/web_dashboard/sensor_pose", 10,
+        std::bind(&FusionManager::onSensorPose, this, std::placeholders::_1));
+
     RCLCPP_INFO(this->get_logger(), "[Fusion] 融合管理节点已启动");
 }
 
@@ -259,10 +264,13 @@ void FusionManager::publishResults()
         if (!track.confirmed) continue;
         auto det = track.latest;
         // 填入地理坐标（雷达坐标 → WGS84），供 web_dashboard 地图使用
-        Eigen::Vector3d wgs = utils::CoordTransform::lidarToWGS84(
-            Eigen::Vector3d(det.x, det.y, det.z));
-        det.lat = wgs.x();
-        det.lng = wgs.y();
+        {
+            std::lock_guard<std::mutex> lk(pose_mutex_);
+            Eigen::Vector3d wgs = utils::CoordTransform::lidarToWGS84(
+                Eigen::Vector3d(det.x, det.y, det.z));
+            det.lat = wgs.x();
+            det.lng = wgs.y();
+        }
         arr.drones.push_back(det);
         checkAndWarn(track);
     }
@@ -352,6 +360,48 @@ void FusionManager::publishMarkers()
         ma.markers.push_back(text);
     }
     pub_markers_->publish(ma);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+void FusionManager::onSensorPose(const std_msgs::msg::String::SharedPtr msg)
+{
+    // ── 1. 解析 JSON ──────────────────────────────────────────────────────────
+    double lat, lng, heading_deg;
+    try {
+        auto j     = nlohmann::json::parse(msg->data);
+        lat        = j.at("lat").get<double>();
+        lng        = j.at("lng").get<double>();
+        heading_deg = j.at("heading").get<double>();
+    } catch (const std::exception & e) {
+        RCLCPP_WARN(this->get_logger(),
+            "[Fusion] 传感器位姿 JSON 解析失败: %s", e.what());
+        return;
+    }
+
+    // ── 2. 计算 T_world_lidar 旋转矩阵 ───────────────────────────────────────
+    // 罗盘朝向角 θ（正北=0°，顺时针）→ ENU 旋转矩阵
+    // Livox x轴（前）在ENU中：(sinθ, cosθ, 0)
+    // Livox y轴（左）在ENU中：(-cosθ, sinθ, 0)
+    // Livox z轴（上）在ENU中：(0, 0, 1)
+    const double theta = heading_deg * M_PI / 180.0;
+    const double s = std::sin(theta);
+    const double c = std::cos(theta);
+
+    Eigen::Matrix4d T = Eigen::Matrix4d::Identity();
+    T(0, 0) =  s;  T(0, 1) = -c;  T(0, 2) = 0.0;
+    T(1, 0) =  c;  T(1, 1) =  s;  T(1, 2) = 0.0;
+    T(2, 0) = 0.0; T(2, 1) = 0.0; T(2, 2) = 1.0;
+
+    // ── 3. 线程安全更新 CoordTransform ───────────────────────────────────────
+    {
+        std::lock_guard<std::mutex> lk(pose_mutex_);
+        utils::CoordTransform::setLidarToWorld(T);
+        utils::CoordTransform::setOrigin(lat, lng);
+    }
+
+    RCLCPP_INFO(this->get_logger(),
+        "[Fusion] 传感器位姿已更新: lat=%.6f lng=%.6f heading=%.1f°",
+        lat, lng, heading_deg);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

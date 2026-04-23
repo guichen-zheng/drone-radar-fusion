@@ -1,0 +1,23 @@
+Consolidate compiler generated dependencies of target fusion_node
+[100%] Built target fusion_node
+-- Install configuration: "Release"
+-- Execute custom install script
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/lib/fusion/fusion_node
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/include/fusion/fusion_manager.hpp
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/include/fusion/kalman_filter.hpp
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/launch/fusion_launch.py
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/ament_index/resource_index/package_run_dependencies/fusion
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/ament_index/resource_index/parent_prefix_path/fusion
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/path.sh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/path.dsv
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.bash
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.sh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.zsh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.dsv
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.dsv
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/ament_index/resource_index/packages/fusion
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/cmake/fusionConfig.cmake
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/cmake/fusionConfig-version.cmake
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.xml

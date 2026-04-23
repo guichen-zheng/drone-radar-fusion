@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d49ef2ae751bc7d1fe94.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "livox_sdk_vendor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "livox-sdk-master::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-livox-sdk-master-Release-afdab73c87d8a5214699.json",
+					"name" : "livox-sdk-master",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "livox_sdk_vendor_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-livox_sdk_vendor_uninstall-Release-aebdf58d39ac20c64a6b.json",
+					"name" : "livox_sdk_vendor_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Release-924059a078535a05c108.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor",
+		"source" : "/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

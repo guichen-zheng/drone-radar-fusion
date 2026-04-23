@@ -7,7 +7,9 @@
 #include <visualization_msgs/msg/marker_array.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <Eigen/Dense>
+#include <opencv2/core.hpp>
 #include <map>
+#include <mutex>
 
 #include "interface/msg/drone_detect_array.hpp"
 #include "interface/msg/radar_warn.hpp"
@@ -68,6 +70,9 @@ private:
     // ── 外参/内参加载 ──────────────────────────────────────
     bool loadCalibration(const std::string & yaml_path);
 
+    // ── 传感器位姿动态更新（由 Web Dashboard 发来）──────────
+    void onSensorPose(const std_msgs::msg::String::SharedPtr msg);
+
     // ── 报警发布（MQTT / HTTP 由外部桥接节点监听 /warn topic）──
     rclcpp::Publisher<interface::msg::RadarWarn>::SharedPtr pub_warn_;
     rclcpp::Publisher<interface::msg::DroneDetectArray>::SharedPtr pub_final_;
@@ -82,6 +87,9 @@ private:
     message_filters::Subscriber<interface::msg::DroneDetectArray> sub_camera_;
     std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
 
+    // ── 传感器位姿订阅器 ──────────────────────────────────
+    rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_sensor_pose_;
+
     // ── 追踪轨迹表（track_id → DroneTrack）────────────────
     std::map<uint32_t, DroneTrack> tracks_;
     uint32_t next_track_id_ = 0;
@@ -90,6 +98,9 @@ private:
     Eigen::Matrix3d cam_intrinsic_;    // 相机内参 K（3×3）
     Eigen::Matrix4d T_cam_lidar_;      // 雷达→相机外参（4×4 齐次变换）
     bool calib_loaded_ = false;
+
+    // ── 坐标转换互斥锁（保护 CoordTransform 静态状态）──────
+    std::mutex pose_mutex_;
 
     // ── 参数 ──────────────────────────────────────────────
     int confirm_thresh_    = 3;    // 连续命中多少帧才确认目标

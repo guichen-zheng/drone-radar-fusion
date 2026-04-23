@@ -1,0 +1,30 @@
+[0.007s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/fusion -- -j16 -l16
+[0.037s] Consolidate compiler generated dependencies of target fusion_node
+[0.048s] [ 25%] Building CXX object CMakeFiles/fusion_node.dir/src/fusion_node.cpp.o
+[0.049s] [ 50%] Building CXX object CMakeFiles/fusion_node.dir/src/fusion_manager.cpp.o
+[13.187s] [ 75%] Linking CXX executable fusion_node
+[13.329s] [100%] Built target fusion_node
+[13.339s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/fusion -- -j16 -l16
+[13.340s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/fusion
+[13.344s] -- Install configuration: "Release"
+[13.344s] -- Execute custom install script
+[13.344s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/lib/fusion/fusion_node
+[13.353s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/include/fusion/fusion_manager.hpp
+[13.364s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/include/fusion/kalman_filter.hpp
+[13.374s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/launch/fusion_launch.py
+[13.380s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/ament_index/resource_index/package_run_dependencies/fusion
+[13.386s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/ament_index/resource_index/parent_prefix_path/fusion
+[13.391s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/ament_prefix_path.sh
+[13.397s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/ament_prefix_path.dsv
+[13.402s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/path.sh
+[13.408s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/environment/path.dsv
+[13.413s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.bash
+[13.417s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.sh
+[13.422s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.zsh
+[13.427s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/local_setup.dsv
+[13.432s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.dsv
+[13.437s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/ament_index/resource_index/packages/fusion
+[13.441s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/cmake/fusionConfig.cmake
+[13.446s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/cmake/fusionConfig-version.cmake
+[13.451s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.xml
+[13.457s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/fusion

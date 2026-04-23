@@ -1,0 +1,78 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from interface/msg/DroneDetect.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module interface {
+  module msg {
+    struct DroneDetect {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "无人机唯一 ID（多目标追踪）")
+      uint32 drone_id;
+
+      @verbatim (language="comment", text=
+        "世界坐标 X（米）")
+      double x;
+
+      @verbatim (language="comment", text=
+        "世界坐标 Y（米）")
+      double y;
+
+      @verbatim (language="comment", text=
+        "高度 Z（米）")
+      double z;
+
+      @verbatim (language="comment", text=
+        "X 方向速度（米/秒）")
+      double vx;
+
+      @verbatim (language="comment", text=
+        "Y 方向速度（米/秒）")
+      double vy;
+
+      @verbatim (language="comment", text=
+        "Z 方向速度（米/秒）")
+      double vz;
+
+      @verbatim (language="comment", text=
+        "融合置信度（0.0 ~ 1.0）")
+      double confidence;
+
+      @verbatim (language="comment", text=
+        "图像 bounding box 左上角 x（像素）")
+      int32 bbox_x;
+
+      @verbatim (language="comment", text=
+        "图像 bounding box 左上角 y（像素）")
+      int32 bbox_y;
+
+      @verbatim (language="comment", text=
+        "bounding box 宽度（像素）")
+      int32 bbox_w;
+
+      @verbatim (language="comment", text=
+        "bounding box 高度（像素）")
+      int32 bbox_h;
+
+      @verbatim (language="comment", text=
+        "类别标签（如 \"drone\"）")
+      string label;
+
+      @verbatim (language="comment", text=
+        "是否处于卡尔曼追踪状态")
+      boolean is_tracked;
+
+      @verbatim (language="comment", text=
+        "地理坐标（由 fusion 包通过 CoordTransform 填入，供 web_dashboard 使用）" "\n"
+        "纬度（度，WGS84）")
+      double lat;
+
+      @verbatim (language="comment", text=
+        "经度（度，WGS84）")
+      double lng;
+    };
+  };
+};

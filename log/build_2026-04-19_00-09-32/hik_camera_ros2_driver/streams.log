@@ -1,0 +1,12 @@
+[0.006s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16
+[0.033s] Consolidate compiler generated dependencies of target hik_camera_ros2_driver_node
+[0.036s] [ 25%] Building CXX object CMakeFiles/hik_camera_ros2_driver.dir/src/hik_camera_node.cpp.o
+[0.041s] [ 75%] Built target hik_camera_ros2_driver_node
+[0.076s] /home/guichen/Documents/drone-radar-fusion/src/hik_camera/src/hik_camera_node.cpp:4:10: fatal error: camera_info_manager/camera_info_manager.hpp: 没有那个文件或目录
+[0.076s]     4 | #include "camera_info_manager/camera_info_manager.hpp"
+[0.076s]       |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0.076s] compilation terminated.
+[0.076s] gmake[2]: *** [CMakeFiles/hik_camera_ros2_driver.dir/build.make:76：CMakeFiles/hik_camera_ros2_driver.dir/src/hik_camera_node.cpp.o] 错误 1
+[0.077s] gmake[1]: *** [CMakeFiles/Makefile2:139：CMakeFiles/hik_camera_ros2_driver.dir/all] 错误 2
+[0.077s] gmake: *** [Makefile:146：all] 错误 2
+[0.079s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16

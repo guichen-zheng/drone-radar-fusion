@@ -1,27 +1,88 @@
-# src/hik_camera/ — 海康相机 ROS2 驱动（★ 待填入）
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build](https://github.com/SMBU-PolarBear-Robotics-Team/hik_camera_ros2_driver/actions/workflows/ci.yml/badge.svg)](https://github.com/SMBU-PolarBear-Robotics-Team/hik_camera_ros2_driver/actions/workflows/ci.yml)
 
-## 说明
-此目录为海康相机驱动占位。该驱动**不在本项目中构建**，需从以下来源获取：
+# hik_camera_ros2_driver
 
-## 推荐驱动方案
+## Overview
 
-### 方案 A：第三方 ROS2 封装（推荐快速上手）
+The `hik_camera_ros2_driver` package provides a ROS 2 driver for controlling and interfacing with Hikvision cameras. It supports functionalities such as camera initialization, parameter configuration, and image publishing. This package is intended for applications requiring reliable and configurable image data acquisition in a ROS 2 environment.
+
+### Executables
+
+The package includes the `hik_camera_node`, which manages the camera and publishes image data along with camera information to ROS 2 topics.
+
+### Subscribed Topics
+
+None.
+
+### Published Topics
+
+- `<camera_topic>` (sensor_msgs/msg/Image)
+  - The image data captured by the Hikvision camera.
+
+- `<camera_topic>/camera_info` (sensor_msgs/msg/CameraInfo)
+  - Camera calibration information.
+
+### Parameters
+
+- `exposure_time` (double, default: `5000`)
+  - The camera exposure time in microseconds.
+
+- `gain` (double, default: `camera`)
+  - The gain setting for the camera.
+
+- `acquisition_frame_rate` (double, default: `165`)
+  - The acquisition frame rate in hz for the camera.
+
+- `pixel_format` (string, default: `RGB8Packed`)
+  - The pixel format for the image data. Supported values: `Mono8`, `Mono10`, `Mono12`, `RGB8Packed`, `BGR8Packed`, `YUV422_YUYV_Packed`, `YUV422Packed`, `BayerRG8`, `BayerRG10`, `BayerRG10Packed`, `BayerRG12`, `BayerRG12Packed`.
+
+- `adc_bit_depth` (string, default: `Bits_8`)
+  - The ADC bit depth for the camera. Supported values: `Bits_8`, `Bits_12`.
+
+- `use_sensor_data_qos` (bool, default: true)
+  - Whether to use the `sensor_data` QoS profile for image topic publication.
+
+- `camera_name` (string, default: `camera`)
+  - The name of the camera for identification purposes.
+
+- `frame_id` (string, default: `<camera_name>_optical_frame`)
+  - The frame_id assigned to the published image data.
+
+- `camera_topic` (string, default: `<camera_name>/image`)
+  - The topic name for publishing image and info data.
+
+- `camera_info_url` (string, default: `package://hik_camera_ros2_driver/config/camera_info.yaml`)
+  - The URL for the camera calibration information file.
+
+### Usage
+
+#### Installation
+
+To use this package, build it from source or include it in your ROS 2 workspace. Ensure that all dependencies are installed. You **don't** need to install the Hikvision camera SDK and include its libraries in your environment.
+
 ```bash
-# 仓库：https://github.com/whlook/ros_hik_camera
-git clone https://github.com/whlook/ros_hik_camera.git src/hik_camera
-colcon build --packages-select hik_camera
+mkdir -p ~/ros_ws/src
+cd ~/ros_ws/src
 ```
-发布 Topic：`/hik_camera/image_raw`（`sensor_msgs/Image`）
 
-### 方案 B：海康官方 MVS SDK + 自封装
-1. 从海康官网下载 MVS SDK（Linux 版）：
-   https://www.hikrobotics.com/cn/machinevision/service/download
-2. 安装 SDK 后参考 SDK 示例封装 ROS2 节点
-3. 节点应发布 Topic：`/hik_camera/image_raw`
+```bash
+git clone https://github.com/SMBU-PolarBear-Robotics-Team/hik_camera_ros2_driver.git
+```
 
-## 与本项目的接口
-camera_vision 包的 `yolo_detector` 节点订阅：
+```bash
+cd ~/ros_ws
+rosdep install -r --from-paths src --ignore-src --rosdistro $ROS_DISTRO -y
 ```
-/hik_camera/image_raw   (sensor_msgs/msg/Image)
+
+```bash
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
-只需确保驱动发布此 Topic，无需修改 camera_vision 任何代码。
+
+#### Run
+
+You can use the provided launch file for starting the camera node with default or custom parameters:
+
+```bash
+ros2 launch hik_camera_ros2_driver hik_camera_launch.py
+```

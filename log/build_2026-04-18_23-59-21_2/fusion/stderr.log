@@ -1,0 +1,44 @@
+[ 11%] Creating directories for 'json-populate'
+[ 22%] Performing download step (download, verify and extract) for 'json-populate'
+-- Downloading...
+   dst='/home/guichen/Documents/drone-radar-fusion/build/fusion/_deps/json-subbuild/json-populate-prefix/src/json.tar.xz'
+   timeout='none'
+   inactivity timeout='none'
+-- Using src='https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz'
+CMake Error at json-subbuild/json-populate-prefix/src/json-populate-stamp/download-json-populate.cmake:170 (message):
+  Each download failed!
+
+    error: downloading 'https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz' failed
+          status_code: 28
+          status_string: "Timeout was reached"
+          log:
+          --- LOG BEGIN ---
+            Trying 198.18.0.196:443...
+
+  connect to 198.18.0.196 port 443 failed: Connection timed out
+
+  Failed to connect to github.com port 443 after 135767 ms: Connection timed
+  out
+
+  Closing connection 0
+
+  
+
+          --- LOG END ---
+          
+    
+
+
+gmake[2]: *** [CMakeFiles/json-populate.dir/build.make:99：json-populate-prefix/src/json-populate-stamp/json-populate-download] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:83：CMakeFiles/json-populate.dir/all] 错误 2
+gmake: *** [Makefile:91：all] 错误 2
+
+CMake Error at /usr/share/cmake-3.22/Modules/FetchContent.cmake:1087 (message):
+  Build step for json failed: 2
+Call Stack (most recent call first):
+  /usr/share/cmake-3.22/Modules/FetchContent.cmake:1216:EVAL:2 (__FetchContent_directPopulate)
+  /usr/share/cmake-3.22/Modules/FetchContent.cmake:1216 (cmake_language)
+  /usr/share/cmake-3.22/Modules/FetchContent.cmake:1259 (FetchContent_Populate)
+  CMakeLists.txt:21 (FetchContent_MakeAvailable)
+
+

@@ -1,0 +1,259 @@
+[0.006s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/interface -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/interface
+[0.041s] -- The C compiler identification is GNU 11.4.0
+[0.075s] -- The CXX compiler identification is GNU 11.4.0
+[0.079s] -- Detecting C compiler ABI info
+[0.122s] -- Detecting C compiler ABI info - done
+[0.127s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.127s] -- Detecting C compile features
+[0.127s] -- Detecting C compile features - done
+[0.129s] -- Detecting CXX compiler ABI info
+[0.178s] -- Detecting CXX compiler ABI info - done
+[0.183s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.183s] -- Detecting CXX compile features
+[0.183s] -- Detecting CXX compile features - done
+[0.185s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.277s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.319s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.332s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.333s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.336s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.358s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.378s] -- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+[0.568s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.702s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.884s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.899s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[0.899s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.918s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[0.918s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.918s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.918s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.933s] -- Found PythonExtra: .so  
+[1.013s] -- Configuring done
+[1.035s] -- Generating done
+[1.042s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/interface
+[1.048s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/interface -DCMAKE_BUILD_TYPE=Release -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/interface
+[1.049s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/interface -- -j16 -l16
+[1.072s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.078s] [  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.078s] [  6%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[1.082s] [  6%] Built target ament_cmake_python_symlink_interface
+[1.225s] running egg_info
+[1.225s] creating interface.egg-info
+[1.225s] writing interface.egg-info/PKG-INFO
+[1.225s] writing dependency_links to interface.egg-info/dependency_links.txt
+[1.225s] writing top-level names to interface.egg-info/top_level.txt
+[1.225s] writing manifest file 'interface.egg-info/SOURCES.txt'
+[1.226s] reading manifest file 'interface.egg-info/SOURCES.txt'
+[1.227s] writing manifest file 'interface.egg-info/SOURCES.txt'
+[1.244s] [  6%] Built target ament_cmake_python_build_interface_egg
+[1.433s] [  6%] Built target interface__rs
+[1.470s] [  6%] Built target interface__cpp
+[1.476s] [  8%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.476s] [ 12%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.476s] [ 12%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.482s] [ 18%] [32mBuilding C object CMakeFiles/interface__rosidl_generator_c.dir/rosidl_generator_c/interface/msg/detail/drone_detect_array__functions.c.o[0m
+[1.482s] [ 18%] [32mBuilding C object CMakeFiles/interface__rosidl_generator_c.dir/rosidl_generator_c/interface/msg/detail/drone_detect__functions.c.o[0m
+[1.482s] [ 18%] [32mBuilding C object CMakeFiles/interface__rosidl_generator_c.dir/rosidl_generator_c/interface/msg/detail/radar_warn__functions.c.o[0m
+[1.547s] [ 20%] [32m[1mLinking C shared library libinterface__rosidl_generator_c.so[0m
+[1.570s] [ 20%] Built target interface__rosidl_generator_c
+[1.576s] [ 27%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.577s] [ 27%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.577s] [ 27%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.832s] [ 29%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interface/msg/drone_detect__type_support.cpp.o[0m
+[1.833s] [ 31%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interface/msg/drone_detect_array__type_support.cpp.o[0m
+[1.833s] [ 33%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/interface/msg/radar_warn__type_support.cpp.o[0m
+[1.847s] [ 37%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interface/msg/detail/drone_detect_array__type_support.cpp.o[0m
+[1.847s] [ 37%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interface/msg/detail/drone_detect__type_support.cpp.o[0m
+[1.847s] [ 39%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/interface/msg/detail/radar_warn__type_support.cpp.o[0m
+[1.883s] [ 41%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interface/msg/detail/dds_fastrtps/drone_detect_array__type_support.cpp.o[0m
+[1.884s] [ 43%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interface/msg/detail/dds_fastrtps/drone_detect__type_support.cpp.o[0m
+[1.884s] [ 45%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/interface/msg/detail/dds_fastrtps/radar_warn__type_support.cpp.o[0m
+[1.954s] [ 50%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/interface/msg/drone_detect__type_support.cpp.o[0m
+[1.954s] [ 50%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/interface/msg/drone_detect_array__type_support.cpp.o[0m
+[1.954s] [ 52%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_c.dir/rosidl_typesupport_c/interface/msg/radar_warn__type_support.cpp.o[0m
+[1.983s] [ 54%] [32mBuilding C object CMakeFiles/interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interface/msg/detail/drone_detect__type_support.c.o[0m
+[1.983s] [ 56%] [32mBuilding C object CMakeFiles/interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interface/msg/detail/drone_detect_array__type_support.c.o[0m
+[1.984s] [ 58%] [32m[1mLinking CXX shared library libinterface__rosidl_typesupport_c.so[0m
+[1.988s] [ 60%] [32mBuilding C object CMakeFiles/interface__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/interface/msg/detail/radar_warn__type_support.c.o[0m
+[1.995s] [ 62%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interface/msg/detail/radar_warn__type_support_c.cpp.o[0m
+[1.995s] [ 64%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interface/msg/detail/drone_detect__type_support_c.cpp.o[0m
+[1.998s] [ 66%] [32mBuilding CXX object CMakeFiles/interface__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/interface/msg/detail/drone_detect_array__type_support_c.cpp.o[0m
+[2.032s] [ 66%] Built target interface__rosidl_typesupport_c
+[2.039s] [ 68%] [32m[1mLinking C shared library libinterface__rosidl_typesupport_introspection_c.so[0m
+[2.074s] [ 68%] Built target interface__rosidl_typesupport_introspection_c
+[2.124s] [ 70%] [32m[1mLinking CXX shared library libinterface__rosidl_typesupport_cpp.so[0m
+[2.168s] [ 70%] Built target interface__rosidl_typesupport_cpp
+[2.229s] [ 72%] [32m[1mLinking CXX shared library libinterface__rosidl_typesupport_introspection_cpp.so[0m
+[2.272s] [ 72%] Built target interface__rosidl_typesupport_introspection_cpp
+[2.303s] [ 75%] [32m[1mLinking CXX shared library libinterface__rosidl_typesupport_fastrtps_c.so[0m
+[2.351s] [ 75%] Built target interface__rosidl_typesupport_fastrtps_c
+[2.376s] [ 77%] [32m[1mLinking CXX shared library libinterface__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.421s] [ 77%] Built target interface__rosidl_typesupport_fastrtps_cpp
+[2.434s] [ 77%] Built target interface
+[2.446s] [ 79%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.070s] [ 79%] Built target interface__py
+[3.082s] [ 83%] [32mBuilding C object CMakeFiles/interface__rosidl_generator_py.dir/rosidl_generator_py/interface/msg/_drone_detect_s.c.o[0m
+[3.082s] [ 83%] [32mBuilding C object CMakeFiles/interface__rosidl_generator_py.dir/rosidl_generator_py/interface/msg/_drone_detect_array_s.c.o[0m
+[3.082s] [ 85%] [32mBuilding C object CMakeFiles/interface__rosidl_generator_py.dir/rosidl_generator_py/interface/msg/_radar_warn_s.c.o[0m
+[3.178s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/interface/libinterface__rosidl_generator_py.so[0m
+[3.203s] [ 87%] Built target interface__rosidl_generator_py
+[3.216s] [ 91%] [32mBuilding C object CMakeFiles/interface__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/interface/_interface_s.ep.rosidl_typesupport_c.c.o[0m
+[3.216s] [ 91%] [32mBuilding C object CMakeFiles/interface__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/interface/_interface_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.216s] [ 93%] [32mBuilding C object CMakeFiles/interface__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/interface/_interface_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.304s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interface/interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.304s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interface/interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.304s] [100%] [32m[1mLinking C shared library rosidl_generator_py/interface/interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.329s] [100%] Built target interface__rosidl_typesupport_introspection_c__pyext
+[3.329s] [100%] Built target interface__rosidl_typesupport_c__pyext
+[3.329s] [100%] Built target interface__rosidl_typesupport_fastrtps_c__pyext
+[3.337s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/interface -- -j16 -l16
+[3.343s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/interface': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/interface
+[3.347s] -- Install configuration: "Release"
+[3.348s] -- Execute custom install script
+[3.348s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/ament_index/resource_index/rosidl_interfaces/interface
+[3.353s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__functions.h
+[3.358s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__struct.h
+[3.363s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__type_support.h
+[3.368s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__functions.h
+[3.372s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__struct.h
+[3.377s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__type_support.h
+[3.381s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__functions.h
+[3.386s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__struct.h
+[3.390s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__type_support.h
+[3.395s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/drone_detect.h
+[3.399s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/drone_detect_array.h
+[3.404s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/radar_warn.h
+[3.409s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/rosidl_generator_c__visibility_control.h
+[3.414s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/library_path.sh
+[3.420s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/library_path.dsv
+[3.426s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__rosidl_typesupport_fastrtps_c.h
+[3.431s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__rosidl_typesupport_fastrtps_c.h
+[3.436s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__rosidl_typesupport_fastrtps_c.h
+[3.441s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.446s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__rosidl_typesupport_introspection_c.h
+[3.451s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__rosidl_typesupport_introspection_c.h
+[3.455s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__rosidl_typesupport_introspection_c.h
+[3.460s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.464s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__builder.hpp
+[3.469s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__struct.hpp
+[3.473s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__traits.hpp
+[3.477s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__type_support.hpp
+[3.482s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__builder.hpp
+[3.487s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__struct.hpp
+[3.492s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__traits.hpp
+[3.496s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__type_support.hpp
+[3.500s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__builder.hpp
+[3.505s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__struct.hpp
+[3.509s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__traits.hpp
+[3.514s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__type_support.hpp
+[3.520s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/drone_detect.hpp
+[3.526s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/drone_detect_array.hpp
+[3.530s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/radar_warn.hpp
+[3.535s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.540s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__rosidl_typesupport_fastrtps_cpp.hpp
+[3.544s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__rosidl_typesupport_fastrtps_cpp.hpp
+[3.549s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__rosidl_typesupport_fastrtps_cpp.hpp
+[3.553s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.558s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect__rosidl_typesupport_introspection_cpp.hpp
+[3.562s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/drone_detect_array__rosidl_typesupport_introspection_cpp.hpp
+[3.567s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/include/interface/interface/msg/detail/radar_warn__rosidl_typesupport_introspection_cpp.hpp
+[3.572s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/pythonpath.sh
+[3.577s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/pythonpath.dsv
+[3.582s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface-1.0.0-py3.10.egg-info/PKG-INFO
+[3.586s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface-1.0.0-py3.10.egg-info/SOURCES.txt
+[3.591s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface-1.0.0-py3.10.egg-info/dependency_links.txt
+[3.597s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface-1.0.0-py3.10.egg-info/top_level.txt
+[3.602s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/__init__.py
+[3.607s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/_interface_s.ep.rosidl_typesupport_c.c
+[3.612s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/_interface_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.617s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/_interface_s.ep.rosidl_typesupport_introspection_c.c
+[3.623s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.628s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.633s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.638s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/libinterface__rosidl_generator_py.so
+[3.643s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/__init__.py
+[3.648s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_drone_detect.py
+[3.653s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_drone_detect_array.py
+[3.657s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_drone_detect_array_s.c
+[3.662s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_drone_detect_s.c
+[3.667s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_radar_warn.py
+[3.671s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_radar_warn_s.c
+[3.676s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/interface_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.676s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/interface_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.676s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/interface_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.676s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/ament_index/resource_index/rust_packages/interface
+[3.681s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/rust/Cargo.toml
+[3.686s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/rust/build.rs
+[3.691s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/rust/src/lib.rs
+[3.695s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/rust/src/msg.rs
+[3.699s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/rust/src/msg/rmw.rs
+[3.704s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/msg/DroneDetect.idl
+[3.709s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/msg/DroneDetectArray.idl
+[3.714s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/msg/RadarWarn.idl
+[3.719s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/msg/DroneDetect.msg
+[3.725s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/msg/DroneDetectArray.msg
+[3.730s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/msg/RadarWarn.msg
+[3.735s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/ament_index/resource_index/package_run_dependencies/interface
+[3.740s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/ament_index/resource_index/parent_prefix_path/interface
+[3.744s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/ament_prefix_path.sh
+[3.749s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/ament_prefix_path.dsv
+[3.754s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/path.sh
+[3.758s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/environment/path.dsv
+[3.763s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/local_setup.bash
+[3.767s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/local_setup.sh
+[3.772s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/local_setup.zsh
+[3.777s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/local_setup.dsv
+[3.782s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.dsv
+[3.786s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/ament_index/resource_index/packages/interface
+[3.791s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/rosidl_cmake-extras.cmake
+[3.795s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.800s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.804s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/ament_cmake_export_libraries-extras.cmake
+[3.809s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/ament_cmake_export_targets-extras.cmake
+[3.814s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.820s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.825s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interfaceConfig.cmake
+[3.830s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interfaceConfig-version.cmake
+[3.835s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.xml
+[3.840s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_generator_c.so
+[3.840s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_generator_c.so" to ""
+[3.840s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_fastrtps_c.so
+[3.840s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_fastrtps_c.so" to ""
+[3.840s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_introspection_c.so
+[3.841s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_introspection_c.so" to ""
+[3.841s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_c.so
+[3.841s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_c.so" to ""
+[3.841s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_fastrtps_cpp.so
+[3.841s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.841s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_introspection_cpp.so
+[3.841s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_introspection_cpp.so" to ""
+[3.841s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_cpp.so
+[3.841s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_typesupport_cpp.so" to ""
+[3.865s] Listing '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface'...
+[3.865s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/__init__.py'...
+[3.865s] Listing '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg'...
+[3.865s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/__init__.py'...
+[3.865s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_drone_detect.py'...
+[3.865s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_drone_detect_array.py'...
+[3.865s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages/interface/msg/_radar_warn.py'...
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_generator_py.so
+[3.868s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/interface/lib/libinterface__rosidl_generator_py.so" to ""
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_generator_cExport.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_generator_cExport-release.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_typesupport_fastrtps_cExport.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_typesupport_fastrtps_cExport-release.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_introspection_cExport.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_introspection_cExport-release.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_cExport.cmake
+[3.868s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_cExport-release.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_generator_cppExport.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_typesupport_fastrtps_cppExport-release.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_introspection_cppExport.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_introspection_cppExport-release.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_cppExport.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/interface__rosidl_typesupport_cppExport-release.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_generator_pyExport.cmake
+[3.869s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake/export_interface__rosidl_generator_pyExport-release.cmake
+[3.871s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/interface' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/interface

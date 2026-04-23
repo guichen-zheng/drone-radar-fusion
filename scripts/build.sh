@@ -10,6 +10,16 @@ ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 
 cd "$ROOT_DIR"
 
+# ── 检查驱动依赖是否已拉取 ────────────────────────────────────
+MISSING=false
+for dep in src/hik_camera src/livox_driver; do
+    if [ ! -d "$dep/.git" ]; then
+        echo "[build.sh] ⚠  缺少驱动：$dep（请先运行 bash scripts/deps.sh）"
+        MISSING=true
+    fi
+done
+$MISSING && { echo "[build.sh] 请先执行：bash scripts/deps.sh"; exit 1; }
+
 # 可选：--clean 删除旧的 build/install/log
 if [[ "$1" == "--clean" ]]; then
     echo "[build.sh] 清理旧编译产物..."

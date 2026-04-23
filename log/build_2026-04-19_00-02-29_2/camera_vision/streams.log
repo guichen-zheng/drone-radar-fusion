@@ -1,0 +1,28 @@
+[0.009s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/camera_vision -- -j16 -l16
+[0.037s] Consolidate compiler generated dependencies of target camera_node
+[0.046s] [ 33%] Building CXX object CMakeFiles/camera_node.dir/src/yolo_detector.cpp.o
+[8.620s] [ 66%] Linking CXX executable camera_node
+[8.985s] [100%] Built target camera_node
+[8.995s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/camera_vision -- -j16 -l16
+[8.996s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/camera_vision
+[9.002s] -- Install configuration: "Release"
+[9.002s] -- Execute custom install script
+[9.003s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib/camera_vision/camera_node
+[9.009s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/include/camera_vision/yolo_detector.hpp
+[9.015s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/launch/camera_launch.py
+[9.021s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/ament_index/resource_index/package_run_dependencies/camera_vision
+[9.026s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/ament_index/resource_index/parent_prefix_path/camera_vision
+[9.032s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/ament_prefix_path.sh
+[9.037s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/ament_prefix_path.dsv
+[9.043s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/path.sh
+[9.048s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/path.dsv
+[9.054s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.bash
+[9.059s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.sh
+[9.065s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.zsh
+[9.070s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.dsv
+[9.075s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.dsv
+[9.081s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/ament_index/resource_index/packages/camera_vision
+[9.087s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/cmake/camera_visionConfig.cmake
+[9.092s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/cmake/camera_visionConfig-version.cmake
+[9.098s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.xml
+[9.105s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/camera_vision

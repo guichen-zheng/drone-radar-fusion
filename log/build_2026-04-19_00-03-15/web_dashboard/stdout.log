@@ -1,0 +1,9 @@
+running develop
+running egg_info
+creating web_dashboard.egg-info
+writing web_dashboard.egg-info/PKG-INFO
+writing dependency_links to web_dashboard.egg-info/dependency_links.txt
+writing entry points to web_dashboard.egg-info/entry_points.txt
+writing requirements to web_dashboard.egg-info/requires.txt
+writing top-level names to web_dashboard.egg-info/top_level.txt
+writing manifest file 'web_dashboard.egg-info/SOURCES.txt'

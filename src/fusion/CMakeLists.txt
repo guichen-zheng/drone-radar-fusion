@@ -13,7 +13,6 @@ find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(yaml-cpp REQUIRED)
 find_package(interface REQUIRED)
-find_package(utils REQUIRED)
 
 # nlohmann/json（头文件库，直接包含）
 include(FetchContent)
@@ -25,7 +24,8 @@ include_directories(
     include
     ${EIGEN3_INCLUDE_DIRS}
     ${OpenCV_INCLUDE_DIRS}
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/../utils/include>
+    # utils 是 header-only 库，直接引用源码目录中的 include 路径
+    ${CMAKE_CURRENT_SOURCE_DIR}/../utils/include
 )
 
 add_executable(fusion_node
