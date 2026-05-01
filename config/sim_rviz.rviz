@@ -7,61 +7,64 @@ Visualization Manager:
   Class: ""
   Displays:
     - Class: rviz_default_plugins/Grid
-      Name: Grid
+      Name: 参考网格
       Enabled: true
       Cell Size: 5
-      Color: 160; 160; 164
-      Line Style:
-        Line Width: 0.03
-        Value: Lines
-      Normal Cell Count: 0
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
+      Color: 130; 130; 130
       Plane: XY
-      Plane Cell Count: 20
+      Plane Cell Count: 30
       Reference Frame: <Fixed Frame>
+
+    - Class: rviz_default_plugins/Axes
+      Name: 坐标系原点
+      Enabled: true
+      Length: 3
+      Radius: 0.12
+      Reference Frame: <Fixed Frame>
+
     - Class: rviz_default_plugins/MarkerArray
-      Name: 融合目标 Markers
+      Name: 无人机模型（sim_bridge）
+      Enabled: true
+      Topic:
+        Value: /sim/drone_visual
+        Depth: 10
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+
+    - Class: rviz_default_plugins/MarkerArray
+      Name: 传感器云台（sim_bridge）
+      Enabled: true
+      Topic:
+        Value: /sim/sensor_visual
+        Depth: 10
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+
+    - Class: rviz_default_plugins/MarkerArray
+      Name: 融合目标（fusion_manager）
       Enabled: true
       Topic:
         Value: /fusion/markers
-        Depth: 5
-        History Policy: Keep Last
+        Depth: 10
         Reliability Policy: Reliable
         Durability Policy: Volatile
-    - Class: rviz_default_plugins/Axes
-      Name: 原点坐标系
-      Enabled: true
-      Length: 5
-      Radius: 0.1
-      Reference Frame: <Fixed Frame>
+
   Enabled: true
   Global Options:
-    Background Color: 20; 20; 30
-    Fixed Frame: map
+    Background Color: 15; 15; 25
+    Fixed Frame: lidar
     Frame Rate: 30
   Name: root
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 80
-      Enable Stereo Rendering:
-        Stereo Eye Separation: 0.06
-        Stereo Focal Distance: 1
-        Swap Stereo Eyes: false
-        Value: false
+      Distance: 65
       Focal Point:
         X: 0
         Y: 0
         Z: 15
-      Focal Shape Fixed Size: true
-      Focal Shape Size: 0.05
-      Invert Z Axis: false
       Name: Current View
-      Near Clip Distance: 0.01
-      Pitch: 0.6
+      Pitch: 0.55
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.8
+      Yaw: 0.6

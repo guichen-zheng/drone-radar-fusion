@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="sensor_unit">
+    <static>true</static>
+    <link name="base">
+
+      <!-- ── 三脚架支腿 ×3 ─────────────────────────────────────────────── -->
+      <visual name="leg_a">
+        <pose>0.0  0.22 0.55 0 -0.3 1.047</pose>
+        <geometry><cylinder><radius>0.018</radius><length>1.20</length></cylinder></geometry>
+        <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+      </visual>
+      <visual name="leg_b">
+        <pose>0.19 -0.11 0.55 0 -0.3 -1.047</pose>
+        <geometry><cylinder><radius>0.018</radius><length>1.20</length></cylinder></geometry>
+        <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+      </visual>
+      <visual name="leg_c">
+        <pose>-0.19 -0.11 0.55 0 -0.3 3.14</pose>
+        <geometry><cylinder><radius>0.018</radius><length>1.20</length></cylinder></geometry>
+        <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+      </visual>
+
+      <!-- ── 主立柱 ───────────────────────────────────────────────────── -->
+      <visual name="pole">
+        <pose>0 0 0.65 0 0 0</pose>
+        <geometry><cylinder><radius>0.025</radius><length>1.3</length></cylinder></geometry>
+        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse></material>
+      </visual>
+
+      <!-- ── 云台顶板 ─────────────────────────────────────────────────── -->
+      <visual name="top_plate">
+        <pose>0 0 1.32 0 0 0</pose>
+        <geometry><box><size>0.28 0.20 0.04</size></box></geometry>
+        <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.25 0.25 0.25 1</diffuse></material>
+      </visual>
+
+      <!-- ── Livox Avia 雷达（深色矩形盒，中央，橙色标志线） ───────────── -->
+      <visual name="radar_body">
+        <pose>0 0 1.40 0 0 0</pose>
+        <geometry><box><size>0.16 0.16 0.06</size></box></geometry>
+        <material><ambient>0.12 0.12 0.12 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse>
+          <specular>0.5 0.5 0.5 1</specular></material>
+      </visual>
+      <!-- 橙色标志条（视觉细节） -->
+      <visual name="radar_stripe">
+        <pose>0.081 0 1.40 0 0 0</pose>
+        <geometry><box><size>0.002 0.16 0.06</size></box></geometry>
+        <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+      </visual>
+      <!-- 激光口窗（浅灰）-->
+      <visual name="radar_window">
+        <pose>0.081 0 1.40 0 0 0</pose>
+        <geometry><box><size>0.002 0.10 0.035</size></box></geometry>
+        <material><ambient>0.7 0.8 0.8 0.6</ambient><diffuse>0.7 0.8 0.8 0.6</diffuse></material>
+      </visual>
+
+      <!-- ── 相机（黑色圆柱，安装在雷达右侧） ───────────────────────── -->
+      <visual name="camera_body">
+        <pose>0 0.13 1.40 1.5708 0 0</pose>
+        <geometry><cylinder><radius>0.032</radius><length>0.09</length></cylinder></geometry>
+        <material><ambient>0.08 0.08 0.08 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse>
+          <specular>0.6 0.6 0.6 1</specular></material>
+      </visual>
+      <!-- 镜头反光圈 -->
+      <visual name="camera_lens">
+        <pose>0 0.175 1.40 1.5708 0 0</pose>
+        <geometry><cylinder><radius>0.022</radius><length>0.005</length></cylinder></geometry>
+        <material><ambient>0.05 0.05 0.2 0.8</ambient><diffuse>0.05 0.05 0.2 0.8</diffuse></material>
+      </visual>
+
+      <!-- 碰撞体（简化包围盒）-->
+      <collision name="collision">
+        <pose>0 0 0.7 0 0 0</pose>
+        <geometry><box><size>0.3 0.3 1.5</size></box></geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

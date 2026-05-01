@@ -2,7 +2,13 @@
 <sdf version="1.6">
   <world name="drone_sim">
 
-    <!-- 方向光（内联，不依赖 model://sun 网络下载） -->
+    <!-- libgazebo_ros_state 插件：提供 /gazebo/set_entity_state 服务 -->
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros><namespace>/gazebo</namespace></ros>
+      <update_rate>100.0</update_rate>
+    </plugin>
+
+    <!-- 方向光 -->
     <light type="directional" name="sun">
       <cast_shadows>true</cast_shadows>
       <pose>0 0 100 0 0 0</pose>
@@ -12,21 +18,16 @@
       <direction>-0.5 0.5 -1.0</direction>
     </light>
 
-    <!-- 地面（内联，不依赖 model://ground_plane 网络下载） -->
+    <!-- 地面 -->
     <model name="ground_plane">
       <static>true</static>
       <link name="link">
         <collision name="collision">
-          <geometry>
-            <plane><normal>0 0 1</normal><size>500 500</size></plane>
-          </geometry>
-          <surface><friction><ode><mu>100</mu><mu2>50</mu2></ode></friction></surface>
+          <geometry><plane><normal>0 0 1</normal><size>500 500</size></plane></geometry>
         </collision>
         <visual name="visual">
           <cast_shadows>false</cast_shadows>
-          <geometry>
-            <plane><normal>0 0 1</normal><size>500 500</size></plane>
-          </geometry>
+          <geometry><plane><normal>0 0 1</normal><size>500 500</size></plane></geometry>
           <material>
             <ambient>0.35 0.45 0.35 1</ambient>
             <diffuse>0.35 0.45 0.35 1</diffuse>
@@ -35,11 +36,18 @@
       </link>
     </model>
 
-    <!-- 无人机（初始位置，由 sim_bridge 通过 SetEntityState 实时更新） -->
+    <!-- 无人机（由 sim_bridge 通过 set_entity_state 实时移动） -->
     <include>
       <uri>model://drone</uri>
       <name>drone</name>
       <pose>20 0 20 0 0 0</pose>
+    </include>
+
+    <!-- 传感器云台（固定在原点，雷达+相机挂载平台） -->
+    <include>
+      <uri>model://sensor_unit</uri>
+      <name>sensor_unit</name>
+      <pose>0 0 0 0 0 0</pose>
     </include>
 
     <!-- 物理设置 -->

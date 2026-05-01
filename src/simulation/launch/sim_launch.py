@@ -99,7 +99,16 @@ def generate_launch_description():
             )
         ]),
 
-        # ── 5. RViz2（7s 后，显示 /fusion/markers 3D 目标标记）──────────────
+        # ── 5. 静态 TF：lidar = map（让 RViz 中 fusion/markers 与 sim 标记共存）─
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='lidar_map_tf',
+            arguments=['0', '0', '0', '0', '0', '0', 'map', 'lidar'],
+            output='screen',
+        ),
+
+        # ── 6. RViz2（7s 后）──────────────────────────────────────────────────
         TimerAction(period=7.0, actions=[
             Node(
                 package='rviz2',
