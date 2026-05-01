@@ -44,8 +44,8 @@ def generate_launch_description():
             description='启动 Gazebo GUI（true=开启 3D 界面，false=仅后台服务）'
         ),
         DeclareLaunchArgument(
-            'map_radius', default_value='500.0',
-            description='无人机轨迹半径（米）。地图展示用 500+，Gazebo 视觉用 20'
+            'map_radius', default_value='50.0',
+            description='无人机轨迹半径（米）。50m=Gazebo+地图兼顾，500m=地图清晰可见'
         ),
 
         # ── 0. 环境变量 ────────────────────────────────────────────────────────
