@@ -69,7 +69,7 @@ def generate_launch_description():
                 name='sim_bridge',
                 output='screen',
                 parameters=[{
-                    'radius': 10.0,
+                    'radius': 20.0,
                     'height': 8.0,
                     'period': 40.0,
                     'drone_model_name': 'drone',
