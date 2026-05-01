@@ -3,7 +3,8 @@
   <model name="drone">
     <static>false</static>
     <link name="base_link">
-      <gravity>false</gravity>  <!-- 禁用重力，由 sim_bridge 直接控制位置 -->
+      <gravity>0</gravity>
+      <kinematic>1</kinematic>
       <inertial>
         <mass>1.5</mass>
         <inertia><ixx>0.03</ixx><iyy>0.03</iyy><izz>0.05</izz>

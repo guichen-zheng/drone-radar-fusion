@@ -28,16 +28,20 @@ from interface.msg import DroneDetect, DroneDetectArray
 
 # ── 辅助函数 ────────────────────────────────────────────────────────────────────
 def _color(r, g, b, a=1.0):
-    c = ColorRGBA(); c.r = r; c.g = g; c.b = b; c.a = a; return c
+    c = ColorRGBA()
+    c.r = float(r); c.g = float(g); c.b = float(b); c.a = float(a)
+    return c
 
 def _scale(x, y, z):
-    s = Vector3(); s.x = x; s.y = y; s.z = z; return s
+    s = Vector3()
+    s.x = float(x); s.y = float(y); s.z = float(z)
+    return s
 
 def _pose(x, y, z, qx=0., qy=0., qz=0., qw=1.):
     p = Pose()
-    p.position.x = x; p.position.y = y; p.position.z = z
-    p.orientation.x = qx; p.orientation.y = qy
-    p.orientation.z = qz; p.orientation.w = qw
+    p.position.x = float(x); p.position.y = float(y); p.position.z = float(z)
+    p.orientation.x = float(qx); p.orientation.y = float(qy)
+    p.orientation.z = float(qz); p.orientation.w = float(qw)
     return p
 
 
