@@ -44,6 +44,17 @@ def _pose(x, y, z, qx=0., qy=0., qz=0., qw=1.):
     p.orientation.z = float(qz); p.orientation.w = float(qw)
     return p
 
+def _rpy_to_quat(roll, pitch, yaw):
+    """RPY 欧拉角转四元数（内旋 XYZ 顺序）"""
+    cr, sr = math.cos(roll/2),  math.sin(roll/2)
+    cp, sp = math.cos(pitch/2), math.sin(pitch/2)
+    cy, sy = math.cos(yaw/2),   math.sin(yaw/2)
+    qw = cr*cp*cy + sr*sp*sy
+    qx = sr*cp*cy - cr*sp*sy
+    qy = cr*sp*cy + sr*cp*sy
+    qz = cr*cp*sy - sr*sp*cy
+    return float(qx), float(qy), float(qz), float(qw)
+
 
 class SimBridge(Node):
     def __init__(self):
@@ -201,11 +212,22 @@ class SimBridge(Node):
         # 镜头蓝色圈
         ma.markers.append(mk(5, CYL, 0, 0.175, 1.40, 0.044, 0.044, 0.005,
                               0.1, 0.1, 0.8, 0.9, qx=0.707, qw=0.707))
-        # 三脚架腿 ×3
-        legs = [(0, 0.22, 0.9), (0.19, -0.11, 0.9), (-0.19, -0.11, 0.9)]
-        for i, (lx, ly, lz) in enumerate(legs):
-            ma.markers.append(mk(6+i, CYL, lx, ly, lz*0.5, 0.036, 0.036, lz,
-                                  0.3, 0.3, 0.3))
+        # 三脚架腿 ×3：与 Gazebo world 一致，roll=0.983，yaw 相差 120°
+        # 中心坐标从立柱底(0,0,0.3)到地面脚点(0,0.45,0)等三方向计算得出
+        LEG_ROLL = 0.983
+        leg_defs = [
+            (0.0,   0.225,  0.15, LEG_ROLL, 0, 0.0),      # +Y
+            (-0.195, -0.112, 0.15, LEG_ROLL, 0, 2.094),   # 120°
+            (0.195, -0.112,  0.15, LEG_ROLL, 0, 4.189),   # 240°
+        ]
+        for i, (lx, ly, lz, r, p, y) in enumerate(leg_defs):
+            qx, qy, qz, qw = _rpy_to_quat(r, p, y)
+            m = Marker(); m.header = hdr; m.ns = 'sensor'; m.id = 6+i
+            m.type = CYL; m.action = Marker.ADD
+            m.pose = _pose(lx, ly, lz, qx, qy, qz, qw)
+            m.scale = _scale(0.036, 0.036, 0.54)
+            m.color = _color(0.3, 0.3, 0.3)
+            ma.markers.append(m)
         # 文字标签
         txt = mk(10, TEXT, 0, 0, 1.6, 0.0, 0.0, 0.15, 0.3, 1.0, 0.3)
         txt.text = '传感器'
