@@ -72,20 +72,23 @@
           <geometry><cylinder><radius>0.032</radius><length>0.09</length></cylinder></geometry>
           <material><ambient>0.05 0.05 0.05 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
         </visual>
-        <!-- 三脚架腿 x3 -->
+        <!-- 三脚架腿 x3（从立柱底部 z=0.3 向外张开至地面 0.45m 处）-->
+        <!-- leg_a: 向 +Y 方向张开，roll=+0.98 rad（57°）-->
         <visual name="leg_a">
-          <pose>0.0 0.20 0.45 0.3 0 0</pose>
-          <geometry><cylinder><radius>0.018</radius><length>1.0</length></cylinder></geometry>
+          <pose>0.0 0.225 0.15 0.98 0 0</pose>
+          <geometry><cylinder><radius>0.018</radius><length>0.54</length></cylinder></geometry>
           <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
         </visual>
+        <!-- leg_b: 向 (-X,-Y) 方向张开 -->
         <visual name="leg_b">
-          <pose>0.17 -0.10 0.45 0.3 0 -1.047</pose>
-          <geometry><cylinder><radius>0.018</radius><length>1.0</length></cylinder></geometry>
+          <pose>-0.195 -0.112 0.15 -0.49 -0.85 0</pose>
+          <geometry><cylinder><radius>0.018</radius><length>0.54</length></cylinder></geometry>
           <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
         </visual>
+        <!-- leg_c: 向 (+X,-Y) 方向张开 -->
         <visual name="leg_c">
-          <pose>-0.17 -0.10 0.45 0.3 0 1.047</pose>
-          <geometry><cylinder><radius>0.018</radius><length>1.0</length></cylinder></geometry>
+          <pose>0.195 -0.112 0.15 -0.49 0.85 0</pose>
+          <geometry><cylinder><radius>0.018</radius><length>0.54</length></cylinder></geometry>
           <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
         </visual>
       </link>
@@ -95,7 +98,7 @@
     <include>
       <uri>model://drone</uri>
       <name>drone</name>
-      <pose>20 0 20 0 0 0</pose>
+      <pose>10 0 8 0 0 0</pose>
     </include>
 
     <!-- 物理设置 -->
