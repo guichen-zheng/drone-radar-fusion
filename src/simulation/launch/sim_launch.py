@@ -38,10 +38,14 @@ def generate_launch_description():
 
     return LaunchDescription([
 
-        # ── GUI 开关（默认关闭，避免黑色窗口遮挡桌面）──────────────────────────
+        # ── 启动参数 ────────────────────────────────────────────────────────────
         DeclareLaunchArgument(
             'gui', default_value='false',
             description='启动 Gazebo GUI（true=开启 3D 界面，false=仅后台服务）'
+        ),
+        DeclareLaunchArgument(
+            'map_radius', default_value='500.0',
+            description='无人机轨迹半径（米）。地图展示用 500+，Gazebo 视觉用 20'
         ),
 
         # ── 0. 环境变量 ────────────────────────────────────────────────────────
@@ -69,7 +73,7 @@ def generate_launch_description():
                 name='sim_bridge',
                 output='screen',
                 parameters=[{
-                    'radius': 20.0,
+                    'radius': LaunchConfiguration('map_radius'),
                     'height': 8.0,
                     'period': 40.0,
                     'drone_model_name': 'drone',
