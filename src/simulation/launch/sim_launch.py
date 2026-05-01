@@ -44,11 +44,10 @@ def generate_launch_description():
             description='启动 Gazebo GUI（true=开启 3D 界面，false=仅后台服务）'
         ),
 
-        # ── 0. 设置 Gazebo 模型路径 ────────────────────────────────────────────
-        SetEnvironmentVariable(
-            name='GAZEBO_MODEL_PATH',
-            value=models_dir
-        ),
+        # ── 0. 环境变量 ────────────────────────────────────────────────────────
+        SetEnvironmentVariable(name='GAZEBO_MODEL_PATH', value=models_dir),
+        # 修复 OGRE 渲染黑屏（ros2 launch 子进程不继承 shell 渲染环境）
+        SetEnvironmentVariable(name='OGRE_RTT_MODE', value='Copy'),
 
         # ── 1. 启动 Gazebo（gui:=false 时只跑 gzserver，无黑色窗口）────────────
         IncludeLaunchDescription(
