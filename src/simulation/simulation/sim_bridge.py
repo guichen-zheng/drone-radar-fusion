@@ -67,7 +67,7 @@ class SimBridge(Node):
 
         # ── Gazebo SetEntityState 服务客户端 ─────────────────────────────────
         self.gazebo_cli = self.create_client(SetEntityState, '/gazebo/set_entity_state')
-        if not self.gazebo_cli.wait_for_service(timeout_sec=5.0):
+        if not self.gazebo_cli.wait_for_service(timeout_sec=12.0):
             self.get_logger().warn(
                 '[SimBridge] /gazebo/set_entity_state 不可用，Gazebo 模型不会移动')
             self.gazebo_ok = False

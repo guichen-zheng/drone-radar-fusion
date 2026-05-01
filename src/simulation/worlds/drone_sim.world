@@ -14,7 +14,8 @@
       <pose>0 0 100 0 0 0</pose>
       <diffuse>1.0 1.0 1.0 1</diffuse>
       <specular>0.3 0.3 0.3 1</specular>
-      <attenuation><range>1000</range><constant>0.9</constant><linear>0.01</linear><quadratic>0.001</quadratic></attenuation>
+      <attenuation><range>1000</range><constant>0.9</constant>
+        <linear>0.01</linear><quadratic>0.001</quadratic></attenuation>
       <direction>-0.5 0.5 -1.0</direction>
     </light>
 
@@ -36,18 +37,65 @@
       </link>
     </model>
 
+    <!-- 传感器云台（内联简化版，避免 model:// 加载慢） -->
+    <model name="sensor_unit">
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      <link name="link">
+        <!-- 立柱 -->
+        <visual name="pole">
+          <pose>0 0 0.65 0 0 0</pose>
+          <geometry><cylinder><radius>0.025</radius><length>1.3</length></cylinder></geometry>
+          <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse></material>
+        </visual>
+        <!-- 顶板 -->
+        <visual name="top">
+          <pose>0 0 1.32 0 0 0</pose>
+          <geometry><box><size>0.28 0.20 0.04</size></box></geometry>
+          <material><ambient>0.2 0.2 0.2 1</ambient><diffuse>0.25 0.25 0.25 1</diffuse></material>
+        </visual>
+        <!-- 雷达（深灰矩形） -->
+        <visual name="radar">
+          <pose>0 0 1.40 0 0 0</pose>
+          <geometry><box><size>0.16 0.16 0.06</size></box></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
+        </visual>
+        <!-- 雷达橙色标志 -->
+        <visual name="radar_stripe">
+          <pose>0.081 0 1.40 0 0 0</pose>
+          <geometry><box><size>0.002 0.16 0.06</size></box></geometry>
+          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
+        </visual>
+        <!-- 相机（黑色圆柱） -->
+        <visual name="camera">
+          <pose>0 0.13 1.40 1.5708 0 0</pose>
+          <geometry><cylinder><radius>0.032</radius><length>0.09</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <!-- 三脚架腿 x3 -->
+        <visual name="leg_a">
+          <pose>0.0 0.20 0.45 0.3 0 0</pose>
+          <geometry><cylinder><radius>0.018</radius><length>1.0</length></cylinder></geometry>
+          <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+        </visual>
+        <visual name="leg_b">
+          <pose>0.17 -0.10 0.45 0.3 0 -1.047</pose>
+          <geometry><cylinder><radius>0.018</radius><length>1.0</length></cylinder></geometry>
+          <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+        </visual>
+        <visual name="leg_c">
+          <pose>-0.17 -0.10 0.45 0.3 0 1.047</pose>
+          <geometry><cylinder><radius>0.018</radius><length>1.0</length></cylinder></geometry>
+          <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+
     <!-- 无人机（由 sim_bridge 通过 set_entity_state 实时移动） -->
     <include>
       <uri>model://drone</uri>
       <name>drone</name>
       <pose>20 0 20 0 0 0</pose>
-    </include>
-
-    <!-- 传感器云台（固定在原点，雷达+相机挂载平台） -->
-    <include>
-      <uri>model://sensor_unit</uri>
-      <name>sensor_unit</name>
-      <pose>0 0 0 0 0 0</pose>
     </include>
 
     <!-- 物理设置 -->

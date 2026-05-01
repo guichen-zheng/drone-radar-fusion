@@ -61,8 +61,8 @@ def generate_launch_description():
             }.items()
         ),
 
-        # ── 2. sim_bridge（5s 后，给 Gazebo 足够时间加载 world）────────────
-        TimerAction(period=5.0, actions=[
+        # ── 2. sim_bridge（8s 后，给 gzserver 充足时间完成初始化）──────────
+        TimerAction(period=8.0, actions=[
             Node(
                 package='simulation',
                 executable='sim_bridge',
