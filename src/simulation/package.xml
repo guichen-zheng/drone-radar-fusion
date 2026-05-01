@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>simulation</name>
+  <version>0.1.0</version>
+  <description>Gazebo simulation bridge for drone-radar-fusion (sim branch)</description>
+  <maintainer email="sim@example.com">sim</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_msgs</depend>
+  <depend>interface</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

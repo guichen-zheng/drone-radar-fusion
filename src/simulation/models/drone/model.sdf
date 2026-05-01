@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="drone">
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.02</ixx><iyy>0.02</iyy><izz>0.04</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+
+      <!-- 机身：红色扁平立方体 -->
+      <visual name="body">
+        <geometry>
+          <box><size>0.50 0.50 0.15</size></box>
+        </geometry>
+        <material>
+          <ambient>0.9 0.1 0.1 1</ambient>
+          <diffuse>0.9 0.1 0.1 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+
+      <!-- 旋翼 × 4（白色圆柱，偏移在四个角）-->
+      <visual name="rotor_fl">
+        <pose>0.22  0.22 0.06 0 0 0</pose>
+        <geometry><cylinder><radius>0.12</radius><length>0.02</length></cylinder></geometry>
+        <material><ambient>0.9 0.9 0.9 1</ambient><diffuse>0.9 0.9 0.9 1</diffuse></material>
+      </visual>
+      <visual name="rotor_fr">
+        <pose>0.22 -0.22 0.06 0 0 0</pose>
+        <geometry><cylinder><radius>0.12</radius><length>0.02</length></cylinder></geometry>
+        <material><ambient>0.9 0.9 0.9 1</ambient><diffuse>0.9 0.9 0.9 1</diffuse></material>
+      </visual>
+      <visual name="rotor_rl">
+        <pose>-0.22  0.22 0.06 0 0 0</pose>
+        <geometry><cylinder><radius>0.12</radius><length>0.02</length></cylinder></geometry>
+        <material><ambient>0.9 0.9 0.9 1</ambient><diffuse>0.9 0.9 0.9 1</diffuse></material>
+      </visual>
+      <visual name="rotor_rr">
+        <pose>-0.22 -0.22 0.06 0 0 0</pose>
+        <geometry><cylinder><radius>0.12</radius><length>0.02</length></cylinder></geometry>
+        <material><ambient>0.9 0.9 0.9 1</ambient><diffuse>0.9 0.9 0.9 1</diffuse></material>
+      </visual>
+
+      <!-- 碰撞体（简单包围盒） -->
+      <collision name="collision">
+        <geometry><box><size>0.60 0.60 0.15</size></box></geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>

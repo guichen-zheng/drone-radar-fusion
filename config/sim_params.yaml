@@ -1,0 +1,17 @@
+# 仿真专用参数（sim 分支使用，覆盖 params.yaml 中的 fusion_manager 部分）
+fusion_manager:
+  ros__parameters:
+    calib_yaml:         "config/sim_calib.yaml"
+    confirm_thresh:     2        # 仿真帧率稳定，2 帧即确认目标
+    max_miss_frames:    10       # 允许更多漏帧
+    match_dist_thresh:  300.0    # 像素距离阈值放宽（仿真 bbox 为近似值）
+    match_iou_thresh:   0.01     # IoU 阈值放宽
+    warn_confidence:    0.70
+    warn_level:         "HIGH"
+
+web_dashboard_node:
+  ros__parameters:
+    host: "0.0.0.0"
+    port: 5000
+    origin_lat: 39.9000
+    origin_lng: 116.4000
