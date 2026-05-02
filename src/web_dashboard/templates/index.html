@@ -132,6 +132,34 @@
   /* ── 传感器连接状态 ── */
   .sensor-status { font-size: 12px; white-space: nowrap; color: #f85149; }
   .sensor-status.ok { color: #3fb950; }
+
+  /* ── 位姿未设置提示遮罩 ── */
+  #pose-prompt {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(22,27,34,.96); border: 2px solid #f0883e; border-radius: 8px;
+    padding: 18px 26px; z-index: 1002; text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,.6); pointer-events: auto;
+    max-width: 420px;
+  }
+  #pose-prompt .prompt-title {
+    color: #f0883e; font-size: 15px; font-weight: bold; margin-bottom: 6px;
+  }
+  #pose-prompt .prompt-body {
+    color: #e6edf3; font-size: 13px; line-height: 1.6;
+  }
+  #pose-prompt .prompt-body b { color: #58a6ff; }
+  #pose-prompt .prompt-ok {
+    margin-top: 12px; padding: 6px 22px;
+    background: #1f6feb; border: 1px solid #58a6ff; border-radius: 4px;
+    color: #fff; cursor: pointer; font-size: 13px; font-weight: bold;
+    transition: background .15s;
+  }
+  #pose-prompt .prompt-ok:hover { background: #388bfd; }
+  #pose-btn.pulse { animation: btnPulse 1.4s infinite; }
+  @keyframes btnPulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(240,136,62,.7); }
+    50%     { box-shadow: 0 0 0 8px rgba(240,136,62,0); }
+  }
 </style>
 </head>
 <body>
@@ -163,6 +191,15 @@
     <svg id="drag-arrow-svg"></svg>
     <!-- 位姿设置操作提示 -->
     <div id="pose-hint">按住鼠标拖拽以设置传感器朝向，松开确认</div>
+    <!-- 未设置位姿前的引导提示 -->
+    <div id="pose-prompt">
+      <div class="prompt-title">⚠ 请先设置传感器位姿</div>
+      <div class="prompt-body">
+        在显示无人机位置之前，需要先指定传感器的<b>位置</b>和<b>朝向</b>。<br>
+        点击顶部的 <b>📍 设置传感器位姿</b> 按钮，然后在地图上按住鼠标拖拽即可。
+      </div>
+      <button class="prompt-ok" onclick="dismissPosePrompt()">确定</button>
+    </div>
   </div>
 
   <div id="panel">
@@ -222,6 +259,33 @@ function droneIcon(z) {
 const droneMarkers = {};   // drone_id → L.marker
 const droneCards   = {};   // drone_id → DOM element
 
+// ── 传感器位姿是否已设置（未设置前不显示无人机）─────────────────────────
+let sensorPoseReady = false;
+
+function dismissPosePrompt() {
+  document.getElementById('pose-prompt').style.display = 'none';
+}
+
+function setSensorPoseReady(ready) {
+  sensorPoseReady = ready;
+  const prompt = document.getElementById('pose-prompt');
+  const btn    = document.getElementById('pose-btn');
+  if (ready) {
+    prompt.style.display = 'none';
+    btn.classList.remove('pulse');
+  } else {
+    prompt.style.display = 'block';
+    btn.classList.add('pulse');
+    // 清除已有的无人机标记和卡片
+    Object.keys(droneMarkers).forEach(id => {
+      map.removeLayer(droneMarkers[id]);
+      delete droneMarkers[id];
+    });
+    document.getElementById('drone-list').innerHTML = '';
+    document.getElementById('count').textContent = 0;
+  }
+}
+
 // ── Socket.IO 连接 ────────────────────────────────────────────────────────
 const socket = io();
 
@@ -241,6 +305,9 @@ socket.on('sensor_status', (data) => {
 
 // ── 接收无人机坐标更新 ────────────────────────────────────────────────────
 socket.on('drone_update', (data) => {
+  // 未设置传感器位姿前忽略所有无人机数据
+  if (!sensorPoseReady) return;
+
   const activIds = new Set();
 
   data.drones.forEach(d => {
@@ -319,6 +386,7 @@ function updateCard(d) {
 
 // ── 接收报警通知 ──────────────────────────────────────────────────────────
 socket.on('drone_warn', (data) => {
+  if (!sensorPoseReady) return;
   showWarnToast(data);
   // 对应卡片变红
   const card = document.getElementById(`card-${data.drone_id}`);
@@ -515,6 +583,7 @@ function confirmSensorPose(latlng, heading) {
   renderSensorArrow(latlng, heading);
   map.panTo(latlng);
   socket.emit('set_sensor_pose', { lat: latlng.lat, lng: latlng.lng, heading: heading });
+  setSensorPoseReady(true);
 }
 
 // ── 地图鼠标事件绑定 ──────────────────────────────────────────────────────
@@ -555,6 +624,9 @@ socket.on('connect', () => {
 socket.on('sensor_pose_current', (data) => {
   if (data && data.lat != null && data.lng != null && data.heading != null) {
     renderSensorArrow(L.latLng(data.lat, data.lng), data.heading);
+    setSensorPoseReady(true);
+  } else {
+    setSensorPoseReady(false);
   }
 });
 

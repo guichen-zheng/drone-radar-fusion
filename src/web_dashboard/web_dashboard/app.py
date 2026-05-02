@@ -160,9 +160,9 @@ def on_set_sensor_pose(data):
 
 @sio.on('request_sensor_pose')
 def on_request_sensor_pose():
-    """新客户端连接时请求当前位姿，用于恢复地图上的传感器箭头。"""
-    if _sensor_pose is not None:
-        sio.emit('sensor_pose_current', _sensor_pose)
+    """新客户端连接时请求当前位姿，用于恢复地图上的传感器箭头。
+    无论是否已设置都回复一次，前端凭此判断是否需要弹出"请先设置位姿"提示。"""
+    sio.emit('sensor_pose_current', _sensor_pose if _sensor_pose is not None else {})
 
 
 @sio.on('request_sensor_status')

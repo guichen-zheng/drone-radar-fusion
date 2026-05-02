@@ -191,8 +191,10 @@ bash scripts/build.sh
 source /opt/ros/humble/setup.bash
 source install/setup.bash
 
-# 一键启动全系统（推荐）
-ros2 launch launch/full_system_launch.py
+ros2 launch launch/full_system_launch.py'
+
+# 启动仿真环境
+ros2 launch simulation sim_launch.py gui:=true
 ```
 
 各组件启动顺序（由 launch 文件控制延迟）：

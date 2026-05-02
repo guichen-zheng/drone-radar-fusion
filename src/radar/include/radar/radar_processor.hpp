@@ -23,6 +23,7 @@ struct ClusterResult {
     float depth;                 // 包围盒深度
     int point_count;             // 聚类点数
     bool is_dynamic;             // 是否为动态目标
+    pcl::PointIndices indices;  // 该聚类对应的点索引（指向 clean_cloud）
 };
 
 class RadarProcessor : public rclcpp::Node
@@ -62,6 +63,10 @@ private:
     // 7. 发布结果
     void publishResults(const std::vector<ClusterResult> & candidates,
                         const std_msgs::msg::Header & header);
+
+    // 8. 发布无人机候选包围盒（RViz 可视化）
+    void publishClusterMarkers(const std::vector<ClusterResult> & candidates,
+                               const std_msgs::msg::Header & header);
 
     // ── 地图加载 ───────────────────────────────────────────
     bool loadMapPCD(const std::string & pcd_path);

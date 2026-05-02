@@ -115,38 +115,19 @@ class SimBridge(Node):
         ma = MarkerArray()
         hdr = Header(); hdr.stamp = stamp; hdr.frame_id = 'lidar'
 
-        def mk(mid, mtype, px, py, pz, sx, sy, sz, r, g, b, a=1.0, qx=0.,qy=0.,qz=0.,qw=1.):
-            m = Marker(); m.header = hdr; m.ns = 'drone'; m.id = mid
-            m.type = mtype; m.action = Marker.ADD
-            m.pose = _pose(px, py, pz, qx, qy, qz, qw)
-            m.scale = _scale(sx, sy, sz)
-            m.color = _color(r, g, b, a)
-            m.lifetime.sec = 1          # 1s 超时自动消失，防止残影
-            return m
-
-        CUBE = Marker.CUBE; CYL = Marker.CYLINDER
-
-        # 机身
-        ma.markers.append(mk(0, CUBE, x, y, z, 0.28, 0.28, 0.10, 0.2, 0.2, 0.2))
-
-        # 4 条机臂（用细长方体，沿 45° 旋转）
-        sq2 = math.sqrt(2) / 2
-        for i, (dx, dy) in enumerate([(1,1),(1,-1),(-1,1),(-1,-1)]):
-            ax = x + dx*0.14; ay = y + dy*0.14
-            qz = sq2 if dx*dy > 0 else -sq2
-            ma.markers.append(mk(1+i, CUBE, ax, ay, z+0.01,
-                                  0.36, 0.04, 0.04, 0.18, 0.18, 0.18,
-                                  qz=qz, qw=sq2))
-
-        # 4 个螺旋桨（白色扁圆柱）
-        arm = 0.26
-        for i, (dx, dy) in enumerate([(1,1),(1,-1),(-1,1),(-1,-1)]):
-            ma.markers.append(mk(5+i, CYL,
-                                  x+dx*arm, y+dy*arm, z+0.07,
-                                  0.30, 0.30, 0.015, 0.9, 0.9, 0.9, 0.85))
-
-        # 机身底部红色标记（醒目识别）
-        ma.markers.append(mk(9, CYL, x, y, z-0.04, 0.08, 0.08, 0.04, 1.0, 0.2, 0.0))
+        # 与 Gazebo 同款 mesh + 同样的 4x 缩放，保证两端视觉一致
+        m = Marker()
+        m.header = hdr
+        m.ns = 'drone'; m.id = 0
+        m.type = Marker.MESH_RESOURCE
+        m.action = Marker.ADD
+        m.mesh_resource = 'package://simulation/models/drone/meshes/quadrotor.dae'
+        m.mesh_use_embedded_materials = True
+        m.pose = _pose(x, y, z)
+        m.scale = _scale(4.0, 4.0, 4.0)
+        m.color = _color(1.0, 1.0, 1.0, 1.0)   # mesh 自带贴图，颜色仅作 fallback
+        m.lifetime.sec = 1
+        ma.markers.append(m)
 
         self.pub_drone_vis.publish(ma)
 

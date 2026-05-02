@@ -97,7 +97,65 @@ void RadarProcessor::pointCloudCallback(
             clean_cloud->size(), clusters.size(), candidates.size());
     }
 
+    // 把候选无人机的点云强度抬高到 250，便于在 RViz 用 intensity 着色时高亮
+    pcl::PointCloud<pcl::PointXYZI>::Ptr highlight_cloud(new pcl::PointCloud<pcl::PointXYZI>(*clean_cloud));
+    for (const auto & c : candidates) {
+        for (int idx : c.indices.indices) {
+            if (idx >= 0 && idx < static_cast<int>(highlight_cloud->size())) {
+                highlight_cloud->points[idx].intensity = 250.0f;
+            }
+        }
+    }
+
+    // 发布动态点云（候选目标点已被高亮）
+    sensor_msgs::msg::PointCloud2 cloud_msg;
+    pcl::toROSMsg(*highlight_cloud, cloud_msg);
+    cloud_msg.header = msg->header;
+    pub_dynamic_cloud_->publish(cloud_msg);
+
+    // 发布无人机包围盒标记
+    publishClusterMarkers(candidates, msg->header);
+
     publishResults(candidates, msg->header);
+}
+
+void RadarProcessor::publishClusterMarkers(
+    const std::vector<ClusterResult> & candidates,
+    const std_msgs::msg::Header & header)
+{
+    visualization_msgs::msg::MarkerArray ma;
+
+    // 先发 DELETEALL 清掉上一帧的旧 marker
+    visualization_msgs::msg::Marker clr;
+    clr.header = header;
+    clr.ns = "drone_candidates";
+    clr.action = visualization_msgs::msg::Marker::DELETEALL;
+    ma.markers.push_back(clr);
+
+    for (size_t i = 0; i < candidates.size(); ++i) {
+        const auto & c = candidates[i];
+
+        // 半透明无人机 mesh：和 Gazebo / sim_bridge 同一个模型，叠在聚类点上
+        visualization_msgs::msg::Marker mesh;
+        mesh.header = header;
+        mesh.ns = "drone_candidates";
+        mesh.id = static_cast<int>(i);
+        mesh.type = visualization_msgs::msg::Marker::MESH_RESOURCE;
+        mesh.action = visualization_msgs::msg::Marker::ADD;
+        mesh.mesh_resource = "package://simulation/models/drone/meshes/quadrotor.dae";
+        mesh.mesh_use_embedded_materials = false;   // 用统一的颜色（淡青色幽灵）
+        mesh.pose.position.x = c.centroid.x;
+        mesh.pose.position.y = c.centroid.y;
+        mesh.pose.position.z = c.centroid.z;
+        mesh.pose.orientation.w = 1.0;
+        mesh.scale.x = mesh.scale.y = mesh.scale.z = 4.0;   // 匹配 Gazebo 的 4x 缩放
+        mesh.color.r = 0.4f; mesh.color.g = 0.9f; mesh.color.b = 1.0f;
+        mesh.color.a = 0.45f;       // 透明，里面的真实雷达点仍然可见
+        mesh.lifetime = rclcpp::Duration::from_seconds(0.5);
+        ma.markers.push_back(mesh);
+    }
+
+    pub_markers_->publish(ma);
 }
 
 pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::voxelFilter(
@@ -182,6 +240,7 @@ std::vector<ClusterResult> RadarProcessor::euclideanClustering(
         float max_x = -1e6, max_y = -1e6, max_z = -1e6;
         float sum_x = 0, sum_y = 0, sum_z = 0;
         res.point_count = indices.indices.size();
+        res.indices = indices;
 
         for (int idx : indices.indices) {
             const auto & pt = cloud->points[idx];

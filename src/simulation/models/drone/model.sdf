@@ -23,9 +23,11 @@
         </geometry>
       </visual>
 
-      <!-- 碰撞体（保持原样大小，不参与渲染） -->
+      <!-- 碰撞体：原本 0.6m 太扁，雷达只扫到一条横线；加高到 1.5m 让雷达
+           的垂直射线能多打到几层，点云看起来更立体。kinematic+无重力 不影响
+           物理仿真，只影响 ray_sensor 的击中范围。 -->
       <collision name="collision">
-        <geometry><box><size>2.5 2.5 0.6</size></box></geometry>
+        <geometry><box><size>2.5 2.5 1.5</size></box></geometry>
       </collision>
     </link>
   </model>
