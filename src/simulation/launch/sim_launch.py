@@ -44,8 +44,8 @@ def generate_launch_description():
             description='启动 Gazebo GUI（true=开启 3D 界面，false=仅后台服务）'
         ),
         DeclareLaunchArgument(
-            'map_radius', default_value='50.0',
-            description='无人机轨迹半径（米）。50m=Gazebo+地图兼顾，500m=地图清晰可见'
+            'map_radius', default_value='22.0',
+            description='中间机的轨迹半径（米）。三机编队：内机 R-7 / 中机 R / 外机 R+6'
         ),
 
         # ── 0. 环境变量 ────────────────────────────────────────────────────────
@@ -73,10 +73,9 @@ def generate_launch_description():
                 name='sim_bridge',
                 output='screen',
                 parameters=[{
+                    # 中间机的半径（近/远机自动 ±7m / +6m）
                     'radius': LaunchConfiguration('map_radius'),
-                    'height': 8.0,
                     'period': 40.0,
-                    'drone_model_name': 'drone',
                 }]
             )
         ]),

@@ -23,11 +23,16 @@
         </geometry>
       </visual>
 
-      <!-- 碰撞体：原本 0.6m 太扁，雷达只扫到一条横线；加高到 1.5m 让雷达
-           的垂直射线能多打到几层，点云看起来更立体。kinematic+无重力 不影响
-           物理仿真，只影响 ray_sensor 的击中范围。 -->
+      <!-- 碰撞体改用真实 mesh：Gazebo 的 ray_sensor 只跟 collision 相交，
+           用 box 的话点云就是长方形；改成与 visual 同一个 quadrotor.dae 后，
+           射线会真打到机身/机臂/螺旋桨表面，点云轮廓贴近无人机外形。 -->
       <collision name="collision">
-        <geometry><box><size>2.5 2.5 1.5</size></box></geometry>
+        <geometry>
+          <mesh>
+            <uri>model://drone/meshes/quadrotor.dae</uri>
+            <scale>4.0 4.0 4.0</scale>
+          </mesh>
+        </geometry>
       </collision>
     </link>
   </model>

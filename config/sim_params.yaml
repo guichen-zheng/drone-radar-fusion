@@ -6,6 +6,9 @@ fusion_manager:
     max_miss_frames:    10       # 允许更多漏帧
     match_dist_thresh:  300.0    # 像素距离阈值放宽（仿真 bbox 为近似值）
     match_iou_thresh:   0.01     # IoU 阈值放宽
+    # 三机编队相邻间距 ~10.6m，关联阈值要小于这个值，否则贪心匹配会把
+    # 邻机绑到同一个 track 上。设 5m 给 KF 预测漂移留点裕量。
+    track_assoc_dist:   5.0
     warn_confidence:    0.70
     warn_level:         "HIGH"
 
@@ -20,7 +23,7 @@ yolo_detector:
 radar_processor:
   ros__parameters:
     map_pcd_path:        "/dev/null"   # 故意失效，跳过 GICP 背景去除（仿真无背景地图）
-    voxel_size:          0.10
+    voxel_size:          0.05    # 降采样粒度更细，保留无人机外形细节
     cluster_tolerance:   1.5
     cluster_min_size:    3             # 仿真点云稀疏，降低阈值
     cluster_max_size:    500

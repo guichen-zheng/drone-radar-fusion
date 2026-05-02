@@ -64,11 +64,18 @@ class SimBridge(Node):
         super().__init__('sim_bridge')
 
         # ── 轨迹参数 ──────────────────────────────────────────────────────────
+        # 三架编队飞行：同一周期不同半径/高度/相位偏移
+        # 相位 -20° / 0° / +20°，相机 HFOV±54°，编队整体宽度 40° 始终在 FOV 内
         _dyn = ParameterDescriptor(dynamic_typing=True)
-        self.radius     = float(self.declare_parameter('radius',  20.0, _dyn).value)
-        self.height     = float(self.declare_parameter('height',  20.0, _dyn).value)
-        self.period     = float(self.declare_parameter('period',  40.0, _dyn).value)
-        self.drone_name = self.declare_parameter('drone_model_name', 'drone').value
+        base_radius = float(self.declare_parameter('radius', 22.0, _dyn).value)  # 中间机半径
+        self.period = float(self.declare_parameter('period', 40.0, _dyn).value)
+
+        # [(model_name, radius, height, phase_rad)]
+        self.drones = [
+            ('drone',  max(8.0,  base_radius - 7.0), 7.0,  -0.35),   # 近 / 低
+            ('drone2', base_radius,                  12.0,  0.00),   # 中
+            ('drone3', min(30.0, base_radius + 6.0), 17.0, +0.35),   # 远 / 高
+        ]
 
         # ── 仿真标定参数（与 sim_calib.yaml 一致） ────────────────────────────
         self.fx = 1000.0; self.fy = 1000.0
@@ -93,41 +100,45 @@ class SimBridge(Node):
         self.create_timer(0.1, self.step)          # 10 Hz 主循环
         self.create_timer(1.0, self._pub_sensor)   # 1 Hz 传感器静态标记
 
-        self.get_logger().info(
-            f'[SimBridge] 启动：R={self.radius}m H={self.height}m T={self.period}s')
+        formation = ', '.join(f'{n}(R={r:.0f},H={h:.0f})' for n,r,h,_ in self.drones)
+        self.get_logger().info(f'[SimBridge] 启动：T={self.period}s 编队：{formation}')
 
     # ── 主循环（10 Hz）────────────────────────────────────────────────────────
     def step(self):
         self.t += 0.1
         omega = 2.0 * math.pi / self.period
-        x = self.radius * math.cos(omega * self.t)
-        y = self.radius * math.sin(omega * self.t)
-        z = self.height
 
-        if self.gazebo_ok:
-            self._move_gazebo(x, y, z)
+        positions = []
+        for name, radius, height, phase in self.drones:
+            x = radius * math.cos(omega * self.t + phase)
+            y = radius * math.sin(omega * self.t + phase)
+            z = height
+            positions.append((name, x, y, z))
+            if self.gazebo_ok:
+                self._move_gazebo(name, x, y, z)
 
         now = self.get_clock().now().to_msg()
-        self._pub_drone_visual(x, y, z, now)
+        self._pub_drone_visual(positions, now)
 
     # ── RViz 无人机可视化标记 ──────────────────────────────────────────────────
-    def _pub_drone_visual(self, x, y, z, stamp):
+    def _pub_drone_visual(self, positions, stamp):
         ma = MarkerArray()
         hdr = Header(); hdr.stamp = stamp; hdr.frame_id = 'lidar'
 
-        # 与 Gazebo 同款 mesh + 同样的 4x 缩放，保证两端视觉一致
-        m = Marker()
-        m.header = hdr
-        m.ns = 'drone'; m.id = 0
-        m.type = Marker.MESH_RESOURCE
-        m.action = Marker.ADD
-        m.mesh_resource = 'package://simulation/models/drone/meshes/quadrotor.dae'
-        m.mesh_use_embedded_materials = True
-        m.pose = _pose(x, y, z)
-        m.scale = _scale(4.0, 4.0, 4.0)
-        m.color = _color(1.0, 1.0, 1.0, 1.0)   # mesh 自带贴图，颜色仅作 fallback
-        m.lifetime.sec = 1
-        ma.markers.append(m)
+        for idx, (_name, x, y, z) in enumerate(positions):
+            # 与 Gazebo 同款 mesh + 同样的 4x 缩放
+            m = Marker()
+            m.header = hdr
+            m.ns = 'drone'; m.id = idx
+            m.type = Marker.MESH_RESOURCE
+            m.action = Marker.ADD
+            m.mesh_resource = 'package://simulation/models/drone/meshes/quadrotor.dae'
+            m.mesh_use_embedded_materials = True
+            m.pose = _pose(x, y, z)
+            m.scale = _scale(4.0, 4.0, 4.0)
+            m.color = _color(1.0, 1.0, 1.0, 1.0)
+            m.lifetime.sec = 1
+            ma.markers.append(m)
 
         self.pub_drone_vis.publish(ma)
 
@@ -187,10 +198,10 @@ class SimBridge(Node):
         self.pub_sensor_vis.publish(ma)
 
     # ── 移动 Gazebo 无人机模型 ─────────────────────────────────────────────────
-    def _move_gazebo(self, x, y, z):
+    def _move_gazebo(self, name, x, y, z):
         req = SetEntityState.Request()
         state = EntityState()
-        state.name = self.drone_name
+        state.name = name
         state.pose = Pose(
             position    = Point(x=float(x), y=float(y), z=float(z)),
             orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)

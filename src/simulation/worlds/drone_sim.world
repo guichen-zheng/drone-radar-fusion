@@ -157,10 +157,21 @@
     </model>
 
     <!-- 无人机（由 sim_bridge 通过 set_entity_state 实时移动） -->
+    <!-- 三架同型号无人机，初始位置都在 +X 侧（相机正前方），不同半径/高度。 -->
     <include>
       <uri>model://drone</uri>
       <name>drone</name>
-      <pose>10 0 8 0 0 0</pose>
+      <pose>15 -5 7 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://drone</uri>
+      <name>drone2</name>
+      <pose>22 0 12 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://drone</uri>
+      <name>drone3</name>
+      <pose>28 9 17 0 0 0</pose>
     </include>
 
     <!-- 物理设置 -->
