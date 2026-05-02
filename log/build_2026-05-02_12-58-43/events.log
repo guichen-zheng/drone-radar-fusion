@@ -1,0 +1,325 @@
+[0.000000] (-) TimerEvent: {}
+[0.000053] (-) JobUnselected: {'identifier': 'camera_vision'}
+[0.000071] (-) JobUnselected: {'identifier': 'fusion'}
+[0.000083] (-) JobUnselected: {'identifier': 'hik_camera_ros2_driver'}
+[0.000092] (-) JobUnselected: {'identifier': 'interface'}
+[0.000101] (-) JobUnselected: {'identifier': 'livox_interfaces'}
+[0.000110] (-) JobUnselected: {'identifier': 'livox_ros2_avia'}
+[0.000119] (-) JobUnselected: {'identifier': 'livox_sdk_vendor'}
+[0.000127] (-) JobUnselected: {'identifier': 'web_dashboard'}
+[0.000138] (radar) JobQueued: {'identifier': 'radar', 'dependencies': OrderedDict([('interface', '/home/guichen/Documents/drone-radar-fusion/install/interface')])}
+[0.000152] (simulation) JobQueued: {'identifier': 'simulation', 'dependencies': OrderedDict([('interface', '/home/guichen/Documents/drone-radar-fusion/install/interface')])}
+[0.000447] (radar) JobStarted: {'identifier': 'radar'}
+[0.004112] (simulation) JobStarted: {'identifier': 'simulation'}
+[0.008916] (radar) JobProgress: {'identifier': 'radar', 'progress': 'cmake'}
+[0.009602] (radar) JobProgress: {'identifier': 'radar', 'progress': 'build'}
+[0.010288] (radar) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/guichen/Documents/drone-radar-fusion/build/radar', '--', '-j16', '-l16'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/radar', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code/2.1.126/agent'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '1868'), ('SYSTEMD_EXEC_PID', '2215'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '78892'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('JOURNAL_STREAM', '8:22589'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.local/bin:/home/guichen/.local/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/guichen/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2188,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2188'), ('INVOCATION_ID', '82334ae6c25d4d0487b0e91c55f54841'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/radar'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.126-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '78892'), ('CMAKE_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble')]), 'shell': False}
+[0.099878] (-) TimerEvent: {}
+[0.200111] (-) TimerEvent: {}
+[0.205399] (radar) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target radar_node\n'}
+[0.205599] (radar) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/radar_node.dir/src/radar_processor.cpp.o\n'}
+[0.300230] (-) TimerEvent: {}
+[0.400476] (-) TimerEvent: {}
+[0.484597] (simulation) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/guichen/Documents/drone-radar-fusion/build/simulation/build', '--no-deps', 'symlink_data'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/simulation', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/guichen', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'AI_AGENT': 'claude-code/2.1.126/agent', 'LANGUAGE': 'zh_CN:en_US:en', 'USER': 'guichen', 'CLAUDE_CODE_ENTRYPOINT': 'claude-vscode', 'LC_TIME': 'zh_CN.UTF-8', 'VSCODE_NLS_CONFIG': '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}', 'GIT_EDITOR': 'true', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/guichen', 'CHROME_DESKTOP': 'code.desktop', 'CONDA_SHLVL': '0', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/guichen/.nvm/versions/node/v24.15.0/bin', 'NVM_INC': '/home/guichen/.nvm/versions/node/v24.15.0/include/node', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-7bcd830d-1.11-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'zh_CN.UTF-8', 'MANAGERPID': '1868', 'SYSTEMD_EXEC_PID': '2215', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', '_CONDA_ROOT': '/home/guichen/miniconda3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '78892', 'NVM_DIR': '/home/guichen/.nvm', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'guichen', 'JOURNAL_STREAM': '8:22589', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'guichen', 'OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE': 'delta', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'MCP_CONNECTION_NONBLOCKING': 'true', 'PATH': '/usr/bin:/home/guichen/.local/bin:/home/guichen/.local/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/guichen/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0/bin', 'SESSION_MANAGER': 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2188,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2188', 'INVOCATION_ID': '82334ae6c25d4d0487b0e91c55f54841', 'PAPERSIZE': 'a4', 'COREPACK_ENABLE_AUTO_PIN': '0', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'zh_CN.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'NoDefaultCurrentDirectoryInExePath': '1', 'LANG': 'zh_CN.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'zh_CN.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble', 'CONDA_PYTHON_EXE': '/home/guichen/miniconda3/bin/python', 'SHELL': '/bin/bash', 'LC_NAME': 'zh_CN.UTF-8', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING': 'true', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CLAUDECODE': '1', 'LC_MEASUREMENT': 'zh_CN.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', '_CONDA_EXE': '/home/guichen/miniconda3/bin/conda', 'LC_IDENTIFICATION': 'zh_CN.UTF-8', 'VIRTUAL_ENV': '/usr', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/guichen/Documents/drone-radar-fusion/build/simulation', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'CONDA_EXE': '/home/guichen/miniconda3/bin/conda', 'VSCODE_CODE_CACHE_PATH': '/home/guichen/.config/Code/CachedData/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'CLAUDE_CODE_EXECPATH': '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.126-linux-x64/resources/native-binary/claude', 'PYTHONPATH': '/home/guichen/Documents/drone-radar-fusion/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'zh_CN.UTF-8', 'LC_PAPER': 'zh_CN.UTF-8', 'COLCON': '1', 'VSCODE_PID': '78892', 'CMAKE_PREFIX_PATH': '/home/guichen/Documents/drone-radar-fusion/install/interface'}, 'shell': False}
+[0.500583] (-) TimerEvent: {}
+[0.600798] (-) TimerEvent: {}
+[0.693841] (simulation) StdoutLine: {'line': b'running develop\n'}
+[0.700903] (-) TimerEvent: {}
+[0.801115] (-) TimerEvent: {}
+[0.801527] (simulation) StdoutLine: {'line': b'running egg_info\n'}
+[0.801677] (simulation) StdoutLine: {'line': b'writing simulation.egg-info/PKG-INFO\n'}
+[0.801789] (simulation) StdoutLine: {'line': b'writing dependency_links to simulation.egg-info/dependency_links.txt\n'}
+[0.801886] (simulation) StdoutLine: {'line': b'writing entry points to simulation.egg-info/entry_points.txt\n'}
+[0.802003] (simulation) StdoutLine: {'line': b'writing requirements to simulation.egg-info/requires.txt\n'}
+[0.802060] (simulation) StdoutLine: {'line': b'writing top-level names to simulation.egg-info/top_level.txt\n'}
+[0.803163] (simulation) StdoutLine: {'line': b"reading manifest file 'simulation.egg-info/SOURCES.txt'\n"}
+[0.803685] (simulation) StdoutLine: {'line': b"writing manifest file 'simulation.egg-info/SOURCES.txt'\n"}
+[0.804805] (simulation) StdoutLine: {'line': b'running build_ext\n'}
+[0.804954] (simulation) StdoutLine: {'line': b'Creating /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)\n'}
+[0.805757] (simulation) StdoutLine: {'line': b'Installing sim_bridge script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation\n'}
+[0.805906] (simulation) StdoutLine: {'line': b'Installing yolo_node script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation\n'}
+[0.806102] (simulation) StdoutLine: {'line': b'\n'}
+[0.806171] (simulation) StdoutLine: {'line': b'Installed /home/guichen/Documents/drone-radar-fusion/build/simulation\n'}
+[0.806222] (simulation) StdoutLine: {'line': b'running symlink_data\n'}
+[0.835303] (simulation) CommandEnded: {'returncode': 0}
+[0.845007] (simulation) JobEnded: {'identifier': 'simulation', 'rc': 0}
+[0.901204] (-) TimerEvent: {}
+[1.001509] (-) TimerEvent: {}
+[1.101839] (-) TimerEvent: {}
+[1.202051] (-) TimerEvent: {}
+[1.302282] (-) TimerEvent: {}
+[1.402501] (-) TimerEvent: {}
+[1.502714] (-) TimerEvent: {}
+[1.602979] (-) TimerEvent: {}
+[1.703229] (-) TimerEvent: {}
+[1.803525] (-) TimerEvent: {}
+[1.903754] (-) TimerEvent: {}
+[2.004052] (-) TimerEvent: {}
+[2.104334] (-) TimerEvent: {}
+[2.204698] (-) TimerEvent: {}
+[2.304973] (-) TimerEvent: {}
+[2.405192] (-) TimerEvent: {}
+[2.505365] (-) TimerEvent: {}
+[2.605570] (-) TimerEvent: {}
+[2.705766] (-) TimerEvent: {}
+[2.805993] (-) TimerEvent: {}
+[2.906306] (-) TimerEvent: {}
+[3.006521] (-) TimerEvent: {}
+[3.106717] (-) TimerEvent: {}
+[3.206917] (-) TimerEvent: {}
+[3.307135] (-) TimerEvent: {}
+[3.407400] (-) TimerEvent: {}
+[3.507802] (-) TimerEvent: {}
+[3.608056] (-) TimerEvent: {}
+[3.708249] (-) TimerEvent: {}
+[3.808445] (-) TimerEvent: {}
+[3.908629] (-) TimerEvent: {}
+[4.008834] (-) TimerEvent: {}
+[4.109043] (-) TimerEvent: {}
+[4.209364] (-) TimerEvent: {}
+[4.309616] (-) TimerEvent: {}
+[4.409825] (-) TimerEvent: {}
+[4.510000] (-) TimerEvent: {}
+[4.610252] (-) TimerEvent: {}
+[4.710476] (-) TimerEvent: {}
+[4.810838] (-) TimerEvent: {}
+[4.911176] (-) TimerEvent: {}
+[5.011383] (-) TimerEvent: {}
+[5.111620] (-) TimerEvent: {}
+[5.211805] (-) TimerEvent: {}
+[5.312004] (-) TimerEvent: {}
+[5.412313] (-) TimerEvent: {}
+[5.512620] (-) TimerEvent: {}
+[5.612865] (-) TimerEvent: {}
+[5.713090] (-) TimerEvent: {}
+[5.813342] (-) TimerEvent: {}
+[5.913608] (-) TimerEvent: {}
+[6.013831] (-) TimerEvent: {}
+[6.114209] (-) TimerEvent: {}
+[6.214493] (-) TimerEvent: {}
+[6.314702] (-) TimerEvent: {}
+[6.414931] (-) TimerEvent: {}
+[6.515133] (-) TimerEvent: {}
+[6.615344] (-) TimerEvent: {}
+[6.715654] (-) TimerEvent: {}
+[6.815983] (-) TimerEvent: {}
+[6.916183] (-) TimerEvent: {}
+[7.016432] (-) TimerEvent: {}
+[7.116703] (-) TimerEvent: {}
+[7.217011] (-) TimerEvent: {}
+[7.317464] (-) TimerEvent: {}
+[7.417926] (-) TimerEvent: {}
+[7.518148] (-) TimerEvent: {}
+[7.618333] (-) TimerEvent: {}
+[7.718564] (-) TimerEvent: {}
+[7.818867] (-) TimerEvent: {}
+[7.919256] (-) TimerEvent: {}
+[8.019535] (-) TimerEvent: {}
+[8.119777] (-) TimerEvent: {}
+[8.219999] (-) TimerEvent: {}
+[8.320180] (-) TimerEvent: {}
+[8.420452] (-) TimerEvent: {}
+[8.520785] (-) TimerEvent: {}
+[8.621161] (-) TimerEvent: {}
+[8.721455] (-) TimerEvent: {}
+[8.821767] (-) TimerEvent: {}
+[8.921966] (-) TimerEvent: {}
+[9.022182] (-) TimerEvent: {}
+[9.122521] (-) TimerEvent: {}
+[9.222837] (-) TimerEvent: {}
+[9.323041] (-) TimerEvent: {}
+[9.423239] (-) TimerEvent: {}
+[9.523426] (-) TimerEvent: {}
+[9.623600] (-) TimerEvent: {}
+[9.723942] (-) TimerEvent: {}
+[9.824376] (-) TimerEvent: {}
+[9.924620] (-) TimerEvent: {}
+[10.024938] (-) TimerEvent: {}
+[10.125197] (-) TimerEvent: {}
+[10.225469] (-) TimerEvent: {}
+[10.325732] (-) TimerEvent: {}
+[10.426137] (-) TimerEvent: {}
+[10.526372] (-) TimerEvent: {}
+[10.626581] (-) TimerEvent: {}
+[10.726786] (-) TimerEvent: {}
+[10.826970] (-) TimerEvent: {}
+[10.927195] (-) TimerEvent: {}
+[11.027525] (-) TimerEvent: {}
+[11.127835] (-) TimerEvent: {}
+[11.228034] (-) TimerEvent: {}
+[11.328228] (-) TimerEvent: {}
+[11.428427] (-) TimerEvent: {}
+[11.528657] (-) TimerEvent: {}
+[11.628893] (-) TimerEvent: {}
+[11.729103] (-) TimerEvent: {}
+[11.829417] (-) TimerEvent: {}
+[11.929815] (-) TimerEvent: {}
+[12.030084] (-) TimerEvent: {}
+[12.130351] (-) TimerEvent: {}
+[12.230700] (-) TimerEvent: {}
+[12.331026] (-) TimerEvent: {}
+[12.431235] (-) TimerEvent: {}
+[12.531528] (-) TimerEvent: {}
+[12.631816] (-) TimerEvent: {}
+[12.732096] (-) TimerEvent: {}
+[12.832425] (-) TimerEvent: {}
+[12.932799] (-) TimerEvent: {}
+[13.033040] (-) TimerEvent: {}
+[13.133212] (-) TimerEvent: {}
+[13.233410] (-) TimerEvent: {}
+[13.333731] (-) TimerEvent: {}
+[13.434087] (-) TimerEvent: {}
+[13.534298] (-) TimerEvent: {}
+[13.634560] (-) TimerEvent: {}
+[13.734865] (-) TimerEvent: {}
+[13.835219] (-) TimerEvent: {}
+[13.935465] (-) TimerEvent: {}
+[14.035744] (-) TimerEvent: {}
+[14.136052] (-) TimerEvent: {}
+[14.236279] (-) TimerEvent: {}
+[14.336488] (-) TimerEvent: {}
+[14.436728] (-) TimerEvent: {}
+[14.536979] (-) TimerEvent: {}
+[14.637287] (-) TimerEvent: {}
+[14.737628] (-) TimerEvent: {}
+[14.837881] (-) TimerEvent: {}
+[14.938169] (-) TimerEvent: {}
+[15.038445] (-) TimerEvent: {}
+[15.138662] (-) TimerEvent: {}
+[15.238985] (-) TimerEvent: {}
+[15.339425] (-) TimerEvent: {}
+[15.439673] (-) TimerEvent: {}
+[15.539986] (-) TimerEvent: {}
+[15.640378] (-) TimerEvent: {}
+[15.740657] (-) TimerEvent: {}
+[15.840972] (-) TimerEvent: {}
+[15.941231] (-) TimerEvent: {}
+[16.041442] (-) TimerEvent: {}
+[16.141652] (-) TimerEvent: {}
+[16.241871] (-) TimerEvent: {}
+[16.342073] (-) TimerEvent: {}
+[16.442335] (-) TimerEvent: {}
+[16.542721] (-) TimerEvent: {}
+[16.642973] (-) TimerEvent: {}
+[16.743179] (-) TimerEvent: {}
+[16.843398] (-) TimerEvent: {}
+[16.943627] (-) TimerEvent: {}
+[17.043974] (-) TimerEvent: {}
+[17.144299] (-) TimerEvent: {}
+[17.244510] (-) TimerEvent: {}
+[17.344693] (-) TimerEvent: {}
+[17.444989] (-) TimerEvent: {}
+[17.545324] (-) TimerEvent: {}
+[17.645540] (-) TimerEvent: {}
+[17.745862] (-) TimerEvent: {}
+[17.846245] (-) TimerEvent: {}
+[17.946487] (-) TimerEvent: {}
+[18.046722] (-) TimerEvent: {}
+[18.146946] (-) TimerEvent: {}
+[18.247260] (-) TimerEvent: {}
+[18.347542] (-) TimerEvent: {}
+[18.447802] (-) TimerEvent: {}
+[18.548081] (-) TimerEvent: {}
+[18.648322] (-) TimerEvent: {}
+[18.748560] (-) TimerEvent: {}
+[18.848905] (-) TimerEvent: {}
+[18.949124] (-) TimerEvent: {}
+[19.049370] (-) TimerEvent: {}
+[19.149625] (-) TimerEvent: {}
+[19.249862] (-) TimerEvent: {}
+[19.350124] (-) TimerEvent: {}
+[19.450341] (-) TimerEvent: {}
+[19.550643] (-) TimerEvent: {}
+[19.650932] (-) TimerEvent: {}
+[19.751165] (-) TimerEvent: {}
+[19.851381] (-) TimerEvent: {}
+[19.951586] (-) TimerEvent: {}
+[20.051791] (-) TimerEvent: {}
+[20.151984] (-) TimerEvent: {}
+[20.252146] (-) TimerEvent: {}
+[20.352328] (-) TimerEvent: {}
+[20.452553] (-) TimerEvent: {}
+[20.552816] (-) TimerEvent: {}
+[20.653018] (-) TimerEvent: {}
+[20.753254] (-) TimerEvent: {}
+[20.853535] (-) TimerEvent: {}
+[20.953778] (-) TimerEvent: {}
+[21.053969] (-) TimerEvent: {}
+[21.154143] (-) TimerEvent: {}
+[21.254326] (-) TimerEvent: {}
+[21.354587] (-) TimerEvent: {}
+[21.454962] (-) TimerEvent: {}
+[21.555255] (-) TimerEvent: {}
+[21.655482] (-) TimerEvent: {}
+[21.755675] (-) TimerEvent: {}
+[21.855840] (-) TimerEvent: {}
+[21.956026] (-) TimerEvent: {}
+[22.056211] (-) TimerEvent: {}
+[22.156398] (-) TimerEvent: {}
+[22.256626] (-) TimerEvent: {}
+[22.356856] (-) TimerEvent: {}
+[22.457193] (-) TimerEvent: {}
+[22.557615] (-) TimerEvent: {}
+[22.657808] (-) TimerEvent: {}
+[22.757958] (-) TimerEvent: {}
+[22.858161] (-) TimerEvent: {}
+[22.958359] (-) TimerEvent: {}
+[23.058553] (-) TimerEvent: {}
+[23.158781] (-) TimerEvent: {}
+[23.258945] (-) TimerEvent: {}
+[23.359170] (-) TimerEvent: {}
+[23.459418] (-) TimerEvent: {}
+[23.559715] (-) TimerEvent: {}
+[23.659948] (-) TimerEvent: {}
+[23.760145] (-) TimerEvent: {}
+[23.860353] (-) TimerEvent: {}
+[23.960565] (-) TimerEvent: {}
+[24.060789] (-) TimerEvent: {}
+[24.161074] (-) TimerEvent: {}
+[24.261267] (-) TimerEvent: {}
+[24.361530] (-) TimerEvent: {}
+[24.461961] (-) TimerEvent: {}
+[24.562533] (-) TimerEvent: {}
+[24.662732] (-) TimerEvent: {}
+[24.762963] (-) TimerEvent: {}
+[24.863166] (-) TimerEvent: {}
+[24.963458] (-) TimerEvent: {}
+[25.030081] (radar) StdoutLine: {'line': b'[ 66%] Linking CXX executable radar_node\n'}
+[25.063596] (-) TimerEvent: {}
+[25.163840] (-) TimerEvent: {}
+[25.264062] (-) TimerEvent: {}
+[25.364309] (-) TimerEvent: {}
+[25.464651] (-) TimerEvent: {}
+[25.564923] (-) TimerEvent: {}
+[25.665200] (-) TimerEvent: {}
+[25.765463] (-) TimerEvent: {}
+[25.865711] (-) TimerEvent: {}
+[25.966061] (-) TimerEvent: {}
+[26.066400] (-) TimerEvent: {}
+[26.085547] (radar) StdoutLine: {'line': b'[100%] Built target radar_node\n'}
+[26.102852] (radar) CommandEnded: {'returncode': 0}
+[26.103587] (radar) JobProgress: {'identifier': 'radar', 'progress': 'install'}
+[26.111886] (radar) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/guichen/Documents/drone-radar-fusion/build/radar'], 'cwd': '/home/guichen/Documents/drone-radar-fusion/build/radar', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/guichen'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('AI_AGENT', 'claude-code/2.1.126/agent'), ('LANGUAGE', 'zh_CN:en_US:en'), ('USER', 'guichen'), ('CLAUDE_CODE_ENTRYPOINT', 'claude-vscode'), ('LC_TIME', 'zh_CN.UTF-8'), ('VSCODE_NLS_CONFIG', '{"userLocale":"zh-cn","osLocale":"zh-cn","resolvedLanguage":"zh-cn","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","languagePack":{"translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","messagesFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409/nls.messages.json","corruptMarkerFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"},"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_languagePackSupport":true,"_translationsConfigFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/tcf.json","_cacheRoot":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn","_resolvedLanguagePackCoreLocation":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409","_corruptedFile":"/home/guichen/.config/Code/clp/b3d577d0e0e421f69f6e9379a6ee9c57.zh-cn/corrupted.info"}'), ('GIT_EDITOR', 'true'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/guichen'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('DESKTOP_SESSION', 'ubuntu'), ('NVM_BIN', '/home/guichen/.nvm/versions/node/v24.15.0/bin'), ('NVM_INC', '/home/guichen/.nvm/versions/node/v24.15.0/include/node'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-7bcd830d-1.11-main.sock'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'zh_CN.UTF-8'), ('MANAGERPID', '1868'), ('SYSTEMD_EXEC_PID', '2215'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('_CONDA_ROOT', '/home/guichen/miniconda3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '78892'), ('NVM_DIR', '/home/guichen/.nvm'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'guichen'), ('JOURNAL_STREAM', '8:22589'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'guichen'), ('OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE', 'delta'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('MCP_CONNECTION_NONBLOCKING', 'true'), ('PATH', '/usr/bin:/home/guichen/.local/bin:/home/guichen/.local/bin:/home/guichen/.nvm/versions/node/v24.15.0/bin:/home/guichen/miniconda3/condabin:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/guichen/.claude/plugins/cache/claude-plugins-official/clangd-lsp/1.0.0/bin'), ('SESSION_MANAGER', 'local/guichen-Lenovo-Legion-Y7000P2021:@/tmp/.ICE-unix/2188,unix/guichen-Lenovo-Legion-Y7000P2021:/tmp/.ICE-unix/2188'), ('INVOCATION_ID', '82334ae6c25d4d0487b0e91c55f54841'), ('PAPERSIZE', 'a4'), ('COREPACK_ENABLE_AUTO_PIN', '0'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'zh_CN.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':1'), ('NoDefaultCurrentDirectoryInExePath', '1'), ('LANG', 'zh_CN.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'zh_CN.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/guichen/miniconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'zh_CN.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu'), ('CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING', 'true'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CLAUDECODE', '1'), ('LC_MEASUREMENT', 'zh_CN.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('_CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('LC_IDENTIFICATION', 'zh_CN.UTF-8'), ('VIRTUAL_ENV', '/usr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/guichen/Documents/drone-radar-fusion/build/radar'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/guichen/miniconda3/bin/conda'), ('VSCODE_CODE_CACHE_PATH', '/home/guichen/.config/Code/CachedData/10c8e557c8b9f9ed0a87f61f1c9a44bde731c409'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('CLAUDE_CODE_EXECPATH', '/home/guichen/.vscode/extensions/anthropic.claude-code-2.1.126-linux-x64/resources/native-binary/claude'), ('PYTHONPATH', '/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'zh_CN.UTF-8'), ('LC_PAPER', 'zh_CN.UTF-8'), ('COLCON', '1'), ('VSCODE_PID', '78892'), ('CMAKE_PREFIX_PATH', '/home/guichen/Documents/drone-radar-fusion/install/interface:/opt/ros/humble')]), 'shell': False}
+[26.118765] (radar) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[26.119202] (radar) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[26.119356] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/lib/radar/radar_node\n'}
+[26.119559] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/include/radar/radar_processor.hpp\n'}
+[26.119713] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/launch/radar_launch.py\n'}
+[26.119814] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/ament_index/resource_index/package_run_dependencies/radar\n'}
+[26.119910] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/ament_index/resource_index/parent_prefix_path/radar\n'}
+[26.120020] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/ament_prefix_path.sh\n'}
+[26.120222] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/ament_prefix_path.dsv\n'}
+[26.120327] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/path.sh\n'}
+[26.120364] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/environment/path.dsv\n'}
+[26.120426] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.bash\n'}
+[26.120488] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.sh\n'}
+[26.120523] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.zsh\n'}
+[26.120603] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/local_setup.dsv\n'}
+[26.120641] (radar) StdoutLine: {'line': b'-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.dsv\n'}
+[26.128509] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/ament_index/resource_index/packages/radar\n'}
+[26.128686] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/cmake/radarConfig.cmake\n'}
+[26.128740] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/cmake/radarConfig-version.cmake\n'}
+[26.128795] (radar) StdoutLine: {'line': b'-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.xml\n'}
+[26.130134] (radar) CommandEnded: {'returncode': 0}
+[26.140237] (radar) JobEnded: {'identifier': 'radar', 'rc': 0}
+[26.140793] (-) EventReactorShutdown: {}

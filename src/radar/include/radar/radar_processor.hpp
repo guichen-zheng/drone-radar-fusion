@@ -94,6 +94,9 @@ private:
     // GICP 迭代参数
     int gicp_max_iter_;
     double gicp_fitness_eps_;
+    // 离群点滤除参数
+    int outlier_mean_k_;
+    double outlier_stddev_mul_;
 };
 
 }  // namespace radar

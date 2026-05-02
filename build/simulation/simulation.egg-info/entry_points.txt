@@ -1,3 +1,4 @@
 [console_scripts]
 sim_bridge = simulation.sim_bridge:main
+yolo_node = simulation.yolo_node:main
 

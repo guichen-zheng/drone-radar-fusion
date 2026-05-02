@@ -25,6 +25,9 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
     this->declare_parameter("drone_max_size", 10.0);
     this->declare_parameter("gicp_max_iter", 50);
     this->declare_parameter("gicp_fitness_eps", 0.01);
+    // 离群点滤除参数（仿真稀疏点云需把 mean_k 调小，否则会把无人机点全部误删）
+    this->declare_parameter("outlier_mean_k", 30);
+    this->declare_parameter("outlier_stddev_mul", 1.0);
 
     roi_x_min_        = this->get_parameter("roi_x_min").as_double();
     roi_x_max_        = this->get_parameter("roi_x_max").as_double();
@@ -41,6 +44,8 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
     drone_max_size_   = this->get_parameter("drone_max_size").as_double();
     gicp_max_iter_    = this->get_parameter("gicp_max_iter").as_int();
     gicp_fitness_eps_ = this->get_parameter("gicp_fitness_eps").as_double();
+    outlier_mean_k_     = this->get_parameter("outlier_mean_k").as_int();
+    outlier_stddev_mul_ = this->get_parameter("outlier_stddev_mul").as_double();
 
     // ── 加载地图 ───────────────────────────────────────────
     std::string map_path = this->get_parameter("map_pcd_path").as_string();
@@ -82,6 +87,15 @@ void RadarProcessor::pointCloudCallback(
     auto clean_cloud  = outlierRemoval(dynamic_cloud);
     auto clusters     = euclideanClustering(clean_cloud);
     auto candidates   = filterDroneCandidates(clusters);
+
+    // 每秒打印一次各阶段点数（仿真调试用）
+    static int frame_cnt = 0;
+    if (++frame_cnt % 10 == 0) {
+        RCLCPP_INFO(this->get_logger(),
+            "[Radar] 点数: 输入=%zu voxel=%zu ROI=%zu outlier=%zu 聚类=%zu 候选=%zu",
+            cloud->size(), filtered->size(), roi_cloud->size(),
+            clean_cloud->size(), clusters.size(), candidates.size());
+    }
 
     publishResults(candidates, msg->header);
 }
@@ -130,11 +144,15 @@ pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::gicpMapRegistration(
 pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::outlierRemoval(
     const pcl::PointCloud<pcl::PointXYZI>::Ptr & cloud)
 {
+    // outlier_mean_k <= 0 时直接跳过滤除（仿真稀疏点云用）
+    if (outlier_mean_k_ <= 0) return cloud;
+    // 输入点数过少（< mean_k+2）时也跳过，否则 SOR 会触发 KDTree empty 错误
+    if (static_cast<int>(cloud->size()) < outlier_mean_k_ + 2) return cloud;
     pcl::StatisticalOutlierRemoval<pcl::PointXYZI> sor;
     pcl::PointCloud<pcl::PointXYZI>::Ptr output(new pcl::PointCloud<pcl::PointXYZI>);
     sor.setInputCloud(cloud);
-    sor.setMeanK(30);
-    sor.setStddevMulThresh(1.0);
+    sor.setMeanK(outlier_mean_k_);
+    sor.setStddevMulThresh(outlier_stddev_mul_);
     sor.filter(*output);
     return output;
 }

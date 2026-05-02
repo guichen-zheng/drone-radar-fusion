@@ -4,9 +4,12 @@ setup.py
 launch/sim_launch.py
 models/drone/model.config
 models/drone/model.sdf
+models/drone/meshes/quadrotor.dae
 resource/simulation
 simulation/__init__.py
 simulation/sim_bridge.py
+simulation/yolo_node.py
+simulation/yolo_worker.py
 simulation.egg-info/PKG-INFO
 simulation.egg-info/SOURCES.txt
 simulation.egg-info/dependency_links.txt

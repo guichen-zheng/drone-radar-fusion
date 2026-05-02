@@ -95,8 +95,8 @@ void YoloDetector::imageCallback(const sensor_msgs::msg::Image::SharedPtr msg)
     cv::Mat blob = preprocess(cv_ptr->image, scale, offset);
 
     net_.setInput(blob);
-    cv::Mat output = net_.forward();  // YOLOv8 输出格式：[1, 84, 8400]
-
+    // 注：先前这里有一次冗余的 net_.forward() 调用，在 OpenCV 4.5.4 + 新版 YOLOv8 ONNX 上会触发
+    // shape_utils 的 total() 断言崩溃。runInference() 内部会用多输出版本重新前向，所以删掉。
     auto dets = runInference(blob, scale, offset, cv_ptr->image.size());
     auto final_dets = applyNMS(dets);
 

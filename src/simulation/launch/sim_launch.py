@@ -81,7 +81,27 @@ def generate_launch_description():
             )
         ]),
 
-        # ── 3. fusion_manager（5s 后，使用仿真参数文件）─────────────────────
+        # ── 3. 感知层（5s 后）：YOLO (走 conda subprocess) + radar (点云聚类) ──
+        # 注：原 C++ camera_node 因系统 OpenCV 4.5.4 解析 YOLOv8 ONNX 失败，
+        # 改用 simulation 包里的 Python yolo_node 桥接 conda 环境的 ultralytics
+        TimerAction(period=5.0, actions=[
+            Node(
+                package='simulation',
+                executable='yolo_node',
+                name='yolo_detector',
+                output='screen',
+                parameters=[sim_params],
+            ),
+            Node(
+                package='radar',
+                executable='radar_node',
+                name='radar_processor',
+                output='screen',
+                parameters=[sim_params],
+            ),
+        ]),
+
+        # ── 4. fusion_manager（5s 后，与感知节点同时启动）───────────────────
         TimerAction(period=5.0, actions=[
             Node(
                 package='fusion',

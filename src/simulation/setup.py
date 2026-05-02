@@ -17,13 +17,16 @@ setup(
         (os.path.join('share', package_name, 'worlds'),
             glob('worlds/*.world')),
         (os.path.join('share', package_name, 'models/drone'),
-            glob('models/drone/*')),
+            [f for f in glob('models/drone/*') if os.path.isfile(f)]),
+        (os.path.join('share', package_name, 'models/drone/meshes'),
+            glob('models/drone/meshes/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     entry_points={
         'console_scripts': [
             'sim_bridge = simulation.sim_bridge:main',
+            'yolo_node  = simulation.yolo_node:main',
         ],
     },
 )

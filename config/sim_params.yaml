@@ -9,6 +9,34 @@ fusion_manager:
     warn_confidence:    0.70
     warn_level:         "HIGH"
 
+# YOLO 视觉检测（simulation 包的 yolo_node，桥接 conda 环境的 ultralytics）
+yolo_detector:
+  ros__parameters:
+    model_path:   "model/ONNX/yolo_drone.onnx"   # 也可改为 .pt（worker 自动匹配）
+    conf_thresh:  0.25
+    input_size:   640
+
+# 雷达点云聚类（radar 包）
+radar_processor:
+  ros__parameters:
+    map_pcd_path:        "/dev/null"   # 故意失效，跳过 GICP 背景去除（仿真无背景地图）
+    voxel_size:          0.10
+    cluster_tolerance:   1.5
+    cluster_min_size:    3             # 仿真点云稀疏，降低阈值
+    cluster_max_size:    500
+    drone_min_height:    3.0           # 仿真无人机在 8m，下限放低
+    drone_max_height:    50.0
+    drone_max_size:      6.0           # 放大后无人机直径 ~2m，留 3 倍裕量
+    roi_x_min:          -100.0
+    roi_x_max:           100.0
+    roi_y_min:          -100.0
+    roi_y_max:           100.0
+    roi_z_min:           1.0
+    roi_z_max:           50.0
+    # 离群点滤除：仿真点云稀疏，无人机只有 ~10 个点，原默认 mean_k=30 会把无人机全部误删
+    outlier_mean_k:      5
+    outlier_stddev_mul:  2.0
+
 web_dashboard_node:
   ros__parameters:
     host: "0.0.0.0"

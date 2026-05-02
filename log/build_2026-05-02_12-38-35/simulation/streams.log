@@ -1,0 +1,18 @@
+[0.476s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/simulation': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/simulation/build --no-deps symlink_data
+[0.656s] running develop
+[0.758s] running egg_info
+[0.759s] writing simulation.egg-info/PKG-INFO
+[0.759s] writing dependency_links to simulation.egg-info/dependency_links.txt
+[0.759s] writing entry points to simulation.egg-info/entry_points.txt
+[0.759s] writing requirements to simulation.egg-info/requires.txt
+[0.759s] writing top-level names to simulation.egg-info/top_level.txt
+[0.760s] reading manifest file 'simulation.egg-info/SOURCES.txt'
+[0.761s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[0.762s] running build_ext
+[0.762s] Creating /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)
+[0.762s] Installing sim_bridge script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation
+[0.762s] Installing yolo_node script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation
+[0.763s] 
+[0.763s] Installed /home/guichen/Documents/drone-radar-fusion/build/simulation
+[0.763s] running symlink_data
+[0.791s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/simulation' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/simulation/build --no-deps symlink_data

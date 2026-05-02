@@ -24,6 +24,8 @@ from visualization_msgs.msg import Marker, MarkerArray
 from gazebo_msgs.srv import SetEntityState
 from gazebo_msgs.msg import EntityState
 
+# NOTE: 雷达检测由 radar 包真跑（基于 Gazebo 点云）；相机检测因 OpenCV 4.5.4
+# 与新版 YOLOv8 ONNX 不兼容（forward() 崩溃），暂用 sim_bridge 合成 bbox 作 fallback
 from interface.msg import DroneDetect, DroneDetectArray
 
 
@@ -72,11 +74,9 @@ class SimBridge(Node):
         self.fx = 1000.0; self.fy = 1000.0
         self.cx = 1224.0; self.cy = 1024.0
 
-        # ── 发布者 ────────────────────────────────────────────────────────────
-        self.pub_radar      = self.create_publisher(DroneDetectArray, '/radar/detect',          10)
-        self.pub_camera     = self.create_publisher(DroneDetectArray, '/camera/detect_result',  10)
-        self.pub_drone_vis  = self.create_publisher(MarkerArray,      '/sim/drone_visual',      10)
-        self.pub_sensor_vis = self.create_publisher(MarkerArray,      '/sim/sensor_visual',     10)
+        # ── 发布者（仅 RViz markers；雷达由 radar 包真跑，相机由 yolo_node 跑）─
+        self.pub_drone_vis  = self.create_publisher(MarkerArray, '/sim/drone_visual',  10)
+        self.pub_sensor_vis = self.create_publisher(MarkerArray, '/sim/sensor_visual', 10)
 
         # ── Gazebo SetEntityState 服务客户端 ─────────────────────────────────
         self.gazebo_cli = self.create_client(SetEntityState, '/gazebo/set_entity_state')
@@ -108,39 +108,7 @@ class SimBridge(Node):
             self._move_gazebo(x, y, z)
 
         now = self.get_clock().now().to_msg()
-        self._publish_radar(x, y, z, now)
-        self._publish_camera(x, y, z, now)
         self._pub_drone_visual(x, y, z, now)
-
-    # ── 雷达检测 ───────────────────────────────────────────────────────────────
-    def _publish_radar(self, x, y, z, stamp):
-        arr = DroneDetectArray()
-        arr.header.stamp    = stamp
-        arr.header.frame_id = 'lidar'
-        det = DroneDetect()
-        det.drone_id = 0; det.x = float(x); det.y = float(y); det.z = float(z)
-        det.confidence = 0.9; det.label = 'drone'; det.is_tracked = False
-        arr.drones.append(det)
-        self.pub_radar.publish(arr)
-
-    # ── 相机检测（投影计算 bbox）───────────────────────────────────────────────
-    def _publish_camera(self, x, y, z, stamp):
-        xc, yc, zc = -y, -z, x          # 轴变换：雷达→相机
-        if zc < 0.5:
-            return
-        u  = self.fx * xc / zc + self.cx
-        v  = self.fy * yc / zc + self.cy
-        hw = max(15, int(300.0 / zc))
-        arr = DroneDetectArray()
-        arr.header.stamp    = stamp
-        arr.header.frame_id = 'camera'
-        det = DroneDetect()
-        det.drone_id = 0
-        det.bbox_x = int(u - hw); det.bbox_y = int(v - hw)
-        det.bbox_w = hw * 2;      det.bbox_h = hw * 2
-        det.confidence = 0.85;    det.label  = 'drone'
-        arr.drones.append(det)
-        self.pub_camera.publish(arr)
 
     # ── RViz 无人机可视化标记 ──────────────────────────────────────────────────
     def _pub_drone_visual(self, x, y, z, stamp):

@@ -11,95 +11,21 @@
           <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia>
       </inertial>
 
-      <!-- 中央机身（深灰色扁盒） -->
+      <!-- 真实四旋翼 mesh（OSRF gazebo_models/quadrotor 衍生，BSD 协议） -->
+      <!-- 放大 4 倍：原 mesh ~50cm，scale=4 后约 2m，便于远距离 YOLO 识别 -->
       <visual name="body">
         <pose>0 0 0 0 0 0</pose>
-        <geometry><box><size>0.28 0.28 0.10</size></box></geometry>
-        <material>
-          <ambient>0.2 0.2 0.2 1</ambient><diffuse>0.25 0.25 0.25 1</diffuse>
-          <specular>0.4 0.4 0.4 1</specular>
-        </material>
+        <geometry>
+          <mesh>
+            <uri>model://drone/meshes/quadrotor.dae</uri>
+            <scale>4.0 4.0 4.0</scale>
+          </mesh>
+        </geometry>
       </visual>
 
-      <!-- 机臂 ×4（45° 方向，深灰色细管） -->
-      <visual name="arm_fl">
-        <pose>0.17 0.17 0.01 0 0 0.785</pose>
-        <geometry><box><size>0.36 0.04 0.04</size></box></geometry>
-        <material><ambient>0.18 0.18 0.18 1</ambient><diffuse>0.22 0.22 0.22 1</diffuse></material>
-      </visual>
-      <visual name="arm_fr">
-        <pose>0.17 -0.17 0.01 0 0 -0.785</pose>
-        <geometry><box><size>0.36 0.04 0.04</size></box></geometry>
-        <material><ambient>0.18 0.18 0.18 1</ambient><diffuse>0.22 0.22 0.22 1</diffuse></material>
-      </visual>
-      <visual name="arm_rl">
-        <pose>-0.17 0.17 0.01 0 0 -0.785</pose>
-        <geometry><box><size>0.36 0.04 0.04</size></box></geometry>
-        <material><ambient>0.18 0.18 0.18 1</ambient><diffuse>0.22 0.22 0.22 1</diffuse></material>
-      </visual>
-      <visual name="arm_rr">
-        <pose>-0.17 -0.17 0.01 0 0 0.785</pose>
-        <geometry><box><size>0.36 0.04 0.04</size></box></geometry>
-        <material><ambient>0.18 0.18 0.18 1</ambient><diffuse>0.22 0.22 0.22 1</diffuse></material>
-      </visual>
-
-      <!-- 电机座 ×4（小深灰圆柱） -->
-      <visual name="motor_fl"><pose>0.26  0.26 0.03 0 0 0</pose>
-        <geometry><cylinder><radius>0.025</radius><length>0.06</length></cylinder></geometry>
-        <material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
-      </visual>
-      <visual name="motor_fr"><pose>0.26 -0.26 0.03 0 0 0</pose>
-        <geometry><cylinder><radius>0.025</radius><length>0.06</length></cylinder></geometry>
-        <material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
-      </visual>
-      <visual name="motor_rl"><pose>-0.26  0.26 0.03 0 0 0</pose>
-        <geometry><cylinder><radius>0.025</radius><length>0.06</length></cylinder></geometry>
-        <material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
-      </visual>
-      <visual name="motor_rr"><pose>-0.26 -0.26 0.03 0 0 0</pose>
-        <geometry><cylinder><radius>0.025</radius><length>0.06</length></cylinder></geometry>
-        <material><ambient>0.15 0.15 0.15 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
-      </visual>
-
-      <!-- 螺旋桨 ×4（白色半透明扁圆柱） -->
-      <visual name="prop_fl"><pose>0.26  0.26 0.07 0 0 0</pose>
-        <geometry><cylinder><radius>0.15</radius><length>0.015</length></cylinder></geometry>
-        <material><ambient>0.9 0.9 0.9 0.7</ambient><diffuse>0.9 0.9 0.9 0.7</diffuse></material>
-      </visual>
-      <visual name="prop_fr"><pose>0.26 -0.26 0.07 0 0 0</pose>
-        <geometry><cylinder><radius>0.15</radius><length>0.015</length></cylinder></geometry>
-        <material><ambient>0.9 0.9 0.9 0.7</ambient><diffuse>0.9 0.9 0.9 0.7</diffuse></material>
-      </visual>
-      <visual name="prop_rl"><pose>-0.26  0.26 0.07 0 0 0</pose>
-        <geometry><cylinder><radius>0.15</radius><length>0.015</length></cylinder></geometry>
-        <material><ambient>0.9 0.9 0.9 0.7</ambient><diffuse>0.9 0.9 0.9 0.7</diffuse></material>
-      </visual>
-      <visual name="prop_rr"><pose>-0.26 -0.26 0.07 0 0 0</pose>
-        <geometry><cylinder><radius>0.15</radius><length>0.015</length></cylinder></geometry>
-        <material><ambient>0.9 0.9 0.9 0.7</ambient><diffuse>0.9 0.9 0.9 0.7</diffuse></material>
-      </visual>
-
-      <!-- 起落架 ×4 -->
-      <visual name="leg_fl"><pose>0.18  0.18 -0.09 0 0 0</pose>
-        <geometry><cylinder><radius>0.012</radius><length>0.10</length></cylinder></geometry>
-        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
-      </visual>
-      <visual name="leg_fr"><pose>0.18 -0.18 -0.09 0 0 0</pose>
-        <geometry><cylinder><radius>0.012</radius><length>0.10</length></cylinder></geometry>
-        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
-      </visual>
-      <visual name="leg_rl"><pose>-0.18  0.18 -0.09 0 0 0</pose>
-        <geometry><cylinder><radius>0.012</radius><length>0.10</length></cylinder></geometry>
-        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
-      </visual>
-      <visual name="leg_rr"><pose>-0.18 -0.18 -0.09 0 0 0</pose>
-        <geometry><cylinder><radius>0.012</radius><length>0.10</length></cylinder></geometry>
-        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
-      </visual>
-
-      <!-- 碰撞体 -->
+      <!-- 碰撞体（保持原样大小，不参与渲染） -->
       <collision name="collision">
-        <geometry><box><size>0.65 0.65 0.15</size></box></geometry>
+        <geometry><box><size>2.5 2.5 0.6</size></box></geometry>
       </collision>
     </link>
   </model>
