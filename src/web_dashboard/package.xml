@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="3">
-  <n>web_dashboard</n>
+  <name>web_dashboard</name>
   <version>1.0.0</version>
   <description>Flask + SocketIO Web 可视化：地图光标 + 高度显示 + 实时报警</description>
   <maintainer email="your@email.com">Your Name</maintainer>

@@ -83,21 +83,24 @@ class WebDashboardNode(Node):
                 "id":         d.drone_id,
                 "x":          round(d.x, 2),
                 "y":          round(d.y, 2),
-                "z":          round(d.z, 2),          # 高度（米）
-                "lat":        round(d.lat, 7),         # 纬度（WGS84，由 fusion 填入）
-                "lng":        round(d.lng, 7),         # 经度
+                "z":          round(d.z, 2),
+                "lat":        round(d.lat, 7),
+                "lng":        round(d.lng, 7),
                 "vx":         round(d.vx, 2),
                 "vy":         round(d.vy, 2),
                 "vz":         round(d.vz, 2),
                 "confidence": round(d.confidence, 2),
                 "label":      d.label,
             })
-        sio.emit("drone_update", {"drones": drones})
+        print(f"[WebDashboard] drone_update: {len(drones)} drones, lat={drones[0]['lat'] if drones else 'N/A'}", flush=True)
+        with app.app_context():
+            sio.emit("drone_update", {"drones": drones})
 
     def _on_warn_json(self, msg: String):
         try:
             data = json.loads(msg.data)
-            sio.emit("drone_warn", data)
+            with app.app_context():
+                sio.emit("drone_warn", data)
         except json.JSONDecodeError:
             pass
 
@@ -105,13 +108,12 @@ class WebDashboardNode(Node):
         self._camera_last_time = time.time()
         try:
             cv_img = bridge.imgmsg_to_cv2(msg, "bgr8")
-            # 压缩为 JPEG base64（降低带宽压力）
             _, buf = cv2.imencode(".jpg", cv_img, [cv2.IMWRITE_JPEG_QUALITY, 60])
             b64 = base64.b64encode(buf).decode("utf-8")
-            sio.emit("camera_frame", {"data": b64})
+            with app.app_context():
+                sio.emit("camera_frame", {"data": b64})
         except Exception as e:
             self.get_logger().warn(f"[WebDashboard] 图像推送失败：{e}")
-
 
     def _check_sensor_status(self):
         now = time.time()
@@ -120,7 +122,8 @@ class WebDashboardNode(Node):
         if radar_ok != self._radar_ok or camera_ok != self._camera_ok:
             self._radar_ok  = radar_ok
             self._camera_ok = camera_ok
-            sio.emit('sensor_status', {'radar': radar_ok, 'camera': camera_ok})
+            with app.app_context():
+                sio.emit('sensor_status', {'radar': radar_ok, 'camera': camera_ok})
 
 
 # ── SocketIO 传感器位姿事件 ───────────────────────────────────────────────────
@@ -131,6 +134,7 @@ def on_set_sensor_pose(data):
     接收前端发来的传感器位姿：{"lat": float, "lng": float, "heading": float}
     发布到 /web_dashboard/sensor_pose 供 fusion_manager 更新坐标转换。
     """
+    print(f"[WebDashboard] set_sensor_pose 收到: {data}")   # ← 调试：确认事件到达
     global _sensor_pose, _ros_node
     try:
         lat     = float(data['lat'])
@@ -146,8 +150,9 @@ def on_set_sensor_pose(data):
         msg = String()
         msg.data = json.dumps(_sensor_pose)
         _ros_node.pub_sensor_pose_.publish(msg)
-        _ros_node.get_logger().info(
-            f"[WebDashboard] 传感器位姿已发布: lat={lat:.6f} lng={lng:.6f} heading={heading:.1f}°")
+        print(f"[WebDashboard] ✓ ROS2 已发布: lat={lat:.6f} lng={lng:.6f} heading={heading:.1f}°")
+    else:
+        print("[WebDashboard] ✗ _ros_node 为 None，无法发布到 ROS2")
 
     # 广播给所有已连接客户端，同步多端显示
     sio.emit('sensor_pose_current', _sensor_pose)
@@ -192,7 +197,7 @@ def main():
     ros_thread.start()
 
     # Flask + SocketIO 在主线程运行
-    sio.run(app, host="0.0.0.0", port=5000, debug=False)
+    sio.run(app, host="0.0.0.0", port=5000, debug=False, allow_unsafe_werkzeug=True)
 
     rclpy.shutdown()
 

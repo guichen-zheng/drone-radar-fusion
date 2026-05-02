@@ -1,0 +1,18 @@
+[0.358s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard': PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data
+[0.508s] running develop
+[0.595s] running egg_info
+[0.595s] writing web_dashboard.egg-info/PKG-INFO
+[0.595s] writing dependency_links to web_dashboard.egg-info/dependency_links.txt
+[0.595s] writing entry points to web_dashboard.egg-info/entry_points.txt
+[0.595s] writing requirements to web_dashboard.egg-info/requires.txt
+[0.595s] writing top-level names to web_dashboard.egg-info/top_level.txt
+[0.596s] reading manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.597s] writing manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.598s] running build_ext
+[0.598s] Creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web-dashboard.egg-link (link to .)
+[0.598s] Installing watchdog_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.598s] Installing web_dashboard_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.598s] 
+[0.598s] Installed /home/guichen/Documents/drone-radar-fusion/build/web_dashboard
+[0.598s] running symlink_data
+[0.615s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard' returned '0': PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data

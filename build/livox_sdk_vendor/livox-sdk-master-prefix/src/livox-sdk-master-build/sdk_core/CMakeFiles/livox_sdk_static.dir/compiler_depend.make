@@ -110,7 +110,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -162,11 +161,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -175,8 +171,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -241,7 +235,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -275,8 +268,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o: /home/guichen/D
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/details/null_mutex.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/fmt.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/bundled/core.h \
@@ -350,7 +341,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -452,7 +442,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_thread.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -545,11 +534,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_thread.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -558,8 +544,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_thread.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -608,7 +592,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_thread.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -729,7 +712,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/aligned_buffer.h \
@@ -785,11 +767,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -798,8 +777,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
@@ -813,8 +790,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o: /home/guichen/D
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/unordered_map \
   /usr/include/c++/11/bits/hashtable.h \
   /usr/include/c++/11/bits/hashtable_policy.h \
@@ -920,14 +895,12 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o: /home/guichen/D
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
@@ -1064,7 +1037,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_base.c
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/atomicity.h \
@@ -1213,7 +1185,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_epoll.
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/atomicity.h \
@@ -1255,7 +1226,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_epoll.
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/unistd.h \
@@ -1264,7 +1234,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_epoll.
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h
 
@@ -1383,7 +1352,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_kqueue
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/atomicity.h \
@@ -1425,7 +1393,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_kqueue
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/unistd.h \
@@ -1434,7 +1401,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_kqueue
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h
 
@@ -1553,7 +1519,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_poll.c
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/atomicity.h \
@@ -1595,7 +1560,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_poll.c
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/unistd.h \
@@ -1604,7 +1568,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_poll.c
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h
 
@@ -1723,7 +1686,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_select
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/atomicity.h \
@@ -1765,7 +1727,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_select
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/epoll.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/include/unistd.h \
@@ -1774,7 +1735,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_select
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/c++/11/thread \
@@ -1826,7 +1786,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -1850,7 +1809,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/netinet/in.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/arpa/inet.h \
@@ -1866,15 +1824,12 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/ifaddrs.h \
   /usr/include/c++/11/string \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -1907,7 +1862,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/cstdint \
   /usr/include/c++/11/bits/allocator.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h \
@@ -1956,9 +1910,7 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/c++/11/cerrno \
@@ -1975,8 +1927,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /usr/include/x86_64-linux-gnu/sys/ioctl.h \
   /usr/include/x86_64-linux-gnu/bits/ioctls.h \
   /usr/include/x86_64-linux-gnu/asm/ioctls.h \
@@ -1992,7 +1942,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/netdb.h \
@@ -2057,7 +2006,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/thread_base.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/tuple \
   /usr/include/c++/11/utility \
   /usr/include/c++/11/bits/stl_relops.h \
@@ -2180,14 +2128,12 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/wake_up/unix/wake_up_pipe.cpp.
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/stdio.h \
@@ -2202,9 +2148,7 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/wake_up/unix/wake_up_pipe.cpp.
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
-  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h
 
 sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/comm_port.cpp.o: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/comm/comm_port.cpp \
   /usr/include/stdc-predef.h \
@@ -2240,14 +2184,10 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/comm_port.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/string.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /usr/include/c++/11/iostream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -2262,7 +2202,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/comm_port.cpp.o: /home/guichen
   /usr/include/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception.h \
   /usr/include/c++/11/bits/exception_ptr.h \
@@ -2358,11 +2297,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/comm_port.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/c++/11/cerrno \
@@ -2434,14 +2370,10 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/sdk_protocol.cpp.o: /home/guic
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/string.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h
+  /usr/include/strings.h
 
 sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp.o: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/command_handler/command_channel.cpp \
   /usr/include/stdc-predef.h \
@@ -2528,7 +2460,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -2609,11 +2540,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -2622,8 +2550,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/cerrno \
   /usr/include/errno.h \
   /usr/include/x86_64-linux-gnu/bits/errno.h \
@@ -2687,7 +2613,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -2702,8 +2627,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/details/null_mutex.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/fmt.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/bundled/core.h \
@@ -2790,7 +2713,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -2816,7 +2738,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/netinet/in.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/arpa/inet.h \
@@ -2914,7 +2835,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -3009,11 +2929,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -3022,8 +2939,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -3075,7 +2990,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -3107,7 +3021,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/logging.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/spdlog.h \
@@ -3116,8 +3029,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/details/null_mutex.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/fmt.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/bundled/core.h \
@@ -3196,7 +3107,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -3306,7 +3216,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o:
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -3401,11 +3310,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o:
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -3414,8 +3320,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o:
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -3464,7 +3368,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o:
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -3496,7 +3399,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o:
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/command_handler/command_impl.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/data_handler/data_handler.h \
@@ -3504,8 +3406,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o:
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_manager.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/livox_def.h
 
@@ -3594,7 +3494,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -3690,11 +3589,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -3703,8 +3599,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -3756,7 +3650,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -3788,7 +3681,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/network/network_util.h \
   /usr/include/fcntl.h \
@@ -3796,8 +3688,7 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
 
 sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handler.cpp.o: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/command_handler/lidar_command_handler.cpp \
   /usr/include/stdc-predef.h \
@@ -3884,7 +3775,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handl
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -3980,11 +3870,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handl
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -3993,8 +3880,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handl
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -4046,7 +3931,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handl
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -4078,7 +3962,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handl
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h
 
 sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/data_handler/data_handler.cpp \
@@ -4170,7 +4053,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/bits/allocated_ptr.h \
   /usr/include/c++/11/ext/aligned_buffer.h \
@@ -4258,11 +4140,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -4271,8 +4150,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -4323,7 +4200,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -4332,8 +4208,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_manager.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/io_thread.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/noncopyable.h \
@@ -4363,7 +4237,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/logging.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/spdlog.h \
@@ -4448,7 +4321,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o: /h
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -4552,7 +4424,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -4646,11 +4517,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -4659,8 +4527,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -4709,7 +4575,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -4719,8 +4584,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_manager.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/io_thread.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/noncopyable.h \
@@ -4750,7 +4613,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/logging.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/spdlog.h \
@@ -4835,7 +4697,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -4938,7 +4799,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -5028,11 +4888,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -5041,8 +4898,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -5096,7 +4951,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -5105,8 +4959,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_manager.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/io_thread.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/noncopyable.h \
@@ -5136,7 +4988,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/network/network_util.h \
   /usr/include/fcntl.h \
@@ -5144,8 +4995,7 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
-  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
 
 sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.cpp \
   /usr/include/stdc-predef.h \
@@ -5250,7 +5100,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -5304,11 +5153,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -5317,8 +5163,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/functional_hash.h \
   /usr/include/c++/11/bits/basic_string.tcc \
@@ -5389,7 +5233,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -5422,7 +5265,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /usr/include/c++/11/iostream \
   /usr/include/c++/11/ostream \
@@ -5452,8 +5294,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/c++/11/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/details/null_mutex.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/fmt.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/bundled/core.h \
@@ -5519,7 +5359,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o: /home/guich
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -5649,7 +5488,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/string \
   /usr/include/c++/11/bits/char_traits.h \
@@ -5701,11 +5539,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -5714,16 +5549,12 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
   /usr/include/c++/11/bits/unique_lock.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.h \
   /usr/include/c++/11/algorithm \
   /usr/include/c++/11/bits/stl_algo.h \
@@ -5787,7 +5618,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -5820,7 +5650,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/logging.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/spdlog.h \
@@ -5905,7 +5734,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o: /home/guichen
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -6018,7 +5846,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o: /home/guichen/Docu
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
   /usr/include/c++/11/bits/shared_ptr_base.h \
   /usr/include/c++/11/typeinfo \
   /usr/include/c++/11/bits/allocated_ptr.h \
@@ -6113,11 +5940,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o: /home/guichen/Docu
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/bits/select.h \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/c++/11/bits/std_abs.h \
   /usr/include/c++/11/cstdio \
   /usr/include/stdio.h \
@@ -6126,8 +5950,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o: /home/guichen/Docu
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio.h \
-  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
   /usr/include/c++/11/bits/std_mutex.h \
@@ -6176,7 +5998,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o: /home/guichen/Docu
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h \
@@ -6208,15 +6029,12 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o: /home/guichen/Docu
   /usr/include/x86_64-linux-gnu/asm/sockios.h \
   /usr/include/asm-generic/sockios.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
-  /usr/include/x86_64-linux-gnu/bits/socket2.h \
   /usr/include/x86_64-linux-gnu/bits/in.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/data_handler/data_handler.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/io_thread.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_manager.h \
   /usr/include/string.h \
   /usr/include/strings.h \
-  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
-  /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/device_discovery.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/logging.h \
   /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/spdlog.h \
@@ -6301,7 +6119,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o: /home/guichen/Docu
   /usr/include/x86_64-linux-gnu/bits/fcntl.h \
   /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
   /usr/include/linux/falloc.h \
-  /usr/include/x86_64-linux-gnu/bits/fcntl2.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/asm/unistd.h \
   /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -6393,8 +6210,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/arpa/inet.h:
 
 /usr/include/netinet/in.h:
-
-/usr/include/x86_64-linux-gnu/bits/socket2.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
 
@@ -6512,6 +6327,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/c++/11/bits/stream_iterator.h:
@@ -6521,8 +6338,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/cassert:
 
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/details/null_mutex.h:
-
-/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
 
 /usr/include/strings.h:
 
@@ -6535,18 +6350,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/fmt/bundled/core.h:
 
 /usr/include/c++/11/istream:
-
-/usr/include/c++/11/bits/ostream.tcc:
-
-/usr/include/linux/types.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
-
-/usr/include/c++/11/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
-
-/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/sinks/sink.h:
 
@@ -6590,11 +6393,13 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib.h:
-
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
+
 /usr/include/errno.h:
+
+/usr/include/c++/11/cwchar:
 
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/command_handler/command_handler.h:
 
@@ -6621,6 +6426,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/ios:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
 /usr/include/c++/11/bits/std_mutex.h:
 
@@ -6690,6 +6497,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/c++/11/atomic:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
 
 /usr/include/x86_64-linux-gnu/asm/ioctl.h:
@@ -6719,10 +6528,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/c++/11/bits/stl_function.h:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
@@ -6806,8 +6611,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/linux/close_range.h:
 
-/usr/include/x86_64-linux-gnu/bits/fcntl2.h:
-
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
@@ -6873,6 +6676,8 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/bits/concept_check.h:
 
 /usr/include/c++/11/clocale:
+
+/usr/include/c++/11/bits/ostream.tcc:
 
 /usr/include/c++/11/stdexcept:
 
@@ -6950,8 +6755,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/gthr.h:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/io_loop.cpp:
@@ -7002,12 +6805,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
-/usr/include/c++/11/bits/locale_facets.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/11/bits/this_thread_sleep.h:
-
 /usr/include/stdlib.h:
 
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src/base/multiple_io/multiple_io_kqueue.h:
@@ -7028,15 +6825,7 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/c++/11/cwchar:
-
-/usr/include/x86_64-linux-gnu/bits/select2.h:
-
 /usr/include/alloca.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
-
-/usr/include/c++/11/cwctype:
 
 /usr/include/stdio.h:
 
@@ -7045,10 +6834,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/ratio:
 
 /usr/include/c++/11/thread:
-
-/usr/include/x86_64-linux-gnu/bits/stdio.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 /usr/include/c++/11/bits/charconv.h:
 
@@ -7069,12 +6854,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/x86_64-linux-gnu/bits/statx-generic.h:
 
 /usr/include/c++/11/bits/hashtable_policy.h:
-
-/usr/include/c++/11/bits/codecvt.h:
-
-/usr/include/c++/11/bits/basic_ios.tcc:
-
-/usr/include/c++/11/bits/enable_special_members.h:
 
 /usr/include/c++/11/bits/ptr_traits.h:
 
@@ -7100,8 +6879,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
-
 /usr/include/c++/11/bits/stl_bvector.h:
 
 /usr/include/c++/11/bits/vector.tcc:
@@ -7119,8 +6896,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
-
-/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
 /usr/include/c++/11/memory:
 
@@ -7190,8 +6965,6 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 
 /usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
-/usr/include/x86_64-linux-gnu/bits/unistd.h:
-
 /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog/spdlog/sinks/rotating_file_sink.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
@@ -7209,3 +6982,25 @@ sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
 /usr/include/c++/11/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
+
+/usr/include/c++/11/cwctype:
+
+/usr/include/c++/11/bits/streambuf_iterator.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/11/bits/this_thread_sleep.h:
+
+/usr/include/c++/11/bits/locale_facets.tcc:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/c++/11/bits/enable_special_members.h:
+
+/usr/include/c++/11/bits/basic_ios.tcc:

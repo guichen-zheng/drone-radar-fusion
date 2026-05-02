@@ -4,7 +4,3 @@ interface.egg-info/PKG-INFO
 interface.egg-info/SOURCES.txt
 interface.egg-info/dependency_links.txt
 interface.egg-info/top_level.txt
-interface/msg/__init__.py
-interface/msg/_drone_detect.py
-interface/msg/_drone_detect_array.py
-interface/msg/_radar_warn.py

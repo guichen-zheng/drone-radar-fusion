@@ -3,7 +3,7 @@
 883b4199307783880a4349c87b763cc9 CMakeFiles/livox-sdk-master-complete
 1ef481df448a64f204cc449872c5dae3 CMakeFiles/livox_sdk_vendor_uninstall
 027731c11639c22602ce2dd708fe7bdc livox-sdk-master-prefix/src/livox-sdk-master-stamp/livox-sdk-master-build
-6fa90ac7811e9d15b80fdb60ab3291d6 livox-sdk-master-prefix/src/livox-sdk-master-stamp/livox-sdk-master-configure
+21ce3b5b36aa110be96d4215e761384c livox-sdk-master-prefix/src/livox-sdk-master-stamp/livox-sdk-master-configure
 30c0608d33bd9b224010e3bbdefcd112 livox-sdk-master-prefix/src/livox-sdk-master-stamp/livox-sdk-master-download
 15e579e52de5730c67dc0daa45f16fd4 livox-sdk-master-prefix/src/livox-sdk-master-stamp/livox-sdk-master-install
 f985ddc4b1e73c663167a5d4440ba3b5 livox-sdk-master-prefix/src/livox-sdk-master-stamp/livox-sdk-master-mkdir

@@ -1,1 +1,1 @@
-flask:flask-socketio:numpy:opencv-python:setuptools
+cv_bridge:interface:rclpy:sensor_msgs:std_msgs

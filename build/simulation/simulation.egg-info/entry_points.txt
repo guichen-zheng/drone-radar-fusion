@@ -1,0 +1,3 @@
+[console_scripts]
+sim_bridge = simulation.sim_bridge:main
+

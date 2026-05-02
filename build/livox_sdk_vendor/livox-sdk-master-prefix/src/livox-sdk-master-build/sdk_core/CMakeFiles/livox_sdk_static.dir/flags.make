@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include -I/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/FastCRC -I/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/spdlog -I/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/include/third_party/cmdline -I/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master/sdk_core/src
 
-CXX_FLAGS =  -pthread -O3 -DNDEBUG -fPIC -Wall -Werror -Wno-c++11-long-long -std=gnu++11
+CXX_FLAGS =  -pthread -fPIC -Wall -Werror -Wno-c++11-long-long -std=gnu++11
 

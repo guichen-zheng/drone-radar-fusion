@@ -16,6 +16,7 @@ simulation/sim_bridge.py
 import math
 import rclpy
 from rclpy.node import Node
+from rcl_interfaces.msg import ParameterDescriptor
 
 from geometry_msgs.msg import Pose, Point, Quaternion, Vector3
 from std_msgs.msg import ColorRGBA, Header
@@ -61,9 +62,10 @@ class SimBridge(Node):
         super().__init__('sim_bridge')
 
         # ── 轨迹参数 ──────────────────────────────────────────────────────────
-        self.radius     = self.declare_parameter('radius',  20.0).value
-        self.height     = self.declare_parameter('height',  20.0).value
-        self.period     = self.declare_parameter('period',  40.0).value
+        _dyn = ParameterDescriptor(dynamic_typing=True)
+        self.radius     = float(self.declare_parameter('radius',  20.0, _dyn).value)
+        self.height     = float(self.declare_parameter('height',  20.0, _dyn).value)
+        self.period     = float(self.declare_parameter('period',  40.0, _dyn).value)
         self.drone_name = self.declare_parameter('drone_model_name', 'drone').value
 
         # ── 仿真标定参数（与 sim_calib.yaml 一致） ────────────────────────────

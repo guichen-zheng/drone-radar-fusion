@@ -1,0 +1,68 @@
+[0.008s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/simulation:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/camera_vision -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/camera_vision
+[0.045s] -- The C compiler identification is GNU 11.4.0
+[0.081s] -- The CXX compiler identification is GNU 11.4.0
+[0.086s] -- Detecting C compiler ABI info
+[0.134s] -- Detecting C compiler ABI info - done
+[0.139s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.139s] -- Detecting C compile features
+[0.140s] -- Detecting C compile features - done
+[0.142s] -- Detecting CXX compiler ABI info
+[0.196s] -- Detecting CXX compiler ABI info - done
+[0.202s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.202s] -- Detecting CXX compile features
+[0.202s] -- Detecting CXX compile features - done
+[0.203s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.309s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.355s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.370s] -- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)
+[0.395s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.398s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.403s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.411s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.420s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.446s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.448s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.502s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.520s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.547s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.552s] -- Looking for pthread.h
+[0.605s] -- Looking for pthread.h - found
+[0.605s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.659s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.659s] -- Found Threads: TRUE  
+[0.696s] -- Found sensor_msgs: 4.9.1 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.718s] -- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+[0.727s] -- Found OpenCV: /usr (found version "4.5.4") 
+[0.727s] -- Found interface: 1.0.0 (/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/cmake)
+[0.782s] -- Configuring done
+[0.791s] -- Generating done
+[0.794s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/camera_vision
+[0.801s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/simulation:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/camera_vision -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/camera_vision
+[0.802s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/simulation:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/camera_vision -- -j16 -l16
+[0.836s] [ 66%] [32mBuilding CXX object CMakeFiles/camera_node.dir/src/yolo_detector.cpp.o[0m
+[0.836s] [ 66%] [32mBuilding CXX object CMakeFiles/camera_node.dir/src/camera_node.cpp.o[0m
+[12.433s] [100%] [32m[1mLinking CXX executable camera_node[0m
+[12.750s] [100%] Built target camera_node
+[12.760s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/simulation:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/camera_vision -- -j16 -l16
+[12.761s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/simulation:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/camera_vision
+[12.767s] -- Install configuration: ""
+[12.767s] -- Execute custom install script
+[12.767s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib/camera_vision/camera_node
+[12.774s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/include/camera_vision/yolo_detector.hpp
+[12.780s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/launch/camera_launch.py
+[12.786s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/ament_index/resource_index/package_run_dependencies/camera_vision
+[12.792s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/ament_index/resource_index/parent_prefix_path/camera_vision
+[12.798s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/ament_prefix_path.sh
+[12.804s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/ament_prefix_path.dsv
+[12.810s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/path.sh
+[12.817s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/environment/path.dsv
+[12.824s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.bash
+[12.830s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.sh
+[12.836s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.zsh
+[12.842s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/local_setup.dsv
+[12.848s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.dsv
+[12.854s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/ament_index/resource_index/packages/camera_vision
+[12.860s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/cmake/camera_visionConfig.cmake
+[12.866s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/cmake/camera_visionConfig-version.cmake
+[12.872s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.xml
+[12.880s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/simulation:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/camera_vision

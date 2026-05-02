@@ -1,6 +1,3 @@
-source;share/web_dashboard/hook/ament_prefix_path.ps1
-source;share/web_dashboard/hook/ament_prefix_path.dsv
-source;share/web_dashboard/hook/ament_prefix_path.sh
 source;share/web_dashboard/hook/path.ps1
 source;share/web_dashboard/hook/path.dsv
 source;share/web_dashboard/hook/path.sh
@@ -10,6 +7,9 @@ source;share/web_dashboard/hook/pythonpath.sh
 source;share/web_dashboard/hook/pythonscriptspath.ps1
 source;share/web_dashboard/hook/pythonscriptspath.dsv
 source;share/web_dashboard/hook/pythonscriptspath.sh
+source;share/web_dashboard/hook/ament_prefix_path.ps1
+source;share/web_dashboard/hook/ament_prefix_path.dsv
+source;share/web_dashboard/hook/ament_prefix_path.sh
 source;../../build/web_dashboard/share/web_dashboard/hook/pythonpath_develop.ps1
 source;../../build/web_dashboard/share/web_dashboard/hook/pythonpath_develop.dsv
 source;../../build/web_dashboard/share/web_dashboard/hook/pythonpath_develop.sh

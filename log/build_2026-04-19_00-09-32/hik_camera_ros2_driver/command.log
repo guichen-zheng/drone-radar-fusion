@@ -1,2 +1,0 @@
-Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16
-Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16

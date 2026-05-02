@@ -1,0 +1,41 @@
+[0.367s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard': PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build
+[0.520s] running develop
+[0.606s] Removing /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web-dashboard.egg-link (link to .)
+[0.623s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard' returned '0': PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build
+[0.624s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard': PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/web_dashboard build --build-base /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build install --record /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log --single-version-externally-managed install_data --force
+[0.761s] running egg_info
+[0.762s] writing ../../build/web_dashboard/web_dashboard.egg-info/PKG-INFO
+[0.762s] writing dependency_links to ../../build/web_dashboard/web_dashboard.egg-info/dependency_links.txt
+[0.762s] writing entry points to ../../build/web_dashboard/web_dashboard.egg-info/entry_points.txt
+[0.762s] writing requirements to ../../build/web_dashboard/web_dashboard.egg-info/requires.txt
+[0.762s] writing top-level names to ../../build/web_dashboard/web_dashboard.egg-info/top_level.txt
+[0.763s] reading manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+[0.763s] writing manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+[0.763s] running build
+[0.763s] running build_py
+[0.763s] creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build
+[0.763s] creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib
+[0.763s] creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[0.763s] copying web_dashboard/app.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[0.763s] copying web_dashboard/__init__.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[0.763s] copying web_dashboard/watchdog_node.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[0.763s] running install
+[0.764s] running install_lib
+[0.764s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[0.764s] copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/app.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[0.764s] copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/__init__.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[0.764s] copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/watchdog_node.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[0.764s] byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/app.py to app.cpython-310.pyc
+[0.765s] byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/__init__.py to __init__.cpython-310.pyc
+[0.765s] byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/watchdog_node.py to watchdog_node.cpython-310.pyc
+[0.766s] running install_data
+[0.766s] copying resource/web_dashboard -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+[0.766s] copying package.xml -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard
+[0.766s] copying templates/index.html -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+[0.766s] running install_egg_info
+[0.768s] Copying ../../build/web_dashboard/web_dashboard.egg-info to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard-1.0.0-py3.10.egg-info
+[0.768s] running install_scripts
+[0.780s] Installing watchdog_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.781s] Installing web_dashboard_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.781s] writing list of installed files to '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log'
+[0.794s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard' returned '0': PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/web_dashboard build --build-base /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build install --record /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log --single-version-externally-managed install_data --force
