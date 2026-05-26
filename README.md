@@ -233,6 +233,55 @@ ros2 run web_dashboard watchdog_node                       # 终端 6（可选�
 
 > 无人机硬件未连接时：hik_camera 和 radar 会报 `No camera found` / `Invalid bd:` 错误并持续重试，属正常现象。Web 地图页面仍可正常加载，但不显示目标数据。
 
+### 8. rosbag 录制与回放（数据驱动调试）
+
+实物跑通后，把关键 topic 录成 rosbag，可以在没有硬件的环境里反复回放，用于
+调试融合参数、卡尔曼追踪、报警规则等下游算法。
+
+#### 录制
+
+```bash
+# 终端 A：照常启动实物系统
+ros2 launch launch/full_system_launch.py
+
+# 终端 B：开始录制
+bash scripts/record_bag.sh                       # 自动命名 drone_fusion_YYYYMMDD_HHMMSS
+bash scripts/record_bag.sh my_test_3drones      # 自定义名字
+```
+
+录到 `~/bags/<名字>/`，zstd 压缩；Ctrl+C 停。**注意**：raw 点云 + 图像约
+3–5 GB/min，录前 `df -h ~` 确认空间。
+
+#### 回放
+
+`launch/playback_launch.py` **只启动下游节点**（不启动 livox / hik 驱动），
+所有节点自动设 `use_sim_time:=true` 让时间戳走 bag /clock。
+
+```bash
+# 方式 A：launch 自动启动 ros2 bag play（默认循环）
+ros2 launch launch/playback_launch.py bag_path:=$HOME/bags/my_test_3drones rate:=1.0
+
+# 方式 B：只起处理管线，bag 手动播（支持暂停 SPACE / 单步 S）
+ros2 launch launch/playback_launch.py
+# 另开终端：
+bash scripts/play_bag.sh ~/bags/my_test_3drones
+```
+
+回放时浏览器 `http://localhost:5000` 和 RViz 同样可用，**看到的可视化效果与实物
+运行时完全一致**。
+
+#### 录制了哪些 topic（由 `scripts/record_bag.sh` 决定）
+
+| 类别 | Topic |
+|------|-------|
+| 原始数据 | `/livox/lidar` `/hik_camera/image_raw` |
+| 雷达输出 | `/radar/detect` `/radar/dynamic_cloud` |
+| 相机输出 | `/camera/detect_result` `/camera/debug_image` |
+| 融合输出 | `/fusion/final_result` `/fusion/warn` `/fusion/markers` |
+
+回放时下游节点会**重新计算**（忽略 bag 里录的处理结果 topic），所以可以改
+`config/params.yaml` 后回放看效果。
+
 ---
 
 ## Topic 一览
