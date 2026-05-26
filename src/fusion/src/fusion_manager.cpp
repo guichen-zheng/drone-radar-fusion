@@ -17,6 +17,7 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     this->declare_parameter("max_miss_frames",  5);
     this->declare_parameter("match_dist_thresh", 50.0);
     this->declare_parameter("match_iou_thresh",  0.3);
+    this->declare_parameter("track_assoc_dist",  5.0);   // 米：track 关联阈值
     this->declare_parameter("warn_confidence",   0.7);
     this->declare_parameter("warn_level",        "MEDIUM");
     this->declare_parameter("origin_lat",        39.9);   // 监控区域原点纬度（度）
@@ -26,6 +27,7 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     max_miss_frames_   = this->get_parameter("max_miss_frames").as_int();
     match_dist_thresh_ = this->get_parameter("match_dist_thresh").as_double();
     match_iou_thresh_  = this->get_parameter("match_iou_thresh").as_double();
+    track_assoc_dist_  = this->get_parameter("track_assoc_dist").as_double();
     warn_confidence_   = this->get_parameter("warn_confidence").as_double();
     warn_level_        = this->get_parameter("warn_level").as_string();
 
@@ -192,7 +194,7 @@ void FusionManager::updateTracks(
 
     // 简单最近邻关联（按 3D 距离）
     std::set<uint32_t> updated_ids;
-    double assoc_dist = 10.0;  // 米，超过此距离认为是新目标
+    double assoc_dist = track_assoc_dist_;  // 米，超过此距离认为是新目标
 
     for (const auto & det : dets) {
         uint32_t best_id = UINT32_MAX;

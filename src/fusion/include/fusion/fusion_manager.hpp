@@ -107,6 +107,7 @@ private:
     int max_miss_frames_   = 5;    // 连续丢失多少帧删除轨迹
     double match_iou_thresh_ = 0.3;
     double match_dist_thresh_ = 50.0;  // 像素距离阈值
+    double track_assoc_dist_  = 5.0;   // 米：track 关联阈值（>此距离视为新目标）
     double warn_confidence_   = 0.7;   // 触发报警的最低置信度
     std::string warn_level_   = "MEDIUM";
 };

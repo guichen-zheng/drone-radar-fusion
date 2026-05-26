@@ -4,10 +4,12 @@
     pixel_format: "BayerRG8"        # Recommended Option: "RGB8Packed", "BayerRG8"
     adc_bit_depth: "Bits_8"         # If using "BayerRG8", <adc_bit_depth> must be set as "Bits_8"; otherwise, it can be "Bits_8" or "Bits_12"
     use_sensor_data_qos: false
-    camera_name: "camera"
+    # ── 命名（让发布 topic 落到 /hik_camera/image_raw，与 yolo_detector 订阅、RViz 配置对齐）──
+    camera_name: "hik_camera"
+    camera_topic: "hik_camera/image_raw"
     # frame_id: "optical_frame"     # If not set, it will be set as <camera_name>_optical_frame
-    # camera_topic: "image"         # If not set, it will be set as <camera_name>/image
 
-    acquisition_frame_rate: 200.0   # Unit: Hz
-    exposure_time: 2500             # Unit: us
-    gain: 12.0                      # Range: 0.0 ~ 16.9, Unit: dB
+    # ── 拍摄参数（现场可调）──
+    acquisition_frame_rate: 30.0    # Hz：30 帧对融合管线足够；过高会徒增 CPU
+    exposure_time: 25000            # μs：太亮→调小（如 5000）；太暗→调大（最大 ~33000，限制于帧率）
+    gain: 14.0                      # dB（0~16.9）：曝光到上限仍暗时再加；过高会噪点

@@ -35,32 +35,31 @@ radar_processor:
     gicp_max_iter:   50
     gicp_fitness_eps: 0.01
 
-# ── YOLO 检测节点（yolo_detector）─────────────────────────────────────────────
+    # 离群点滤除（mean_k<=0 时跳过；点云稀疏时也跳过避免崩溃）
+    outlier_mean_k:     30
+    outlier_stddev_mul: 1.0
+
+# ── YOLO 检测节点（camera_yolo 包，通过 conda subprocess 跑 ultralytics）─────
+# 不再使用旧的 camera_vision (C++)，因为系统 OpenCV 4.5.4 解析 YOLOv8 ONNX 崩溃。
+# 现走 Python 节点：rclpy 收图 → JPEG 编码 → stdin 管道 → conda 里 ultralytics
+# 推理 → JSON stdout 返回。
 yolo_detector:
   ros__parameters:
-    # ★ 待填入：训练好的无人机 YOLO ONNX 模型路径
-    # 推荐数据集：VisDrone（https://github.com/VisDrone/VisDrone-Dataset）
-    # 或自采集数据集 + YOLOv8n 训练，导出为 ONNX：yolo export model=best.pt format=onnx
-    model_path:       "model/ONNX/yolo_drone.onnx"
-    class_names_path: "model/ONNX/classes.txt"
+    # 模型路径（worker 内部会优先尝试同名 .pt，找不到再回退到 .onnx）
+    model_path:   "model/ONNX/yolo_drone.onnx"
+    conf_thresh:  0.60         # 置信度阈值（0~1）：值越大越严，假阳性越少。
+                               # 0.25 太宽容会把人当 drone；0.60 起步，看效果再微调
+    input_size:   640
+    image_topic:  "/hik_camera/image_raw"
 
-    input_width:  640
-    input_height: 640
-    conf_thresh:  0.50        # 置信度阈值（可根据场景调整）
-    nms_thresh:   0.45
-    use_gpu:      true        # false = 仅 CPU 推理
+    # conda 环境的 Python 解释器路径。如果你的 conda env 不在默认位置，改这里。
+    # 创建：conda create -n yolov8 python=3.10 && conda activate yolov8 && \
+    #       pip install ultralytics opencv-python
+    conda_python: "/home/guichen/miniconda3/envs/yolov8/bin/python"
 
-# ── 海康相机驱动节点（hik_camera）─────────────────────────────────────────────
-# ★ 待填入：海康驱动安装后参考其 README 配置
-# 驱动推荐：https://github.com/whlook/ros_hik_camera  或官方 MVS SDK ROS2 封装
-hik_camera:
-  ros__parameters:
-    camera_sn: ""             # 相机序列号（留空则自动选第一个）
-    width:  1920
-    height: 1080
-    fps:    30
-    exposure_time: 5000       # 微秒
-    gain:    0.0
+# ── 海康相机驱动 ─────────────────────────────────────────────────────────────
+# 参数已迁移到 src/hik_camera/config/camera_params.yaml，由 hik_camera_ros2_driver
+# 自己加载（node 名 = /hik_camera_ros2_driver）。这里不再重复，避免参数名漂移。
 
 # ── 融合节点（fusion_manager）─────────────────────────────────────────────────
 fusion_manager:
@@ -73,6 +72,7 @@ fusion_manager:
     max_miss_frames:   5      # 目标消失帧数上限
     match_dist_thresh: 60.0   # 相机-雷达投影匹配距离阈值（像素）
     match_iou_thresh:  0.25
+    track_assoc_dist:  8.0    # 米：track 关联阈值（>此距离视为新目标）
     warn_confidence:   0.70   # 触发报警的最低置信度
     warn_level:        "HIGH" # "LOW" / "MEDIUM" / "HIGH"
 

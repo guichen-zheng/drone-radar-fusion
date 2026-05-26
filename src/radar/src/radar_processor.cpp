@@ -25,6 +25,9 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
     this->declare_parameter("drone_max_size", 10.0);
     this->declare_parameter("gicp_max_iter", 50);
     this->declare_parameter("gicp_fitness_eps", 0.01);
+    // 离群点滤除参数（mean_k<=0 时跳过；点云稀疏时也跳过，避免 KDTree empty）
+    this->declare_parameter("outlier_mean_k", 30);
+    this->declare_parameter("outlier_stddev_mul", 1.0);
 
     roi_x_min_        = this->get_parameter("roi_x_min").as_double();
     roi_x_max_        = this->get_parameter("roi_x_max").as_double();
@@ -41,6 +44,8 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
     drone_max_size_   = this->get_parameter("drone_max_size").as_double();
     gicp_max_iter_    = this->get_parameter("gicp_max_iter").as_int();
     gicp_fitness_eps_ = this->get_parameter("gicp_fitness_eps").as_double();
+    outlier_mean_k_     = this->get_parameter("outlier_mean_k").as_int();
+    outlier_stddev_mul_ = this->get_parameter("outlier_stddev_mul").as_double();
 
     // ── 加载地图 ───────────────────────────────────────────
     std::string map_path = this->get_parameter("map_pcd_path").as_string();
@@ -83,7 +88,74 @@ void RadarProcessor::pointCloudCallback(
     auto clusters     = euclideanClustering(clean_cloud);
     auto candidates   = filterDroneCandidates(clusters);
 
+    // 每 10 帧打印一次各阶段点数（实物调试用）
+    static int frame_cnt = 0;
+    if (++frame_cnt % 10 == 0) {
+        RCLCPP_INFO(this->get_logger(),
+            "[Radar] 点数: 输入=%zu voxel=%zu ROI=%zu outlier=%zu 聚类=%zu 候选=%zu",
+            cloud->size(), filtered->size(), roi_cloud->size(),
+            clean_cloud->size(), clusters.size(), candidates.size());
+    }
+
+    // 把候选无人机的点云强度抬高到 250，便于在 RViz 用 intensity 着色时高亮
+    pcl::PointCloud<pcl::PointXYZI>::Ptr highlight_cloud(new pcl::PointCloud<pcl::PointXYZI>(*clean_cloud));
+    for (const auto & c : candidates) {
+        for (int idx : c.indices.indices) {
+            if (idx >= 0 && idx < static_cast<int>(highlight_cloud->size())) {
+                highlight_cloud->points[idx].intensity = 250.0f;
+            }
+        }
+    }
+
+    // 发布动态点云（候选目标点已被高亮）
+    sensor_msgs::msg::PointCloud2 cloud_msg;
+    pcl::toROSMsg(*highlight_cloud, cloud_msg);
+    cloud_msg.header = msg->header;
+    pub_dynamic_cloud_->publish(cloud_msg);
+
+    // 发布无人机包围盒标记
+    publishClusterMarkers(candidates, msg->header);
+
     publishResults(candidates, msg->header);
+}
+
+void RadarProcessor::publishClusterMarkers(
+    const std::vector<ClusterResult> & candidates,
+    const std_msgs::msg::Header & header)
+{
+    visualization_msgs::msg::MarkerArray ma;
+
+    // 先发 DELETEALL 清掉上一帧的旧 marker
+    visualization_msgs::msg::Marker clr;
+    clr.header = header;
+    clr.ns = "drone_candidates";
+    clr.action = visualization_msgs::msg::Marker::DELETEALL;
+    ma.markers.push_back(clr);
+
+    for (size_t i = 0; i < candidates.size(); ++i) {
+        const auto & c = candidates[i];
+
+        // 半透明青色包围盒：尺寸 = cluster bbox（宽×深×高），叠在聚类点上
+        visualization_msgs::msg::Marker box;
+        box.header = header;
+        box.ns = "drone_candidates";
+        box.id = static_cast<int>(i);
+        box.type = visualization_msgs::msg::Marker::CUBE;
+        box.action = visualization_msgs::msg::Marker::ADD;
+        box.pose.position.x = c.centroid.x;
+        box.pose.position.y = c.centroid.y;
+        box.pose.position.z = c.centroid.z;
+        box.pose.orientation.w = 1.0;
+        box.scale.x = std::max(c.width,  0.3f);
+        box.scale.y = std::max(c.depth,  0.3f);
+        box.scale.z = std::max(c.height, 0.3f);
+        box.color.r = 0.4f; box.color.g = 0.9f; box.color.b = 1.0f;
+        box.color.a = 0.45f;
+        box.lifetime = rclcpp::Duration::from_seconds(0.5);
+        ma.markers.push_back(box);
+    }
+
+    pub_markers_->publish(ma);
 }
 
 pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::voxelFilter(
@@ -130,11 +202,15 @@ pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::gicpMapRegistration(
 pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::outlierRemoval(
     const pcl::PointCloud<pcl::PointXYZI>::Ptr & cloud)
 {
+    // outlier_mean_k <= 0 时直接跳过滤除（点云稀疏时用）
+    if (outlier_mean_k_ <= 0) return cloud;
+    // 输入点数过少（< mean_k+2）时也跳过，否则 SOR 会触发 KDTree empty 错误
+    if (static_cast<int>(cloud->size()) < outlier_mean_k_ + 2) return cloud;
     pcl::StatisticalOutlierRemoval<pcl::PointXYZI> sor;
     pcl::PointCloud<pcl::PointXYZI>::Ptr output(new pcl::PointCloud<pcl::PointXYZI>);
     sor.setInputCloud(cloud);
-    sor.setMeanK(30);
-    sor.setStddevMulThresh(1.0);
+    sor.setMeanK(outlier_mean_k_);
+    sor.setStddevMulThresh(outlier_stddev_mul_);
     sor.filter(*output);
     return output;
 }
@@ -164,6 +240,7 @@ std::vector<ClusterResult> RadarProcessor::euclideanClustering(
         float max_x = -1e6, max_y = -1e6, max_z = -1e6;
         float sum_x = 0, sum_y = 0, sum_z = 0;
         res.point_count = indices.indices.size();
+        res.indices = indices;
 
         for (int idx : indices.indices) {
             const auto & pt = cloud->points[idx];

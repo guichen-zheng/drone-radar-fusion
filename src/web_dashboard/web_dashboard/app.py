@@ -24,8 +24,9 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 from std_msgs.msg import String
-from sensor_msgs.msg import Image
+from sensor_msgs.msg import Image, PointCloud2
 from interface.msg import DroneDetectArray
+from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
 
 import cv2
 import numpy as np
@@ -56,10 +57,25 @@ class WebDashboardNode(Node):
             String, "/fusion/warn_json",
             self._on_warn_json, 10)
 
-        # 订阅相机调试图像（可选，占带宽）
+        # 订阅相机调试图像（带 YOLO bbox，用于前端实时画面）
         self.create_subscription(
             Image, "/camera/debug_image",
             self._on_debug_image, 10)
+
+        # ── 连接状态监控（与上面的"数据消费"订阅分开，确保状态灯反映"硬件连通"） ──
+        # 相机原始图：在发就说明海康驱动 ↔ 相机连通
+        sensor_qos = QoSProfile(
+            depth=5,
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            history=HistoryPolicy.KEEP_LAST,
+        )
+        self.create_subscription(
+            Image, "/hik_camera/image_raw",
+            self._on_camera_raw, sensor_qos)
+        # 雷达原始点云：在发就说明 Livox 驱动 ↔ 雷达连通
+        self.create_subscription(
+            PointCloud2, "/livox/lidar",
+            self._on_lidar_raw, sensor_qos)
 
         # 发布传感器位姿到 fusion 节点
         self.pub_sensor_pose_ = self.create_publisher(
@@ -67,16 +83,23 @@ class WebDashboardNode(Node):
 
         self.get_logger().info("[WebDashboard] ROS2 节点已启动，推送地址：http://0.0.0.0:5000")
 
-        # 传感器连接状态（最近 3 秒内有无数据）
+        # 传感器连接状态（最近 3 秒内有原始数据 = 连通）
         self._radar_last_time  = 0.0
         self._camera_last_time = 0.0
         self._radar_ok  = False
         self._camera_ok = False
         self.create_timer(2.0, self._check_sensor_status)
 
+    # ── 硬件连通监控回调（只更新时间戳，不做其他事） ─────────
+    def _on_lidar_raw(self, msg):
+        self._radar_last_time = time.time()
+
+    def _on_camera_raw(self, msg):
+        self._camera_last_time = time.time()
+
     # ── ROS2 回调 → SocketIO 推送 ─────────────────────────
     def _on_final_result(self, msg: DroneDetectArray):
-        self._radar_last_time = time.time()
+        # 注：不在这里更新 _radar_last_time —— 雷达连通由 /livox/lidar 直接监控
         drones = []
         for d in msg.drones:
             drones.append({
@@ -92,26 +115,27 @@ class WebDashboardNode(Node):
                 "confidence": round(d.confidence, 2),
                 "label":      d.label,
             })
-        sio.emit("drone_update", {"drones": drones})
+        with app.app_context():
+            sio.emit("drone_update", {"drones": drones})
 
     def _on_warn_json(self, msg: String):
         try:
             data = json.loads(msg.data)
-            sio.emit("drone_warn", data)
+            with app.app_context():
+                sio.emit("drone_warn", data)
         except json.JSONDecodeError:
             pass
 
     def _on_debug_image(self, msg: Image):
-        self._camera_last_time = time.time()
+        # 注：不在这里更新 _camera_last_time —— 相机连通由 /hik_camera/image_raw 直接监控
         try:
             cv_img = bridge.imgmsg_to_cv2(msg, "bgr8")
-            # 压缩为 JPEG base64（降低带宽压力）
             _, buf = cv2.imencode(".jpg", cv_img, [cv2.IMWRITE_JPEG_QUALITY, 60])
             b64 = base64.b64encode(buf).decode("utf-8")
-            sio.emit("camera_frame", {"data": b64})
+            with app.app_context():
+                sio.emit("camera_frame", {"data": b64})
         except Exception as e:
             self.get_logger().warn(f"[WebDashboard] 图像推送失败：{e}")
-
 
     def _check_sensor_status(self):
         now = time.time()
@@ -120,7 +144,8 @@ class WebDashboardNode(Node):
         if radar_ok != self._radar_ok or camera_ok != self._camera_ok:
             self._radar_ok  = radar_ok
             self._camera_ok = camera_ok
-            sio.emit('sensor_status', {'radar': radar_ok, 'camera': camera_ok})
+            with app.app_context():
+                sio.emit('sensor_status', {'radar': radar_ok, 'camera': camera_ok})
 
 
 # ── SocketIO 传感器位姿事件 ───────────────────────────────────────────────────
@@ -155,9 +180,9 @@ def on_set_sensor_pose(data):
 
 @sio.on('request_sensor_pose')
 def on_request_sensor_pose():
-    """新客户端连接时请求当前位姿，用于恢复地图上的传感器箭头。"""
-    if _sensor_pose is not None:
-        sio.emit('sensor_pose_current', _sensor_pose)
+    """新客户端连接时请求当前位姿，用于恢复地图上的传感器箭头。
+    无论是否已设置都回复一次，前端凭此判断是否需要弹出"请先设置位姿"提示。"""
+    sio.emit('sensor_pose_current', _sensor_pose if _sensor_pose is not None else {})
 
 
 @sio.on('request_sensor_status')
@@ -192,7 +217,7 @@ def main():
     ros_thread.start()
 
     # Flask + SocketIO 在主线程运行
-    sio.run(app, host="0.0.0.0", port=5000, debug=False)
+    sio.run(app, host="0.0.0.0", port=5000, debug=False, allow_unsafe_werkzeug=True)
 
     rclpy.shutdown()
 

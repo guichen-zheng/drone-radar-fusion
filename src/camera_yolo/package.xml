@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>web_dashboard</name>
+  <name>camera_yolo</name>
   <version>1.0.0</version>
-  <description>Flask + SocketIO Web 可视化：地图光标 + 高度显示 + 实时报警</description>
-  <maintainer email="your@email.com">Your Name</maintainer>
+  <description>YOLO 推理节点（通过 conda 子进程桥接 ultralytics，绕过系统 OpenCV 4.5.4 + YOLOv8 ONNX 不兼容问题）</description>
+  <maintainer email="2830532983@qq.com">guichen</maintainer>
   <license>MIT</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
+
   <depend>rclpy</depend>
-  <depend>std_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>cv_bridge</depend>
   <depend>interface</depend>
