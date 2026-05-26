@@ -1,8 +1,0 @@
-{
-  "package_name": "interface",
-  "non_idl_tuples": [
-    "/home/guichen/Documents/drone-radar-fusion/src/interface:msg/DroneDetect.msg",
-    "/home/guichen/Documents/drone-radar-fusion/src/interface:msg/DroneDetectArray.msg",
-    "/home/guichen/Documents/drone-radar-fusion/src/interface:msg/RadarWarn.msg"
-  ]
-}

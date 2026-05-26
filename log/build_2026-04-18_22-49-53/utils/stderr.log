@@ -1,7 +1,0 @@
-[0mCMake Error: File /home/guichen/Documents/drone-radar-fusion/src/utils/cmake/utilsConfig.cmake.in does not exist.[0m
-[31mCMake Error at /usr/share/cmake-3.22/Modules/CMakePackageConfigHelpers.cmake:342 (configure_file):
-  configure_file Problem configuring file
-Call Stack (most recent call first):
-  CMakeLists.txt:36 (configure_package_config_file)
-
-[0m

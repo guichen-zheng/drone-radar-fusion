@@ -1,1 +1,0 @@
-/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia/ament_cmake_environment_hooks/local_setup.bash

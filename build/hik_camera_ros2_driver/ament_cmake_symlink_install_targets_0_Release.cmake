@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver/hik_camera_ros2_driver_node" "TARGETS" "hik_camera_ros2_driver_node" "DESTINATION" "lib/hik_camera_ros2_driver")

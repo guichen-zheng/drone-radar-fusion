@@ -1,7 +1,0 @@
-{
-  "package_name": "livox_interfaces",
-  "non_idl_tuples": [
-    "/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces:msg/CustomPoint.msg",
-    "/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces:msg/CustomMsg.msg"
-  ]
-}

@@ -1,4 +1,0 @@
-[console_scripts]
-watchdog_node = web_dashboard.watchdog_node:main
-web_dashboard_node = web_dashboard.app:main
-

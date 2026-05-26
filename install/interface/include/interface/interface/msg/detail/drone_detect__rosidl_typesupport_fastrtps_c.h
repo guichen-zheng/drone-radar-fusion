@@ -1,1 +1,0 @@
-/home/guichen/Documents/drone-radar-fusion/build/interface/rosidl_typesupport_fastrtps_c/interface/msg/detail/drone_detect__rosidl_typesupport_fastrtps_c.h

@@ -1,1 +1,0 @@
-/home/guichen/Documents/drone-radar-fusion/build/radar/ament_cmake_environment_hooks/local_setup.zsh

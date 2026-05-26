@@ -1,1 +1,0 @@
-/home/guichen/Documents/drone-radar-fusion/build/interface/ament_cmake_python/interface/interface.egg-info/top_level.txt

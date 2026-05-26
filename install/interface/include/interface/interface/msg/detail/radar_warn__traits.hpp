@@ -1,1 +1,0 @@
-/home/guichen/Documents/drone-radar-fusion/build/interface/rosidl_generator_cpp/interface/msg/detail/radar_warn__traits.hpp

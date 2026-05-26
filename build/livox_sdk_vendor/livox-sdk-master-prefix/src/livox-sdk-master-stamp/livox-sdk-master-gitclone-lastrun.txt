@@ -1,3 +1,0 @@
-repository='https://github.com/acceleration-robotics/Livox-SDK.git'
-module=''
-tag='origin'
