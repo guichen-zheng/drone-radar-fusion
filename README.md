@@ -249,8 +249,24 @@ bash scripts/record_bag.sh                       # 自动命名 drone_fusion_YYY
 bash scripts/record_bag.sh my_test_3drones      # 自定义名字
 ```
 
-录到 `~/bags/<名字>/`，zstd 压缩；Ctrl+C 停。**注意**：raw 点云 + 图像约
+默认录到 `~/bags/<名字>/`，zstd 压缩；Ctrl+C 停。**注意**：raw 点云 + 图像约
 3–5 GB/min，录前 `df -h ~` 确认空间。
+
+**录到移动硬盘 / 其他位置**：用 `BAG_ROOT` 环境变量覆盖根目录，脚本会自动 mkdir。
+
+```bash
+# 先确认硬盘挂载点
+df -h | grep media
+
+# 录制时指定 BAG_ROOT（例：挂在 /media/guichen/MyDisk/）
+BAG_ROOT=/media/guichen/MyDisk/bags  bash scripts/record_bag.sh my_test
+
+# 想长期固定到硬盘，加进 ~/.bashrc：
+# export BAG_ROOT=/media/guichen/MyDisk/bags
+```
+
+⚠️ 移动硬盘必须是 **ext4/xfs/NTFS**（FAT32/exFAT 不支持大文件，超过 4GB 会截断）；
+USB3.0 / SSD 才够写入速度，USB2.0 慢盘可能丢消息。
 
 #### 回放
 
