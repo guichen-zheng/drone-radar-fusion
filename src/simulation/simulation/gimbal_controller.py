@@ -175,18 +175,18 @@ class GimbalController(Node):
         t.transform.rotation = euler_to_quat(-math.pi / 2.0, 0.0, -math.pi / 2.0)
         self.tf_static.sendTransform(t)
 
-    # ── /radar/detect 回调：转世界坐标 + 目标锁定 + 算期望角度 ────────────
+    # ── /radar/detect 回调：检测已是世界坐标（由 radar_world_repub 做了 TF 变换）
     def _on_radar(self, msg: DroneDetectArray):
         now = time.monotonic()
 
-        # 把每个检测从当前 lidar 坐标系转到世界坐标系（依赖当前 cur_pan/cur_tilt）
-        # 同时按距离 > min_dist 过滤
+        # 注：现在订阅的 /radar/detect 已是 map 坐标系下的检测（由 radar_world_repub
+        # 把 lidar 局部坐标转换过）。直接用 d.x/y/z 作为世界坐标。
         candidates = []
         for d in msg.drones:
-            wx, wy, wz = lidar_to_world(
-                d.x, d.y, d.z, self.cur_pan, self.cur_tilt, self.pivot)
-            # 距离用世界坐标算（雷达 frame 也行，效果一样）
-            dist = math.sqrt(d.x * d.x + d.y * d.y + d.z * d.z)
+            wx, wy, wz = float(d.x), float(d.y), float(d.z)
+            # 距离按目标到云台支点的世界欧氏距离算
+            dx, dy, dz = wx - self.pivot[0], wy - self.pivot[1], wz - self.pivot[2]
+            dist = math.sqrt(dx*dx + dy*dy + dz*dz)
             if dist < self.min_dist:
                 continue
             candidates.append((wx, wy, wz, float(d.confidence)))

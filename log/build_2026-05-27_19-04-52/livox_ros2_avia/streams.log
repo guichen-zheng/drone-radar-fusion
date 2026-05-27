@@ -1,0 +1,111 @@
+[0.019s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia -- -j16 -l16
+[0.040s] -- livox_ros2_avia version: 0.0.1
+[0.040s] -- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.130s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.202s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.203s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.209s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.220s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.230s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.254s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.255s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.332s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.435s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.461s] -- FLANN found (include: /usr/include, lib: /usr/lib/x86_64-linux-gnu/libflann_cpp.so)
+[0.687s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.691s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.825s] -- Eigen found (include: /usr/include/eigen3, version: 3.4.0)
+[0.831s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[0.836s] -- OpenNI2 found (version: 2.2.0.33, include: /usr/include/openni2, lib: /usr/lib/x86_64-linux-gnu/libOpenNI2.so;libusb::libusb)
+[0.944s] -- Found Qhull version 8.0.2
+[1.057s] -- OpenNI found (version: 1.5.4.0, include: /usr/include/ni, lib: /usr/lib/libOpenNI.so;libusb::libusb)
+[1.200s] [33mCMake Warning (dev) at CMakeLists.txt:31 (find_package):
+[1.200s]   Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+[1.200s]   Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+[1.200s]   command to set the policy and suppress this warning.
+[1.200s] 
+[1.200s]   CMake variable PCL_ROOT is set to:
+[1.200s] 
+[1.200s]     /usr
+[1.200s] 
+[1.200s]   For compatibility, CMake is ignoring the variable.
+[1.200s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[1.200s] [0m
+[1.211s] -- Checking for module 'apr-1'
+[1.222s] --   Found apr-1, version 1.7.0
+[1.247s] [0m/usr/include/apr-1.0[0m
+[1.247s] [0mapr-1[0m
+[1.258s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.265s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.267s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.268s] -- Configured cppcheck include dirs: /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/rapidjson;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/comon/rapdidxml;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/common/comm;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/timesync;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/timesync/user_uart;/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia/livox_ros2_avia
+[1.268s] -- Configured cppcheck exclude dirs and/or files: 
+[1.270s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.270s] -- Configured cpplint exclude dirs and/or files: 
+[1.270s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.271s] -- Added test 'lint_cmake' to check CMake code style
+[1.271s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.273s] -- Added test 'uncrustify' to check C / C++ code style
+[1.274s] -- Configured uncrustify additional arguments: 
+[1.274s] -- Added test 'xmllint' to check XML markup files
+[1.275s] -- Configuring done
+[1.313s] -- Generating done
+[1.325s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia
+[1.355s] [35m[1mConsolidate compiler generated dependencies of target livox_ros2_avia_node[0m
+[1.358s] [35m[1mConsolidate compiler generated dependencies of target livox_ros2_avia[0m
+[1.367s] [  6%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia_node.dir/rclcpp_components/node_main_livox_ros2_avia_node.cpp.o[0m
+[1.382s] [ 18%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lvx_file.cpp.o[0m
+[1.382s] [ 25%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds.cpp.o[0m
+[1.382s] [ 25%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/ldq.cpp.o[0m
+[1.383s] [ 31%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds_lvx.cpp.o[0m
+[1.385s] [ 37%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds_hub.cpp.o[0m
+[1.385s] [ 43%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lds_lidar.cpp.o[0m
+[1.390s] [ 50%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/lddc.cpp.o[0m
+[1.390s] [ 56%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/timesync/timesync.cpp.o[0m
+[1.390s] [ 62%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/livox_ros2_avia/livox_ros2_driver.cpp.o[0m
+[1.390s] [ 68%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/timesync/user_uart/user_uart.cpp.o[0m
+[1.395s] [ 75%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/common/comm/comm_protocol.cpp.o[0m
+[1.401s] [ 81%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/common/comm/sdk_protocol.cpp.o[0m
+[1.407s] [ 87%] [32mBuilding CXX object CMakeFiles/livox_ros2_avia.dir/common/comm/gps_protocol.cpp.o[0m
+[4.352s] [ 93%] [32m[1mLinking CXX executable livox_ros2_avia_node[0m
+[4.453s] [ 93%] Built target livox_ros2_avia_node
+[8.092s] [100%] [32m[1mLinking CXX shared library liblivox_ros2_avia.so[0m
+[8.839s] [100%] Built target livox_ros2_avia
+[8.850s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia -- -j16 -l16
+[8.852s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia
+[8.858s] -- Install configuration: ""
+[8.858s] -- Execute custom install script
+[8.858s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/livox_ros2_avia/livox_ros2_avia_node
+[8.858s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/library_path.sh
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/library_path.dsv
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/liblivox_ros2_avia.so
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_hub.rviz
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_hub_config.json
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_lidar.rviz
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/config/livox_lidar_config.json
+[8.859s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_hub_launch.py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_hub_msg_launch .py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_hub_rviz_launch.py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_lidar_launch.py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_lidar_msg_launch.py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_lidar_rviz_launch.py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/launch/livox_template_launch.py
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/package_run_dependencies/livox_ros2_avia
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/parent_prefix_path/livox_ros2_avia
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/ament_prefix_path.sh
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/ament_prefix_path.dsv
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/path.sh
+[8.860s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/environment/path.dsv
+[8.861s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.bash
+[8.861s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.sh
+[8.861s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.zsh
+[8.861s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/local_setup.dsv
+[8.861s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.dsv
+[8.868s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/packages/livox_ros2_avia
+[8.869s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/ament_index/resource_index/rclcpp_components/livox_ros2_avia
+[8.869s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.869s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/ament_cmake_export_libraries-extras.cmake
+[8.869s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/livox_ros2_aviaConfig.cmake
+[8.869s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/cmake/livox_ros2_aviaConfig-version.cmake
+[8.869s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.xml
+[8.871s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia

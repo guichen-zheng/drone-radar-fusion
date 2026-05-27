@@ -197,19 +197,6 @@ livox_sdk_vendor_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/livox_sdk_vendor_uninstall.dir/build.make CMakeFiles/livox_sdk_vendor_uninstall.dir/build
 .PHONY : livox_sdk_vendor_uninstall/fast
 
-#=============================================================================
-# Target rules for targets named livox-sdk-master
-
-# Build rule for target.
-livox-sdk-master: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 livox-sdk-master
-.PHONY : livox-sdk-master
-
-# fast build rule for target.
-livox-sdk-master/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/livox-sdk-master.dir/build.make CMakeFiles/livox-sdk-master.dir/build
-.PHONY : livox-sdk-master/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -223,7 +210,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... livox-sdk-master"
 	@echo "... livox_sdk_vendor_uninstall"
 	@echo "... uninstall"
 .PHONY : help

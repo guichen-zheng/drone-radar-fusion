@@ -107,6 +107,21 @@ def generate_launch_description():
                 name='radar_processor',
                 output='screen',
                 parameters=[sim_params],
+                # 云台模式：radar 输出原始（lidar 局部坐标）到 _lidar 后缀的 topic，
+                # 由 radar_world_repub 转世界坐标后再发回 /radar/detect 给 fusion
+                remappings=[('/radar/detect', '/radar/detect_lidar')],
+            ),
+            # 雷达检测坐标变换：lidar frame → map frame
+            Node(
+                package='simulation',
+                executable='radar_world_repub',
+                name='radar_world_repub',
+                output='screen',
+                parameters=[{
+                    'input_topic':  '/radar/detect_lidar',
+                    'output_topic': '/radar/detect',
+                    'world_frame':  'map',
+                }],
             ),
         ]),
 

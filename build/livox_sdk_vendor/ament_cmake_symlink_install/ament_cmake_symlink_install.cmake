@@ -315,9 +315,6 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/" "DESTINATION" "/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor")
-ament_cmake_symlink_install_directory("/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor" DIRECTORY "/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/" "DESTINATION" "/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor")
-
 # install(DIRECTORY "cmake" "DESTINATION" "share/livox_sdk_vendor")
 ament_cmake_symlink_install_directory("/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor" DIRECTORY "cmake" "DESTINATION" "share/livox_sdk_vendor")
 

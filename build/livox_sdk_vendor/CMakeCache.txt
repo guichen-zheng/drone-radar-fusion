@@ -293,10 +293,10 @@ ament_cmake_test_DIR:PATH=/opt/ros/humble/share/ament_cmake_test/cmake
 ament_cmake_version_DIR:PATH=/opt/ros/humble/share/ament_cmake_version/cmake
 
 //Path to a file.
-livox_sdk_INCLUDE_DIR:PATH=livox_sdk_INCLUDE_DIR-NOTFOUND
+livox_sdk_INCLUDE_DIR:PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include
 
 //Path to a library.
-livox_sdk_LIBRARY:FILEPATH=livox_sdk_LIBRARY-NOTFOUND
+livox_sdk_LIBRARY:FILEPATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/liblivox_sdk_static.a
 
 //Value Computed by CMake
 livox_sdk_vendor_BINARY_DIR:STATIC=/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor

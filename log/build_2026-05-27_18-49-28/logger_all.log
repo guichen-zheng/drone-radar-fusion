@@ -1,0 +1,944 @@
+[0.078s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install', '--parallel-workers', '3']
+[0.078s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=3, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7ff690759ae0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7ff690758a30>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7ff690758a30>>)
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.195s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.195s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/guichen/Documents/drone-radar-fusion'
+[0.195s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.196s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ignore_ament_install'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_pkg']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_pkg'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['colcon_meta']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'colcon_meta'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['ros']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'ros'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['cmake', 'python']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'cmake'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extensions ['python_setup_py']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config) by extension 'python_setup_py'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extensions ['ignore', 'ignore_ament_install']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'ignore'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'ignore_ament_install'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extensions ['colcon_pkg']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'colcon_pkg'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extensions ['colcon_meta']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'colcon_meta'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extensions ['ros']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'ros'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extensions ['cmake', 'python']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'cmake'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'python'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extensions ['python_setup_py']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(config/calib_tool) by extension 'python_setup_py'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ignore', 'ignore_ament_install']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore_ament_install'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_pkg']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_pkg'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_meta']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_meta'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ros']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ros'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['cmake', 'python']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'cmake'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['python_setup_py']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python_setup_py'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ignore'
+[0.204s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ignore_ament_install'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['colcon_pkg']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'colcon_pkg'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['colcon_meta']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'colcon_meta'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['ros']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ros'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['cmake', 'python']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'cmake'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'python'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['python_setup_py']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'python_setup_py'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extensions ['ignore', 'ignore_ament_install']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'ignore'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'ignore_ament_install'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extensions ['colcon_pkg']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'colcon_pkg'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extensions ['colcon_meta']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'colcon_meta'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extensions ['ros']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'ros'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extensions ['cmake', 'python']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'cmake'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'python'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extensions ['python_setup_py']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model) by extension 'python_setup_py'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extensions ['ignore', 'ignore_ament_install']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'ignore'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'ignore_ament_install'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extensions ['colcon_pkg']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'colcon_pkg'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extensions ['colcon_meta']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'colcon_meta'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extensions ['ros']
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'ros'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extensions ['cmake', 'python']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'cmake'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'python'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extensions ['python_setup_py']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(model/ONNX) by extension 'python_setup_py'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_pkg'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'colcon_meta'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['ros']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'ros'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['cmake', 'python']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'cmake'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extensions ['python_setup_py']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(scripts) by extension 'python_setup_py'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extension 'colcon_pkg'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extensions ['colcon_meta']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extension 'colcon_meta'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extensions ['ros']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_vision) by extension 'ros'
+[0.208s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera_vision' with type 'ros.ament_cmake' and name 'camera_vision'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extensions ['ignore', 'ignore_ament_install']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extension 'ignore'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extension 'ignore_ament_install'
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extensions ['colcon_pkg']
+[0.208s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extension 'colcon_pkg'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extensions ['colcon_meta']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extension 'colcon_meta'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extensions ['ros']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_yolo) by extension 'ros'
+[0.209s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera_yolo' with type 'ros.ament_python' and name 'camera_yolo'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extensions ['ignore', 'ignore_ament_install']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extension 'ignore'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extension 'ignore_ament_install'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extensions ['colcon_pkg']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extension 'colcon_pkg'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extensions ['colcon_meta']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extension 'colcon_meta'
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extensions ['ros']
+[0.209s] Level 1:colcon.colcon_core.package_identification:_identify(src/fusion) by extension 'ros'
+[0.210s] DEBUG:colcon.colcon_core.package_identification:Package 'src/fusion' with type 'ros.ament_cmake' and name 'fusion'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extensions ['ignore', 'ignore_ament_install']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extension 'ignore'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extension 'ignore_ament_install'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extensions ['colcon_pkg']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extension 'colcon_pkg'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extensions ['colcon_meta']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extension 'colcon_meta'
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extensions ['ros']
+[0.210s] Level 1:colcon.colcon_core.package_identification:_identify(src/hik_camera) by extension 'ros'
+[0.211s] DEBUG:colcon.colcon_core.package_identification:Package 'src/hik_camera' with type 'ros.ament_cmake' and name 'hik_camera_ros2_driver'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(src/interface) by extension 'ros'
+[0.211s] DEBUG:colcon.colcon_core.package_identification:Package 'src/interface' with type 'ros.ament_cmake' and name 'interface'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'ignore_ament_install'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extensions ['colcon_pkg']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'colcon_pkg'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extensions ['colcon_meta']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'colcon_meta'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extensions ['ros']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'ros'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extensions ['cmake', 'python']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'cmake'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'python'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extensions ['python_setup_py']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver) by extension 'python_setup_py'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'ignore_ament_install'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extensions ['colcon_pkg']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'colcon_pkg'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extensions ['colcon_meta']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'colcon_meta'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extensions ['ros']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'ros'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extensions ['cmake', 'python']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'cmake'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'python'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extensions ['python_setup_py']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/images) by extension 'python_setup_py'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extension 'ignore'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extension 'ignore_ament_install'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extensions ['colcon_pkg']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extension 'colcon_pkg'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extensions ['colcon_meta']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extension 'colcon_meta'
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extensions ['ros']
+[0.212s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_interfaces) by extension 'ros'
+[0.213s] DEBUG:colcon.colcon_core.package_identification:Package 'src/livox_driver/livox_interfaces' with type 'ros.ament_cmake' and name 'livox_interfaces'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extensions ['ignore', 'ignore_ament_install']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extension 'ignore'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extension 'ignore_ament_install'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extensions ['colcon_pkg']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extension 'colcon_pkg'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extensions ['colcon_meta']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extension 'colcon_meta'
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extensions ['ros']
+[0.213s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_ros2_avia) by extension 'ros'
+[0.214s] DEBUG:colcon.colcon_core.package_identification:Package 'src/livox_driver/livox_ros2_avia' with type 'ros.ament_cmake' and name 'livox_ros2_avia'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extensions ['ignore', 'ignore_ament_install']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extension 'ignore'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extension 'ignore_ament_install'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extensions ['colcon_pkg']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extension 'colcon_pkg'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extensions ['colcon_meta']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extension 'colcon_meta'
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extensions ['ros']
+[0.214s] Level 1:colcon.colcon_core.package_identification:_identify(src/livox_driver/livox_sdk_vendor) by extension 'ros'
+[0.215s] DEBUG:colcon.colcon_core.package_identification:Package 'src/livox_driver/livox_sdk_vendor' with type 'ros.ament_cmake' and name 'livox_sdk_vendor'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extension 'ignore'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extension 'ignore_ament_install'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extensions ['colcon_pkg']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extension 'colcon_pkg'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extensions ['colcon_meta']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extension 'colcon_meta'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extensions ['ros']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/radar) by extension 'ros'
+[0.215s] DEBUG:colcon.colcon_core.package_identification:Package 'src/radar' with type 'ros.ament_cmake' and name 'radar'
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['ignore', 'ignore_ament_install']
+[0.215s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ignore'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ignore_ament_install'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['colcon_pkg']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'colcon_pkg'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['colcon_meta']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'colcon_meta'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['ros']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'ros'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['cmake', 'python']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'cmake'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'python'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extensions ['python_setup_py']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils) by extension 'python_setup_py'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extensions ['ignore', 'ignore_ament_install']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'ignore'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'ignore_ament_install'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extensions ['colcon_pkg']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'colcon_pkg'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extensions ['colcon_meta']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'colcon_meta'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extensions ['ros']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'ros'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extensions ['cmake', 'python']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'cmake'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'python'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extensions ['python_setup_py']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include) by extension 'python_setup_py'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extensions ['ignore', 'ignore_ament_install']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'ignore'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'ignore_ament_install'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extensions ['colcon_pkg']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'colcon_pkg'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extensions ['colcon_meta']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'colcon_meta'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extensions ['ros']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'ros'
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extensions ['cmake', 'python']
+[0.216s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'cmake'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'python'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extensions ['python_setup_py']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/utils/include/utils) by extension 'python_setup_py'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extension 'ignore_ament_install'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extensions ['colcon_pkg']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extension 'colcon_pkg'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extensions ['colcon_meta']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extension 'colcon_meta'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extensions ['ros']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(src/web_dashboard) by extension 'ros'
+[0.217s] DEBUG:colcon.colcon_core.package_identification:Package 'src/web_dashboard' with type 'ros.ament_python' and name 'web_dashboard'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extensions ['ignore', 'ignore_ament_install']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'ignore'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'ignore_ament_install'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extensions ['colcon_pkg']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'colcon_pkg'
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extensions ['colcon_meta']
+[0.217s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'colcon_meta'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extensions ['ros']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'ros'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extensions ['cmake', 'python']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'cmake'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'python'
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extensions ['python_setup_py']
+[0.218s] Level 1:colcon.colcon_core.package_identification:_identify(watchDog) by extension 'python_setup_py'
+[0.218s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.218s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.218s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.218s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.218s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.239s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.239s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.239s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/simulation' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/radar' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/fusion' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/camera_vision' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/interface' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/radar' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/fusion' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/camera_vision' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/interface' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.240s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/guichen/Documents/drone-radar-fusion/install
+[0.241s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 360 installed packages in /opt/ros/humble
+[0.242s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'cmake_target' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'hik_camera_ros2_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.273s] DEBUG:colcon.colcon_core.verb:Building package 'hik_camera_ros2_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/hik_camera', 'symlink_install': True, 'test_result_base': None}
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_target' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_clean_cache' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_clean_first' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'cmake_force_configure' from command line to 'False'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'ament_cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'catkin_cmake_args' from command line to 'None'
+[0.273s] Level 5:colcon.colcon_core.verb:set package 'interface' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.274s] DEBUG:colcon.colcon_core.verb:Building package 'interface' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/interface', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/interface', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/interface', 'symlink_install': True, 'test_result_base': None}
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.274s] DEBUG:colcon.colcon_core.verb:Building package 'livox_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces', 'symlink_install': True, 'test_result_base': None}
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'cmake_target' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'cmake_clean_cache' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'cmake_clean_first' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'cmake_force_configure' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'ament_cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'catkin_cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'livox_sdk_vendor' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.274s] DEBUG:colcon.colcon_core.verb:Building package 'livox_sdk_vendor' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor', 'symlink_install': True, 'test_result_base': None}
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'cmake_target' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.274s] Level 5:colcon.colcon_core.verb:set package 'camera_vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.274s] DEBUG:colcon.colcon_core.verb:Building package 'camera_vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/camera_vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/camera_vision', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/camera_vision', 'symlink_install': True, 'test_result_base': None}
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'cmake_target' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'cmake_clean_first' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'cmake_force_configure' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'ament_cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'camera_yolo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.275s] DEBUG:colcon.colcon_core.verb:Building package 'camera_yolo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/camera_yolo', 'symlink_install': True, 'test_result_base': None}
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'cmake_target' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'cmake_clean_cache' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'cmake_clean_first' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'cmake_force_configure' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'ament_cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'catkin_cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'fusion' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.275s] DEBUG:colcon.colcon_core.verb:Building package 'fusion' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/fusion', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/fusion', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/fusion', 'symlink_install': True, 'test_result_base': None}
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'cmake_target' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'cmake_clean_cache' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'cmake_clean_first' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'cmake_force_configure' from command line to 'False'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'ament_cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'catkin_cmake_args' from command line to 'None'
+[0.275s] Level 5:colcon.colcon_core.verb:set package 'livox_ros2_avia' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.275s] DEBUG:colcon.colcon_core.verb:Building package 'livox_ros2_avia' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia', 'symlink_install': True, 'test_result_base': None}
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'cmake_args' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'cmake_target' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'cmake_clean_cache' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'cmake_clean_first' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'cmake_force_configure' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'ament_cmake_args' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'catkin_cmake_args' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'radar' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.276s] DEBUG:colcon.colcon_core.verb:Building package 'radar' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/radar', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/radar', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/radar', 'symlink_install': True, 'test_result_base': None}
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'cmake_args' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'cmake_target' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'cmake_clean_cache' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'cmake_clean_first' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'cmake_force_configure' from command line to 'False'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'ament_cmake_args' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'catkin_cmake_args' from command line to 'None'
+[0.276s] Level 5:colcon.colcon_core.verb:set package 'web_dashboard' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.276s] DEBUG:colcon.colcon_core.verb:Building package 'web_dashboard' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard', 'merge_install': False, 'path': '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard', 'symlink_install': True, 'test_result_base': None}
+[0.276s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.277s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.277s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/interface' with build type 'ament_cmake'
+[0.277s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/interface'
+[0.279s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.279s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.279s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.281s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces' with build type 'ament_cmake'
+[0.281s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces'
+[0.281s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.281s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.283s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor' with build type 'ament_cmake'
+[0.284s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor'
+[0.284s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.284s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.289s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/interface
+[0.291s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces
+[0.293s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor
+[0.810s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor
+[0.811s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor -- -j16 -l16
+[1.556s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/interface -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/interface
+[1.557s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/interface -- -j16 -l16
+[1.574s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces
+[1.575s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces -- -j16 -l16
+[3.938s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces -- -j16 -l16
+[3.946s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces
+[4.399s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/interface -- -j16 -l16
+[4.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/interface': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/interface
+[4.549s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(livox_interfaces)
+[4.550s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces
+[4.551s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces' for CMake module files
+[4.551s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces' for CMake config files
+[4.552s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_interfaces', 'cmake_prefix_path')
+[4.552s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/cmake_prefix_path.ps1'
+[4.553s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/cmake_prefix_path.dsv'
+[4.553s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/cmake_prefix_path.sh'
+[4.553s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib'
+[4.553s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_interfaces', 'ld_library_path_lib')
+[4.554s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/ld_library_path_lib.ps1'
+[4.554s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/ld_library_path_lib.dsv'
+[4.554s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/ld_library_path_lib.sh'
+[4.554s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/bin'
+[4.554s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/pkgconfig/livox_interfaces.pc'
+[4.555s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/python3.10/site-packages'
+[4.555s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/bin'
+[4.555s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.ps1'
+[4.556s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.dsv'
+[4.556s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.sh'
+[4.557s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.bash'
+[4.557s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.zsh'
+[4.558s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/colcon-core/packages/livox_interfaces)
+[4.558s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(livox_interfaces)
+[4.558s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces' for CMake module files
+[4.559s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces' for CMake config files
+[4.559s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_interfaces', 'cmake_prefix_path')
+[4.559s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/cmake_prefix_path.ps1'
+[4.559s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/cmake_prefix_path.dsv'
+[4.560s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/cmake_prefix_path.sh'
+[4.560s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib'
+[4.560s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_interfaces', 'ld_library_path_lib')
+[4.560s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/ld_library_path_lib.ps1'
+[4.560s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/ld_library_path_lib.dsv'
+[4.561s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/hook/ld_library_path_lib.sh'
+[4.561s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/bin'
+[4.561s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/pkgconfig/livox_interfaces.pc'
+[4.561s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/python3.10/site-packages'
+[4.561s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/bin'
+[4.561s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.ps1'
+[4.562s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.dsv'
+[4.562s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.sh'
+[4.562s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.bash'
+[4.563s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.zsh'
+[4.563s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/colcon-core/packages/livox_interfaces)
+[4.563s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/hik_camera' with build type 'ament_cmake'
+[4.563s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/hik_camera'
+[4.563s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.563s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.569s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/hik_camera -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver
+[5.114s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interface)
+[5.114s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface' for CMake module files
+[5.115s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/interface' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/interface
+[5.115s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface' for CMake config files
+[5.116s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'cmake_prefix_path')
+[5.116s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/cmake_prefix_path.ps1'
+[5.116s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/cmake_prefix_path.dsv'
+[5.117s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/cmake_prefix_path.sh'
+[5.117s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/lib'
+[5.117s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'ld_library_path_lib')
+[5.117s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/ld_library_path_lib.ps1'
+[5.117s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/ld_library_path_lib.dsv'
+[5.117s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/ld_library_path_lib.sh'
+[5.118s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/bin'
+[5.118s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/lib/pkgconfig/interface.pc'
+[5.118s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/lib/python3.10/site-packages'
+[5.118s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/bin'
+[5.118s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.ps1'
+[5.119s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.dsv'
+[5.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.sh'
+[5.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.bash'
+[5.119s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.zsh'
+[5.119s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/interface/share/colcon-core/packages/interface)
+[5.120s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(interface)
+[5.120s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface' for CMake module files
+[5.120s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface' for CMake config files
+[5.121s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'cmake_prefix_path')
+[5.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/cmake_prefix_path.ps1'
+[5.121s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/cmake_prefix_path.dsv'
+[5.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/cmake_prefix_path.sh'
+[5.122s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/lib'
+[5.122s] Level 1:colcon.colcon_core.shell:create_environment_hook('interface', 'ld_library_path_lib')
+[5.122s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/ld_library_path_lib.ps1'
+[5.122s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/ld_library_path_lib.dsv'
+[5.122s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/hook/ld_library_path_lib.sh'
+[5.123s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/bin'
+[5.123s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/lib/pkgconfig/interface.pc'
+[5.123s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/lib/python3.10/site-packages'
+[5.123s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/interface/bin'
+[5.123s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.ps1'
+[5.124s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.dsv'
+[5.124s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.sh'
+[5.124s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.bash'
+[5.124s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/interface/share/interface/package.zsh'
+[5.125s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/interface/share/colcon-core/packages/interface)
+[5.125s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/camera_vision' with build type 'ament_cmake'
+[5.125s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/camera_vision'
+[5.125s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.125s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.133s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/camera_vision -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/camera_vision
+[5.531s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/hik_camera -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver
+[5.532s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16
+[5.975s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/camera_vision -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/camera_vision
+[5.976s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/camera_vision -- -j16 -l16
+[8.252s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16
+[8.252s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver
+[8.863s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hik_camera_ros2_driver)
+[8.864s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver' for CMake module files
+[8.865s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver' for CMake config files
+[8.865s] Level 1:colcon.colcon_core.shell:create_environment_hook('hik_camera_ros2_driver', 'cmake_prefix_path')
+[8.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/cmake_prefix_path.ps1'
+[8.866s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/cmake_prefix_path.dsv'
+[8.867s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/cmake_prefix_path.sh'
+[8.871s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver
+[8.872s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib'
+[8.872s] Level 1:colcon.colcon_core.shell:create_environment_hook('hik_camera_ros2_driver', 'ld_library_path_lib')
+[8.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/ld_library_path_lib.ps1'
+[8.873s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/ld_library_path_lib.dsv'
+[8.873s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/ld_library_path_lib.sh'
+[8.873s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/bin'
+[8.874s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/pkgconfig/hik_camera_ros2_driver.pc'
+[8.874s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/python3.10/site-packages'
+[8.874s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/bin'
+[8.875s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.ps1'
+[8.875s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.dsv'
+[8.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.sh'
+[8.876s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.bash'
+[8.877s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.zsh'
+[8.877s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/colcon-core/packages/hik_camera_ros2_driver)
+[8.878s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(hik_camera_ros2_driver)
+[8.878s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver' for CMake module files
+[8.879s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver' for CMake config files
+[8.879s] Level 1:colcon.colcon_core.shell:create_environment_hook('hik_camera_ros2_driver', 'cmake_prefix_path')
+[8.880s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/cmake_prefix_path.ps1'
+[8.880s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/cmake_prefix_path.dsv'
+[8.881s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/cmake_prefix_path.sh'
+[8.882s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib'
+[8.882s] Level 1:colcon.colcon_core.shell:create_environment_hook('hik_camera_ros2_driver', 'ld_library_path_lib')
+[8.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/ld_library_path_lib.ps1'
+[8.882s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/ld_library_path_lib.dsv'
+[8.883s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/hook/ld_library_path_lib.sh'
+[8.883s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/bin'
+[8.883s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/pkgconfig/hik_camera_ros2_driver.pc'
+[8.884s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/python3.10/site-packages'
+[8.884s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/bin'
+[8.885s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.ps1'
+[8.886s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.dsv'
+[8.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.sh'
+[8.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.bash'
+[8.887s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.zsh'
+[8.888s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/colcon-core/packages/hik_camera_ros2_driver)
+[8.889s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/camera_yolo' with build type 'ament_python'
+[8.889s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_yolo', 'ament_prefix_path')
+[8.889s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/hook/ament_prefix_path.ps1'
+[8.890s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/hook/ament_prefix_path.dsv'
+[8.890s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/hook/ament_prefix_path.sh'
+[8.891s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[8.891s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[9.337s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/guichen/Documents/drone-radar-fusion/src/camera_yolo'
+[9.338s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[9.338s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[9.828s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/camera_yolo/build --no-deps symlink_data
+[10.408s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_yolo', 'pythonpath_develop')
+[10.408s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/share/camera_yolo/hook/pythonpath_develop.ps1'
+[10.409s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/camera_yolo/build --no-deps symlink_data
+[10.410s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/share/camera_yolo/hook/pythonpath_develop.dsv'
+[10.410s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/share/camera_yolo/hook/pythonpath_develop.sh'
+[10.411s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo' for CMake module files
+[10.412s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo' for CMake config files
+[10.412s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib'
+[10.412s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/bin'
+[10.412s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/pkgconfig/camera_yolo.pc'
+[10.413s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/python3.10/site-packages'
+[10.413s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_yolo', 'pythonpath')
+[10.413s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/hook/pythonpath.ps1'
+[10.413s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/hook/pythonpath.dsv'
+[10.414s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/hook/pythonpath.sh'
+[10.414s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/bin'
+[10.415s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(camera_yolo)
+[10.415s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/package.ps1'
+[10.416s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/package.dsv'
+[10.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/package.sh'
+[10.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/package.bash'
+[10.417s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/camera_yolo/package.zsh'
+[10.418s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/share/colcon-core/packages/camera_yolo)
+[10.419s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/fusion' with build type 'ament_cmake'
+[10.419s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/fusion'
+[10.419s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.419s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[10.432s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/fusion -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/fusion
+[13.599s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/fusion -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/fusion
+[13.600s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/fusion -- -j16 -l16
+[13.626s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor -- -j16 -l16
+[13.628s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor
+[13.780s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(livox_sdk_vendor)
+[13.781s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor' for CMake module files
+[13.781s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor
+[13.781s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor' for CMake config files
+[13.782s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_sdk_vendor', 'cmake_prefix_path')
+[13.782s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/hook/cmake_prefix_path.ps1'
+[13.782s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/hook/cmake_prefix_path.dsv'
+[13.782s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/hook/cmake_prefix_path.sh'
+[13.783s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib'
+[13.783s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/bin'
+[13.783s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/pkgconfig/livox_sdk_vendor.pc'
+[13.783s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/python3.10/site-packages'
+[13.783s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/bin'
+[13.783s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.ps1'
+[13.784s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv'
+[13.784s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.sh'
+[13.784s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.bash'
+[13.784s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.zsh'
+[13.784s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/colcon-core/packages/livox_sdk_vendor)
+[13.785s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(livox_sdk_vendor)
+[13.785s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor' for CMake module files
+[13.785s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor' for CMake config files
+[13.785s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_sdk_vendor', 'cmake_prefix_path')
+[13.785s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/hook/cmake_prefix_path.ps1'
+[13.786s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/hook/cmake_prefix_path.dsv'
+[13.786s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/hook/cmake_prefix_path.sh'
+[13.786s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib'
+[13.786s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/bin'
+[13.786s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/pkgconfig/livox_sdk_vendor.pc'
+[13.786s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/python3.10/site-packages'
+[13.787s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/bin'
+[13.787s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.ps1'
+[13.787s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv'
+[13.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.sh'
+[13.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.bash'
+[13.788s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.zsh'
+[13.788s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/colcon-core/packages/livox_sdk_vendor)
+[13.788s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia' with build type 'ament_cmake'
+[13.789s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia'
+[13.789s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[13.789s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[13.797s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia
+[16.329s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_ros2_avia -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia
+[16.331s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia -- -j16 -l16
+[19.133s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/camera_vision -- -j16 -l16
+[19.135s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/camera_vision
+[19.273s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(camera_vision)
+[19.273s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision' for CMake module files
+[19.274s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_vision' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/camera_vision
+[19.274s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision' for CMake config files
+[19.274s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_vision', 'cmake_prefix_path')
+[19.275s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/hook/cmake_prefix_path.ps1'
+[19.275s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/hook/cmake_prefix_path.dsv'
+[19.275s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/hook/cmake_prefix_path.sh'
+[19.276s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib'
+[19.276s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/bin'
+[19.276s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib/pkgconfig/camera_vision.pc'
+[19.276s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib/python3.10/site-packages'
+[19.276s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/bin'
+[19.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.ps1'
+[19.277s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.dsv'
+[19.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.sh'
+[19.277s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.bash'
+[19.278s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.zsh'
+[19.278s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/colcon-core/packages/camera_vision)
+[19.278s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(camera_vision)
+[19.278s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision' for CMake module files
+[19.279s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision' for CMake config files
+[19.279s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera_vision', 'cmake_prefix_path')
+[19.279s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/hook/cmake_prefix_path.ps1'
+[19.280s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/hook/cmake_prefix_path.dsv'
+[19.280s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/hook/cmake_prefix_path.sh'
+[19.281s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib'
+[19.281s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/bin'
+[19.281s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib/pkgconfig/camera_vision.pc'
+[19.281s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/lib/python3.10/site-packages'
+[19.281s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/bin'
+[19.282s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.ps1'
+[19.282s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.dsv'
+[19.283s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.sh'
+[19.283s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.bash'
+[19.283s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/camera_vision/package.zsh'
+[19.283s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/camera_vision/share/colcon-core/packages/camera_vision)
+[19.284s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/radar' with build type 'ament_cmake'
+[19.284s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/guichen/Documents/drone-radar-fusion/src/radar'
+[19.284s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[19.284s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[19.295s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/radar': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/radar -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/radar
+[21.742s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/radar' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/radar -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/radar
+[21.744s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/radar': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/radar -- -j16 -l16
+[24.071s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia -- -j16 -l16
+[24.073s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia
+[24.305s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(livox_ros2_avia)
+[24.306s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia' for CMake module files
+[24.306s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_ros2_avia
+[24.306s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia' for CMake config files
+[24.306s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_ros2_avia', 'cmake_prefix_path')
+[24.307s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/cmake_prefix_path.ps1'
+[24.307s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/cmake_prefix_path.dsv'
+[24.307s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/cmake_prefix_path.sh'
+[24.308s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib'
+[24.308s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_ros2_avia', 'ld_library_path_lib')
+[24.308s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/ld_library_path_lib.ps1'
+[24.308s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/ld_library_path_lib.dsv'
+[24.308s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/ld_library_path_lib.sh'
+[24.308s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/bin'
+[24.308s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/pkgconfig/livox_ros2_avia.pc'
+[24.309s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/python3.10/site-packages'
+[24.309s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/bin'
+[24.309s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.ps1'
+[24.309s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.dsv'
+[24.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.sh'
+[24.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.bash'
+[24.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.zsh'
+[24.310s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/colcon-core/packages/livox_ros2_avia)
+[24.311s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(livox_ros2_avia)
+[24.311s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia' for CMake module files
+[24.311s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia' for CMake config files
+[24.312s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_ros2_avia', 'cmake_prefix_path')
+[24.312s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/cmake_prefix_path.ps1'
+[24.312s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/cmake_prefix_path.dsv'
+[24.312s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/cmake_prefix_path.sh'
+[24.313s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib'
+[24.313s] Level 1:colcon.colcon_core.shell:create_environment_hook('livox_ros2_avia', 'ld_library_path_lib')
+[24.313s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/ld_library_path_lib.ps1'
+[24.313s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/ld_library_path_lib.dsv'
+[24.313s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/hook/ld_library_path_lib.sh'
+[24.313s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/bin'
+[24.313s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/pkgconfig/livox_ros2_avia.pc'
+[24.314s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib/python3.10/site-packages'
+[24.314s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/bin'
+[24.314s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.ps1'
+[24.314s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.dsv'
+[24.315s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.sh'
+[24.315s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.bash'
+[24.315s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/livox_ros2_avia/package.zsh'
+[24.316s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/share/colcon-core/packages/livox_ros2_avia)
+[24.316s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard' with build type 'ament_python'
+[24.316s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_dashboard', 'ament_prefix_path')
+[24.316s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/hook/ament_prefix_path.ps1'
+[24.317s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/hook/ament_prefix_path.dsv'
+[24.317s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/hook/ament_prefix_path.sh'
+[24.317s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[24.317s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[24.514s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard'
+[24.514s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[24.514s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[24.774s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data
+[25.097s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_dashboard', 'pythonpath_develop')
+[25.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/share/web_dashboard/hook/pythonpath_develop.ps1'
+[25.098s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data
+[25.098s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/share/web_dashboard/hook/pythonpath_develop.dsv'
+[25.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/share/web_dashboard/hook/pythonpath_develop.sh'
+[25.099s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard' for CMake module files
+[25.099s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard' for CMake config files
+[25.100s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib'
+[25.100s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/bin'
+[25.100s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/pkgconfig/web_dashboard.pc'
+[25.100s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages'
+[25.100s] Level 1:colcon.colcon_core.shell:create_environment_hook('web_dashboard', 'pythonpath')
+[25.100s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/hook/pythonpath.ps1'
+[25.101s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/hook/pythonpath.dsv'
+[25.101s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/hook/pythonpath.sh'
+[25.101s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/bin'
+[25.101s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(web_dashboard)
+[25.102s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/package.ps1'
+[25.102s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/package.dsv'
+[25.102s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/package.sh'
+[25.103s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/package.bash'
+[25.103s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/package.zsh'
+[25.103s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/colcon-core/packages/web_dashboard)
+[34.490s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/fusion -- -j16 -l16
+[34.491s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/fusion': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/fusion
+[34.614s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fusion)
+[34.614s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion' for CMake module files
+[34.615s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/fusion' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/fusion
+[34.615s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion' for CMake config files
+[34.615s] Level 1:colcon.colcon_core.shell:create_environment_hook('fusion', 'cmake_prefix_path')
+[34.616s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/hook/cmake_prefix_path.ps1'
+[34.616s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/hook/cmake_prefix_path.dsv'
+[34.616s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/hook/cmake_prefix_path.sh'
+[34.616s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/lib'
+[34.617s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/bin'
+[34.617s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/lib/pkgconfig/fusion.pc'
+[34.617s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/lib/python3.10/site-packages'
+[34.617s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/bin'
+[34.617s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.ps1'
+[34.618s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.dsv'
+[34.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.sh'
+[34.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.bash'
+[34.618s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.zsh'
+[34.618s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/fusion/share/colcon-core/packages/fusion)
+[34.619s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(fusion)
+[34.619s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion' for CMake module files
+[34.619s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion' for CMake config files
+[34.620s] Level 1:colcon.colcon_core.shell:create_environment_hook('fusion', 'cmake_prefix_path')
+[34.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/hook/cmake_prefix_path.ps1'
+[34.620s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/hook/cmake_prefix_path.dsv'
+[34.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/hook/cmake_prefix_path.sh'
+[34.620s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/lib'
+[34.621s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/bin'
+[34.621s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/lib/pkgconfig/fusion.pc'
+[34.621s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/lib/python3.10/site-packages'
+[34.621s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/fusion/bin'
+[34.621s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.ps1'
+[34.621s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.dsv'
+[34.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.sh'
+[34.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.bash'
+[34.622s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/fusion/share/fusion/package.zsh'
+[34.622s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/fusion/share/colcon-core/packages/fusion)
+[43.474s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/radar' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/radar -- -j16 -l16
+[43.475s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/radar': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/radar
+[43.590s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(radar)
+[43.590s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar' for CMake module files
+[43.590s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/radar' returned '0': CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:/home/guichen/Documents/drone-radar-fusion/install/radar:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia:/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces:/home/guichen/Documents/drone-radar-fusion/install/fusion:/home/guichen/Documents/drone-radar-fusion/install/camera_vision:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_ros2_avia/lib:/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib:/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/radar
+[43.591s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar' for CMake config files
+[43.591s] Level 1:colcon.colcon_core.shell:create_environment_hook('radar', 'cmake_prefix_path')
+[43.591s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/hook/cmake_prefix_path.ps1'
+[43.591s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/hook/cmake_prefix_path.dsv'
+[43.592s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/hook/cmake_prefix_path.sh'
+[43.592s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/lib'
+[43.592s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/bin'
+[43.592s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/lib/pkgconfig/radar.pc'
+[43.592s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/lib/python3.10/site-packages'
+[43.592s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/bin'
+[43.593s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.ps1'
+[43.593s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.dsv'
+[43.593s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.sh'
+[43.593s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.bash'
+[43.594s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.zsh'
+[43.594s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/radar/share/colcon-core/packages/radar)
+[43.594s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(radar)
+[43.594s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar' for CMake module files
+[43.595s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar' for CMake config files
+[43.595s] Level 1:colcon.colcon_core.shell:create_environment_hook('radar', 'cmake_prefix_path')
+[43.595s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/hook/cmake_prefix_path.ps1'
+[43.595s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/hook/cmake_prefix_path.dsv'
+[43.595s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/hook/cmake_prefix_path.sh'
+[43.596s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/lib'
+[43.596s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/bin'
+[43.596s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/lib/pkgconfig/radar.pc'
+[43.596s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/lib/python3.10/site-packages'
+[43.596s] Level 1:colcon.colcon_core.environment:checking '/home/guichen/Documents/drone-radar-fusion/install/radar/bin'
+[43.596s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.ps1'
+[43.597s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.dsv'
+[43.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.sh'
+[43.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.bash'
+[43.597s] INFO:colcon.colcon_core.shell:Creating package script '/home/guichen/Documents/drone-radar-fusion/install/radar/share/radar/package.zsh'
+[43.597s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/guichen/Documents/drone-radar-fusion/install/radar/share/colcon-core/packages/radar)
+[43.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[43.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[43.598s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[43.598s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[43.602s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[43.602s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[43.602s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[43.612s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[43.612s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/guichen/Documents/drone-radar-fusion/install/local_setup.ps1'
+[43.613s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/guichen/Documents/drone-radar-fusion/install/_local_setup_util_ps1.py'
+[43.614s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/guichen/Documents/drone-radar-fusion/install/setup.ps1'
+[43.615s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/guichen/Documents/drone-radar-fusion/install/local_setup.sh'
+[43.615s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/guichen/Documents/drone-radar-fusion/install/_local_setup_util_sh.py'
+[43.615s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/guichen/Documents/drone-radar-fusion/install/setup.sh'
+[43.616s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/guichen/Documents/drone-radar-fusion/install/local_setup.bash'
+[43.617s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/guichen/Documents/drone-radar-fusion/install/setup.bash'
+[43.617s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/guichen/Documents/drone-radar-fusion/install/local_setup.zsh'
+[43.618s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/guichen/Documents/drone-radar-fusion/install/setup.zsh'

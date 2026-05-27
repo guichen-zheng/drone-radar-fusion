@@ -1,0 +1,155 @@
+[0.009s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor
+[0.067s] -- The C compiler identification is GNU 11.4.0
+[0.124s] -- The CXX compiler identification is GNU 11.4.0
+[0.131s] -- Detecting C compiler ABI info
+[0.182s] -- Detecting C compiler ABI info - done
+[0.187s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.187s] -- Detecting C compile features
+[0.188s] -- Detecting C compile features - done
+[0.190s] -- Detecting CXX compiler ABI info
+[0.252s] -- Detecting CXX compiler ABI info - done
+[0.257s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.257s] -- Detecting CXX compile features
+[0.257s] -- Detecting CXX compile features - done
+[0.262s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.370s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.421s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.516s] -- Configuring done
+[0.518s] -- Generating done
+[0.519s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor
+[0.526s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_sdk_vendor -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor
+[0.527s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor -- -j16 -l16
+[0.563s] [ 12%] [34m[1mCreating directories for 'livox-sdk-master'[0m
+[0.618s] [ 25%] [34m[1mPerforming download step (git clone) for 'livox-sdk-master'[0m
+[0.637s] 正克隆到 'livox-sdk-master'...
+[6.568s] 已经位于 'master'
+[6.568s] 您的分支与上游分支 'origin/master' 一致。
+[6.609s] [ 37%] [34m[1mPerforming update step for 'livox-sdk-master'[0m
+[7.486s] HEAD 目前位于 1b3ef28 fix build ubuntu 22.04
+[7.512s] [ 50%] [34m[1mNo patch step for 'livox-sdk-master'[0m
+[7.536s] [ 62%] [34m[1mPerforming configure step for 'livox-sdk-master'[0m
+[7.581s] -- The C compiler identification is GNU 11.4.0
+[7.624s] -- The CXX compiler identification is GNU 11.4.0
+[7.631s] -- Detecting C compiler ABI info
+[7.684s] -- Detecting C compiler ABI info - done
+[7.690s] -- Check for working C compiler: /usr/bin/cc - skipped
+[7.690s] -- Detecting C compile features
+[7.690s] -- Detecting C compile features - done
+[7.693s] -- Detecting CXX compiler ABI info
+[7.754s] -- Detecting CXX compiler ABI info - done
+[7.760s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[7.760s] -- Detecting CXX compile features
+[7.760s] -- Detecting CXX compile features - done
+[7.761s] -- main project dir: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master
+[7.763s] -- Configuring done
+[7.777s] -- Generating done
+[7.778s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master-build
+[7.794s] [ 75%] [34m[1mPerforming build step for 'livox-sdk-master'[0m
+[7.832s] [  2%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_loop.cpp.o[0m
+[7.832s] [  4%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/third_party/FastCRC/FastCRCsw.cpp.o[0m
+[7.832s] [ 10%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/thread_base.cpp.o[0m
+[7.832s] [ 10%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/livox_sdk.cpp.o[0m
+[7.832s] [ 10%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/sdk_protocol.cpp.o[0m
+[7.832s] [ 12%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_discovery.cpp.o[0m
+[7.832s] [ 14%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/network/unix/network_util.cpp.o[0m
+[7.832s] [ 16%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/device_manager.cpp.o[0m
+[7.833s] [ 18%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/comm/comm_port.cpp.o[0m
+[7.844s] [ 20%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/data_handler.cpp.o[0m
+[7.845s] [ 22%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/io_thread.cpp.o[0m
+[7.848s] [ 25%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/hub_data_handler.cpp.o[0m
+[7.848s] [ 27%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/logging.cpp.o[0m
+[7.850s] [ 29%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/data_handler/lidar_data_handler.cpp.o[0m
+[7.857s] [ 31%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_handler.cpp.o[0m
+[7.867s] [ 33%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_channel.cpp.o[0m
+[7.887s] [ 35%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/hub_command_handler.cpp.o[0m
+[7.925s] [ 37%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/lidar_command_handler.cpp.o[0m
+[8.067s] [ 39%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/command_handler/command_impl.cpp.o[0m
+[8.119s] [ 41%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_base.cpp.o[0m
+[8.161s] [ 43%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_epoll.cpp.o[0m
+[8.587s] [ 45%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_poll.cpp.o[0m
+[8.602s] [ 47%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_kqueue.cpp.o[0m
+[8.605s] [ 50%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/multiple_io/multiple_io_select.cpp.o[0m
+[8.617s] [ 52%] [32mBuilding CXX object sdk_core/CMakeFiles/livox_sdk_static.dir/src/base/wake_up/unix/wake_up_pipe.cpp.o[0m
+[11.541s] [ 54%] [32m[1mLinking CXX static library liblivox_sdk_static.a[0m
+[11.736s] [ 54%] Built target livox_sdk_static
+[11.754s] [ 56%] [32mBuilding CXX object sample_cc/hub/CMakeFiles/hub_sample_cc.dir/main.cpp.o[0m
+[11.755s] [ 60%] [32mBuilding CXX object sample/lidar_lvx_file/CMakeFiles/lidar_lvx_sample.dir/lvx_file.cpp.o[0m
+[11.755s] [ 60%] [32mBuilding CXX object sample/hub_lvx_file/CMakeFiles/hub_lvx_sample.dir/lvx_file.cpp.o[0m
+[11.755s] [ 64%] [32mBuilding CXX object sample/hub_lvx_file/CMakeFiles/hub_lvx_sample.dir/main.cpp.o[0m
+[11.755s] [ 64%] [32mBuilding C object sample/lidar/CMakeFiles/lidar_sample.dir/main.c.o[0m
+[11.755s] [ 66%] [32mBuilding CXX object sample/lidar_lvx_file/CMakeFiles/lidar_lvx_sample.dir/main.cpp.o[0m
+[11.756s] [ 68%] [32mBuilding CXX object sample_cc/hub/CMakeFiles/hub_sample_cc.dir/lds_hub.cpp.o[0m
+[11.756s] [ 72%] [32mBuilding CXX object sample_cc/lidar_utc_sync/CMakeFiles/lidar_utc_sync.dir/main.cpp.o[0m
+[11.756s] [ 72%] [32mBuilding CXX object sample_cc/trouble_shooting/CMakeFiles/trouble_shooting.dir/main.cpp.o[0m
+[11.757s] [ 75%] [32mBuilding CXX object sample_cc/lidar_utc_sync/CMakeFiles/lidar_utc_sync.dir/synchro.cpp.o[0m
+[11.757s] [ 77%] [32mBuilding C object sample/hub/CMakeFiles/hub_sample.dir/main.c.o[0m
+[11.758s] [ 79%] [32mBuilding CXX object sample_cc/lidar_utc_sync/CMakeFiles/lidar_utc_sync.dir/lds_lidar.cpp.o[0m
+[11.760s] [ 81%] [32mBuilding CXX object sample_cc/lidar/CMakeFiles/lidar_sample_cc.dir/main.cpp.o[0m
+[11.763s] [ 83%] [32mBuilding CXX object sample_cc/lidar/CMakeFiles/lidar_sample_cc.dir/lds_lidar.cpp.o[0m
+[11.819s] [ 85%] [32m[1mLinking CXX executable lidar_sample[0m
+[11.825s] [ 87%] [32m[1mLinking CXX executable hub_sample[0m
+[12.080s] [ 89%] [32m[1mLinking CXX executable trouble_shooting[0m
+[12.486s] [ 89%] Built target hub_sample
+[12.486s] [ 89%] Built target lidar_sample
+[12.510s] [ 91%] [32m[1mLinking CXX executable lidar_sample_cc[0m
+[12.594s] [ 93%] [32m[1mLinking CXX executable lidar_utc_sync[0m
+[12.601s] [ 95%] [32m[1mLinking CXX executable hub_sample_cc[0m
+[12.604s] [ 95%] Built target trouble_shooting
+[12.630s] [ 97%] [32m[1mLinking CXX executable lidar_lvx_sample[0m
+[12.804s] [100%] [32m[1mLinking CXX executable hub_lvx_sample[0m
+[12.915s] [100%] Built target lidar_sample_cc
+[13.025s] [100%] Built target hub_sample_cc
+[13.026s] [100%] Built target lidar_utc_sync
+[13.062s] [100%] Built target lidar_lvx_sample
+[13.164s] [100%] Built target hub_lvx_sample
+[13.186s] [ 87%] [34m[1mPerforming install step for 'livox-sdk-master'[0m
+[13.212s] [35m[1mConsolidate compiler generated dependencies of target livox_sdk_static[0m
+[13.234s] [ 54%] Built target livox_sdk_static
+[13.243s] [35m[1mConsolidate compiler generated dependencies of target hub_sample[0m
+[13.243s] [35m[1mConsolidate compiler generated dependencies of target trouble_shooting[0m
+[13.243s] [35m[1mConsolidate compiler generated dependencies of target hub_sample_cc[0m
+[13.243s] [35m[1mConsolidate compiler generated dependencies of target lidar_lvx_sample[0m
+[13.243s] [35m[1mConsolidate compiler generated dependencies of target hub_lvx_sample[0m
+[13.244s] [35m[1mConsolidate compiler generated dependencies of target lidar_sample[0m
+[13.245s] [35m[1mConsolidate compiler generated dependencies of target lidar_sample_cc[0m
+[13.249s] [35m[1mConsolidate compiler generated dependencies of target lidar_utc_sync[0m
+[13.252s] [ 58%] Built target hub_sample
+[13.253s] [ 66%] Built target trouble_shooting
+[13.253s] [ 68%] Built target hub_lvx_sample
+[13.255s] [ 75%] Built target hub_sample_cc
+[13.255s] [ 79%] Built target lidar_sample
+[13.256s] [ 85%] Built target lidar_lvx_sample
+[13.257s] [ 93%] Built target lidar_utc_sync
+[13.260s] [100%] Built target lidar_sample_cc
+[13.277s] [36mInstall the project...[0m
+[13.285s] -- Install configuration: ""
+[13.285s] -- Installing: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/lib/liblivox_sdk_static.a
+[13.293s] -- Installing: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/include/livox_def.h
+[13.293s] -- Installing: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/include/livox_sdk.h
+[13.308s] [100%] [34m[1mCompleted 'livox-sdk-master'[0m
+[13.333s] [100%] Built target livox-sdk-master
+[13.342s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor -- -j16 -l16
+[13.344s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor
+[13.349s] -- Install configuration: ""
+[13.349s] -- Execute custom install script
+[13.349s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include/livox_def.h
+[13.356s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include/livox_sdk.h
+[13.362s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/liblivox_sdk_static.a
+[13.370s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules/Findlivox_sdk.cmake
+[13.377s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/package_run_dependencies/livox_sdk_vendor
+[13.385s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/parent_prefix_path/livox_sdk_vendor
+[13.392s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.sh
+[13.399s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.dsv
+[13.407s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.sh
+[13.414s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.dsv
+[13.421s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.bash
+[13.428s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.sh
+[13.435s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.zsh
+[13.442s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.dsv
+[13.449s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv
+[13.456s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/packages/livox_sdk_vendor
+[13.464s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendor-extras.cmake
+[13.471s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig.cmake
+[13.480s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig-version.cmake
+[13.488s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.xml
+[13.497s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard:/home/guichen/Documents/drone-radar-fusion/install/simulation:/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor

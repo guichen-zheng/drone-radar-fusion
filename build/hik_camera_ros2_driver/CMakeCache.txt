@@ -428,7 +428,7 @@ hik_camera_ros2_driver_SOURCE_DIR:STATIC=/home/guichen/Documents/drone-radar-fus
 image_transport_DIR:PATH=/opt/ros/humble/share/image_transport/cmake
 
 //The directory containing a CMake configuration file for image_transport_plugins.
-image_transport_plugins_DIR:PATH=image_transport_plugins_DIR-NOTFOUND
+image_transport_plugins_DIR:PATH=/opt/ros/humble/share/image_transport_plugins/cmake
 
 //The directory containing a CMake configuration file for libstatistics_collector.
 libstatistics_collector_DIR:PATH=/opt/ros/humble/share/libstatistics_collector/cmake
