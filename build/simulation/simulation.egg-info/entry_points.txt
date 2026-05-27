@@ -1,4 +1,5 @@
 [console_scripts]
+gimbal_controller = simulation.gimbal_controller:main
 sim_bridge = simulation.sim_bridge:main
 yolo_node = simulation.yolo_node:main
 

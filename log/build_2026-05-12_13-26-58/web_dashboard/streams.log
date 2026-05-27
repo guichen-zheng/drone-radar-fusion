@@ -1,0 +1,19 @@
+[0.463s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data
+[0.631s] running develop
+[0.735s] running egg_info
+[0.735s] writing web_dashboard.egg-info/PKG-INFO
+[0.735s] writing dependency_links to web_dashboard.egg-info/dependency_links.txt
+[0.735s] writing entry points to web_dashboard.egg-info/entry_points.txt
+[0.735s] writing requirements to web_dashboard.egg-info/requires.txt
+[0.735s] writing top-level names to web_dashboard.egg-info/top_level.txt
+[0.737s] reading manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.737s] writing manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.738s] running build_ext
+[0.738s] Creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web-dashboard.egg-link (link to .)
+[0.739s] Installing watchdog_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.739s] Installing web_dashboard_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.739s] 
+[0.739s] Installed /home/guichen/Documents/drone-radar-fusion/build/web_dashboard
+[0.739s] running symlink_data
+[0.739s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/launch
+[0.758s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data

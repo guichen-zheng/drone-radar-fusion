@@ -1,0 +1,27 @@
+[0.482s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data
+[0.713s] running develop
+[0.864s] running egg_info
+[0.865s] creating web_dashboard.egg-info
+[0.865s] writing web_dashboard.egg-info/PKG-INFO
+[0.865s] writing dependency_links to web_dashboard.egg-info/dependency_links.txt
+[0.865s] writing entry points to web_dashboard.egg-info/entry_points.txt
+[0.865s] writing requirements to web_dashboard.egg-info/requires.txt
+[0.865s] writing top-level names to web_dashboard.egg-info/top_level.txt
+[0.865s] writing manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.867s] reading manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.867s] writing manifest file 'web_dashboard.egg-info/SOURCES.txt'
+[0.868s] running build_ext
+[0.869s] Creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web-dashboard.egg-link (link to .)
+[0.869s] Installing watchdog_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.870s] Installing web_dashboard_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[0.870s] 
+[0.870s] Installed /home/guichen/Documents/drone-radar-fusion/build/web_dashboard
+[0.870s] running symlink_data
+[0.870s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index
+[0.870s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index
+[0.870s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+[0.870s] symbolically linking /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/resource/web_dashboard -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+[0.871s] symbolically linking /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/package.xml -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard
+[0.871s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+[0.871s] symbolically linking /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/templates/index.html -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+[0.898s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build --no-deps symlink_data

@@ -1,0 +1,239 @@
+[0.008s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces
+[0.066s] -- The C compiler identification is GNU 11.4.0
+[0.122s] -- The CXX compiler identification is GNU 11.4.0
+[0.129s] -- Detecting C compiler ABI info
+[0.176s] -- Detecting C compiler ABI info - done
+[0.181s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.182s] -- Detecting C compile features
+[0.182s] -- Detecting C compile features - done
+[0.184s] -- Detecting CXX compiler ABI info
+[0.239s] -- Detecting CXX compiler ABI info - done
+[0.244s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.244s] -- Detecting CXX compile features
+[0.244s] -- Detecting CXX compile features - done
+[0.248s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.350s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.394s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.417s] -- Found std_msgs: 4.9.1 (/opt/ros/humble/share/std_msgs/cmake)
+[0.449s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.452s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.458s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.468s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.478s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.500s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.694s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.938s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.030s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.045s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.046s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.064s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.064s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.064s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.064s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.078s] -- Found PythonExtra: .so  
+[1.159s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.177s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.178s] -- Added test 'lint_cmake' to check CMake code style
+[1.179s] -- Added test 'xmllint' to check XML markup files
+[1.181s] -- Configuring done
+[1.202s] -- Generating done
+[1.210s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces
+[1.218s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/livox_driver/livox_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces
+[1.219s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces -- -j16 -l16
+[1.248s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.258s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.258s] [  7%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[1.265s] [  7%] Built target ament_cmake_python_symlink_livox_interfaces
+[1.601s] running egg_info
+[1.601s] creating livox_interfaces.egg-info
+[1.601s] writing livox_interfaces.egg-info/PKG-INFO
+[1.601s] writing dependency_links to livox_interfaces.egg-info/dependency_links.txt
+[1.601s] writing top-level names to livox_interfaces.egg-info/top_level.txt
+[1.602s] writing manifest file 'livox_interfaces.egg-info/SOURCES.txt'
+[1.603s] reading manifest file 'livox_interfaces.egg-info/SOURCES.txt'
+[1.604s] writing manifest file 'livox_interfaces.egg-info/SOURCES.txt'
+[1.632s] [  7%] Built target ament_cmake_python_build_livox_interfaces_egg
+[1.688s] [  7%] Built target livox_interfaces__rs
+[1.726s] [ 12%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_c.dir/rosidl_generator_c/livox_interfaces/msg/detail/custom_point__functions.c.o[0m
+[1.726s] [ 12%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_c.dir/rosidl_generator_c/livox_interfaces/msg/detail/custom_msg__functions.c.o[0m
+[1.746s] [ 12%] Built target livox_interfaces__cpp
+[1.755s] [ 17%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.756s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.756s] [ 20%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.791s] [ 22%] [32m[1mLinking C shared library liblivox_interfaces__rosidl_generator_c.so[0m
+[1.825s] [ 22%] Built target livox_interfaces__rosidl_generator_c
+[1.836s] [ 27%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.836s] [ 27%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.836s] [ 30%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.301s] [ 32%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_interfaces/msg/custom_point__type_support.cpp.o[0m
+[2.306s] [ 35%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/livox_interfaces/msg/custom_msg__type_support.cpp.o[0m
+[2.394s] [ 37%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_interfaces/msg/detail/dds_fastrtps/custom_point__type_support.cpp.o[0m
+[2.394s] [ 40%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/livox_interfaces/msg/detail/dds_fastrtps/custom_msg__type_support.cpp.o[0m
+[2.604s] [ 45%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_interfaces/msg/detail/custom_point__type_support_c.cpp.o[0m
+[2.604s] [ 45%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/livox_interfaces/msg/detail/custom_msg__type_support_c.cpp.o[0m
+[2.678s] [ 47%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_interfaces/msg/custom_point__type_support.cpp.o[0m
+[2.680s] [ 50%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/livox_interfaces/msg/custom_msg__type_support.cpp.o[0m
+[2.722s] [ 52%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_interfaces/msg/detail/custom_msg__type_support.cpp.o[0m
+[2.750s] [ 55%] [32mBuilding CXX object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/livox_interfaces/msg/detail/custom_point__type_support.cpp.o[0m
+[2.754s] [ 57%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_interfaces/msg/detail/custom_point__type_support.c.o[0m
+[2.755s] [ 60%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_c.so[0m
+[2.770s] [ 62%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/livox_interfaces/msg/detail/custom_msg__type_support.c.o[0m
+[2.861s] [ 65%] [32m[1mLinking C shared library liblivox_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.902s] [ 65%] Built target livox_interfaces__rosidl_typesupport_c
+[2.935s] [ 67%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_cpp.so[0m
+[2.951s] [ 67%] Built target livox_interfaces__rosidl_typesupport_introspection_c
+[3.074s] [ 67%] Built target livox_interfaces__rosidl_typesupport_cpp
+[3.198s] [ 70%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[3.280s] [ 72%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.385s] [ 72%] Built target livox_interfaces__rosidl_typesupport_fastrtps_c
+[3.465s] [ 72%] Built target livox_interfaces__rosidl_typesupport_fastrtps_cpp
+[3.695s] [ 75%] [32m[1mLinking CXX shared library liblivox_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[3.769s] [ 75%] Built target livox_interfaces__rosidl_typesupport_introspection_cpp
+[3.788s] [ 75%] Built target livox_interfaces
+[3.805s] [ 77%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.277s] [ 77%] Built target livox_interfaces__py
+[4.290s] [ 80%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_py.dir/rosidl_generator_py/livox_interfaces/msg/_custom_point_s.c.o[0m
+[4.290s] [ 82%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_generator_py.dir/rosidl_generator_py/livox_interfaces/msg/_custom_msg_s.c.o[0m
+[4.382s] [ 85%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/liblivox_interfaces__rosidl_generator_py.so[0m
+[4.413s] [ 85%] Built target livox_interfaces__rosidl_generator_py
+[4.432s] [ 92%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.433s] [ 92%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.433s] [ 92%] [32mBuilding C object CMakeFiles/livox_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[4.508s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.508s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.508s] [100%] [32m[1mLinking C shared library rosidl_generator_py/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.539s] [100%] Built target livox_interfaces__rosidl_typesupport_c__pyext
+[4.539s] [100%] Built target livox_interfaces__rosidl_typesupport_introspection_c__pyext
+[4.539s] [100%] Built target livox_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[4.547s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces -- -j16 -l16
+[4.554s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces
+[4.559s] -- Install configuration: ""
+[4.559s] -- Execute custom install script
+[4.559s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/rosidl_interfaces/livox_interfaces
+[4.566s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_msg.h
+[4.571s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_point.h
+[4.577s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__functions.h
+[4.583s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__struct.h
+[4.588s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.h
+[4.594s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__functions.h
+[4.600s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__struct.h
+[4.606s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.h
+[4.612s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_generator_c__visibility_control.h
+[4.618s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/library_path.sh
+[4.625s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/library_path.dsv
+[4.632s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_fastrtps_c.h
+[4.640s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_fastrtps_c.h
+[4.645s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.651s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_msg.hpp
+[4.666s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/custom_point.hpp
+[4.678s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__builder.hpp
+[4.705s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__struct.hpp
+[4.737s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__traits.hpp
+[4.764s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__type_support.hpp
+[4.778s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__builder.hpp
+[4.803s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__struct.hpp
+[4.827s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__traits.hpp
+[4.853s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__type_support.hpp
+[4.868s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[4.885s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[4.898s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_fastrtps_cpp.hpp
+[4.914s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[4.936s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_introspection_c.h
+[4.947s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_introspection_c.h
+[4.962s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[4.977s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_msg__rosidl_typesupport_introspection_cpp.hpp
+[4.992s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/include/livox_interfaces/livox_interfaces/msg/detail/custom_point__rosidl_typesupport_introspection_cpp.hpp
+[5.008s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/pythonpath.sh
+[5.032s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/pythonpath.dsv
+[5.049s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/PKG-INFO
+[5.067s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/SOURCES.txt
+[5.089s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/dependency_links.txt
+[5.102s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces-0.0.1-py3.10.egg-info/top_level.txt
+[5.131s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/__init__.py
+[5.164s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_c.c
+[5.202s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.236s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/_livox_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[5.272s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/liblivox_interfaces__rosidl_generator_py.so
+[5.300s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[5.335s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[5.374s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[5.410s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/__init__.py
+[5.444s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_msg.py
+[5.476s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_msg_s.c
+[5.509s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_point.py
+[5.550s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_point_s.c
+[5.576s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[5.577s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[5.580s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/livox_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[5.581s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/rust_packages/livox_interfaces
+[5.621s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/Cargo.toml
+[5.647s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/build.rs
+[5.674s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/src/lib.rs
+[5.712s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/src/msg.rs
+[5.732s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/rust/src/msg/rmw.rs
+[5.757s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomPoint.idl
+[5.778s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomMsg.idl
+[5.792s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomPoint.msg
+[5.810s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/msg/CustomMsg.msg
+[5.827s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/package_run_dependencies/livox_interfaces
+[5.864s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/parent_prefix_path/livox_interfaces
+[5.895s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/ament_prefix_path.sh
+[5.911s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/ament_prefix_path.dsv
+[5.939s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/path.sh
+[5.956s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/environment/path.dsv
+[5.978s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.bash
+[5.987s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.sh
+[6.004s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.zsh
+[6.017s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/local_setup.dsv
+[6.045s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.dsv
+[6.063s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/ament_index/resource_index/packages/livox_interfaces
+[6.099s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake-extras.cmake
+[6.113s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[6.134s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[6.153s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[6.169s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[6.184s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[6.196s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[6.205s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfacesConfig.cmake
+[6.216s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfacesConfig-version.cmake
+[6.227s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/package.xml
+[6.241s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_c.so
+[6.242s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_c.so" to ""
+[6.242s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_c.so
+[6.242s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[6.242s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[6.243s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[6.243s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_c.so
+[6.243s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[6.243s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_c.so
+[6.243s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_c.so" to ""
+[6.243s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_cpp.so
+[6.244s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[6.244s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_cpp.so
+[6.244s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_typesupport_cpp.so" to ""
+[6.286s] Listing '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces'...
+[6.286s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/__init__.py'...
+[6.287s] Listing '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg'...
+[6.287s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/__init__.py'...
+[6.287s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_msg.py'...
+[6.287s] Compiling '/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/local/lib/python3.10/dist-packages/livox_interfaces/msg/_custom_point.py'...
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_py.so
+[6.294s] -- Set runtime path of "/home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/lib/liblivox_interfaces__rosidl_generator_py.so" to ""
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cExport.cmake
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cExport-noconfig.cmake
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_cppExport.cmake
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[6.294s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[6.295s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[6.295s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[6.295s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cExport.cmake
+[6.295s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[6.297s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[6.297s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[6.297s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cppExport.cmake
+[6.297s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/livox_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[6.297s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_pyExport.cmake
+[6.297s] -- Installing: /home/guichen/Documents/drone-radar-fusion/install/livox_interfaces/share/livox_interfaces/cmake/export_livox_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[6.299s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/livox_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/livox_interfaces

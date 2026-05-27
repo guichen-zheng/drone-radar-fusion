@@ -1,0 +1,65 @@
+[ 12%] [34m[1mPerforming update step for 'livox-sdk-master'[0m
+[ 25%] [34m[1mNo patch step for 'livox-sdk-master'[0m
+[ 37%] [34m[1mPerforming configure step for 'livox-sdk-master'[0m
+-- main project dir: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk-master-prefix/src/livox-sdk-master-build
+[ 50%] [34m[1mPerforming build step for 'livox-sdk-master'[0m
+[35m[1mConsolidate compiler generated dependencies of target livox_sdk_static[0m
+[ 54%] Built target livox_sdk_static
+[35m[1mConsolidate compiler generated dependencies of target lidar_sample[0m
+[35m[1mConsolidate compiler generated dependencies of target hub_lvx_sample[0m
+[35m[1mConsolidate compiler generated dependencies of target lidar_lvx_sample[0m
+[35m[1mConsolidate compiler generated dependencies of target hub_sample_cc[0m
+[35m[1mConsolidate compiler generated dependencies of target lidar_sample_cc[0m
+[35m[1mConsolidate compiler generated dependencies of target lidar_utc_sync[0m
+[35m[1mConsolidate compiler generated dependencies of target hub_sample[0m
+[35m[1mConsolidate compiler generated dependencies of target trouble_shooting[0m
+[ 58%] Built target lidar_sample
+[ 64%] Built target hub_sample_cc
+[ 70%] Built target lidar_lvx_sample
+[ 79%] Built target lidar_utc_sync
+[ 83%] Built target hub_sample
+[ 95%] Built target hub_lvx_sample
+[ 95%] Built target lidar_sample_cc
+[100%] Built target trouble_shooting
+[ 62%] [34m[1mPerforming install step for 'livox-sdk-master'[0m
+[ 54%] Built target livox_sdk_static
+[ 58%] Built target hub_sample
+[ 62%] Built target lidar_sample
+[ 75%] Built target lidar_lvx_sample
+[ 75%] Built target hub_lvx_sample
+[ 81%] Built target lidar_sample_cc
+[ 95%] Built target hub_sample_cc
+[ 95%] Built target lidar_utc_sync
+[100%] Built target trouble_shooting
+[36mInstall the project...[0m
+-- Install configuration: ""
+-- Up-to-date: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/lib/liblivox_sdk_static.a
+-- Up-to-date: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/include/livox_def.h
+-- Up-to-date: /home/guichen/Documents/drone-radar-fusion/build/livox_sdk_vendor/livox-sdk_install/include/livox_sdk.h
+[ 75%] [34m[1mCompleted 'livox-sdk-master'[0m
+[100%] Built target livox-sdk-master
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include/livox_def.h
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/include/livox_sdk.h
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/lib/liblivox_sdk_static.a
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/Modules/Findlivox_sdk.cmake
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/package_run_dependencies/livox_sdk_vendor
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/parent_prefix_path/livox_sdk_vendor
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.sh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/environment/path.dsv
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.bash
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.sh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.zsh
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/local_setup.dsv
+-- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.dsv
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/ament_index/resource_index/packages/livox_sdk_vendor
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendor-extras.cmake
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig.cmake
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/cmake/livox_sdk_vendorConfig-version.cmake
+-- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/livox_sdk_vendor/share/livox_sdk_vendor/package.xml

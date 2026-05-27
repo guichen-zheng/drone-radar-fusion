@@ -96,16 +96,19 @@ class SimBridge(Node):
             self.get_logger().info('[SimBridge] Gazebo 服务已连接，无人机将同步移动')
 
         # ── 定时器 ────────────────────────────────────────────────────────────
+        # 30Hz：10Hz 会让无人机在 Gazebo 里目视闪烁（每 100ms 才瞬移一次，
+        # 大于人眼平滑感知阈值）。30Hz 时每 33ms 更新一次，视觉连续。
         self.t = 0.0
-        self.create_timer(0.1, self.step)          # 10 Hz 主循环
-        self.create_timer(1.0, self._pub_sensor)   # 1 Hz 传感器静态标记
+        self.STEP_DT = 1.0 / 30.0
+        self.create_timer(self.STEP_DT, self.step)   # 30 Hz 主循环
+        self.create_timer(1.0, self._pub_sensor)     # 1 Hz 传感器静态标记
 
         formation = ', '.join(f'{n}(R={r:.0f},H={h:.0f})' for n,r,h,_ in self.drones)
         self.get_logger().info(f'[SimBridge] 启动：T={self.period}s 编队：{formation}')
 
-    # ── 主循环（10 Hz）────────────────────────────────────────────────────────
+    # ── 主循环（30 Hz）────────────────────────────────────────────────────────
     def step(self):
-        self.t += 0.1
+        self.t += self.STEP_DT
         omega = 2.0 * math.pi / self.period
 
         positions = []
@@ -123,7 +126,8 @@ class SimBridge(Node):
     # ── RViz 无人机可视化标记 ──────────────────────────────────────────────────
     def _pub_drone_visual(self, positions, stamp):
         ma = MarkerArray()
-        hdr = Header(); hdr.stamp = stamp; hdr.frame_id = 'lidar'
+        # 用 map（世界）frame：无人机位置直接是世界坐标，不受 lidar 旋转影响
+        hdr = Header(); hdr.stamp = stamp; hdr.frame_id = 'map'
 
         for idx, (_name, x, y, z) in enumerate(positions):
             # 与 Gazebo 同款 mesh + 同样的 4x 缩放
@@ -146,7 +150,10 @@ class SimBridge(Node):
     def _pub_sensor(self):
         ma = MarkerArray()
         now = self.get_clock().now().to_msg()
-        hdr = Header(); hdr.stamp = now; hdr.frame_id = 'lidar'
+        # map（世界）frame：脚架/立柱永远不动
+        # 注：雷达和相机本身现在装在 sensor_head 里跟着云台转（见 Gazebo），
+        # RViz 里这两个 marker 显示静态初始位置，仅作装配示意。
+        hdr = Header(); hdr.stamp = now; hdr.frame_id = 'map'
 
         def mk(mid, mtype, px, py, pz, sx, sy, sz, r, g, b, a=1.0,
                qx=0., qy=0., qz=0., qw=1.):

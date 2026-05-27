@@ -11,6 +11,45 @@ fusion_manager:
     track_assoc_dist:   5.0
     warn_confidence:    0.70
     warn_level:         "HIGH"
+    # 云台：开启动态外参（gimbal_controller 发布 TF lidar→camera_optical）
+    # TF 不可用时（启动初期或云台节点未运行）会自动回退到 calib_yaml 静态外参
+    use_tf_extrinsic:   true
+    tf_camera_frame:    "camera_optical"
+    tf_lidar_frame:     "lidar"
+
+# 云台控制器（v1.1：雷达+相机同转 + 目标锁定）
+# 订阅 /radar/detect → 转世界坐标 → 在已锁定目标附近用空间最近邻找回它
+# → 锁定丢失 lock_loss_timeout 秒才允许重选 → 限速 PD 追踪
+# → 写 sensor_head 模型姿态（雷达+相机一起转）+ 发布动态 TF map→lidar
+gimbal_controller:
+  ros__parameters:
+    # 云台旋转中心（世界坐标，米）。也是雷达 frame 原点。
+    pivot_x:    0.0
+    pivot_y:    0.0
+    pivot_z:    1.55
+    # 关节角度限制
+    pan_min_deg:        -180.0
+    pan_max_deg:         180.0    # ±180°：360° 全向（实际机械限位）
+    tilt_min_deg:        -85.0    # 向上看为负 pitch，最多上仰 85°
+    tilt_max_deg:         30.0
+    # 速率限制（FLIR PTU-D46 典型规格）
+    pan_speed_deg_per_sec:   60.0
+    tilt_speed_deg_per_sec:  45.0
+    # 目标筛选
+    min_target_distance: 5.0      # 距离 < 5m 的检测忽略（近距离意义不大）
+    # 目标锁定参数（防抖核心）
+    lock_radius_m:       6.0      # 锁定目标在两帧间最大允许位移（米）
+    lock_loss_timeout:   2.0      # 锁定目标连续丢失 N 秒才允许换目标
+    # 控制频率
+    control_rate_hz:     30.0
+    # Gazebo 模型实体名
+    entity_name:         "sensor_head"
+    # TF frame 名
+    tf_world_frame:      "map"
+    tf_lidar_frame:      "lidar"
+    tf_camera_frame:     "camera_optical"
+    # 相机相对雷达的 z 偏移（sensor_head 内部装配，米）
+    camera_offset_z:     0.07
 
 # YOLO 视觉检测（simulation 包的 yolo_node，桥接 conda 环境的 ultralytics）
 yolo_detector:
@@ -27,14 +66,17 @@ radar_processor:
     cluster_tolerance:   1.5
     cluster_min_size:    3             # 仿真点云稀疏，降低阈值
     cluster_max_size:    500
-    drone_min_height:    3.0           # 仿真无人机在 8m，下限放低
+    # ⚠️ 云台模式下 lidar frame 会随云台俯仰旋转，z 不再是世界垂直方向。
+    # 比如雷达上仰 27° 看高度 12m 的无人机时，目标在 lidar frame 里 z ≈ 0.3m。
+    # 因此把高度阈值放到允许负值（仿真无地面杂波，不需要 z 过滤）。
+    drone_min_height:   -50.0          # 原 3.0，与世界垂直对齐时才有意义
     drone_max_height:    50.0
     drone_max_size:      6.0           # 放大后无人机直径 ~2m，留 3 倍裕量
     roi_x_min:          -100.0
     roi_x_max:           100.0
     roi_y_min:          -100.0
     roi_y_max:           100.0
-    roi_z_min:           1.0
+    roi_z_min:          -50.0          # 原 1.0，云台旋转后 lidar.z 不是世界垂直
     roi_z_max:           50.0
     # 离群点滤除：仿真点云稀疏，无人机只有 ~10 个点，原默认 mean_k=30 会把无人机全部误删
     outlier_mean_k:      5

@@ -25,8 +25,9 @@ setup(
     zip_safe=True,
     entry_points={
         'console_scripts': [
-            'sim_bridge = simulation.sim_bridge:main',
-            'yolo_node  = simulation.yolo_node:main',
+            'sim_bridge        = simulation.sim_bridge:main',
+            'yolo_node         = simulation.yolo_node:main',
+            'gimbal_controller = simulation.gimbal_controller:main',
         ],
     },
 )

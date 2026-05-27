@@ -6,6 +6,8 @@
 #include <message_filters/sync_policies/approximate_time.h>
 #include <visualization_msgs/msg/marker_array.hpp>
 #include <std_msgs/msg/string.hpp>
+#include <tf2_ros/buffer.h>
+#include <tf2_ros/transform_listener.h>
 #include <Eigen/Dense>
 #include <opencv2/core.hpp>
 #include <map>
@@ -98,6 +100,15 @@ private:
     Eigen::Matrix3d cam_intrinsic_;    // 相机内参 K（3×3）
     Eigen::Matrix4d T_cam_lidar_;      // 雷达→相机外参（4×4 齐次变换）
     bool calib_loaded_ = false;
+
+    // ── 动态外参（TF tree 查询）─────────────────────────────
+    // 当 use_tf_extrinsic_=true 且 TF lookup 成功时，优先用 TF；否则回退到
+    // 静态 T_cam_lidar_。云台场景必须开启 TF；普通静态相机可关闭。
+    std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
+    std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+    bool use_tf_extrinsic_   = false;
+    std::string tf_camera_frame_ = "camera_optical";
+    std::string tf_lidar_frame_  = "lidar";
 
     // ── 坐标转换互斥锁（保护 CoordTransform 静态状态）──────
     std::mutex pose_mutex_;

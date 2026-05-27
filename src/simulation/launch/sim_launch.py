@@ -52,6 +52,16 @@ def generate_launch_description():
         SetEnvironmentVariable(name='GAZEBO_MODEL_PATH', value=models_dir),
         # 修复 OGRE 渲染黑屏（ros2 launch 子进程不继承 shell 渲染环境）
         SetEnvironmentVariable(name='OGRE_RTT_MODE', value='Copy'),
+        # 海康 MVS SDK 在 LD_LIBRARY_PATH 里塞了 /opt/MVS/lib/64，里面带过期的
+        # libusb-1.0.so.0（缺 libusb_set_option 符号）会让 PCL/libpcl_io 加载
+        # 失败 → radar_node 崩溃。这里只过滤掉 /opt/MVS 路径，保留 ROS/系统库。
+        SetEnvironmentVariable(
+            name='LD_LIBRARY_PATH',
+            value=':'.join(
+                p for p in os.environ.get('LD_LIBRARY_PATH', '').split(':')
+                if p and '/opt/MVS' not in p
+            )
+        ),
 
         # ── 1. 启动 Gazebo（gui:=false 时只跑 gzserver，无黑色窗口）────────────
         IncludeLaunchDescription(
@@ -111,6 +121,19 @@ def generate_launch_description():
             )
         ]),
 
+        # ── 4.5 gimbal_controller（6s 后，等 radar_processor 起来再开始追）────
+        # 走 set_entity_state 简化版：订阅 /radar/detect → 选目标 → 旋转
+        # sensor_camera 模型 → 发布动态 TF lidar → camera_optical（fusion 用）
+        TimerAction(period=6.0, actions=[
+            Node(
+                package='simulation',
+                executable='gimbal_controller',
+                name='gimbal_controller',
+                output='screen',
+                parameters=[sim_params],
+            )
+        ]),
+
         # ── 4. web_dashboard（6s 后）────────────────────────────────────────
         TimerAction(period=6.0, actions=[
             Node(
@@ -121,14 +144,10 @@ def generate_launch_description():
             )
         ]),
 
-        # ── 5. 静态 TF：lidar = map（让 RViz 中 fusion/markers 与 sim 标记共存）─
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='lidar_map_tf',
-            arguments=['0', '0', '0', '0', '0', '0', 'map', 'lidar'],
-            output='screen',
-        ),
+        # ── 5. （已移除静态 lidar_map_tf）─────────────────────────────────────
+        # 雷达现在装在 sensor_head 上跟着云台转，gimbal_controller 会动态发布
+        # map→lidar 这个 TF（带 pan/tilt 旋转）。如果再起一个 static identity
+        # 会和动态 TF 打架。
 
         # ── 6. RViz2（7s 后）──────────────────────────────────────────────────
         TimerAction(period=7.0, actions=[

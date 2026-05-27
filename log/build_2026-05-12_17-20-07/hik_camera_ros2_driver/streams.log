@@ -1,0 +1,62 @@
+[0.008s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/hik_camera -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver
+[0.021s] -- Found ament_cmake_auto: 1.3.14 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[0.112s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.182s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.184s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.190s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.197s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.208s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.234s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.235s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.308s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.414s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.427s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.427s] -- Configured cppcheck include dirs: /home/guichen/Documents/drone-radar-fusion/src/hik_camera/hikSDK/include
+[0.427s] -- Configured cppcheck exclude dirs and/or files: 
+[0.428s] -- Added test 'lint_cmake' to check CMake code style
+[0.429s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.429s] -- Added test 'xmllint' to check XML markup files
+[0.431s] -- Configuring done
+[0.442s] -- Generating done
+[0.445s] -- Build files have been written to: /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver
+[0.451s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/guichen/Documents/drone-radar-fusion/src/hik_camera -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver
+[0.452s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16
+[0.478s] Consolidate compiler generated dependencies of target hik_camera_ros2_driver
+[0.478s] Consolidate compiler generated dependencies of target hik_camera_ros2_driver_node
+[0.486s] [100%] Built target hik_camera_ros2_driver_node
+[0.486s] [100%] Built target hik_camera_ros2_driver
+[0.493s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver -- -j16 -l16
+[0.494s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver
+[0.498s] -- Install configuration: "Release"
+[0.499s] -- Execute custom install script
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/libFormatConversion.so
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/libMVRender.so
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/libMediaProcess.so
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/libMvCameraControl.so
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/libMvUsb3vTL.so
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/hik_camera_ros2_driver/hik_camera_ros2_driver_node
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/environment/library_path.sh
+[0.499s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/environment/library_path.dsv
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/lib/libhik_camera_ros2_driver.so
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/launch/hik_camera_launch.py
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/config/camera_info.yaml
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/config/camera_params.yaml
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/ament_index/resource_index/package_run_dependencies/hik_camera_ros2_driver
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/ament_index/resource_index/parent_prefix_path/hik_camera_ros2_driver
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/environment/ament_prefix_path.sh
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/environment/ament_prefix_path.dsv
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/environment/path.sh
+[0.500s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/environment/path.dsv
+[0.501s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/local_setup.bash
+[0.501s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/local_setup.sh
+[0.501s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/local_setup.zsh
+[0.501s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/local_setup.dsv
+[0.501s] -- Symlinking: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.dsv
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/ament_index/resource_index/packages/hik_camera_ros2_driver
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/ament_index/resource_index/rclcpp_components/hik_camera_ros2_driver
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/cmake/ament_cmake_export_libraries-extras.cmake
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/cmake/hik_camera_ros2_driverConfig.cmake
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/cmake/hik_camera_ros2_driverConfig-version.cmake
+[0.506s] -- Up-to-date symlink: /home/guichen/Documents/drone-radar-fusion/install/hik_camera_ros2_driver/share/hik_camera_ros2_driver/package.xml
+[0.508s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver

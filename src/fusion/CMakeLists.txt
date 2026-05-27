@@ -9,6 +9,9 @@ find_package(rclcpp REQUIRED)
 find_package(message_filters REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(yaml-cpp REQUIRED)
@@ -35,7 +38,8 @@ add_executable(fusion_node
 )
 
 ament_target_dependencies(fusion_node
-    rclcpp message_filters visualization_msgs std_msgs interface
+    rclcpp message_filters visualization_msgs std_msgs geometry_msgs
+    tf2 tf2_ros interface
 )
 target_link_libraries(fusion_node
     Eigen3::Eigen

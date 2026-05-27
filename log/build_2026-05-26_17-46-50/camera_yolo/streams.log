@@ -1,0 +1,17 @@
+[0.546s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/camera_yolo/build --no-deps symlink_data
+[0.729s] running develop
+[0.846s] running egg_info
+[0.846s] writing camera_yolo.egg-info/PKG-INFO
+[0.847s] writing dependency_links to camera_yolo.egg-info/dependency_links.txt
+[0.847s] writing entry points to camera_yolo.egg-info/entry_points.txt
+[0.847s] writing requirements to camera_yolo.egg-info/requires.txt
+[0.847s] writing top-level names to camera_yolo.egg-info/top_level.txt
+[0.848s] reading manifest file 'camera_yolo.egg-info/SOURCES.txt'
+[0.849s] writing manifest file 'camera_yolo.egg-info/SOURCES.txt'
+[0.850s] running build_ext
+[0.850s] Creating /home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/python3.10/site-packages/camera-yolo.egg-link (link to .)
+[0.851s] Installing yolo_node script to /home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/camera_yolo
+[0.851s] 
+[0.851s] Installed /home/guichen/Documents/drone-radar-fusion/build/camera_yolo
+[0.851s] running symlink_data
+[0.876s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/camera_yolo' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/camera_yolo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/camera_yolo/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/camera_yolo/build --no-deps symlink_data

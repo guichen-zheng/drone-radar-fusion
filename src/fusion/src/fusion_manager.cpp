@@ -4,6 +4,9 @@
 #include <opencv2/core/eigen.hpp>
 #include <nlohmann/json.hpp>
 #include <sstream>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2/LinearMath/Matrix3x3.h>
+#include <geometry_msgs/msg/transform_stamped.hpp>
 
 namespace fusion
 {
@@ -22,6 +25,10 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     this->declare_parameter("warn_level",        "MEDIUM");
     this->declare_parameter("origin_lat",        39.9);   // 监控区域原点纬度（度）
     this->declare_parameter("origin_lng",       116.4);   // 监控区域原点经度（度）
+    // 云台/动态外参开关：true 时优先查 TF，失败回退静态 T_cam_lidar_
+    this->declare_parameter("use_tf_extrinsic", false);
+    this->declare_parameter("tf_camera_frame", "camera_optical");
+    this->declare_parameter("tf_lidar_frame",  "lidar");
 
     confirm_thresh_    = this->get_parameter("confirm_thresh").as_int();
     max_miss_frames_   = this->get_parameter("max_miss_frames").as_int();
@@ -30,6 +37,13 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     track_assoc_dist_  = this->get_parameter("track_assoc_dist").as_double();
     warn_confidence_   = this->get_parameter("warn_confidence").as_double();
     warn_level_        = this->get_parameter("warn_level").as_string();
+    use_tf_extrinsic_  = this->get_parameter("use_tf_extrinsic").as_bool();
+    tf_camera_frame_   = this->get_parameter("tf_camera_frame").as_string();
+    tf_lidar_frame_    = this->get_parameter("tf_lidar_frame").as_string();
+
+    // TF buffer/listener（无论是否启用都初始化，便于运行时切换）
+    tf_buffer_   = std::make_shared<tf2_ros::Buffer>(this->get_clock());
+    tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
     // 初始化地理坐标原点（雷达坐标 → WGS84 的基准点）
     double origin_lat = this->get_parameter("origin_lat").as_double();
@@ -81,9 +95,38 @@ void FusionManager::fusionCallback(
         // 无标定时直接用雷达结果（已含 3D 坐标）
         fused_dets = radar_msg->drones;
     } else {
+        // 选择外参矩阵：开启 use_tf_extrinsic_ 时优先查 TF（云台场景必需）
+        Eigen::Matrix4d T_cam_lidar = T_cam_lidar_;
+        if (use_tf_extrinsic_) {
+            try {
+                auto tf = tf_buffer_->lookupTransform(
+                    tf_camera_frame_, tf_lidar_frame_,
+                    rclcpp::Time(radar_msg->header.stamp),
+                    rclcpp::Duration::from_seconds(0.1));
+                tf2::Quaternion q(
+                    tf.transform.rotation.x, tf.transform.rotation.y,
+                    tf.transform.rotation.z, tf.transform.rotation.w);
+                tf2::Matrix3x3 R(q);
+                Eigen::Matrix4d M = Eigen::Matrix4d::Identity();
+                for (int i = 0; i < 3; ++i)
+                    for (int j = 0; j < 3; ++j)
+                        M(i, j) = R[i][j];
+                M(0, 3) = tf.transform.translation.x;
+                M(1, 3) = tf.transform.translation.y;
+                M(2, 3) = tf.transform.translation.z;
+                T_cam_lidar = M;
+            } catch (const std::exception & e) {
+                static int warn_cnt = 0;
+                if (++warn_cnt % 30 == 1) {
+                    RCLCPP_WARN(this->get_logger(),
+                        "[Fusion] TF lookup %s<-%s 失败（回退静态外参）: %s",
+                        tf_camera_frame_.c_str(), tf_lidar_frame_.c_str(), e.what());
+                }
+            }
+        }
         // 将雷达 3D 点投影到图像平面，与相机 BBox 中心做距离匹配
         auto matches = matchDetections(*radar_msg, *camera_msg,
-                                       cam_intrinsic_, T_cam_lidar_);
+                                       cam_intrinsic_, T_cam_lidar);
 
         std::set<int> matched_radar, matched_camera;
         for (auto & [ri, ci] : matches) {
