@@ -66,17 +66,16 @@ radar_processor:
     cluster_tolerance:   1.5
     cluster_min_size:    3             # 仿真点云稀疏，降低阈值
     cluster_max_size:    500
-    # ⚠️ 云台模式下 lidar frame 会随云台俯仰旋转，z 不再是世界垂直方向。
-    # 比如雷达上仰 27° 看高度 12m 的无人机时，目标在 lidar frame 里 z ≈ 0.3m。
-    # 因此把高度阈值放到允许负值（仿真无地面杂波，不需要 z 过滤）。
-    drone_min_height:   -50.0          # 原 3.0，与世界垂直对齐时才有意义
+    # 雷达现在静止、与世界坐标轴对齐，z 即世界垂直高度（相对雷达 1.55m）。
+    # 仿真无地面杂波，高度阈值仍放宽，避免边缘情况误删稀疏目标。
+    drone_min_height:   -50.0
     drone_max_height:    50.0
     drone_max_size:      6.0           # 放大后无人机直径 ~2m，留 3 倍裕量
     roi_x_min:          -100.0
     roi_x_max:           100.0
     roi_y_min:          -100.0
     roi_y_max:           100.0
-    roi_z_min:          -50.0          # 原 1.0，云台旋转后 lidar.z 不是世界垂直
+    roi_z_min:          -50.0
     roi_z_max:           50.0
     # 离群点滤除：仿真点云稀疏，无人机只有 ~10 个点，原默认 mean_k=30 会把无人机全部误删
     outlier_mean_k:      5

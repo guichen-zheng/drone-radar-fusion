@@ -1,15 +1,15 @@
 """
 simulation/gimbal_controller.py
 
-云台主动注视控制器（v1.1，雷达+相机一同旋转，目标锁定防抖）：
+云台主动注视控制器（v1.2，雷达静止 + 仅相机旋转，目标锁定防抖）：
 
-  ① 订阅 /radar/detect → 把每个检测从雷达局部坐标转到世界坐标
-     （雷达和相机都装在 sensor_head 上，跟着云台一起转）
+  ① 订阅 /radar/detect（已是 map 世界坐标，雷达 360° 全向静止粗检）
   ② 目标锁定机制：一旦选定目标，每帧用空间最近邻在新检测里找它，
      除非丢失超过 lock_loss_timeout 秒才允许重选
   ③ 用速率限制（pan_speed / tilt_speed）追踪期望角度
-  ④ 通过 /gazebo/set_entity_state 把 sensor_head 旋转到当前 (pan, tilt)
-  ⑤ 发布动态 TF：map → lidar（旋转），以及静态 TF：lidar → camera_optical
+  ④ 通过 /gazebo/set_entity_state 把 sensor_head（仅相机）旋转到 (pan, tilt)
+  ⑤ 发布静态 TF：map → lidar（雷达固定），动态 TF：lidar → camera_optical
+     （相机外参随云台转动 → fusion 主动注视投影）
   ⑥ 发布 /gimbal/target Marker 给 RViz 显示当前注视的射线
 
 注：v1 用 set_entity_state 走纯运动学路线，跳过 Gazebo 物理 PID。v2 论文版本会换成
@@ -42,6 +42,16 @@ def euler_to_quat(roll: float, pitch: float, yaw: float) -> Quaternion:
     q.x = sr * cp * cy - cr * sp * sy
     q.y = cr * sp * cy + sr * cp * sy
     q.z = cr * cp * sy - sr * sp * cy
+    return q
+
+
+def quat_mul(a: Quaternion, b: Quaternion) -> Quaternion:
+    """Hamilton 四元数乘 a⊗b（先按 a 旋转，再在其体坐标系内按 b 旋转）。"""
+    q = Quaternion()
+    q.w = a.w*b.w - a.x*b.x - a.y*b.y - a.z*b.z
+    q.x = a.w*b.x + a.x*b.w + a.y*b.z - a.z*b.y
+    q.y = a.w*b.y - a.x*b.z + a.y*b.w + a.z*b.x
+    q.z = a.w*b.z + a.x*b.y - a.y*b.x + a.z*b.w
     return q
 
 
@@ -152,27 +162,24 @@ class GimbalController(Node):
         self.create_timer(1.0 / rate_hz, self._control_tick)
 
         self.get_logger().info(
-            f'[GimbalController] v1.1（雷达+相机同转）已启动。'
+            f'[GimbalController] v1.2（雷达静止 + 仅相机转）已启动。'
             f'pivot={self.pivot} pan_speed={math.degrees(self.pan_speed):.0f}°/s '
             f'tilt_speed={math.degrees(self.tilt_speed):.0f}°/s '
             f'min_dist={self.min_dist}m lock_radius={self.lock_radius}m '
             f'lock_loss={self.lock_loss_timeout}s')
 
-    # ── 静态 TF：lidar → camera_optical ────────────────────────────────────
+    # ── 静态 TF：map → lidar ───────────────────────────────────────────────
     def _publish_static_tf(self):
-        """雷达和相机都在 sensor_head 里，所以 lidar→camera 没有旋转差异，
-        只有一个垂直平移 + REP-103 光学约定的轴变换。"""
+        """雷达固定在立柱顶端（世界 pivot 处），与世界坐标轴对齐、永远不动。
+        所以 map→lidar 是一个常量 TF：平移=pivot，旋转=单位。"""
         t = TransformStamped()
         t.header.stamp = self.get_clock().now().to_msg()
-        t.header.frame_id = self.lidar_frame
-        t.child_frame_id  = self.camera_frame
-        # 相机比雷达高 cam_offset_z，在云台头部坐标系里就是 +z 方向
-        t.transform.translation.x = 0.0
-        t.transform.translation.y = 0.0
-        t.transform.translation.z = float(self.cam_offset_z)
-        # REP-103 光学约定：x=right=-y_sensor, y=down=-z_sensor, z=fwd=+x_sensor
-        # 对应 RPY = (-π/2, 0, -π/2)
-        t.transform.rotation = euler_to_quat(-math.pi / 2.0, 0.0, -math.pi / 2.0)
+        t.header.frame_id = self.world_frame
+        t.child_frame_id  = self.lidar_frame
+        t.transform.translation.x = float(self.pivot[0])
+        t.transform.translation.y = float(self.pivot[1])
+        t.transform.translation.z = float(self.pivot[2])
+        t.transform.rotation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
         self.tf_static.sendTransform(t)
 
     # ── /radar/detect 回调：检测已是世界坐标（由 radar_world_repub 做了 TF 变换）
@@ -266,15 +273,24 @@ class GimbalController(Node):
         if self.gazebo_cli.service_is_ready():
             self.gazebo_cli.call_async(req)
 
-        # 2) 发布动态 TF：map → lidar（位置=pivot，旋转=pan+tilt）
+        # 2) 发布动态 TF：lidar → camera_optical（相机随云台 pan/tilt 转动）
+        #    雷达静止、与世界对齐，所以相机相对雷达的外参 = 云台旋转 ∘ 光学约定。
+        #    fusion 用这个动态外参把雷达 3D 点投到当前相机像平面。
+        q_pantilt = euler_to_quat(0.0, self.cur_tilt, self.cur_pan)
+        # REP-103 光学约定：x=right, y=down, z=fwd → RPY=(-π/2, 0, -π/2)
+        q_optical = euler_to_quat(-math.pi / 2.0, 0.0, -math.pi / 2.0)
+        # 相机光心相对雷达的平移：模型内 +z 偏移，随云台一起转
+        ox, oy, oz = lidar_to_world(
+            0.0, 0.0, self.cam_offset_z,
+            self.cur_pan, self.cur_tilt, (0.0, 0.0, 0.0))
         t = TransformStamped()
         t.header.stamp = self.get_clock().now().to_msg()
-        t.header.frame_id = self.world_frame
-        t.child_frame_id  = self.lidar_frame
-        t.transform.translation.x = float(self.pivot[0])
-        t.transform.translation.y = float(self.pivot[1])
-        t.transform.translation.z = float(self.pivot[2])
-        t.transform.rotation = euler_to_quat(0.0, self.cur_tilt, self.cur_pan)
+        t.header.frame_id = self.lidar_frame
+        t.child_frame_id  = self.camera_frame
+        t.transform.translation.x = float(ox)
+        t.transform.translation.y = float(oy)
+        t.transform.translation.z = float(oz)
+        t.transform.rotation = quat_mul(q_pantilt, q_optical)
         self.tf_dyn.sendTransform(t)
 
         # 3) 发布注视射线 Marker

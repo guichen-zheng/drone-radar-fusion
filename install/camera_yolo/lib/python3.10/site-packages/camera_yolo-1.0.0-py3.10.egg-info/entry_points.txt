@@ -1,0 +1,3 @@
+[console_scripts]
+yolo_node = camera_yolo.yolo_node:main
+

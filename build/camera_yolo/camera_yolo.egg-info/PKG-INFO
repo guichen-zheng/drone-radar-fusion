@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: camera-yolo
+Version: 1.0.0
+Summary: YOLO 推理节点（conda subprocess 桥接，绕过 cv::dnn 兼容问题）
+Home-page: UNKNOWN
+Maintainer: guichen
+Maintainer-email: 2830532983@qq.com
+License: MIT
+Platform: UNKNOWN
+
+UNKNOWN
+

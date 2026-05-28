@@ -38,8 +38,9 @@
     </model>
 
     <!-- ────────────────────────────────────────────────────────────────── -->
-    <!-- sensor_pillar：脚架 + 立柱（静态，永远不动）                       -->
-    <!-- 雷达和相机现在都在 sensor_head 里，跟着云台一起转                  -->
+    <!-- sensor_pillar：脚架 + 立柱 + 雷达（静态，永远不动）               -->
+    <!-- 雷达固定在立柱顶端（世界 z=1.55），360° 全向扫描，持续看到全部无人机 -->
+    <!-- 只有相机（sensor_head）跟着云台转 → 主动注视；雷达保持宽域稳定粗检 -->
     <!-- ────────────────────────────────────────────────────────────────── -->
     <model name="sensor_pillar">
       <static>true</static>
@@ -50,6 +51,12 @@
           <pose>0 0 0.65 0 0 0</pose>
           <geometry><cylinder><radius>0.025</radius><length>1.3</length></cylinder></geometry>
           <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse></material>
+        </visual>
+        <!-- 雷达本体（深灰矩形，固定在立柱顶端 z=1.55） -->
+        <visual name="radar_body">
+          <pose>0 0 1.55 0 0 0</pose>
+          <geometry><box><size>0.16 0.16 0.06</size></box></geometry>
+          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
         </visual>
         <!-- 顶板 -->
         <visual name="top">
@@ -79,69 +86,32 @@
           <geometry><cylinder><radius>0.018</radius><length>0.54</length></cylinder></geometry>
           <material><ambient>0.25 0.25 0.25 1</ambient><diffuse>0.3 0.3 0.3 1</diffuse></material>
         </visual>
-      </link>
-    </model>
-
-    <!-- ────────────────────────────────────────────────────────────────── -->
-    <!-- sensor_head：雷达 + 相机，由 gimbal_controller 通过                -->
-    <!-- /gazebo/set_entity_state 旋转，模拟 2-DOF PT 云台                  -->
-    <!-- 旋转中心（pivot）：世界 (0, 0, 1.55)                              -->
-    <!-- 模型坐标系：原点=旋转中心 = 雷达位置                              -->
-    <!--   雷达光学中心：模型 (0, 0, 0)，等同 lidar frame 原点               -->
-    <!--   相机光学中心：模型 (0, 0, 0.07)，比雷达高 7cm，避免外观重叠      -->
-    <!--   两者光轴均沿模型 +x 方向                                         -->
-    <!-- ────────────────────────────────────────────────────────────────── -->
-    <model name="sensor_head">
-      <pose>0 0 1.55 0 0 0</pose>
-      <static>true</static>
-      <link name="link">
-        <!-- 雷达本体（深灰矩形，朝 +x） -->
-        <visual name="radar_body">
-          <pose>0 0 0 0 0 0</pose>
-          <geometry><box><size>0.16 0.16 0.06</size></box></geometry>
-          <material><ambient>0.1 0.1 0.1 1</ambient><diffuse>0.15 0.15 0.15 1</diffuse></material>
-        </visual>
-        <!-- 雷达橙色发射面（标志 +x 方向） -->
-        <visual name="radar_stripe">
-          <pose>0.081 0 0 0 0 0</pose>
-          <geometry><box><size>0.002 0.16 0.06</size></box></geometry>
-          <material><ambient>1.0 0.5 0.0 1</ambient><diffuse>1.0 0.5 0.0 1</diffuse></material>
-        </visual>
-        <!-- 相机本体（黑色圆柱，位于雷达上方 7cm，朝 +x） -->
-        <visual name="camera_body">
-          <pose>0 0 0.07 0 1.5708 0</pose>
-          <geometry><cylinder><radius>0.032</radius><length>0.10</length></cylinder></geometry>
-          <material><ambient>0.05 0.05 0.05 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
-        </visual>
-        <!-- 镜头（前端蓝色圆盘） -->
-        <visual name="camera_lens">
-          <pose>0.055 0 0.07 0 1.5708 0</pose>
-          <geometry><cylinder><radius>0.022</radius><length>0.005</length></cylinder></geometry>
-          <material><ambient>0.05 0.05 0.25 1</ambient><diffuse>0.1 0.1 0.4 1</diffuse></material>
-        </visual>
 
         <!-- ============================================================ -->
-        <!-- 激光雷达传感器（Livox Avia，发布 /livox/lidar 点云）         -->
-        <!-- pose 全 0：传感器位于模型原点，跟着模型一起旋转              -->
+        <!-- 激光雷达传感器（静态，发布 /livox/lidar 点云）               -->
+        <!-- 位于立柱顶端 (0,0,1.55)，与世界坐标轴对齐，永远不动           -->
+        <!-- 水平 360° 全向 + 垂直 0°~+48°（只朝上看天空）：                -->
+        <!-- 无人机都在雷达上方 19°~28° 仰角，向上扫避免射线打到地面产生海量 -->
+        <!-- 杂波点（曾达 4.5 万点拖垮聚类）。向上扫后点云只剩无人机本身。     -->
         <!-- ============================================================ -->
         <sensor name="livox_lidar" type="ray">
-          <pose>0 0 0 0 0 0</pose>
+          <pose>0 0 1.55 0 0 0</pose>
           <update_rate>10</update_rate>
           <always_on>true</always_on>
           <visualize>false</visualize>
           <ray>
             <scan>
               <horizontal>
-                <samples>360</samples>
+                <samples>720</samples>
                 <resolution>1</resolution>
-                <min_angle>-1.047</min_angle>
-                <max_angle>1.047</max_angle>
+                <min_angle>-3.14159</min_angle>
+                <max_angle>3.14159</max_angle>
               </horizontal>
               <vertical>
-                <samples>128</samples>
+                <samples>96</samples>
                 <resolution>1</resolution>
-                <min_angle>-0.611</min_angle>
-                <max_angle>0.611</max_angle>
+                <min_angle>0.0</min_angle>
+                <max_angle>0.838</max_angle>
               </vertical>
             </scan>
             <range>
@@ -159,6 +129,34 @@
             <frame_name>lidar</frame_name>
           </plugin>
         </sensor>
+      </link>
+    </model>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- sensor_head：仅相机，由 gimbal_controller 通过                     -->
+    <!-- /gazebo/set_entity_state 旋转，模拟 2-DOF PT 云台（主动注视）      -->
+    <!-- 旋转中心（pivot）：世界 (0, 0, 1.55)，与雷达同高                  -->
+    <!-- 模型坐标系：原点=旋转中心                                         -->
+    <!--   相机光学中心：模型 (0, 0, 0.07)，比雷达高 7cm                    -->
+    <!--   光轴沿模型 +x 方向，随云台 pan/tilt 转动                         -->
+    <!-- 雷达已移到 sensor_pillar（静态），不再随云台转                     -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <model name="sensor_head">
+      <pose>0 0 1.55 0 0 0</pose>
+      <static>true</static>
+      <link name="link">
+        <!-- 相机本体（黑色圆柱，位于云台中心上方 7cm，朝 +x） -->
+        <visual name="camera_body">
+          <pose>0 0 0.07 0 1.5708 0</pose>
+          <geometry><cylinder><radius>0.032</radius><length>0.10</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.05 1</ambient><diffuse>0.1 0.1 0.1 1</diffuse></material>
+        </visual>
+        <!-- 镜头（前端蓝色圆盘） -->
+        <visual name="camera_lens">
+          <pose>0.055 0 0.07 0 1.5708 0</pose>
+          <geometry><cylinder><radius>0.022</radius><length>0.005</length></cylinder></geometry>
+          <material><ambient>0.05 0.05 0.25 1</ambient><diffuse>0.1 0.1 0.4 1</diffuse></material>
+        </visual>
 
         <!-- ============================================================ -->
         <!-- RGB 相机传感器（发布 /hik_camera/image_raw）                 -->

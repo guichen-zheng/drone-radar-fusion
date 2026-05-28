@@ -1,0 +1,20 @@
+[1.109s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/build/simulation': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/simulation/build --no-deps symlink_data
+[1.523s] running develop
+[1.775s] running egg_info
+[1.775s] writing simulation.egg-info/PKG-INFO
+[1.775s] writing dependency_links to simulation.egg-info/dependency_links.txt
+[1.775s] writing entry points to simulation.egg-info/entry_points.txt
+[1.775s] writing requirements to simulation.egg-info/requires.txt
+[1.775s] writing top-level names to simulation.egg-info/top_level.txt
+[1.778s] reading manifest file 'simulation.egg-info/SOURCES.txt'
+[1.779s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[1.782s] running build_ext
+[1.782s] Creating /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)
+[1.783s] Installing gimbal_controller script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation
+[1.784s] Installing radar_world_repub script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation
+[1.784s] Installing sim_bridge script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation
+[1.784s] Installing yolo_node script to /home/guichen/Documents/drone-radar-fusion/install/simulation/lib/simulation
+[1.784s] 
+[1.784s] Installed /home/guichen/Documents/drone-radar-fusion/build/simulation
+[1.784s] running symlink_data
+[1.828s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/build/simulation' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/simulation/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/guichen/Documents/drone-radar-fusion/build/simulation/build --no-deps symlink_data

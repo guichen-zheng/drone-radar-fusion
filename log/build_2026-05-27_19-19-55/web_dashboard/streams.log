@@ -1,0 +1,43 @@
+[2.139s] Invoking command in '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/web_dashboard build --build-base /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build install --record /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log --single-version-externally-managed install_data
+[2.879s] running egg_info
+[2.881s] creating ../../build/web_dashboard/web_dashboard.egg-info
+[2.882s] writing ../../build/web_dashboard/web_dashboard.egg-info/PKG-INFO
+[2.882s] writing dependency_links to ../../build/web_dashboard/web_dashboard.egg-info/dependency_links.txt
+[2.883s] writing entry points to ../../build/web_dashboard/web_dashboard.egg-info/entry_points.txt
+[2.883s] writing requirements to ../../build/web_dashboard/web_dashboard.egg-info/requires.txt
+[2.883s] writing top-level names to ../../build/web_dashboard/web_dashboard.egg-info/top_level.txt
+[2.883s] writing manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+[2.887s] reading manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+[2.889s] writing manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+[2.889s] running build
+[2.889s] running build_py
+[2.890s] creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build
+[2.890s] creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib
+[2.890s] creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[2.890s] copying web_dashboard/app.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[2.890s] copying web_dashboard/__init__.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[2.891s] copying web_dashboard/watchdog_node.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+[2.891s] running install
+[2.892s] running install_lib
+[2.895s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[2.895s] copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/app.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[2.895s] copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/__init__.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[2.896s] copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/watchdog_node.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+[2.897s] byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/app.py to app.cpython-310.pyc
+[2.903s] byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/__init__.py to __init__.cpython-310.pyc
+[2.904s] byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/watchdog_node.py to watchdog_node.cpython-310.pyc
+[2.906s] running install_data
+[2.906s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index
+[2.907s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index
+[2.907s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+[2.908s] copying resource/web_dashboard -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+[2.908s] copying package.xml -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard
+[2.908s] creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+[2.908s] copying templates/index.html -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+[2.908s] running install_egg_info
+[2.914s] Copying ../../build/web_dashboard/web_dashboard.egg-info to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard-1.0.0-py3.10.egg-info
+[2.916s] running install_scripts
+[2.986s] Installing watchdog_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[2.986s] Installing web_dashboard_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+[2.987s] writing list of installed files to '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log'
+[3.058s] Invoked command in '/home/guichen/Documents/drone-radar-fusion/src/web_dashboard' returned '0': AMENT_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface LD_LIBRARY_PATH=/home/guichen/Documents/drone-radar-fusion/install/interface/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/opt/MVS/lib/64:/opt/MVS/lib/32:/opt/MVS/lib/64:/opt/MVS/lib/32 PYTHONPATH=/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages:/home/guichen/Documents/drone-radar-fusion/install/interface/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/web_dashboard build --build-base /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build install --record /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log --single-version-externally-managed install_data

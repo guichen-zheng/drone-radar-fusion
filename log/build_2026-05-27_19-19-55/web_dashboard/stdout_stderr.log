@@ -1,0 +1,41 @@
+running egg_info
+creating ../../build/web_dashboard/web_dashboard.egg-info
+writing ../../build/web_dashboard/web_dashboard.egg-info/PKG-INFO
+writing dependency_links to ../../build/web_dashboard/web_dashboard.egg-info/dependency_links.txt
+writing entry points to ../../build/web_dashboard/web_dashboard.egg-info/entry_points.txt
+writing requirements to ../../build/web_dashboard/web_dashboard.egg-info/requires.txt
+writing top-level names to ../../build/web_dashboard/web_dashboard.egg-info/top_level.txt
+writing manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+reading manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+writing manifest file '../../build/web_dashboard/web_dashboard.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build
+creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib
+creating /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+copying web_dashboard/app.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+copying web_dashboard/__init__.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+copying web_dashboard/watchdog_node.py -> /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard
+running install
+running install_lib
+creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/app.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/__init__.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+copying /home/guichen/Documents/drone-radar-fusion/build/web_dashboard/build/lib/web_dashboard/watchdog_node.py -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard
+byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/app.py to app.cpython-310.pyc
+byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard/watchdog_node.py to watchdog_node.cpython-310.pyc
+running install_data
+creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index
+creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index
+creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+copying resource/web_dashboard -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/ament_index/resource_index/packages
+copying package.xml -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard
+creating /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+copying templates/index.html -> /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/share/web_dashboard/templates
+running install_egg_info
+Copying ../../build/web_dashboard/web_dashboard.egg-info to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/python3.10/site-packages/web_dashboard-1.0.0-py3.10.egg-info
+running install_scripts
+Installing watchdog_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+Installing web_dashboard_node script to /home/guichen/Documents/drone-radar-fusion/install/web_dashboard/lib/web_dashboard
+writing list of installed files to '/home/guichen/Documents/drone-radar-fusion/build/web_dashboard/install.log'

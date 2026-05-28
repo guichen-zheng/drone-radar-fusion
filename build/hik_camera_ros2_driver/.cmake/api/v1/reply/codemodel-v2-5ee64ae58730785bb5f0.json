@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-f49aa7ec6f77e128061e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "hik_camera_ros2_driver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "hik_camera_ros2_driver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hik_camera_ros2_driver-bba7a8b0b6ef4910bbce.json",
+					"name" : "hik_camera_ros2_driver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hik_camera_ros2_driver_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hik_camera_ros2_driver_node-46ac3ad4fb8f7c05e5aa.json",
+					"name" : "hik_camera_ros2_driver_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hik_camera_ros2_driver_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hik_camera_ros2_driver_uninstall-a8a45c95ea446f0a9da8.json",
+					"name" : "hik_camera_ros2_driver_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-08a81d3a6cc9fb35715f.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/guichen/Documents/drone-radar-fusion/build/hik_camera_ros2_driver",
+		"source" : "/home/guichen/Documents/drone-radar-fusion/src/hik_camera"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
