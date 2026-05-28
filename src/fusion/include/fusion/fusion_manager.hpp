@@ -87,6 +87,12 @@ private:
     message_filters::Subscriber<interface::msg::DroneDetectArray> sub_camera_;
     std::shared_ptr<message_filters::Synchronizer<SyncPolicy>> sync_;
 
+    // ── 雷达独立模式订阅器（radar_only_mode=true 时启用）──
+    // 没相机时跳过同步等待，雷达检测直接进入追踪管线
+    rclcpp::Subscription<interface::msg::DroneDetectArray>::SharedPtr sub_radar_only_;
+    bool radar_only_mode_ = false;
+    void onRadarOnly(const interface::msg::DroneDetectArray::ConstSharedPtr msg);
+
     // ── 传感器位姿订阅器 ──────────────────────────────────
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr sub_sensor_pose_;
 

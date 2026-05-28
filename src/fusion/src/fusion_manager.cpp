@@ -22,6 +22,8 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     this->declare_parameter("warn_level",        "MEDIUM");
     this->declare_parameter("origin_lat",        39.9);   // 监控区域原点纬度（度）
     this->declare_parameter("origin_lng",       116.4);   // 监控区域原点经度（度）
+    // 没相机时开启：跳过 message_filters 同步，雷达检测直接喂追踪管线
+    this->declare_parameter("radar_only_mode",   false);
 
     confirm_thresh_    = this->get_parameter("confirm_thresh").as_int();
     max_miss_frames_   = this->get_parameter("max_miss_frames").as_int();
@@ -30,6 +32,7 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
     track_assoc_dist_  = this->get_parameter("track_assoc_dist").as_double();
     warn_confidence_   = this->get_parameter("warn_confidence").as_double();
     warn_level_        = this->get_parameter("warn_level").as_string();
+    radar_only_mode_   = this->get_parameter("radar_only_mode").as_bool();
 
     // 初始化地理坐标原点（雷达坐标 → WGS84 的基准点）
     double origin_lat = this->get_parameter("origin_lat").as_double();
@@ -43,15 +46,25 @@ FusionManager::FusionManager(const rclcpp::NodeOptions & options)
             "[Fusion] 标定文件未加载：%s，融合将仅使用雷达坐标", calib_path.c_str());
     }
 
-    // ── 时间同步订阅（容忍 200ms 时差）──────────────────
-    sub_radar_.subscribe(this, "/radar/detect");
-    sub_camera_.subscribe(this, "/camera/detect_result");
-    sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(
-        SyncPolicy(10), sub_radar_, sub_camera_);
-    sync_->setMaxIntervalDuration(rclcpp::Duration::from_seconds(0.2));
-    sync_->registerCallback(
-        std::bind(&FusionManager::fusionCallback, this,
-                  std::placeholders::_1, std::placeholders::_2));
+    if (radar_only_mode_) {
+        // 雷达独立模式：跳过相机同步，雷达检测直接走追踪管线
+        sub_radar_only_ = this->create_subscription<interface::msg::DroneDetectArray>(
+            "/radar/detect", 10,
+            std::bind(&FusionManager::onRadarOnly, this, std::placeholders::_1));
+        RCLCPP_WARN(this->get_logger(),
+            "[Fusion] radar_only_mode=true，已跳过相机时间同步，"
+            "所有雷达检测直接进入追踪管线（前端可看，但无相机视觉确认）");
+    } else {
+        // 默认：时间同步订阅雷达 + 相机（容忍 200ms 时差）
+        sub_radar_.subscribe(this, "/radar/detect");
+        sub_camera_.subscribe(this, "/camera/detect_result");
+        sync_ = std::make_shared<message_filters::Synchronizer<SyncPolicy>>(
+            SyncPolicy(10), sub_radar_, sub_camera_);
+        sync_->setMaxIntervalDuration(rclcpp::Duration::from_seconds(0.2));
+        sync_->registerCallback(
+            std::bind(&FusionManager::fusionCallback, this,
+                      std::placeholders::_1, std::placeholders::_2));
+    }
 
     // ── 发布 ──────────────────────────────────────────────
     pub_final_    = this->create_publisher<interface::msg::DroneDetectArray>("/fusion/final_result", 10);
@@ -431,6 +444,18 @@ bool FusionManager::loadCalibration(const std::string & path)
             "[Fusion] 标定文件解析失败：%s", e.what());
         return false;
     }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 雷达独立模式回调：构造空的 camera msg，复用 fusionCallback。
+// fusionCallback 里"未匹配雷达"分支会处理所有雷达检测（confidence × 0.6 降权）。
+void FusionManager::onRadarOnly(
+    const interface::msg::DroneDetectArray::ConstSharedPtr msg)
+{
+    auto empty_cam = std::make_shared<interface::msg::DroneDetectArray>();
+    empty_cam->header = msg->header;     // 用相同时间戳走 ts 计算
+    // empty_cam->drones 空 → 不会有任何 radar↔camera 匹配 → 所有雷达走 unmatched 分支
+    fusionCallback(msg, empty_cam);
 }
 
 }  // namespace fusion

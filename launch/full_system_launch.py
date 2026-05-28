@@ -3,7 +3,7 @@ launch/full_system_launch.py
 一键启动全系统：雷达驱动 → 相机+YOLO → 融合 → Web Dashboard
 """
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, TimerAction
+from launch.actions import IncludeLaunchDescription, TimerAction, SetEnvironmentVariable
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
@@ -11,6 +11,18 @@ import os
 
 def generate_launch_description():
     return LaunchDescription([
+
+        # ── 0. 环境变量：过滤 LD_LIBRARY_PATH 里的 /opt/MVS 路径 ─────────────
+        # 海康 MVS SDK 在 LD_LIBRARY_PATH 塞了 /opt/MVS/lib/64，里面带过期的
+        # libusb-1.0.so.0（缺 libusb_set_option 符号），会让 PCL/libpcl_io 加载
+        # 失败 → radar_node 启动就崩。这里只过滤 /opt/MVS 路径，保留 ROS/系统库。
+        SetEnvironmentVariable(
+            name='LD_LIBRARY_PATH',
+            value=':'.join(
+                p for p in os.environ.get('LD_LIBRARY_PATH', '').split(':')
+                if p and '/opt/MVS' not in p
+            )
+        ),
 
         # ── 1. Livox Avia 驱动（立即启动）──────────────────────────────────────
         # 包名：livox_ros2_avia
