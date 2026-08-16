@@ -158,6 +158,10 @@ class GimbalController(Node):
         self.pub_target_marker = self.create_publisher(
             MarkerArray, '/gimbal/target', 10)
 
+        # ── 发布禁飞区提醒激光 Marker（红色光束 + 命中光斑）─────────────
+        self.pub_laser = self.create_publisher(
+            MarkerArray, '/gimbal/laser', 10)
+
         # ── 控制定时器 ──────────────────────────────────────────────────────
         self.create_timer(1.0 / rate_hz, self._control_tick)
 
@@ -296,6 +300,9 @@ class GimbalController(Node):
         # 3) 发布注视射线 Marker
         self._publish_target_marker()
 
+        # 4) 发布禁飞区提醒激光（红色光束打到锁定的无人机上）
+        self._publish_laser()
+
     @staticmethod
     def _step_to(cur: float, des: float, max_rate: float, dt: float) -> float:
         delta = des - cur
@@ -341,6 +348,59 @@ class GimbalController(Node):
             ma.markers.append(line)
 
         self.pub_target_marker.publish(ma)
+
+    # ── 禁飞区提醒激光：向锁定的无人机（=相机注视目标）打一束红色激光 ───
+    def _publish_laser(self):
+        """对当前锁定的无人机打一束红色提醒激光 + 命中光斑，提示飞手已进入
+        禁飞区。真实红外激光肉眼不可见，这里用红色可视化表示其轨迹与落点。"""
+        ma = MarkerArray()
+        clr = Marker()
+        clr.header.frame_id = self.world_frame
+        clr.header.stamp = self.get_clock().now().to_msg()
+        clr.ns = 'laser'
+        clr.action = Marker.DELETEALL
+        ma.markers.append(clr)
+
+        if self.locked and self.locked_world_pos is not None \
+                and (time.monotonic() - self.last_seen_time) < 2.0:
+            wx, wy, wz = self.locked_world_pos
+            now_msg = self.get_clock().now().to_msg()
+
+            # 1) 激光束：从云台发射点到目标的红色细线
+            beam = Marker()
+            beam.header.frame_id = self.world_frame
+            beam.header.stamp = now_msg
+            beam.ns = 'laser'
+            beam.id = 0
+            beam.type = Marker.LINE_STRIP
+            beam.action = Marker.ADD
+            beam.scale = Vector3(x=0.06, y=0.0, z=0.0)
+            beam.color = ColorRGBA(r=1.0, g=0.0, b=0.0, a=1.0)
+            beam.points.append(Point(x=float(self.pivot[0]),
+                                     y=float(self.pivot[1]),
+                                     z=float(self.pivot[2])))
+            beam.points.append(Point(x=float(wx), y=float(wy), z=float(wz)))
+            beam.lifetime.sec = 0
+            beam.lifetime.nanosec = 300_000_000
+            ma.markers.append(beam)
+
+            # 2) 命中光斑：目标处一个红色发光小球
+            spot = Marker()
+            spot.header.frame_id = self.world_frame
+            spot.header.stamp = now_msg
+            spot.ns = 'laser'
+            spot.id = 1
+            spot.type = Marker.SPHERE
+            spot.action = Marker.ADD
+            spot.pose.position = Point(x=float(wx), y=float(wy), z=float(wz))
+            spot.pose.orientation = Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)
+            spot.scale = Vector3(x=0.6, y=0.6, z=0.6)
+            spot.color = ColorRGBA(r=1.0, g=0.1, b=0.1, a=0.95)
+            spot.lifetime.sec = 0
+            spot.lifetime.nanosec = 300_000_000
+            ma.markers.append(spot)
+
+        self.pub_laser.publish(ma)
 
 
 def main(args=None):
