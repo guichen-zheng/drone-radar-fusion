@@ -32,7 +32,7 @@ class YoloNode(Node):
 
         self.declare_parameter("model_path", "model/ONNX/yolo_drone.onnx")
         self.declare_parameter("conf_thresh", 0.25)
-        self.declare_parameter("input_size", 640)
+        self.declare_parameter("input_size", 1280)
         self.declare_parameter(
             "conda_python", "/home/guichen/miniconda3/envs/yolov8/bin/python"
         )

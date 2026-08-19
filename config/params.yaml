@@ -53,9 +53,9 @@ yolo_detector:
   ros__parameters:
     # 模型路径（worker 内部会优先尝试同名 .pt，找不到再回退到 .onnx）
     model_path:   "model/ONNX/yolo_drone.onnx"
-    conf_thresh:  0.60         # 置信度阈值（0~1）：值越大越严，假阳性越少。
-                               # 0.25 太宽容会把人当 drone；0.60 起步，看效果再微调
-    input_size:   640
+    conf_thresh:  0.25         # 优先保证远距离小目标召回；误报多时可提高到 0.35
+    # 新模型以静态 1280x1280 输入导出，必须保持一致。
+    input_size:   1280
     image_topic:  "/hik_camera/image_raw"
 
     # conda 环境的 Python 解释器路径。如果你的 conda env 不在默认位置，改这里。
