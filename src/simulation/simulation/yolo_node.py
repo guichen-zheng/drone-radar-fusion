@@ -36,7 +36,7 @@ class YoloNode(Node):
 
         self.declare_parameter("model_path", "model/ONNX/yolo_drone.onnx")
         self.declare_parameter("conf_thresh", 0.25)
-        self.declare_parameter("input_size", 640)
+        self.declare_parameter("input_size", 1280)
 
         model_path = self.get_parameter("model_path").get_parameter_value().string_value
         conf = self.get_parameter("conf_thresh").get_parameter_value().double_value

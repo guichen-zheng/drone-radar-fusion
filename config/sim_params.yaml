@@ -56,7 +56,8 @@ yolo_detector:
   ros__parameters:
     model_path:   "model/ONNX/yolo_drone.onnx"   # 也可改为 .pt（worker 自动匹配）
     conf_thresh:  0.25
-    input_size:   640
+    # 新模型以静态 1280x1280 输入导出，必须保持一致。
+    input_size:   1280
 
 # 雷达点云聚类（radar 包）
 radar_processor:
