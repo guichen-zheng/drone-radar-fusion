@@ -40,7 +40,7 @@ def read_exact(stream, n):
 def main():
     model_path = sys.argv[1] if len(sys.argv) > 1 else "model/ONNX/yolo_drone.onnx"
     conf_thresh = float(sys.argv[2]) if len(sys.argv) > 2 else 0.25
-    imgsz = int(sys.argv[3]) if len(sys.argv) > 3 else 640
+    imgsz = int(sys.argv[3]) if len(sys.argv) > 3 else 1280
 
     # 优先用 .pt（更稳定），找不到再退回 .onnx
     pt_alt = model_path.replace(".onnx", ".pt")
