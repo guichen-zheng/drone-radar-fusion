@@ -1,0 +1,32 @@
+# TIERS Multi-LiDAR Multi-UAV Dataset: TelloOut sequences
+#
+# Intrinsics are copied from /camera/color/camera_info in TelloOut02.bag.
+# The extrinsic is derived from the calibration published by TIERS:
+#   T_base_avia and T_base_camera
+#   T_camera_avia = inverse(T_base_camera) * T_base_avia
+#
+# Official calibration source:
+# https://github.com/TIERS/multi_lidar_multi_uav_dataset
+
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [1390.2823486328125, 0.0, 964.8575439453125,
+         0.0, 1390.7899169921875, 536.1715087890625,
+         0.0, 0.0, 1.0]
+
+# The released RGB stream is already rectified (plumb_bob, all zeros).
+dist_coeffs:
+  rows: 1
+  cols: 5
+  data: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+# Livox Avia (livox_frame) -> Realsense color optical frame.
+# Camera convention: +x right, +y down, +z forward.
+T_cam_lidar:
+  rows: 4
+  cols: 4
+  data: [-0.0112431202, -0.9997183334, -0.0209008647,  0.0690978736,
+          0.0368332710,  0.0204739437, -0.9991116693, -0.0387010095,
+          0.9992581760, -0.0120029798,  0.0365927053,  0.3253416824,
+          0.0,           0.0,           0.0,           1.0]

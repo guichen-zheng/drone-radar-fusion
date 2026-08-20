@@ -4,40 +4,51 @@
 # ═══════════════════════════════════════════════════════════════════════════════
 
 # ── 雷达处理节点（radar_processor）────────────────────────────────────────────
+# 实物近距离调参（无人机在 20m 内飞行）：放宽过滤让稀疏点云的小目标也能保留
 radar_processor:
   ros__parameters:
     # 地图点云路径（相对于项目根目录）
-    # ★ 待填入：用 Livox Avia 扫描监控区域后保存的 .pcd 文件
-    map_pcd_path: "config/drone_map.pcd"
+    # 设一个不存在的路径，让 pcl::loadPCDFile 干净返回 -1（GICP 自动跳过）。
+    # ⚠️ 不要用 /dev/null —— PCL 解析 0 字节文件会 segfault 直接挂掉 radar_node
+    # 等你有时间扫一段 30s 环境背景，导出 .pcd 后改回 "config/drone_map.pcd"
+    map_pcd_path: "config/_no_background.pcd"
 
     # 体素滤波分辨率（米）
-    voxel_size: 0.15
+    # 5cm：保留无人机的 30+ 个点（15cm 会把无人机降到 1-2 个点）
+    voxel_size: 0.05
 
     # 感兴趣区域（ROI），单位：米，相对雷达坐标系
-    roi_x_min: -150.0
-    roi_x_max:  150.0
-    roi_y_min: -150.0
-    roi_y_max:  150.0
-    roi_z_min:    3.0    # 低于 3m 的点视为地面/建筑，过滤掉
-    roi_z_max:  200.0
+    # 你飞 20m 内，ROI 取 ±30m 留 10m 余量；多余范围只增加杂波
+    roi_x_min: -30.0
+    roi_x_max:  30.0
+    roi_y_min: -30.0
+    roi_y_max:  30.0
+    roi_z_min:   1.5    # 高于 1.5m 才认为是飞行物（避开地面、人）
+    roi_z_max:  50.0    # 上限给足，你飞不到 50m
 
-    # 欧几里得聚类
-    cluster_tolerance: 2.0    # 聚类半径（米）
-    cluster_min_size:  4      # 最少点数
-    cluster_max_size:  300
+    # 欧几里得聚类（v2：更激进，追求高检出率）
+    cluster_tolerance: 2.5    # 2.5m 内的点算同一物体（远距稀疏点也能成团）
+    cluster_min_size:  2      # 远距离 / 边缘情况只有 2-3 点也接受
+    cluster_max_size:  500
 
     # 无人机候选过滤（高度和尺寸范围）
-    drone_min_height: 5.0     # 米，低于此高度不认为是无人机
-    drone_max_height: 200.0
-    drone_max_size:   8.0     # 聚类包围盒最大边长（米）
+    drone_min_height: 1.5     # 与 roi_z_min 一致
+    drone_max_height: 50.0
+    drone_max_size:   10.0    # 你飞到 30m 时点云会"分裂"成多团，放宽尺寸允许大 cluster
 
     # GICP 地图配准
     gicp_max_iter:   50
     gicp_fitness_eps: 0.01
+    gicp_max_corr_dist: 1.0
+    # 固定安装时地图与实时点云同属 livox_frame，无需逐帧配准。
+    background_align_gicp: false
+    # 当前点距离背景地图超过该值才作为动态前景保留。
+    background_distance_thresh: 0.25
 
-    # 离群点滤除（mean_k<=0 时跳过；点云稀疏时也跳过避免崩溃）
-    outlier_mean_k:     30
-    outlier_stddev_mul: 1.0
+    # 离群点滤除（核心 — "雷达看不到无人机" 90% 是这里太严）
+    # mean_k=3：极度宽松，几乎不过滤（牺牲一点噪声换检出率）
+    outlier_mean_k:     3
+    outlier_stddev_mul: 2.5
 
 # ── YOLO 检测节点（camera_yolo 包，通过 conda subprocess 跑 ultralytics）─────
 # 不再使用旧的 camera_vision (C++)，因为系统 OpenCV 4.5.4 解析 YOLOv8 ONNX 崩溃。
@@ -50,6 +61,12 @@ yolo_detector:
     conf_thresh:  0.25         # 优先保证远距离小目标召回；误报多时可提高到 0.35
     # 新模型以静态 1280x1280 输入导出，必须保持一致。
     input_size:   1280
+    # 2448x2048 原图切成约 3x3 个重叠区域，每片再送入 1280 模型。
+    slice_enabled: true
+    slice_size:    960
+    slice_overlap: 0.20
+    slice_nms_iou: 0.45        # 合并不同切片在重叠区域产生的重复框
+    hybrid_full_frame: true    # 额外跑一次整图，保留近距离大目标；切片负责远距离小目标
     image_topic:  "/hik_camera/image_raw"
 
     # conda 环境的 Python 解释器路径。如果你的 conda env 不在默认位置，改这里。
@@ -75,6 +92,10 @@ fusion_manager:
     track_assoc_dist:  8.0    # 米：track 关联阈值（>此距离视为新目标）
     warn_confidence:   0.70   # 触发报警的最低置信度
     warn_level:        "HIGH" # "LOW" / "MEDIUM" / "HIGH"
+    # ⚠️ 没接相机时设 true：跳过相机时间同步，雷达检测直接进入追踪
+    #    → /fusion/final_result / 前端地图能看到目标
+    # 接上相机后改回 false，恢复 雷达+相机 全融合
+    radar_only_mode:   true
 
 # ── Web Dashboard（web_dashboard_node）────────────────────────────────────────
 web_dashboard_node:

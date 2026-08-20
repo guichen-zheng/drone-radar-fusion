@@ -1,0 +1,57 @@
+# Livox Avia 实物部署通用基线（50m级小/中型无人机）。
+#
+# 这些参数不绑定某一个rosbag，但背景 PCD 必须在每个新场地重新生成。
+# z 是相对 Avia 安装中心的坐标，不是相对地面的高度。
+
+radar_processor:
+  ros__parameters:
+    # 默认实物背景路径。launch 的 map_pcd_path:=... 会通过节点内部的
+    # map_pcd_path_override 强制覆盖它。
+    map_pcd_path: "config/site_background.pcd"
+    # 实物通用模式不允许无背景 fail-open，避免把整面墙当候选。
+    background_required: true
+
+    # 8cm 保留远距离稀疏回波，同时比5cm更节省 CPU。
+    voxel_size: 0.08
+
+    # Avia 水平安装、主要向前监控的通用 50m ROI。
+    # x=前后、y=左右、z=相对雷达安装中心的上下。
+    roi_x_min:   1.0
+    roi_x_max:  50.0
+    roi_y_min: -35.0
+    roi_y_max:  35.0
+    # 假设 Avia 比最低需检测高度高0.5m。现场应按
+    # roi_z_min = 最低离地检测高度 - Avia离地安装高度 重算。
+    roi_z_min:  -0.5
+    roi_z_max:  30.0
+
+    # 0.5m 允许远距离稀疏点形成簇，又不会像2.5m那样连成整面墙。
+    # 默认3点是实测安全基线；远距离高召回测试可改成2，同时提高confirm_thresh。
+    cluster_tolerance: 0.50
+    cluster_min_size:  3
+    cluster_max_size:  500
+
+    # 覆盖大多数消费级、穿越机和中型四旋翼；大型工业机需单独放宽。
+    drone_min_height: -0.5
+    drone_max_height: 30.0
+    drone_max_size:    1.5
+
+    # 雷达固定安装时关闭逐帧 GICP；移动或重新架设后应重建背景图。
+    background_align_gicp: false
+    background_distance_thresh: 0.30
+    gicp_max_iter: 50
+    gicp_fitness_eps: 0.01
+    gicp_max_corr_dist: 1.0
+
+    # 远距离小无人机常只有2--4个点，SOR容易将目标本身删除。
+    # 静态杂波主要交给现场背景 PCD 和时序跟踪处理。
+    outlier_mean_k: 0
+    outlier_stddev_mul: 2.5
+
+fusion_manager:
+  ros__parameters:
+    # 实物驱动 publish_freq=10Hz：5次命中约0.5s确认，允许约0.8s断续回波。
+    confirm_thresh: 5
+    max_miss_frames: 8
+    # 比旧默认8m严格，避免把两个相邻杂点串成轨迹。
+    track_assoc_dist: 1.5

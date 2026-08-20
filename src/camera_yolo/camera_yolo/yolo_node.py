@@ -33,6 +33,11 @@ class YoloNode(Node):
         self.declare_parameter("model_path", "model/ONNX/yolo_drone.onnx")
         self.declare_parameter("conf_thresh", 0.25)
         self.declare_parameter("input_size", 1280)
+        self.declare_parameter("slice_enabled", True)
+        self.declare_parameter("slice_size", 960)
+        self.declare_parameter("slice_overlap", 0.20)
+        self.declare_parameter("slice_nms_iou", 0.45)
+        self.declare_parameter("hybrid_full_frame", True)
         self.declare_parameter(
             "conda_python", "/home/guichen/miniconda3/envs/yolov8/bin/python"
         )
@@ -41,6 +46,13 @@ class YoloNode(Node):
         model_path   = self.get_parameter("model_path").get_parameter_value().string_value
         conf         = self.get_parameter("conf_thresh").get_parameter_value().double_value
         imgsz        = self.get_parameter("input_size").get_parameter_value().integer_value
+        slice_enabled = self.get_parameter("slice_enabled").get_parameter_value().bool_value
+        slice_size   = self.get_parameter("slice_size").get_parameter_value().integer_value
+        slice_overlap = self.get_parameter("slice_overlap").get_parameter_value().double_value
+        slice_nms_iou = self.get_parameter("slice_nms_iou").get_parameter_value().double_value
+        hybrid_full_frame = self.get_parameter(
+            "hybrid_full_frame"
+        ).get_parameter_value().bool_value
         conda_python = self.get_parameter("conda_python").get_parameter_value().string_value
         image_topic  = self.get_parameter("image_topic").get_parameter_value().string_value
 
@@ -58,7 +70,18 @@ class YoloNode(Node):
             raise RuntimeError("conda python not found")
 
         self.proc = subprocess.Popen(
-            [conda_python, worker_script, model_path, str(conf), str(imgsz)],
+            [
+                conda_python,
+                worker_script,
+                model_path,
+                str(conf),
+                str(imgsz),
+                "1" if slice_enabled else "0",
+                str(slice_size),
+                str(slice_overlap),
+                str(slice_nms_iou),
+                "1" if hybrid_full_frame else "0",
+            ],
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -69,8 +92,9 @@ class YoloNode(Node):
         threading.Thread(target=self._pump_stderr, daemon=True).start()
 
         self.bridge = CvBridge()
+        # 切片推理耗时高于单帧推理，队列只保留最新一帧，避免延迟不断累积。
         self.sub = self.create_subscription(
-            Image, image_topic, self.on_image, 10
+            Image, image_topic, self.on_image, 1
         )
         self.pub_det = self.create_publisher(
             DroneDetectArray, "/camera/detect_result", 10
@@ -85,6 +109,9 @@ class YoloNode(Node):
             f"  worker = {worker_script}\n"
             f"  model = {model_path}\n"
             f"  conf  = {conf}\n"
+            f"  slicing = {slice_enabled} "
+            f"(size={slice_size}, overlap={slice_overlap}, nms={slice_nms_iou}, "
+            f"full_frame={hybrid_full_frame})\n"
             f"  image_topic = {image_topic}"
         )
 

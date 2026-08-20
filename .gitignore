@@ -30,3 +30,4 @@ bags/
 # model/ONNX/*.pt
 # model/ONNX/*.onnx
 # config/drone_map.pcd
+config/site_background.pcd
