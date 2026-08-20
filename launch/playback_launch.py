@@ -18,11 +18,12 @@
 import os
 from launch import LaunchDescription
 from launch.actions import (
-    DeclareLaunchArgument, ExecuteProcess, TimerAction,
+    DeclareLaunchArgument, ExecuteProcess, TimerAction, SetEnvironmentVariable,
 )
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch.conditions import IfCondition
 from launch_ros.actions import Node, SetParameter
+from launch_ros.parameter_descriptions import ParameterValue
 
 
 def generate_launch_description():
@@ -34,10 +35,20 @@ def generate_launch_description():
 
     bag_path = LaunchConfiguration('bag_path')
     rate     = LaunchConfiguration('rate')
+    calib_yaml = LaunchConfiguration('calib_yaml')
+    radar_only_mode = LaunchConfiguration('radar_only_mode')
+    radar_params = LaunchConfiguration('radar_params')
+    map_pcd_path = LaunchConfiguration('map_pcd_path')
 
     # bag_path 是否非空（决定要不要自动播）
     bag_set_condition = IfCondition(
         PythonExpression(['"', bag_path, '" != ""'])
+    )
+    map_set_condition = IfCondition(
+        PythonExpression(['"', map_pcd_path, '" != ""'])
+    )
+    map_unset_condition = IfCondition(
+        PythonExpression(['"', map_pcd_path, '" == ""'])
     )
 
     return LaunchDescription([
@@ -47,6 +58,31 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'rate', default_value='1.0',
             description='bag 播放速率（0.5=半速，2.0=双速）'),
+        DeclareLaunchArgument(
+            'calib_yaml',
+            default_value=os.path.join(project_root, 'config', 'out_matrix.yaml'),
+            description='相机-雷达标定文件；TIERS 数据使用 config/tiers_tello_out_calib.yaml'),
+        DeclareLaunchArgument(
+            'radar_only_mode', default_value='true',
+            description='true=只用雷达；false=启用相机与雷达融合'),
+        DeclareLaunchArgument(
+            'radar_params', default_value=params,
+            description='雷达参数文件；TIERS 使用 config/tiers_radar_params.yaml'),
+        DeclareLaunchArgument(
+            'map_pcd_path', default_value='',
+            description='可选背景PCD覆盖；空字符串=使用radar_params中的路径'),
+
+        # 海康 MVS SDK 在 LD_LIBRARY_PATH 中加入了自带的旧版 libusb，PCL 加载
+        # libpcl_io 时会报 undefined symbol: libusb_set_option，导致 radar_node
+        # 以 exit code 127 退出。回放虽然不启动相机驱动，但会继承终端环境，
+        # 因此与实物 full_system_launch.py 一样过滤 /opt/MVS。
+        SetEnvironmentVariable(
+            name='LD_LIBRARY_PATH',
+            value=':'.join(
+                path for path in os.environ.get('LD_LIBRARY_PATH', '').split(':')
+                if path and '/opt/MVS' not in path
+            ),
+        ),
 
         # 给所有 Node 默认 use_sim_time=True，省得每个 Node 单独写
         SetParameter(name='use_sim_time', value=True),
@@ -55,17 +91,42 @@ def generate_launch_description():
         Node(
             package='radar', executable='radar_node',
             name='radar_processor', output='screen',
-            parameters=[params],
+            parameters=[params, radar_params],
+            condition=map_unset_condition,
+        ),
+        Node(
+            package='radar', executable='radar_node',
+            name='radar_processor', output='screen',
+            parameters=[
+                params,
+                radar_params,
+                # 使用独立覆盖参数，避免 radar_params 中节点专用的
+                # map_pcd_path 覆盖 launch 生成的 /** 参数。
+                {'map_pcd_path_override': ParameterValue(
+                    map_pcd_path, value_type=str)},
+            ],
+            condition=map_set_condition,
         ),
         Node(
             package='camera_yolo', executable='yolo_node',
             name='yolo_detector', output='screen',
             parameters=[params],
+            condition=IfCondition(
+                PythonExpression(['"', radar_only_mode, '" == "false"'])
+            ),
         ),
         Node(
             package='fusion', executable='fusion_node',
             name='fusion_manager', output='screen',
-            parameters=[params],
+            parameters=[
+                params,
+                radar_params,
+                {
+                    'calib_yaml': calib_yaml,
+                    'radar_only_mode': ParameterValue(
+                        radar_only_mode, value_type=bool),
+                },
+            ],
         ),
 
         # ── Web 仪表盘（2s 后，让上游先建好 topic）─────────────────────────────

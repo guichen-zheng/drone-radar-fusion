@@ -3,14 +3,36 @@ launch/full_system_launch.py
 一键启动全系统：雷达驱动 → 相机+YOLO → 融合 → Web Dashboard
 """
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, TimerAction, SetEnvironmentVariable
+from launch.actions import (
+    DeclareLaunchArgument,
+    IncludeLaunchDescription,
+    SetEnvironmentVariable,
+    TimerAction,
+)
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
+    project_root = os.path.normpath(
+        os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+    general_radar_params = os.path.join(
+        project_root, 'config', 'radar_general_params.yaml')
+    default_background = os.path.join(
+        project_root, 'config', 'site_background.pcd')
+    radar_params = LaunchConfiguration('radar_params')
+    map_pcd_path = LaunchConfiguration('map_pcd_path')
+
     return LaunchDescription([
+
+        DeclareLaunchArgument(
+            'radar_params', default_value=general_radar_params,
+            description='Real-world Avia radar parameter overlay'),
+        DeclareLaunchArgument(
+            'map_pcd_path', default_value=default_background,
+            description='Background PCD recorded with Avia fixed in this scene'),
 
         # ── 0. 环境变量：过滤 LD_LIBRARY_PATH 里的 /opt/MVS 路径 ─────────────
         # 海康 MVS SDK 在 LD_LIBRARY_PATH 塞了 /opt/MVS/lib/64，里面带过期的
@@ -46,7 +68,11 @@ def generate_launch_description():
                         get_package_share_directory('radar'),
                         'launch', 'radar_launch.py'
                     )
-                )
+                ),
+                launch_arguments={
+                    'radar_params': radar_params,
+                    'map_pcd_path': map_pcd_path,
+                }.items(),
             )
         ]),
 
@@ -58,7 +84,7 @@ def generate_launch_description():
                         get_package_share_directory('camera_vision'),
                         'launch', 'camera_launch.py'
                     )
-                )
+                ),
             )
         ]),
 
@@ -70,7 +96,10 @@ def generate_launch_description():
                         get_package_share_directory('fusion'),
                         'launch', 'fusion_launch.py'
                     )
-                )
+                ),
+                launch_arguments={
+                    'radar_params': radar_params,
+                }.items(),
             )
         ]),
 

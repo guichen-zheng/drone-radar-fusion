@@ -1,6 +1,7 @@
 #include "radar/radar_processor.hpp"
 #include <pcl/io/pcd_io.h>
 #include <pcl/filters/crop_box.h>
+#include <stdexcept>
 
 namespace radar
 {
@@ -10,6 +11,11 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
 {
     // ── 声明并读取参数 ─────────────────────────────────────
     this->declare_parameter("map_pcd_path", "config/drone_map.pcd");
+    // 当前多参数文件合并时，节点专用 YAML 中的 map_pcd_path 可能遮蔽
+    // launch 生成的 /** 同名参数。用独立参数承接显式覆盖；空字符串表示
+    // 仍使用 map_pcd_path，以兼容旧参数文件和直接 ros2 run 的用法。
+    this->declare_parameter("map_pcd_path_override", "");
+    this->declare_parameter("background_required", false);
     this->declare_parameter("voxel_size", 0.1);
     this->declare_parameter("roi_x_min", -100.0);
     this->declare_parameter("roi_x_max",  100.0);
@@ -25,6 +31,12 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
     this->declare_parameter("drone_max_size", 10.0);
     this->declare_parameter("gicp_max_iter", 50);
     this->declare_parameter("gicp_fitness_eps", 0.01);
+    this->declare_parameter("gicp_max_corr_dist", 1.0);
+    // 固定安装的 Livox 与背景地图本来就在同一坐标系，默认不做逐帧 GICP。
+    // 雷达或支架可能轻微移动时才开启，以免动态目标影响配准结果。
+    this->declare_parameter("background_align_gicp", false);
+    // 当前点到静态地图最近点距离超过该阈值时，才视为前景/动态点。
+    this->declare_parameter("background_distance_thresh", 0.25);
     // 离群点滤除参数（mean_k<=0 时跳过；点云稀疏时也跳过，避免 KDTree empty）
     this->declare_parameter("outlier_mean_k", 30);
     this->declare_parameter("outlier_stddev_mul", 1.0);
@@ -44,12 +56,30 @@ RadarProcessor::RadarProcessor(const rclcpp::NodeOptions & options)
     drone_max_size_   = this->get_parameter("drone_max_size").as_double();
     gicp_max_iter_    = this->get_parameter("gicp_max_iter").as_int();
     gicp_fitness_eps_ = this->get_parameter("gicp_fitness_eps").as_double();
+    gicp_max_corr_dist_ = this->get_parameter("gicp_max_corr_dist").as_double();
+    background_align_gicp_ = this->get_parameter("background_align_gicp").as_bool();
+    background_distance_thresh_ =
+        this->get_parameter("background_distance_thresh").as_double();
     outlier_mean_k_     = this->get_parameter("outlier_mean_k").as_int();
     outlier_stddev_mul_ = this->get_parameter("outlier_stddev_mul").as_double();
 
     // ── 加载地图 ───────────────────────────────────────────
     std::string map_path = this->get_parameter("map_pcd_path").as_string();
+    const std::string map_path_override =
+        this->get_parameter("map_pcd_path_override").as_string();
+    if (!map_path_override.empty()) {
+        map_path = map_path_override;
+        RCLCPP_INFO(this->get_logger(),
+            "[Radar] 使用启动参数覆盖背景地图：%s", map_path.c_str());
+    }
     if (!loadMapPCD(map_path)) {
+        if (this->get_parameter("background_required").as_bool()) {
+            RCLCPP_FATAL(this->get_logger(),
+                "[Radar] 实物模式要求背景地图，但加载失败：%s",
+                map_path.c_str());
+            throw std::runtime_error(
+                "required radar background PCD could not be loaded: " + map_path);
+        }
         RCLCPP_WARN(this->get_logger(),
             "[Radar] 地图文件未加载：%s，将跳过 GICP 背景去除", map_path.c_str());
     }
@@ -92,9 +122,10 @@ void RadarProcessor::pointCloudCallback(
     static int frame_cnt = 0;
     if (++frame_cnt % 10 == 0) {
         RCLCPP_INFO(this->get_logger(),
-            "[Radar] 点数: 输入=%zu voxel=%zu ROI=%zu outlier=%zu 聚类=%zu 候选=%zu",
+            "[Radar] 点数: 输入=%zu voxel=%zu ROI=%zu 前景=%zu outlier=%zu 聚类=%zu 候选=%zu",
             cloud->size(), filtered->size(), roi_cloud->size(),
-            clean_cloud->size(), clusters.size(), candidates.size());
+            dynamic_cloud->size(), clean_cloud->size(),
+            clusters.size(), candidates.size());
     }
 
     // 把候选无人机的点云强度抬高到 250，便于在 RViz 用 intensity 着色时高亮
@@ -184,19 +215,52 @@ pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::roiFilter(
 pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::gicpMapRegistration(
     const pcl::PointCloud<pcl::PointXYZI>::Ptr & cloud)
 {
-    // GICP 将当前帧与预建地图对齐，通过差值提取动态点（背景去除）
-    pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZI, pcl::PointXYZI> gicp;
-    gicp.setMaximumIterations(gicp_max_iter_);
-    gicp.setTransformationEpsilon(gicp_fitness_eps_);
-    gicp.setInputSource(cloud);
-    gicp.setInputTarget(map_cloud_);
+    if (!map_loaded_ || !map_kdtree_ || cloud->empty()) return cloud;
 
-    pcl::PointCloud<pcl::PointXYZI> aligned;
-    gicp.align(aligned);
+    // 数据集和固定监控设备中，点云与地图共享 livox_frame，直接差分最稳定。
+    // 只有明确知道雷达发生了轻微位移时才启用 GICP 对齐。
+    pcl::PointCloud<pcl::PointXYZI>::Ptr aligned_cloud = cloud;
+    pcl::PointCloud<pcl::PointXYZI>::Ptr aligned_storage;
+    if (background_align_gicp_ && cloud->size() >= 20 && map_cloud_->size() >= 20) {
+        pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZI, pcl::PointXYZI> gicp;
+        gicp.setMaximumIterations(gicp_max_iter_);
+        gicp.setTransformationEpsilon(gicp_fitness_eps_);
+        gicp.setMaxCorrespondenceDistance(gicp_max_corr_dist_);
+        gicp.setInputSource(cloud);
+        gicp.setInputTarget(map_cloud_);
 
-    // TODO: 在对齐后的点云与地图之间做差集，提取动态点
-    // 当前直接返回原始点云（完整实现参考原库 lidar/ 中的差分逻辑）
-    return cloud;
+        aligned_storage.reset(new pcl::PointCloud<pcl::PointXYZI>);
+        gicp.align(*aligned_storage);
+        if (gicp.hasConverged()) {
+            aligned_cloud = aligned_storage;
+        } else {
+            RCLCPP_WARN_THROTTLE(
+                this->get_logger(), *this->get_clock(), 5000,
+                "[Radar] GICP 未收敛，本帧按原坐标进行背景差分");
+        }
+    }
+
+    pcl::PointCloud<pcl::PointXYZI>::Ptr foreground(
+        new pcl::PointCloud<pcl::PointXYZI>);
+    foreground->reserve(aligned_cloud->size());
+    const float threshold_sq = static_cast<float>(
+        background_distance_thresh_ * background_distance_thresh_);
+    std::vector<int> nearest_index(1);
+    std::vector<float> nearest_distance_sq(1);
+
+    for (const auto & point : aligned_cloud->points) {
+        if (!pcl::isFinite(point)) continue;
+        const int found = map_kdtree_->nearestKSearch(
+            point, 1, nearest_index, nearest_distance_sq);
+        // 地图覆盖不到，或与最近背景点足够远：保留为前景。
+        if (found == 0 || nearest_distance_sq[0] > threshold_sq) {
+            foreground->push_back(point);
+        }
+    }
+    foreground->width = static_cast<uint32_t>(foreground->size());
+    foreground->height = 1;
+    foreground->is_dense = true;
+    return foreground;
 }
 
 pcl::PointCloud<pcl::PointXYZI>::Ptr RadarProcessor::outlierRemoval(
@@ -269,7 +333,9 @@ std::vector<ClusterResult> RadarProcessor::filterDroneCandidates(
         if (c.centroid.z < drone_min_height_ || c.centroid.z > drone_max_height_)
             continue;
         // 尺寸过滤（无人机体积较小）
-        if (c.width > drone_max_size_ || c.depth > drone_max_size_)
+        if (c.width > drone_max_size_ ||
+            c.depth > drone_max_size_ ||
+            c.height > drone_max_size_)
             continue;
         candidates.push_back(c);
     }
@@ -303,9 +369,17 @@ bool RadarProcessor::loadMapPCD(const std::string & path)
     if (pcl::io::loadPCDFile<pcl::PointXYZI>(path, *map_cloud_) == -1) {
         return false;
     }
+    if (map_cloud_->empty()) {
+        RCLCPP_WARN(this->get_logger(), "[Radar] 背景地图为空：%s", path.c_str());
+        return false;
+    }
+    map_kdtree_.reset(new pcl::KdTreeFLANN<pcl::PointXYZI>);
+    map_kdtree_->setInputCloud(map_cloud_);
     map_loaded_ = true;
     RCLCPP_INFO(this->get_logger(),
-        "[Radar] 地图加载成功：%s（%zu 点）", path.c_str(), map_cloud_->size());
+        "[Radar] 背景地图加载成功：%s（%zu 点），差分阈值=%.3fm，GICP=%s",
+        path.c_str(), map_cloud_->size(), background_distance_thresh_,
+        background_align_gicp_ ? "on" : "off");
     return true;
 }
 

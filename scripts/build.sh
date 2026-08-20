@@ -33,27 +33,28 @@ source /opt/ros/iron/setup.bash   2>/dev/null || \
 
 echo "[build.sh] 开始编译（按依赖顺序）..."
 
-# 1. 先编译 interface（其他包依赖它）
+# 1. 先编译消息与 Livox SDK 依赖（其他包依赖它们）
 colcon build \
-    --packages-select interface \
+    --packages-select interface livox_interfaces livox_sdk_vendor \
     --symlink-install \
     --cmake-args -DCMAKE_BUILD_TYPE=Release
 
-# 2. 编译 utils（纯头文件，编译快）
-colcon build \
-    --packages-select utils \
-    --symlink-install
+source install/setup.bash
 
-# 3. 编译其余 C++ 包
+# 2. 编译处理节点和实物驱动
 colcon build \
-    --packages-select radar camera_vision fusion \
+    --packages-select \
+        radar camera_vision fusion \
+        livox_ros2_avia hik_camera_ros2_driver \
     --symlink-install \
     --cmake-args -DCMAKE_BUILD_TYPE=Release \
     --parallel-workers 4
 
-# 4. 编译 Python 包
+source install/setup.bash
+
+# 3. 编译 Python 包（YOLO ROS 桥接 + Web 仪表盘）
 colcon build \
-    --packages-select web_dashboard \
+    --packages-select camera_yolo web_dashboard \
     --symlink-install
 
 source install/setup.bash

@@ -39,6 +39,11 @@ radar_processor:
     # GICP 地图配准
     gicp_max_iter:   50
     gicp_fitness_eps: 0.01
+    gicp_max_corr_dist: 1.0
+    # 固定安装时地图与实时点云同属 livox_frame，无需逐帧配准。
+    background_align_gicp: false
+    # 当前点距离背景地图超过该值才作为动态前景保留。
+    background_distance_thresh: 0.25
 
     # 离群点滤除（核心 — "雷达看不到无人机" 90% 是这里太严）
     # mean_k=3：极度宽松，几乎不过滤（牺牲一点噪声换检出率）
@@ -56,6 +61,12 @@ yolo_detector:
     conf_thresh:  0.25         # 优先保证远距离小目标召回；误报多时可提高到 0.35
     # 新模型以静态 1280x1280 输入导出，必须保持一致。
     input_size:   1280
+    # 2448x2048 原图切成约 3x3 个重叠区域，每片再送入 1280 模型。
+    slice_enabled: true
+    slice_size:    960
+    slice_overlap: 0.20
+    slice_nms_iou: 0.45        # 合并不同切片在重叠区域产生的重复框
+    hybrid_full_frame: true    # 额外跑一次整图，保留近距离大目标；切片负责远距离小目标
     image_topic:  "/hik_camera/image_raw"
 
     # conda 环境的 Python 解释器路径。如果你的 conda env 不在默认位置，改这里。

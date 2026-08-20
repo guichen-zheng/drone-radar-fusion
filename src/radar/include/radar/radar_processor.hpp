@@ -79,6 +79,7 @@ private:
 
     // ── 地图点云 ───────────────────────────────────────────
     pcl::PointCloud<pcl::PointXYZI>::Ptr map_cloud_;
+    pcl::KdTreeFLANN<pcl::PointXYZI>::Ptr map_kdtree_;
     bool map_loaded_ = false;
 
     // ── 参数 ──────────────────────────────────────────────
@@ -99,6 +100,9 @@ private:
     // GICP 迭代参数
     int gicp_max_iter_;
     double gicp_fitness_eps_;
+    double gicp_max_corr_dist_;
+    bool background_align_gicp_;
+    double background_distance_thresh_;
     // 离群点滤除参数
     int outlier_mean_k_;
     double outlier_stddev_mul_;

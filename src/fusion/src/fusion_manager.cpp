@@ -214,6 +214,9 @@ void FusionManager::updateTracks(
         double best_dist = assoc_dist;
 
         for (auto & [id, track] : tracks_) {
+            // 一条轨迹在同一帧最多只能匹配一个候选，否则多个
+            // 邻近杂点会在单帧内重复累加 hit_count 并被误确认。
+            if (updated_ids.count(id)) continue;
             auto pos = track.kf.getPosition();
             double d = std::sqrt(
                 std::pow(pos.x() - det.x, 2) +
