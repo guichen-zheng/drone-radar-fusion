@@ -158,7 +158,7 @@ bash scripts/deps.sh
 ### 4. 实物 Avia 通用基线与现场背景
 
 `config/radar_general_params.yaml` 是实物 Avia 的平衡起点，默认面向水平固定
-安装、1--50m范围内的小/中型无人机。它不使用 TIERS rosbag 的专用参数。
+安装、1--50m范围内的小/中型无人机。`main` 不加载任何 rosbag 专用参数。
 
 实测现场没有 PCD 时，**不能使用 Tello rosbag 的背景 PCD 代替**，因为背景地图只
 对应生成它时的雷达位置、朝向和静态场景。每次更换场地，或者移动/旋转 Avia 后，
@@ -276,9 +276,8 @@ bash scripts/build.sh
 
 ### 6. 启动
 
-以下命令用于**实物相机和雷达已经连接**的情况；回放已经录制的 rosbag 请使用
-后面的「rosbag 录制与回放」命令，不要启动 `full_system_launch.py`，否则硬件驱动
-会与 bag 中的 `/livox/lidar`、`/hik_camera/image_raw` 重复发布。
+`main` 是实测分支，以下命令会启动 Livox Avia 与海康相机硬件驱动。rosbag 回放与
+TIERS 数据转换只在 `bag-workflow` 分支维护，不应在本分支使用回放输入代替实物驱动。
 
 ```bash
 cd /home/guichen/Documents/drone-radar-fusion
@@ -342,10 +341,10 @@ Displays 中勾选 `Image (YOLO debug)`（Topic 为 `/camera/debug_image`）。�
 
 > 无人机硬件未连接时：hik_camera 和 radar 会报 `No camera found` / `Invalid bd:` 错误并持续重试，属正常现象。Web 地图页面仍可正常加载，但不显示目标数据。
 
-### 8. rosbag 录制与回放（数据驱动调试）
+### 8. 实测数据录制（可选）
 
-实物跑通后，把关键 topic 录成 rosbag，可以在没有硬件的环境里反复回放，用于
-调试融合参数、卡尔曼追踪、报警规则等下游算法。
+实物跑通后，可以把关键 topic 录成 rosbag 作为现场测试记录。本节只负责录制；离线
+回放和公开数据集转换请切换到 `bag-workflow` 分支。
 
 #### 录制
 
@@ -377,197 +376,14 @@ BAG_ROOT=/media/guichen/MyDisk/bags  bash scripts/record_bag.sh my_test
 ⚠️ 移动硬盘必须是 **ext4/xfs/NTFS**（FAT32/exFAT 不支持大文件，超过 4GB 会截断）；
 USB3.0 / SSD 才够写入速度，USB2.0 慢盘可能丢消息。
 
-#### 回放
-
-`launch/playback_launch.py` **只启动下游节点**（不启动 livox / hik 驱动），
-所有节点自动设 `use_sim_time:=true` 让时间戳走 bag /clock。
-
-当前 `my_test_3drones` 同时录有原始数据和旧的处理结果。若直接回放全部 topic，bag
-会发布旧的 `/radar/detect`、`/radar/dynamic_cloud`、`/fusion/markers`，新启动的节点
-也会发布同名 topic，造成重复发布。要用当前代码重新处理并画雷达框，推荐只回放
-`/livox/lidar` 和 `/hik_camera/image_raw`：
-
-```bash
-# 终端 1：启动处理管线和 RViz，不启动硬件驱动、不自动播放 bag
-cd /home/guichen/Documents/drone-radar-fusion
-source /opt/ros/humble/setup.bash
-source install/setup.bash
-ros2 launch launch/playback_launch.py
-
-# 终端 2：只回放原始输入，并发布仿真时钟
-source /opt/ros/humble/setup.bash
-source /home/guichen/Documents/drone-radar-fusion/install/setup.bash
-ros2 bag play /home/guichen/bags/my_test_3drones \
-  --topics /livox/lidar /hik_camera/image_raw \
-  --rate 0.5 --clock 100 --loop
-```
-
-先用 `--rate 0.5` 检查画框是否正常。视觉切片推理速度足够后，可以改回
-`--rate 1.0`。请先启动终端 1，看到 radar、YOLO、fusion 和 RViz 均已启动后，再
-执行终端 2。不要使用 `scripts/play_bag.sh` 做重新计算：该脚本会回放所有已录话题，
-并且当前没有传入 `--clock`。
-
-如果只是想快速查看 bag 当时已经录好的处理结果、不需要用当前代码重新计算，可以使用
-自动播放方式：
-
-```bash
-cd /home/guichen/Documents/drone-radar-fusion
-source /opt/ros/humble/setup.bash
-source install/setup.bash
-ros2 launch launch/playback_launch.py \
-  bag_path:=/home/guichen/bags/my_test_3drones \
-  rate:=0.5
-```
-
-> 自动方式会回放 bag 内已有处理结果，同时也启动处理节点，因此只适合快速查看，
-> 不适合判断修改后的雷达算法是否生效。重新计算请始终使用上面的“双终端、只回放
-> 原始输入”方式，并且不要省略 `--clock 100`。播放终端中可用 SPACE 暂停/继续。
-
-回放时浏览器 `http://localhost:5000` 和 RViz 同样可用，**看到的可视化效果与实物
-运行时完全一致**。
-
-#### TIERS TelloOut02 公开数据集
-
-TIERS 数据是 ROS1 bag，不能直接执行 `ros2 bag play`。仓库提供了
-`scripts/convert_tiers_ros1_bag.py`，它不依赖 ROS1/Noetic，会流式完成以下转换：
-
-| ROS1 原话题 | ROS2 输出话题 |
-|---|---|
-| `/avia/livox/lidar`（Livox `CustomMsg`） | `/livox/lidar`（`PointCloud2`） |
-| `/camera/color/image_raw` | `/hik_camera/image_raw` |
-| `/camera/color/camera_info` | `/hik_camera/camera_info` |
-| `/vrpn_client_node/tello/pose` | `/tiers/tello/pose` |
-
-原始 `.bag` 不会被修改，且转换工具不会覆盖已经存在的输出目录。完整转换约产生 5 GB
-数据，建议仍写到移动硬盘：
-
-```bash
-cd /home/guichen/Documents/drone-radar-fusion
-source /opt/ros/humble/setup.bash
-
-python3 scripts/convert_tiers_ros1_bag.py \
-  /media/guichen/T7/ros_bag/TelloOut02.bag \
-  /media/guichen/T7/ros_bag/TelloOut02_ros2
-
-ros2 bag info /media/guichen/T7/ros_bag/TelloOut02_ros2
-
-# 从重复观测到的静态体素生成背景地图（原bag不会被修改）
-python3 scripts/build_background_pcd.py \
-  /media/guichen/T7/ros_bag/TelloOut02_ros2 \
-  /media/guichen/T7/ros_bag/TelloOut02_background_balanced.pcd \
-  --voxel-size 0.10 --min-frames 10
-```
-
-转换完成后重新编译并启动。TIERS 使用它自己的相机内参与 Camera–Avia 外参，不能沿用
-实物设备的 `config/out_matrix.yaml`：
-
-```bash
-cd /home/guichen/Documents/drone-radar-fusion
-source /opt/ros/humble/setup.bash
-bash scripts/build.sh
-source install/setup.bash
-
-ros2 launch launch/playback_launch.py \
-  bag_path:=/media/guichen/T7/ros_bag/TelloOut02_ros2 \
-  rate:=0.2 \
-  calib_yaml:=/home/guichen/Documents/drone-radar-fusion/config/tiers_tello_out_calib.yaml \
-  radar_params:=/home/guichen/Documents/drone-radar-fusion/config/tiers_radar_params.yaml \
-  radar_only_mode:=true
-```
-
-若要用**实物通用平衡参数**回放同一个 bag 做对比，使用下面命令。这里只将
-`map_pcd_path` 替换为该录制场地的背景图，聚类、ROI和跟踪都来自
-`radar_general_params.yaml`：
-
-```bash
-cd /home/guichen/Documents/drone-radar-fusion
-source /opt/ros/humble/setup.bash
-source install/setup.bash
-
-ros2 launch launch/playback_launch.py \
-  bag_path:=/media/guichen/T7/ros_bag/TelloOut02_ros2 \
-  rate:=0.2 \
-  calib_yaml:=/home/guichen/Documents/drone-radar-fusion/config/tiers_tello_out_calib.yaml \
-  radar_params:=/home/guichen/Documents/drone-radar-fusion/config/radar_general_params.yaml \
-  map_pcd_path:=/media/guichen/T7/ros_bag/TelloOut02_background_balanced.pcd \
-  radar_only_mode:=true
-```
-
-正常启动时应看到“使用启动参数覆盖背景地图”和“背景地图加载成功”两行日志；
-如果出现 `config/site_background.pcd` 加载失败，说明仍在运行修改前的旧进程，先
-`Ctrl+C` 结束它，重新 `source install/setup.bash` 后再启动。
-
-`radar_only_mode:=true` 会跳过 YOLO 切片推理，让这次回放只测试 Avia 雷达链路。
-TIERS 转换后的点云约100Hz，实物驱动为10Hz，因此该回放适合看漏检/误报趋势，
-不能完全替代实地结果。
-
-雷达独立模式可从 `rate:=0.5` 或 `1.0` 开始；若将 `radar_only_mode`
-改为 `false` 启用1920×1080图像切片推理，建议先使用 `rate:=0.2`。
-`Calibration.bag` 只有各传感器点云，没有 RGB 图像，不用于检测回放。
-
-TIERS 是以多激光雷达跟踪为主的数据集。它提供原始 RGB 图，但没有二维检测框标注，
-也不保证无人机始终处于 RealSense D435 的 69°×42°视场内。对 TelloOut02 抽帧实测时，
-当前 YOLO 模型即使把阈值降到 `0.001`，最高响应也只有约 `0.023`，且主要落在建筑、
-自行车和支架等静态物体上。因此该 bag 适合验证 Avia 点云和 ROS2 接入，不适合单独
-判断当前 YOLO 的识别精度。先保持 `radar_only_mode:=true`；只有确认
-`/camera/detect_result` 已经产生正确视觉框后，才改为 `false` 测试视觉—雷达融合。
-
-`/tiers/tello/pose` 是 MOCAP 的 `world` 坐标。bag 中没有提供固定的
-`world→livox_frame` 变换，不能直接把位姿向量的模当作目标到传感器的距离。官方论文
-只说明室外轨迹整体可延伸到约 30 m，并未给出 TelloOut02 每帧相对传感器的距离。
-
-数据集没有直接提供该室外场景的空背景 PCD。本项目通过整段bag的“不同帧重复观测
-次数”生成静态体素地图，再执行最近邻背景差分。对TelloOut02实测，修正
-以 Avia 安装中心为原点的 z 范围后，原始雷达候选从 bag 第4.015秒开始，融合确认框
-从第4.837秒持续到第22.5秒。完整轨迹 x 约11.86--22.24m、z 约-0.37--1.26m；
-约46--48m处的远墙和 z≈-1m的地面杂点仍被 TIERS 专用 ROI 排除。
-
-> 这里的 `z` 是雷达坐标系中相对 Avia 安装中心的高度，不能直接当作相对
-> 地面的无人机高度。例如 `z=-0.3m` 只表示目标低于雷达安装中心0.3m。
-
-无人机真值保存在 `/tiers/tello/pose`，但后续定量误差评估前仍需补齐
-`world→livox_frame` 坐标变换。
-
-#### 回放时检查雷达画框链路
-
-另开一个已经 source 环境的终端，按顺序检查：
-
-```bash
-# 1. bag 是否在发布时钟和原始雷达点云
-ros2 topic hz /clock
-ros2 topic hz /livox/lidar
-
-# 2. radar_node 是否在持续发布处理后点云和雷达框消息
-ros2 topic hz /radar/dynamic_cloud
-ros2 topic hz /radar/cluster_markers
-
-# 3. 当前帧是否真的产生了无人机候选
-ros2 topic echo /radar/detect --once
-```
-
-- `/clock` 没有频率：播放命令漏了 `--clock 100`；停止播放并按推荐命令重启。
-- `/livox/lidar` 没有频率：bag 没有开始播放、路径错误或 `--topics` 写错。
-- `/livox/lidar` 有频率而 `/radar/cluster_markers` 没有：确认 `radar_processor` 节点
-  正在运行，并查看启动终端是否报错。若看到 `exit code 127` 或
-  `undefined symbol: libusb_set_option`，说明运行的是修复前的回放 launch；结束全部
-  回放进程后，重新 source 并启动当前 `launch/playback_launch.py`。
-- `/radar/cluster_markers` 有频率但 `/radar/detect` 的 `drones: []`：可视化没有故障，
-  而是当前参数筛选后的候选数为 0。观察 radar 日志中的
-  `输入/ROI/outlier/聚类/候选` 数量，再调整 `config/params.yaml`。
-- `/radar/detect` 中有目标但 RViz 没框：把 Fixed Frame 设为 `livox_frame`，确认添加的
-  是 `/radar/cluster_markers`，并将 Reliability 设为 `Reliable`。
-
-#### 录制了哪些 topic（由 `scripts/record_bag.sh` 决定）
+#### 录制的话题（由 `scripts/record_bag.sh` 决定）
 
 | 类别 | Topic |
 |------|-------|
 | 原始数据 | `/livox/lidar` `/hik_camera/image_raw` |
-| 雷达输出 | `/radar/detect` `/radar/dynamic_cloud`（bag 内有旧结果；推荐回放命令会排除并重新计算） |
+| 雷达输出 | `/radar/detect` `/radar/dynamic_cloud` |
 | 相机输出 | `/camera/detect_result` `/camera/debug_image` |
 | 融合输出 | `/fusion/final_result` `/fusion/warn` `/fusion/markers` |
-
-使用上面的“只回放原始输入”命令时，下游节点会**重新计算**，不会播放 bag 里的旧
-处理结果，所以可以修改 `config/params.yaml` 后回放比较效果。
 
 ---
 
