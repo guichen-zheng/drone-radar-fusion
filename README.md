@@ -155,6 +155,49 @@ bash scripts/deps.sh
 | `config/drone_map.pcd` | 用 Livox Avia 扫描监控区域，`ros2 bag record /livox/lidar` 后用 pcl 工具导出 |
 | `config/out_matrix.yaml` | 用 Kalibr 或五点标定工具完成相机-雷达外参标定 |
 
+#### 实测现场没有背景 PCD 时
+
+背景 PCD **不能跨场地通用**，也不能使用 Tello rosbag 的背景 PCD 代替。背景地图只
+对应生成它时的雷达位置、朝向和静态场景。每次更换场地，或者移动/旋转 Avia 后，
+都应先在没有无人机、人员尽量离开监控区的情况下录制 20--30 秒空场点云。
+
+> 以下自动生成和启动命令依赖 `bag-workflow` 分支中的
+> `scripts/build_background_pcd.py`、`config/radar_general_params.yaml` 以及
+> `map_pcd_path` launch 参数；`main` 尚未合并这些实现时，请先合并对应功能代码。
+
+```bash
+# 终端 A：只启动 Avia 驱动，雷达位置和角度之后不能再动
+cd /home/guichen/Documents/drone-radar-fusion
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ros2 launch livox_ros2_avia livox_lidar_launch.py
+
+# 终端 B：录制20--30秒后 Ctrl+C
+source /opt/ros/humble/setup.bash
+ros2 bag record /livox/lidar \
+  -o /home/guichen/bags/avia_empty_scene
+
+# 录制结束后生成现场背景 PCD
+cd /home/guichen/Documents/drone-radar-fusion
+source /opt/ros/humble/setup.bash
+python3 scripts/build_background_pcd.py \
+  /home/guichen/bags/avia_empty_scene \
+  /home/guichen/Documents/drone-radar-fusion/config/site_background.pcd \
+  --voxel-size 0.10 --min-frames 10
+
+# 使用现场 PCD 启动实测
+source install/setup.bash
+ros2 launch launch/full_system_launch.py \
+  map_pcd_path:=/home/guichen/Documents/drone-radar-fusion/config/site_background.pcd
+```
+
+注意：
+
+- 生成背景后不能再移动或旋转雷达，否则必须重新生成。
+- 录制背景时不能有无人机，人员也应尽量离开监控区域。
+- 通用配置在地图缺失时会停止 `radar_node`，避免把墙、树木和地面识别成无人机。
+- 不建议关闭 `background_required` 强行无背景运行，这会产生大量静态物体误报。
+
 ### 4. 修改参数
 
 编辑 `config/params.yaml`：
